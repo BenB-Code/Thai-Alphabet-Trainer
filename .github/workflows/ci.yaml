@@ -42,7 +42,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run tests
-        run: npm run test -- --watch=false --browser=ChromeHeadless --code-coverage
+        run: npm run test -- --watch=false --browsers=ChromeHeadless --code-coverage
 
 # TODO : uncomment when docker is done
 #  build:
