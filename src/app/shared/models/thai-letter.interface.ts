@@ -4,7 +4,7 @@ export interface ThaiLetter {
   romanization: string;
   exampleWord: string;
   exampleWordThai: string;
-  exampleMeaning: string;
+  exampleMeaningEN: string;
   exampleMeaningFR: string;
   details?: string;
 }
