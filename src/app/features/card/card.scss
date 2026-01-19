@@ -1,0 +1,59 @@
+:host {
+  mat-card {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    width: 13rem;
+    height: 13rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+    border-left: 0.25rem solid var(--card-color);
+
+    &.isActive {
+      border-right-color: var(--card-color);
+      border-top-color: var(--card-color);
+      border-bottom-color: var(--card-color);
+
+      mat-card-content {
+        &::after {
+          content: '✓';
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          color: white;
+          width: 2rem;
+          height: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+          font-weight: bold;
+          background: var(--color-green-70);
+          border-radius: 50%;
+          animation: 0.3s ease-out 0s 1 normal none running checkmark;
+        }
+      }
+    }
+
+    &:hover {
+      transform: translateY(-0.15rem);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-color: var(--card-color);
+    }
+
+    .big-letter {
+      font-size: 5rem;
+    }
+
+    .name {
+      margin: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .infos {
+      font-style: italic;
+    }
+  }
+}
