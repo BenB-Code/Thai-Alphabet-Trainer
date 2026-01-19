@@ -1,0 +1,77 @@
+@use 'sass:map';
+@use './theme-colors' as theme;
+
+// Expose custom color palettes as CSS variables
+@mixin custom-color-vars() {
+  // Green
+  --color-green-0: #{map.get(theme.$green-palette, 0)};
+  --color-green-10: #{map.get(theme.$green-palette, 10)};
+  --color-green-20: #{map.get(theme.$green-palette, 20)};
+  --color-green-25: #{map.get(theme.$green-palette, 25)};
+  --color-green-30: #{map.get(theme.$green-palette, 30)};
+  --color-green-35: #{map.get(theme.$green-palette, 35)};
+  --color-green-40: #{map.get(theme.$green-palette, 40)};
+  --color-green-50: #{map.get(theme.$green-palette, 50)};
+  --color-green-60: #{map.get(theme.$green-palette, 60)};
+  --color-green-70: #{map.get(theme.$green-palette, 70)};
+  --color-green-80: #{map.get(theme.$green-palette, 80)};
+  --color-green-90: #{map.get(theme.$green-palette, 90)};
+  --color-green-95: #{map.get(theme.$green-palette, 95)};
+  --color-green-98: #{map.get(theme.$green-palette, 98)};
+  --color-green-99: #{map.get(theme.$green-palette, 99)};
+  --color-green-100: #{map.get(theme.$green-palette, 100)};
+
+  // Green-Blue
+  --color-green-blue-0: #{map.get(theme.$green-blue-palette, 0)};
+  --color-green-blue-10: #{map.get(theme.$green-blue-palette, 10)};
+  --color-green-blue-20: #{map.get(theme.$green-blue-palette, 20)};
+  --color-green-blue-25: #{map.get(theme.$green-blue-palette, 25)};
+  --color-green-blue-30: #{map.get(theme.$green-blue-palette, 30)};
+  --color-green-blue-35: #{map.get(theme.$green-blue-palette, 35)};
+  --color-green-blue-40: #{map.get(theme.$green-blue-palette, 40)};
+  --color-green-blue-50: #{map.get(theme.$green-blue-palette, 50)};
+  --color-green-blue-60: #{map.get(theme.$green-blue-palette, 60)};
+  --color-green-blue-70: #{map.get(theme.$green-blue-palette, 70)};
+  --color-green-blue-80: #{map.get(theme.$green-blue-palette, 80)};
+  --color-green-blue-90: #{map.get(theme.$green-blue-palette, 90)};
+  --color-green-blue-95: #{map.get(theme.$green-blue-palette, 95)};
+  --color-green-blue-98: #{map.get(theme.$green-blue-palette, 98)};
+  --color-green-blue-99: #{map.get(theme.$green-blue-palette, 99)};
+  --color-green-blue-100: #{map.get(theme.$green-blue-palette, 100)};
+
+  // Orange
+  --color-orange-0: #{map.get(theme.$orange-palette, 0)};
+  --color-orange-10: #{map.get(theme.$orange-palette, 10)};
+  --color-orange-20: #{map.get(theme.$orange-palette, 20)};
+  --color-orange-25: #{map.get(theme.$orange-palette, 25)};
+  --color-orange-30: #{map.get(theme.$orange-palette, 30)};
+  --color-orange-35: #{map.get(theme.$orange-palette, 35)};
+  --color-orange-40: #{map.get(theme.$orange-palette, 40)};
+  --color-orange-50: #{map.get(theme.$orange-palette, 50)};
+  --color-orange-60: #{map.get(theme.$orange-palette, 60)};
+  --color-orange-70: #{map.get(theme.$orange-palette, 70)};
+  --color-orange-80: #{map.get(theme.$orange-palette, 80)};
+  --color-orange-90: #{map.get(theme.$orange-palette, 90)};
+  --color-orange-95: #{map.get(theme.$orange-palette, 95)};
+  --color-orange-98: #{map.get(theme.$orange-palette, 98)};
+  --color-orange-99: #{map.get(theme.$orange-palette, 99)};
+  --color-orange-100: #{map.get(theme.$orange-palette, 100)};
+
+  // Purple
+  --color-purple-0: #{map.get(theme.$purple-palette, 0)};
+  --color-purple-10: #{map.get(theme.$purple-palette, 10)};
+  --color-purple-20: #{map.get(theme.$purple-palette, 20)};
+  --color-purple-25: #{map.get(theme.$purple-palette, 25)};
+  --color-purple-30: #{map.get(theme.$purple-palette, 30)};
+  --color-purple-35: #{map.get(theme.$purple-palette, 35)};
+  --color-purple-40: #{map.get(theme.$purple-palette, 40)};
+  --color-purple-50: #{map.get(theme.$purple-palette, 50)};
+  --color-purple-60: #{map.get(theme.$purple-palette, 60)};
+  --color-purple-70: #{map.get(theme.$purple-palette, 70)};
+  --color-purple-80: #{map.get(theme.$purple-palette, 80)};
+  --color-purple-90: #{map.get(theme.$purple-palette, 90)};
+  --color-purple-95: #{map.get(theme.$purple-palette, 95)};
+  --color-purple-98: #{map.get(theme.$purple-palette, 98)};
+  --color-purple-99: #{map.get(theme.$purple-palette, 99)};
+  --color-purple-100: #{map.get(theme.$purple-palette, 100)};
+}
