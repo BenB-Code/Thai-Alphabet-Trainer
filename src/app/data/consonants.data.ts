@@ -1,8 +1,9 @@
-import { HIGH, LOW, MID, ThaiConsonant } from '../shared/models';
+import { CONSONANT, HIGH, LOW, MID, ThaiConsonant } from '../shared/models';
 
 export const THAI_CONSONANTS: ThaiConsonant[] = [
   {
     id: 1,
+    kind: CONSONANT,
     character: 'ก',
     romanization: 'kor kai',
     transliteration: 'k',
@@ -14,6 +15,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 2,
+    kind: CONSONANT,
     character: 'จ',
     romanization: 'jor jaan',
     transliteration: 'j',
@@ -25,6 +27,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 3,
+    kind: CONSONANT,
     character: 'ฎ',
     romanization: 'dor chada',
     transliteration: 'd',
@@ -36,6 +39,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 4,
+    kind: CONSONANT,
     character: 'ฏ',
     romanization: 'tor patak',
     transliteration: 't',
@@ -47,6 +51,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 5,
+    kind: CONSONANT,
     character: 'ด',
     romanization: 'dor dek',
     transliteration: 'd',
@@ -58,6 +63,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 6,
+    kind: CONSONANT,
     character: 'ต',
     romanization: 'tor tao',
     transliteration: 't',
@@ -69,6 +75,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 7,
+    kind: CONSONANT,
     character: 'บ',
     romanization: 'bor baimai',
     transliteration: 'b',
@@ -80,6 +87,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 8,
+    kind: CONSONANT,
     character: 'ป',
     romanization: 'por pla',
     transliteration: 'p',
@@ -91,6 +99,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 9,
+    kind: CONSONANT,
     character: 'อ',
     romanization: 'or aang',
     transliteration: 'ʔ',
@@ -104,6 +113,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   // High Class (11 consonants)
   {
     id: 10,
+    kind: CONSONANT,
     character: 'ข',
     romanization: 'khor khai',
     transliteration: 'kh',
@@ -115,6 +125,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 11,
+    kind: CONSONANT,
     character: 'ฃ',
     romanization: 'khor khuat',
     transliteration: 'kh',
@@ -126,6 +137,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 12,
+    kind: CONSONANT,
     character: 'ฉ',
     romanization: 'chor ching',
     transliteration: 'ch',
@@ -137,6 +149,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 13,
+    kind: CONSONANT,
     character: 'ฐ',
     romanization: 'thor than',
     transliteration: 'th',
@@ -148,6 +161,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 14,
+    kind: CONSONANT,
     character: 'ถ',
     romanization: 'thor thung',
     transliteration: 'th',
@@ -159,6 +173,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 15,
+    kind: CONSONANT,
     character: 'ผ',
     romanization: 'phor phueng',
     transliteration: 'ph',
@@ -170,6 +185,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 16,
+    kind: CONSONANT,
     character: 'ฝ',
     romanization: 'for faa',
     transliteration: 'f',
@@ -181,6 +197,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 17,
+    kind: CONSONANT,
     character: 'ศ',
     romanization: 'sor sala',
     transliteration: 's',
@@ -192,6 +209,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 18,
+    kind: CONSONANT,
     character: 'ษ',
     romanization: 'sor rue-si',
     transliteration: 's',
@@ -203,6 +221,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 19,
+    kind: CONSONANT,
     character: 'ส',
     romanization: 'sor suea',
     transliteration: 's',
@@ -214,6 +233,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 20,
+    kind: CONSONANT,
     character: 'ห',
     romanization: 'hor hip',
     transliteration: 'h',
@@ -227,6 +247,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   // Low Class (24 consonants)
   {
     id: 21,
+    kind: CONSONANT,
     character: 'ค',
     romanization: 'khor khwai',
     transliteration: 'kh',
@@ -238,6 +259,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 22,
+    kind: CONSONANT,
     character: 'ฅ',
     romanization: 'khor khon',
     transliteration: 'kh',
@@ -249,6 +271,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 23,
+    kind: CONSONANT,
     character: 'ฆ',
     romanization: 'khor ra-khang',
     transliteration: 'kh',
@@ -260,6 +283,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 24,
+    kind: CONSONANT,
     character: 'ง',
     romanization: 'ngor ngoo',
     transliteration: 'ng',
@@ -271,6 +295,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 25,
+    kind: CONSONANT,
     character: 'ช',
     romanization: 'chor chaang',
     transliteration: 'ch',
@@ -282,6 +307,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 26,
+    kind: CONSONANT,
     character: 'ซ',
     romanization: 'sor soh',
     transliteration: 's',
@@ -293,6 +319,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 27,
+    kind: CONSONANT,
     character: 'ฌ',
     romanization: 'chor choe',
     transliteration: 'ch',
@@ -304,6 +331,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 28,
+    kind: CONSONANT,
     character: 'ญ',
     romanization: 'yor ying',
     transliteration: 'y',
@@ -315,6 +343,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 29,
+    kind: CONSONANT,
     character: 'ฑ',
     romanization: 'thor montho',
     transliteration: 'th',
@@ -326,6 +355,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 30,
+    kind: CONSONANT,
     character: 'ฒ',
     romanization: 'thor pho-thao',
     transliteration: 'th',
@@ -337,6 +367,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 31,
+    kind: CONSONANT,
     character: 'ณ',
     romanization: 'nor nen',
     transliteration: 'n',
@@ -348,6 +379,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 32,
+    kind: CONSONANT,
     character: 'ท',
     romanization: 'thor thahan',
     transliteration: 'th',
@@ -359,6 +391,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 33,
+    kind: CONSONANT,
     character: 'ธ',
     romanization: 'thor thong',
     transliteration: 'th',
@@ -370,6 +403,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 34,
+    kind: CONSONANT,
     character: 'น',
     romanization: 'nor noo',
     transliteration: 'n',
@@ -381,6 +415,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 35,
+    kind: CONSONANT,
     character: 'พ',
     romanization: 'phor phan',
     transliteration: 'ph',
@@ -392,6 +427,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 36,
+    kind: CONSONANT,
     character: 'ฟ',
     romanization: 'for fan',
     transliteration: 'f',
@@ -403,6 +439,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 37,
+    kind: CONSONANT,
     character: 'ภ',
     romanization: 'phor samphao',
     transliteration: 'ph',
@@ -414,6 +451,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 38,
+    kind: CONSONANT,
     character: 'ม',
     romanization: 'mor maa',
     transliteration: 'm',
@@ -425,6 +463,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 39,
+    kind: CONSONANT,
     character: 'ย',
     romanization: 'yor yak',
     transliteration: 'y',
@@ -436,6 +475,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 40,
+    kind: CONSONANT,
     character: 'ร',
     romanization: 'ror ruea',
     transliteration: 'r',
@@ -447,6 +487,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 41,
+    kind: CONSONANT,
     character: 'ล',
     romanization: 'lor ling',
     transliteration: 'l',
@@ -458,6 +499,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 42,
+    kind: CONSONANT,
     character: 'ว',
     romanization: 'wor waen',
     transliteration: 'w',
@@ -469,6 +511,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 43,
+    kind: CONSONANT,
     character: 'ฬ',
     romanization: 'lor chula',
     transliteration: 'l',
@@ -480,6 +523,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
   },
   {
     id: 44,
+    kind: CONSONANT,
     character: 'ฮ',
     romanization: 'hor nok-hook',
     transliteration: 'h',

@@ -1,8 +1,9 @@
-import { DIPHTHONG, LONG, SHORT, SPECIAL, ThaiVowel } from '../shared/models';
+import { DIPHTHONG, LONG, SHORT, SPECIAL, ThaiVowel, VOWEL } from '../shared/models';
 
 export const THAI_VOWELS: ThaiVowel[] = [
   {
     id: 1,
+    kind: VOWEL,
     character: 'อะ',
     romanization: 'a',
     exampleWord: 'ka',
@@ -13,6 +14,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 2,
+    kind: VOWEL,
     character: 'อา',
     romanization: 'aa',
     exampleWord: 'kaa',
@@ -23,6 +25,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 3,
+    kind: VOWEL,
     character: 'อิ',
     romanization: 'i',
     exampleWord: 'ki',
@@ -33,6 +36,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 4,
+    kind: VOWEL,
     character: 'อี',
     romanization: 'ii',
     exampleWord: 'kii',
@@ -43,6 +47,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 5,
+    kind: VOWEL,
     character: 'อึ',
     romanization: 'ue',
     exampleWord: 'kuek',
@@ -53,6 +58,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 6,
+    kind: VOWEL,
     character: 'อื',
     romanization: 'uue',
     exampleWord: 'kuue',
@@ -63,6 +69,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 7,
+    kind: VOWEL,
     character: 'อุ',
     romanization: 'u',
     exampleWord: 'ku',
@@ -73,6 +80,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 8,
+    kind: VOWEL,
     character: 'อู',
     romanization: 'uu',
     exampleWord: 'kuu',
@@ -83,6 +91,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 9,
+    kind: VOWEL,
     character: 'เอะ',
     romanization: 'e',
     exampleWord: 'ke',
@@ -93,6 +102,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 10,
+    kind: VOWEL,
     character: 'เอ',
     romanization: 'ee',
     exampleWord: 'kee',
@@ -103,6 +113,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 11,
+    kind: VOWEL,
     character: 'แอะ',
     romanization: 'ae',
     exampleWord: 'kae',
@@ -113,6 +124,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 12,
+    kind: VOWEL,
     character: 'แอ',
     romanization: 'aae',
     exampleWord: 'kaae',
@@ -123,6 +135,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 13,
+    kind: VOWEL,
     character: 'โอะ',
     romanization: 'o',
     exampleWord: 'ko',
@@ -133,6 +146,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 14,
+    kind: VOWEL,
     character: 'โอ',
     romanization: 'oo',
     exampleWord: 'koo',
@@ -143,6 +157,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 15,
+    kind: VOWEL,
     character: 'เอาะ',
     romanization: 'aw',
     exampleWord: 'kaw',
@@ -153,6 +168,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 16,
+    kind: VOWEL,
     character: '-อ',
     romanization: 'aaw',
     exampleWord: 'kaaw',
@@ -163,6 +179,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 17,
+    kind: VOWEL,
     character: 'เ-อะ',
     romanization: 'oe',
     exampleWord: 'koe',
@@ -173,6 +190,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 18,
+    kind: VOWEL,
     character: 'เ-อ',
     romanization: 'ooe',
     exampleWord: 'kooe',
@@ -184,6 +202,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   // Diphthongs
   {
     id: 19,
+    kind: VOWEL,
     character: 'เอีย',
     romanization: 'ia',
     exampleWord: 'kia',
@@ -194,6 +213,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 20,
+    kind: VOWEL,
     character: 'เอือ',
     romanization: 'uea',
     exampleWord: 'kuea',
@@ -204,6 +224,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 21,
+    kind: VOWEL,
     character: 'อัว',
     romanization: 'ua',
     exampleWord: 'kua',
@@ -214,6 +235,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 22,
+    kind: VOWEL,
     character: 'ไอ',
     romanization: 'ai',
     exampleWord: 'kai',
@@ -224,6 +246,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 23,
+    kind: VOWEL,
     character: 'ใอ',
     romanization: 'ai',
     exampleWord: 'kai',
@@ -234,6 +257,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 24,
+    kind: VOWEL,
     character: 'เอา',
     romanization: 'ao',
     exampleWord: 'kao',
@@ -245,6 +269,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   // Special
   {
     id: 25,
+    kind: VOWEL,
     character: 'อำ', //
     romanization: 'am',
     exampleWord: 'kam',
@@ -255,6 +280,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 26,
+    kind: VOWEL,
     character: 'ฤ',
     romanization: 'rue',
     exampleWord: 'krue',
@@ -265,6 +291,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 27,
+    kind: VOWEL,
     character: 'ฤๅ',
     romanization: 'ruue',
     exampleWord: 'kruue',
@@ -275,6 +302,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 28,
+    kind: VOWEL,
     character: 'ฦ',
     romanization: 'lue',
     exampleWord: 'klue',
@@ -285,6 +313,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   },
   {
     id: 29,
+    kind: VOWEL,
     character: 'ฦๅ',
     romanization: 'luue',
     exampleWord: 'kluue',
