@@ -1,6 +1,6 @@
-import { computed, inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal, WritableSignal } from '@angular/core';
 import { DataService } from '../data-service/data-service';
-import { ThaiConsonant, ThaiVowel } from '../../shared/models';
+import { CONSONANT, LetterKind, ThaiConsonant, ThaiVowel } from '../../shared/models';
 
 @Injectable({
   providedIn: 'root',
@@ -18,38 +18,34 @@ export class StateService {
   total = computed(() => new Set([...this.selectedConsonants(), ...this.selectedVowels()]));
   totalCount = computed(() => this.total().size);
 
-  toggleConsonantSelection(consonant: ThaiConsonant): void {
-    this._selectedConsonants.update(current => {
-      const newSet = new Set(current);
-      if (newSet.has(consonant)) {
-        newSet.delete(consonant);
+  private getSetByKind(kind: LetterKind): WritableSignal<Set<ThaiConsonant | ThaiVowel>> {
+    return kind === CONSONANT ? this._selectedConsonants : this._selectedVowels;
+  }
+
+  toggleLetter(letter: ThaiConsonant | ThaiVowel): void {
+    this.getSetByKind(letter.kind).update(set => {
+      const newSet = new Set(set);
+      if (newSet.has(letter)) {
+        newSet.delete(letter);
       } else {
-        newSet.add(consonant);
+        newSet.add(letter);
       }
       return newSet;
     });
   }
+
   selectAllConsonants(): void {
     this._selectedConsonants.set(new Set(this.dataService.getAllConsonants()));
   }
+
   deselectAllConsonants(): void {
     this._selectedConsonants.set(new Set());
   }
 
-  toggleVowelSelection(vowel: ThaiVowel): void {
-    this._selectedVowels.update(current => {
-      const newSet = new Set(current);
-      if (newSet.has(vowel)) {
-        newSet.delete(vowel);
-      } else {
-        newSet.add(vowel);
-      }
-      return newSet;
-    });
-  }
   selectAllVowels(): void {
     this._selectedVowels.set(new Set(this.dataService.getAllVowels()));
   }
+
   deselectAllVowels(): void {
     this._selectedVowels.set(new Set());
   }
