@@ -2,8 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { DataService } from './data-service';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { THAI_CONSONANTS, THAI_VOWELS } from '../data';
-import { LONG, MID } from '../shared/models';
+import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
+import { LONG, MID } from '../../shared/models';
 
 describe('DataService', () => {
   let service: DataService;
