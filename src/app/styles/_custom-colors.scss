@@ -12,6 +12,7 @@
   --color-green-35: #{map.get(theme.$green-palette, 35)};
   --color-green-40: #{map.get(theme.$green-palette, 40)};
   --color-green-50: #{map.get(theme.$green-palette, 50)};
+  --color-green: #{map.get(theme.$green-palette, 60)};
   --color-green-60: #{map.get(theme.$green-palette, 60)};
   --color-green-70: #{map.get(theme.$green-palette, 70)};
   --color-green-80: #{map.get(theme.$green-palette, 80)};
@@ -30,6 +31,7 @@
   --color-green-blue-35: #{map.get(theme.$green-blue-palette, 35)};
   --color-green-blue-40: #{map.get(theme.$green-blue-palette, 40)};
   --color-green-blue-50: #{map.get(theme.$green-blue-palette, 50)};
+  --color-green-blue: #{map.get(theme.$green-blue-palette, 60)};
   --color-green-blue-60: #{map.get(theme.$green-blue-palette, 60)};
   --color-green-blue-70: #{map.get(theme.$green-blue-palette, 70)};
   --color-green-blue-80: #{map.get(theme.$green-blue-palette, 80)};
@@ -48,6 +50,7 @@
   --color-orange-35: #{map.get(theme.$orange-palette, 35)};
   --color-orange-40: #{map.get(theme.$orange-palette, 40)};
   --color-orange-50: #{map.get(theme.$orange-palette, 50)};
+  --color-orange: #{map.get(theme.$orange-palette, 60)};
   --color-orange-60: #{map.get(theme.$orange-palette, 60)};
   --color-orange-70: #{map.get(theme.$orange-palette, 70)};
   --color-orange-80: #{map.get(theme.$orange-palette, 80)};
@@ -66,6 +69,7 @@
   --color-purple-35: #{map.get(theme.$purple-palette, 35)};
   --color-purple-40: #{map.get(theme.$purple-palette, 40)};
   --color-purple-50: #{map.get(theme.$purple-palette, 50)};
+  --color-purple: #{map.get(theme.$purple-palette, 60)};
   --color-purple-60: #{map.get(theme.$purple-palette, 60)};
   --color-purple-70: #{map.get(theme.$purple-palette, 70)};
   --color-purple-80: #{map.get(theme.$purple-palette, 80)};
