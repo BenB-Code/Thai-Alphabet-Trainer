@@ -21,7 +21,7 @@
           position: absolute;
           top: 0.5rem;
           right: 0.5rem;
-          color: white;
+          color: var(--mat-sys-background);
           width: 2rem;
           height: 2rem;
           display: flex;
@@ -43,17 +43,27 @@
     }
 
     .big-letter {
-      font-size: 5rem;
+      font-size: 4.5rem;
+      padding-bottom: 0.5rem;
+      font-weight: 400;
+    }
+
+    .mid-letter {
+      font-size: 1.25rem;
+      color: var(--card-color);
+      font-weight: 300;
     }
 
     .name {
       margin: 0.5rem;
-      font-size: 1.1rem;
-      font-weight: 500;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--card-color);
     }
 
     .infos {
       font-style: italic;
+      margin-top: 0;
     }
   }
 }

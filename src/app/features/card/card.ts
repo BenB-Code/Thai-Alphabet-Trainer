@@ -3,6 +3,7 @@ import { MatCard, MatCardContent } from '@angular/material/card';
 import { ThaiConsonant, ThaiVowel } from '../../shared/models';
 import { StateService } from '../../services/state-service/state-service';
 import { COLORS, PRIMARY } from '../../shared/constants';
+import { I18nService } from '../../services/i18n-service/i18n-service';
 
 @Component({
   selector: 'app-card',
@@ -16,9 +17,11 @@ import { COLORS, PRIMARY } from '../../shared/constants';
 })
 export class Card {
   protected readonly stateService: StateService = inject<StateService>(StateService);
+  protected readonly i18nService: I18nService = inject<I18nService>(I18nService);
 
   letter = input.required<ThaiConsonant | ThaiVowel>();
   color = input<COLORS>(PRIMARY);
+
   isActive = computed(() => this.stateService.total().has(this.letter()));
 
   toggleLetter(): void {
