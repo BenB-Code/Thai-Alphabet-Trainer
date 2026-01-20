@@ -4,18 +4,35 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@use 'app/styles/_theme-colors' as theme;
+@use 'app/styles/_custom-colors' as colors;
+@use 'app/styles/_animations' as animations;
 
 html {
+  @include colors.custom-color-vars();
+  @include animations.animations();
   @include mat.theme(
     (
       color: (
-        primary: mat.$azure-palette,
-        tertiary: mat.$blue-palette,
+        primary: theme.$primary-palette,
+        secondary: theme.$secondary-palette,
+        tertiary: theme.$tertiary-palette,
+        green: theme.$green-palette,
+        green-blue: theme.$green-blue-palette,
+        orange: theme.$orange-palette,
+        purple: theme.$purple-palette,
+        neutral: theme.$neutral-palette,
+        neutral-variant: theme.$neutral-variant-palette,
+        error: theme.$error-palette,
       ),
       typography: Roboto,
       density: 0,
     )
   );
+
+  @media (prefers-contrast: more) {
+    @include theme.high-contrast-overrides('light');
+  }
 }
 
 body {
@@ -39,7 +56,24 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.noto-serif-thai-normal {
+  font-family: 'Noto Serif Thai', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+
+.roboto-normal {
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
 }
