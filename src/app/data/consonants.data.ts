@@ -9,8 +9,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'k',
     exampleWord: 'kai',
     exampleWordThai: 'ไก่',
-    exampleMeaningEN: 'chicken',
-    exampleMeaningFR: 'poulet',
+    en: {
+      exampleMeaning: 'chicken',
+    },
+    fr: {
+      exampleMeaning: 'poulet',
+    },
     class: MID,
   },
   {
@@ -21,8 +25,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'j',
     exampleWord: 'jaan',
     exampleWordThai: 'จาน',
-    exampleMeaningEN: 'plate',
-    exampleMeaningFR: 'assiette',
+    en: {
+      exampleMeaning: 'plate',
+    },
+    fr: {
+      exampleMeaning: 'assiette',
+    },
     class: MID,
   },
   {
@@ -33,8 +41,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'd',
     exampleWord: 'chada',
     exampleWordThai: 'ชฎา',
-    exampleMeaningEN: 'thai head dress',
-    exampleMeaningFR: 'coiffe',
+    en: {
+      exampleMeaning: 'thai headdress',
+    },
+    fr: {
+      exampleMeaning: 'coiffe',
+    },
     class: MID,
   },
   {
@@ -45,8 +57,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 't',
     exampleWord: 'patak',
     exampleWordThai: 'ปฏัก',
-    exampleMeaningEN: 'goad',
-    exampleMeaningFR: 'aiguillon',
+    en: {
+      exampleMeaning: 'goad',
+    },
+    fr: {
+      exampleMeaning: 'aiguillon',
+    },
     class: MID,
   },
   {
@@ -57,8 +73,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'd',
     exampleWord: 'dek',
     exampleWordThai: 'เด็ก',
-    exampleMeaningEN: 'child',
-    exampleMeaningFR: 'enfant',
+    en: {
+      exampleMeaning: 'child',
+    },
+    fr: {
+      exampleMeaning: 'enfant',
+    },
     class: MID,
   },
   {
@@ -69,8 +89,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 't',
     exampleWord: 'tao',
     exampleWordThai: 'เต่า',
-    exampleMeaningEN: 'turtle',
-    exampleMeaningFR: 'tortue',
+    en: {
+      exampleMeaning: 'turtle',
+    },
+    fr: {
+      exampleMeaning: 'tortue',
+    },
     class: MID,
   },
   {
@@ -81,8 +105,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'b',
     exampleWord: 'baimai',
     exampleWordThai: 'ใบไม้',
-    exampleMeaningEN: 'leaf',
-    exampleMeaningFR: 'feuille',
+    en: {
+      exampleMeaning: 'leaf',
+    },
+    fr: {
+      exampleMeaning: 'feuille',
+    },
     class: MID,
   },
   {
@@ -93,8 +121,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'p',
     exampleWord: 'pla',
     exampleWordThai: 'ปลา',
-    exampleMeaningEN: 'fish',
-    exampleMeaningFR: 'poisson',
+    en: {
+      exampleMeaning: 'fish',
+    },
+    fr: {
+      exampleMeaning: 'poisson',
+    },
     class: MID,
   },
   {
@@ -105,8 +137,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'ʔ',
     exampleWord: 'ang',
     exampleWordThai: 'อ่าง',
-    exampleMeaningEN: 'basin',
-    exampleMeaningFR: 'bassin',
+    en: {
+      exampleMeaning: 'basin',
+    },
+    fr: {
+      exampleMeaning: 'bassin',
+    },
     class: MID,
   },
 
@@ -119,8 +155,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'kh',
     exampleWord: 'khai',
     exampleWordThai: 'ไข่',
-    exampleMeaningEN: 'egg',
-    exampleMeaningFR: 'oeuf',
+    en: {
+      exampleMeaning: 'egg',
+    },
+    fr: {
+      exampleMeaning: 'oeuf',
+    },
     class: HIGH,
   },
   {
@@ -131,8 +171,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'kh',
     exampleWord: 'khuat',
     exampleWordThai: 'ขวด',
-    exampleMeaningEN: 'bottle',
-    exampleMeaningFR: 'bouteille',
+    en: {
+      exampleMeaning: 'bottle',
+    },
+    fr: {
+      exampleMeaning: 'bouteille',
+    },
     class: HIGH,
   },
   {
@@ -143,8 +187,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'ch',
     exampleWord: 'ching',
     exampleWordThai: 'ฉิ่ง',
-    exampleMeaningEN: 'cymbal',
-    exampleMeaningFR: 'cymbale',
+    en: {
+      exampleMeaning: 'cymbal',
+    },
+    fr: {
+      exampleMeaning: 'cymbale',
+    },
     class: HIGH,
   },
   {
@@ -155,8 +203,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'th',
     exampleWord: 'than',
     exampleWordThai: 'ฐาน',
-    exampleMeaningEN: 'pedestal',
-    exampleMeaningFR: 'piédestal',
+    en: {
+      exampleMeaning: 'pedestal',
+    },
+    fr: {
+      exampleMeaning: 'piédestal',
+    },
     class: HIGH,
   },
   {
@@ -167,8 +219,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'th',
     exampleWord: 'thung',
     exampleWordThai: 'ถุง',
-    exampleMeaningEN: 'bag',
-    exampleMeaningFR: 'sac',
+    en: {
+      exampleMeaning: 'bag',
+    },
+    fr: {
+      exampleMeaning: 'sac',
+    },
     class: HIGH,
   },
   {
@@ -179,8 +235,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'ph',
     exampleWord: 'phueng',
     exampleWordThai: 'ผึ้ง',
-    exampleMeaningEN: 'bee',
-    exampleMeaningFR: 'abeille',
+    en: {
+      exampleMeaning: 'bee',
+    },
+    fr: {
+      exampleMeaning: 'abeille',
+    },
     class: HIGH,
   },
   {
@@ -191,8 +251,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'f',
     exampleWord: 'faa',
     exampleWordThai: 'ฝา',
-    exampleMeaningEN: 'lid',
-    exampleMeaningFR: 'couvercle',
+    en: {
+      exampleMeaning: 'lid',
+    },
+    fr: {
+      exampleMeaning: 'couvercle',
+    },
     class: HIGH,
   },
   {
@@ -203,8 +267,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 's',
     exampleWord: 'sala',
     exampleWordThai: 'ศาลา',
-    exampleMeaningEN: 'pavilion',
-    exampleMeaningFR: 'pavillon',
+    en: {
+      exampleMeaning: 'pavilion',
+    },
+    fr: {
+      exampleMeaning: 'pavillon',
+    },
     class: HIGH,
   },
   {
@@ -215,8 +283,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 's',
     exampleWord: 'rue-si',
     exampleWordThai: 'ฤๅษี',
-    exampleMeaningEN: 'hermit',
-    exampleMeaningFR: 'ermite',
+    en: {
+      exampleMeaning: 'hermit',
+    },
+    fr: {
+      exampleMeaning: 'ermite',
+    },
     class: HIGH,
   },
   {
@@ -227,8 +299,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 's',
     exampleWord: 'suea',
     exampleWordThai: 'เสือ',
-    exampleMeaningEN: 'tiger',
-    exampleMeaningFR: 'tigre',
+    en: {
+      exampleMeaning: 'tiger',
+    },
+    fr: {
+      exampleMeaning: 'tigre',
+    },
     class: HIGH,
   },
   {
@@ -239,8 +315,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'h',
     exampleWord: 'hip',
     exampleWordThai: 'หีบ',
-    exampleMeaningEN: 'chest',
-    exampleMeaningFR: 'coffre',
+    en: {
+      exampleMeaning: 'chest',
+    },
+    fr: {
+      exampleMeaning: 'coffre',
+    },
     class: HIGH,
   },
 
@@ -253,8 +333,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'kh',
     exampleWord: 'khwai',
     exampleWordThai: 'ควาย',
-    exampleMeaningEN: 'buffalo',
-    exampleMeaningFR: 'buffle',
+    en: {
+      exampleMeaning: 'buffalo',
+    },
+    fr: {
+      exampleMeaning: 'buffle',
+    },
     class: LOW,
   },
   {
@@ -265,8 +349,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'kh',
     exampleWord: 'khon',
     exampleWordThai: 'คน',
-    exampleMeaningEN: 'person',
-    exampleMeaningFR: 'personne',
+    en: {
+      exampleMeaning: 'person',
+    },
+    fr: {
+      exampleMeaning: 'personne',
+    },
     class: LOW,
   },
   {
@@ -277,8 +365,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'kh',
     exampleWord: 'ra-khang',
     exampleWordThai: 'ระฆัง',
-    exampleMeaningEN: 'bell',
-    exampleMeaningFR: 'cloche',
+    en: {
+      exampleMeaning: 'bell',
+    },
+    fr: {
+      exampleMeaning: 'cloche',
+    },
     class: LOW,
   },
   {
@@ -289,8 +381,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'ng',
     exampleWord: 'ngoo',
     exampleWordThai: 'งู',
-    exampleMeaningEN: 'snake',
-    exampleMeaningFR: 'serpent',
+    en: {
+      exampleMeaning: 'snake',
+    },
+    fr: {
+      exampleMeaning: 'serpent',
+    },
     class: LOW,
   },
   {
@@ -301,8 +397,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'ch',
     exampleWord: 'chaang',
     exampleWordThai: 'ช้าง',
-    exampleMeaningEN: 'elephant',
-    exampleMeaningFR: 'éléphant',
+    en: {
+      exampleMeaning: 'elephant',
+    },
+    fr: {
+      exampleMeaning: 'éléphant',
+    },
     class: LOW,
   },
   {
@@ -313,8 +413,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 's',
     exampleWord: 'soh',
     exampleWordThai: 'โซ่',
-    exampleMeaningEN: 'chain',
-    exampleMeaningFR: 'chaîne',
+    en: {
+      exampleMeaning: 'chain',
+    },
+    fr: {
+      exampleMeaning: 'chaîne',
+    },
     class: LOW,
   },
   {
@@ -325,8 +429,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'ch',
     exampleWord: 'choe',
     exampleWordThai: 'เฌอ',
-    exampleMeaningEN: 'tree',
-    exampleMeaningFR: 'arbre',
+    en: {
+      exampleMeaning: 'tree',
+    },
+    fr: {
+      exampleMeaning: 'arbre',
+    },
     class: LOW,
   },
   {
@@ -337,8 +445,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'y',
     exampleWord: 'ying',
     exampleWordThai: 'หญิง',
-    exampleMeaningEN: 'woman',
-    exampleMeaningFR: 'femme',
+    en: {
+      exampleMeaning: 'woman',
+    },
+    fr: {
+      exampleMeaning: 'femme',
+    },
     class: LOW,
   },
   {
@@ -349,8 +461,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'th',
     exampleWord: 'montho',
     exampleWordThai: 'มณโฑ',
-    exampleMeaningEN: 'queen',
-    exampleMeaningFR: 'reine',
+    en: {
+      exampleMeaning: 'queen',
+    },
+    fr: {
+      exampleMeaning: 'reine',
+    },
     class: LOW,
   },
   {
@@ -361,8 +477,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'th',
     exampleWord: 'pho-thao',
     exampleWordThai: 'ผู้เฒ่า',
-    exampleMeaningEN: 'old man',
-    exampleMeaningFR: 'vieil homme',
+    en: {
+      exampleMeaning: 'old man',
+    },
+    fr: {
+      exampleMeaning: 'vieil homme',
+    },
     class: LOW,
   },
   {
@@ -373,8 +493,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'n',
     exampleWord: 'nen',
     exampleWordThai: 'เณร',
-    exampleMeaningEN: 'monk',
-    exampleMeaningFR: 'moine',
+    en: {
+      exampleMeaning: 'monk',
+    },
+    fr: {
+      exampleMeaning: 'moine',
+    },
     class: LOW,
   },
   {
@@ -385,8 +509,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'th',
     exampleWord: 'thahan',
     exampleWordThai: 'ทหาร',
-    exampleMeaningEN: 'soldier',
-    exampleMeaningFR: 'soldat',
+    en: {
+      exampleMeaning: 'soldier',
+    },
+    fr: {
+      exampleMeaning: 'soldat',
+    },
     class: LOW,
   },
   {
@@ -397,8 +525,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'th',
     exampleWord: 'thong',
     exampleWordThai: 'ธง',
-    exampleMeaningEN: 'flag',
-    exampleMeaningFR: 'drapeau',
+    en: {
+      exampleMeaning: 'flag',
+    },
+    fr: {
+      exampleMeaning: 'drapeau',
+    },
     class: LOW,
   },
   {
@@ -409,8 +541,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'n',
     exampleWord: 'noo',
     exampleWordThai: 'หนู',
-    exampleMeaningEN: 'rat',
-    exampleMeaningFR: 'rat',
+    en: {
+      exampleMeaning: 'rat',
+    },
+    fr: {
+      exampleMeaning: 'rat',
+    },
     class: LOW,
   },
   {
@@ -421,8 +557,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'ph',
     exampleWord: 'phan',
     exampleWordThai: 'พาน',
-    exampleMeaningEN: 'offering tray',
-    exampleMeaningFR: "plateau d'offrandes",
+    en: {
+      exampleMeaning: 'offering tray',
+    },
+    fr: {
+      exampleMeaning: "plateau d'offrandes",
+    },
     class: LOW,
   },
   {
@@ -433,8 +573,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'f',
     exampleWord: 'fan',
     exampleWordThai: 'ฟัน',
-    exampleMeaningEN: 'teeth',
-    exampleMeaningFR: 'dents',
+    en: {
+      exampleMeaning: 'teeth',
+    },
+    fr: {
+      exampleMeaning: 'dents',
+    },
     class: LOW,
   },
   {
@@ -445,8 +589,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'ph',
     exampleWord: 'samphao',
     exampleWordThai: 'สำเภา',
-    exampleMeaningEN: 'junk boat',
-    exampleMeaningFR: 'jonque',
+    en: {
+      exampleMeaning: 'junk boat',
+    },
+    fr: {
+      exampleMeaning: 'jonque',
+    },
     class: LOW,
   },
   {
@@ -457,8 +605,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'm',
     exampleWord: 'maa',
     exampleWordThai: 'ม้า',
-    exampleMeaningEN: 'horse',
-    exampleMeaningFR: 'cheval',
+    en: {
+      exampleMeaning: 'horse',
+    },
+    fr: {
+      exampleMeaning: 'cheval',
+    },
     class: LOW,
   },
   {
@@ -469,8 +621,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'y',
     exampleWord: 'yak',
     exampleWordThai: 'ยักษ์',
-    exampleMeaningEN: 'giant',
-    exampleMeaningFR: 'géant',
+    en: {
+      exampleMeaning: 'giant',
+    },
+    fr: {
+      exampleMeaning: 'géant',
+    },
     class: LOW,
   },
   {
@@ -481,8 +637,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'r',
     exampleWord: 'ruea',
     exampleWordThai: 'เรือ',
-    exampleMeaningEN: 'boat',
-    exampleMeaningFR: 'bateau',
+    en: {
+      exampleMeaning: 'boat',
+    },
+    fr: {
+      exampleMeaning: 'bateau',
+    },
     class: LOW,
   },
   {
@@ -493,8 +653,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'l',
     exampleWord: 'ling',
     exampleWordThai: 'ลิง',
-    exampleMeaningEN: 'monkey',
-    exampleMeaningFR: 'singe',
+    en: {
+      exampleMeaning: 'monkey',
+    },
+    fr: {
+      exampleMeaning: 'singe',
+    },
     class: LOW,
   },
   {
@@ -505,8 +669,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'w',
     exampleWord: 'waen',
     exampleWordThai: 'แหวน',
-    exampleMeaningEN: 'ring',
-    exampleMeaningFR: 'bague',
+    en: {
+      exampleMeaning: 'ring',
+    },
+    fr: {
+      exampleMeaning: 'bague',
+    },
     class: LOW,
   },
   {
@@ -517,8 +685,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'l',
     exampleWord: 'chula',
     exampleWordThai: 'จุฬา',
-    exampleMeaningEN: 'kite',
-    exampleMeaningFR: 'cerf-volant',
+    en: {
+      exampleMeaning: 'kite',
+    },
+    fr: {
+      exampleMeaning: 'cerf-volant',
+    },
     class: LOW,
   },
   {
@@ -529,8 +701,12 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: 'h',
     exampleWord: 'nok-hook',
     exampleWordThai: 'นกฮูก',
-    exampleMeaningEN: 'owl',
-    exampleMeaningFR: 'hibou',
+    en: {
+      exampleMeaning: 'owl',
+    },
+    fr: {
+      exampleMeaning: 'hibou',
+    },
     class: LOW,
   },
 ];

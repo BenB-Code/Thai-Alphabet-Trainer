@@ -6,7 +6,7 @@ export const RED = 'var(--mat-sys-error)';
 export const PRIMARY = 'var(--mat-sys-primary)';
 export const SECONDARY = 'var(--mat-sys-secondary)';
 export const TERTIARY = 'var(--mat-sys-tertiary)';
-export const NEUTRAL = 'var(--mat-sys-neutral)';
+export const TRANSPARENT = 'transparent';
 
 export type COLORS =
   | typeof GREEN
@@ -17,4 +17,4 @@ export type COLORS =
   | typeof PRIMARY
   | typeof SECONDARY
   | typeof TERTIARY
-  | typeof NEUTRAL;
+  | typeof TRANSPARENT;
