@@ -8,8 +8,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'a',
     exampleWord: 'ka',
     exampleWordThai: 'กะ',
-    exampleMeaningEN: 'to estimate',
-    exampleMeaningFR: 'estimer',
+    en: {
+      exampleMeaning: 'to estimate',
+    },
+    fr: {
+      exampleMeaning: 'estimer',
+    },
     type: SHORT,
   },
   {
@@ -19,8 +23,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'aa',
     exampleWord: 'kaa',
     exampleWordThai: 'กา',
-    exampleMeaningEN: 'crow',
-    exampleMeaningFR: 'corbeau',
+    en: {
+      exampleMeaning: 'crow',
+    },
+    fr: {
+      exampleMeaning: 'corbeau',
+    },
     type: LONG,
   },
   {
@@ -30,8 +38,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'i',
     exampleWord: 'ki',
     exampleWordThai: 'กิ',
-    exampleMeaningEN: 'prefix',
-    exampleMeaningFR: 'préfixe',
+    en: {
+      exampleMeaning: 'prefix',
+    },
+    fr: {
+      exampleMeaning: 'préfixe',
+    },
     type: SHORT,
   },
   {
@@ -41,8 +53,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ii',
     exampleWord: 'kii',
     exampleWordThai: 'กี',
-    exampleMeaningEN: 'to hinder',
-    exampleMeaningFR: 'gêner',
+    en: {
+      exampleMeaning: 'to hinder',
+    },
+    fr: {
+      exampleMeaning: 'gêner',
+    },
     type: LONG,
   },
   {
@@ -52,8 +68,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ue',
     exampleWord: 'kuek',
     exampleWordThai: 'กึก',
-    exampleMeaningEN: 'sound',
-    exampleMeaningFR: 'son',
+    en: {
+      exampleMeaning: 'sound',
+    },
+    fr: {
+      exampleMeaning: 'son',
+    },
     type: SHORT,
   },
   {
@@ -63,8 +83,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'uue',
     exampleWord: 'kuue',
     exampleWordThai: 'กื',
-    exampleMeaningEN: 'prefix',
-    exampleMeaningFR: 'préfixe',
+    en: {
+      exampleMeaning: 'prefix',
+    },
+    fr: {
+      exampleMeaning: 'préfixe',
+    },
     type: LONG,
   },
   {
@@ -74,8 +98,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'u',
     exampleWord: 'ku',
     exampleWordThai: 'กุ',
-    exampleMeaningEN: 'prefix',
-    exampleMeaningFR: 'préfixe',
+    en: {
+      exampleMeaning: 'prefix',
+    },
+    fr: {
+      exampleMeaning: 'préfixe',
+    },
     type: SHORT,
   },
   {
@@ -85,8 +113,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'uu',
     exampleWord: 'kuu',
     exampleWordThai: 'กู',
-    exampleMeaningEN: 'I (informal)',
-    exampleMeaningFR: 'je (familier)',
+    en: {
+      exampleMeaning: 'I (informal)',
+    },
+    fr: {
+      exampleMeaning: 'je (familier)',
+    },
     type: LONG,
   },
   {
@@ -96,8 +128,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'e',
     exampleWord: 'ke',
     exampleWordThai: 'เกะ',
-    exampleMeaningEN: 'messy',
-    exampleMeaningFR: 'désordonné',
+    en: {
+      exampleMeaning: 'messy',
+    },
+    fr: {
+      exampleMeaning: 'désordonné',
+    },
     type: SHORT,
   },
   {
@@ -107,8 +143,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ee',
     exampleWord: 'kee',
     exampleWordThai: 'เก',
-    exampleMeaningEN: 'old',
-    exampleMeaningFR: 'vieux',
+    en: {
+      exampleMeaning: 'old',
+    },
+    fr: {
+      exampleMeaning: 'vieux',
+    },
     type: LONG,
   },
   {
@@ -118,8 +158,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ae',
     exampleWord: 'kae',
     exampleWordThai: 'แกะ',
-    exampleMeaningEN: 'sheep',
-    exampleMeaningFR: 'mouton',
+    en: {
+      exampleMeaning: 'sheep',
+    },
+    fr: {
+      exampleMeaning: 'mouton',
+    },
     type: SHORT,
   },
   {
@@ -129,8 +173,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'aae',
     exampleWord: 'kaae',
     exampleWordThai: 'แก',
-    exampleMeaningEN: 'old',
-    exampleMeaningFR: 'vieux',
+    en: {
+      exampleMeaning: 'old',
+    },
+    fr: {
+      exampleMeaning: 'vieux',
+    },
     type: LONG,
   },
   {
@@ -140,8 +188,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'o',
     exampleWord: 'ko',
     exampleWordThai: 'โกะ',
-    exampleMeaningEN: 'bald',
-    exampleMeaningFR: 'chauve',
+    en: {
+      exampleMeaning: 'bald',
+    },
+    fr: {
+      exampleMeaning: 'chauve',
+    },
     type: SHORT,
   },
   {
@@ -151,8 +203,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'oo',
     exampleWord: 'koo',
     exampleWordThai: 'โก',
-    exampleMeaningEN: 'to cheat',
-    exampleMeaningFR: 'tricher',
+    en: {
+      exampleMeaning: 'to cheat',
+    },
+    fr: {
+      exampleMeaning: 'tricher',
+    },
     type: LONG,
   },
   {
@@ -162,8 +218,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'aw',
     exampleWord: 'kaw',
     exampleWordThai: 'เกาะ',
-    exampleMeaningEN: 'island',
-    exampleMeaningFR: 'île',
+    en: {
+      exampleMeaning: 'island',
+    },
+    fr: {
+      exampleMeaning: 'île',
+    },
     type: SHORT,
   },
   {
@@ -173,8 +233,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'aaw',
     exampleWord: 'kaaw',
     exampleWordThai: 'กอ',
-    exampleMeaningEN: 'to embrace',
-    exampleMeaningFR: 'embrasser',
+    en: {
+      exampleMeaning: 'to embrace',
+    },
+    fr: {
+      exampleMeaning: 'embrasser',
+    },
     type: LONG,
   },
   {
@@ -184,8 +248,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'oe',
     exampleWord: 'koe',
     exampleWordThai: 'เกอะ',
-    exampleMeaningEN: 'informal',
-    exampleMeaningFR: 'informel',
+    en: {
+      exampleMeaning: 'informal',
+    },
+    fr: {
+      exampleMeaning: 'informel',
+    },
     type: SHORT,
   },
   {
@@ -195,8 +263,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ooe',
     exampleWord: 'kooe',
     exampleWordThai: 'เกอ',
-    exampleMeaningEN: 'prefix',
-    exampleMeaningFR: 'préfixe',
+    en: {
+      exampleMeaning: 'prefix',
+    },
+    fr: {
+      exampleMeaning: 'préfixe',
+    },
     type: LONG,
   },
   // Diphthongs
@@ -207,8 +279,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ia',
     exampleWord: 'kia',
     exampleWordThai: 'เกีย',
-    exampleMeaningEN: 'related to',
-    exampleMeaningFR: 'lié à',
+    en: {
+      exampleMeaning: 'related to',
+    },
+    fr: {
+      exampleMeaning: 'lié à',
+    },
     type: DIPHTHONG,
   },
   {
@@ -218,8 +294,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'uea',
     exampleWord: 'kuea',
     exampleWordThai: 'เกือ',
-    exampleMeaningEN: 'almost',
-    exampleMeaningFR: 'presque',
+    en: {
+      exampleMeaning: 'almost',
+    },
+    fr: {
+      exampleMeaning: 'presque',
+    },
     type: DIPHTHONG,
   },
   {
@@ -229,8 +309,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ua',
     exampleWord: 'kua',
     exampleWordThai: 'กัว',
-    exampleMeaningEN: 'to stir',
-    exampleMeaningFR: 'remuer',
+    en: {
+      exampleMeaning: 'to stir',
+    },
+    fr: {
+      exampleMeaning: 'remuer',
+    },
     type: DIPHTHONG,
   },
   {
@@ -240,8 +324,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ai',
     exampleWord: 'kai',
     exampleWordThai: 'ไก',
-    exampleMeaningEN: 'far',
-    exampleMeaningFR: 'loin',
+    en: {
+      exampleMeaning: 'far',
+    },
+    fr: {
+      exampleMeaning: 'loin',
+    },
     type: DIPHTHONG,
   },
   {
@@ -251,8 +339,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ai',
     exampleWord: 'kai',
     exampleWordThai: 'ใก',
-    exampleMeaningEN: 'near',
-    exampleMeaningFR: 'près',
+    en: {
+      exampleMeaning: 'near',
+    },
+    fr: {
+      exampleMeaning: 'près',
+    },
     type: DIPHTHONG,
   },
   {
@@ -262,8 +354,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ao',
     exampleWord: 'kao',
     exampleWordThai: 'เกา',
-    exampleMeaningEN: 'to scratch',
-    exampleMeaningFR: 'gratter',
+    en: {
+      exampleMeaning: 'to scratch',
+    },
+    fr: {
+      exampleMeaning: 'gratter',
+    },
     type: DIPHTHONG,
   },
   // Special
@@ -274,8 +370,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'am',
     exampleWord: 'kam',
     exampleWordThai: 'กำ',
-    exampleMeaningEN: 'to grasp',
-    exampleMeaningFR: 'saisir',
+    en: {
+      exampleMeaning: 'to grasp',
+    },
+    fr: {
+      exampleMeaning: 'saisir',
+    },
     type: SPECIAL,
   },
   {
@@ -285,8 +385,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'rue',
     exampleWord: 'krue',
     exampleWordThai: 'ครุ',
-    exampleMeaningEN: 'heavy',
-    exampleMeaningFR: 'lourd',
+    en: {
+      exampleMeaning: 'heavy',
+    },
+    fr: {
+      exampleMeaning: 'lourd',
+    },
     type: SPECIAL,
   },
   {
@@ -296,8 +400,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'ruue',
     exampleWord: 'kruue',
     exampleWordThai: 'กรื',
-    exampleMeaningEN: 'long rue',
-    exampleMeaningFR: 'rue long',
+    en: {
+      exampleMeaning: 'long rue',
+    },
+    fr: {
+      exampleMeaning: 'rue long',
+    },
     type: SPECIAL,
   },
   {
@@ -307,8 +415,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'lue',
     exampleWord: 'klue',
     exampleWordThai: 'กลึ',
-    exampleMeaningEN: 'to lathe',
-    exampleMeaningFR: 'tourner',
+    en: {
+      exampleMeaning: 'to lathe',
+    },
+    fr: {
+      exampleMeaning: 'tourner',
+    },
     type: SPECIAL,
   },
   {
@@ -318,8 +430,12 @@ export const THAI_VOWELS: ThaiVowel[] = [
     romanization: 'luue',
     exampleWord: 'kluue',
     exampleWordThai: 'กลื',
-    exampleMeaningEN: 'long lue',
-    exampleMeaningFR: 'lue long',
+    en: {
+      exampleMeaning: 'long lue',
+    },
+    fr: {
+      exampleMeaning: 'lue long',
+    },
     type: SPECIAL,
   },
 ];

@@ -5,9 +5,14 @@ export interface ThaiLetter {
   romanization: string;
   exampleWord: string;
   exampleWordThai: string;
-  exampleMeaningEN: string;
-  exampleMeaningFR: string;
-  details?: string;
+  en: {
+    exampleMeaning: string;
+    details?: string;
+  };
+  fr: {
+    exampleMeaning: string;
+    details?: string;
+  };
 }
 
 export type LetterKind = typeof CONSONANT | typeof VOWEL;
