@@ -59,7 +59,14 @@ body {
 
 body {
   margin: 0;
+  padding: 2%;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.shadow-box {
+  border: 2px solid transparent;
+  box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.15);
+  border-radius: var(--mat-sys-corner-medium);
 }
 
 .noto-serif-thai-normal {

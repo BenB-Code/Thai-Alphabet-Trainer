@@ -4,6 +4,7 @@ import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { EN } from './shared/constants';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,8 +17,8 @@ export const appConfig: ApplicationConfig = {
         prefix: '/assets/i18n/',
         suffix: '.json',
       }),
-      fallbackLang: 'en',
-      lang: 'en',
+      fallbackLang: EN,
+      lang: EN,
     }),
   ],
 };
