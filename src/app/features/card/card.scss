@@ -9,6 +9,7 @@
     transition: all 0.3s ease-in-out;
     border: 2px solid transparent;
     border-left: 0.25rem solid var(--card-color);
+    box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.15);
 
     &.isActive {
       border-right-color: var(--card-color);
@@ -44,7 +45,6 @@
 
     .big-letter {
       font-size: 4.5rem;
-      padding-bottom: 0.5rem;
       font-weight: 400;
     }
 
