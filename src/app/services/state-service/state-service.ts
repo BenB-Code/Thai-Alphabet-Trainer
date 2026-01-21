@@ -1,6 +1,6 @@
 import { computed, inject, Injectable, signal, WritableSignal } from '@angular/core';
 import { DataService } from '../data-service/data-service';
-import { CONSONANT, LetterKind, ThaiConsonant, ThaiVowel } from '../../shared/models';
+import { CONSONANT, LetterKind, ThaiConsonant, ThaiVowel, VOWEL } from '../../shared/models';
 
 @Injectable({
   providedIn: 'root',
@@ -34,19 +34,13 @@ export class StateService {
     });
   }
 
-  selectAllConsonants(): void {
-    this._selectedConsonants.set(new Set(this.dataService.getAllConsonants()));
+  selectAll(kind: typeof CONSONANT | typeof VOWEL): void {
+    if (kind === CONSONANT) this._selectedConsonants.set(new Set(this.dataService.getAllConsonants()));
+    if (kind === VOWEL) this._selectedVowels.set(new Set(this.dataService.getAllVowels()));
   }
 
-  deselectAllConsonants(): void {
-    this._selectedConsonants.set(new Set());
-  }
-
-  selectAllVowels(): void {
-    this._selectedVowels.set(new Set(this.dataService.getAllVowels()));
-  }
-
-  deselectAllVowels(): void {
-    this._selectedVowels.set(new Set());
+  deselectAll(kind: typeof CONSONANT | typeof VOWEL): void {
+    if (kind === CONSONANT) this._selectedConsonants.set(new Set());
+    if (kind === VOWEL) this._selectedVowels.set(new Set());
   }
 }
