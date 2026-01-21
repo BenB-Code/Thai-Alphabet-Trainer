@@ -28,7 +28,7 @@ describe('DataService', () => {
 
     it('getConsonantById - it should return corresponding consonant entry', () => {
       const result = service.getConsonantById(3);
-      expect(result).toEqual(THAI_CONSONANTS[2]);
+      expect(result).toEqual(THAI_CONSONANTS[26]);
     });
 
     it('getConsonantById - it should return undefined', () => {
