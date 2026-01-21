@@ -1,1 +1,3 @@
-<p>cards-container works!</p>
+@for (letter of list(); track letter.id) {
+<app-card [letter]="letter" [color]="color()"><</app-card>
+}

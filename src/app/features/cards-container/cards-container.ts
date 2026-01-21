@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { ThaiConsonant, ThaiVowel } from '../../shared/models';
+import { Card } from '../card/card';
+import { COLORS, PRIMARY } from '../../shared/constants';
 
 @Component({
   selector: 'app-cards-container',
-  imports: [],
+  imports: [Card],
   templateUrl: './cards-container.html',
   styleUrl: './cards-container.scss',
 })
-export class CardsContainer {}
+export class CardsContainer {
+  list = input.required<ThaiConsonant[] | ThaiVowel[]>();
+  color = input<COLORS>(PRIMARY);
+}
