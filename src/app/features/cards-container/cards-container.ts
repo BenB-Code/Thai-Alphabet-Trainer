@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { ThaiConsonant, ThaiVowel } from '../../shared/models';
 import { Card } from '../card/card';
 import { COLORS, PRIMARY } from '../../shared/constants';
@@ -8,6 +8,7 @@ import { COLORS, PRIMARY } from '../../shared/constants';
   imports: [Card],
   templateUrl: './cards-container.html',
   styleUrl: './cards-container.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardsContainer {
   list = input.required<ThaiConsonant[] | ThaiVowel[]>();
