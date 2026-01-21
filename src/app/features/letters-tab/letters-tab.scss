@@ -1,9 +1,6 @@
 :host {
-  mat-tab-group {
-    padding: 0.5rem;
-
-    .mat-mdc-tab:hover {
-      border-radius: var(--mat-sys-corner-medium);
-    }
+  .tab-label {
+    font-size: medium;
+    font-weight: bold;
   }
 }
