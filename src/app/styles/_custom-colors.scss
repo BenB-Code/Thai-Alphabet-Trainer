@@ -78,4 +78,109 @@
   --color-purple-98: #{map.get(theme.$purple-palette, 98)};
   --color-purple-99: #{map.get(theme.$purple-palette, 99)};
   --color-purple-100: #{map.get(theme.$purple-palette, 100)};
+
+  // Primary
+  --color-blue-0: #{map.get(theme.$primary-palette, 0)};
+  --color-blue-10: #{map.get(theme.$primary-palette, 10)};
+  --color-blue-20: #{map.get(theme.$primary-palette, 20)};
+  --color-blue-25: #{map.get(theme.$primary-palette, 25)};
+  --color-blue-30: #{map.get(theme.$primary-palette, 30)};
+  --color-blue-35: #{map.get(theme.$primary-palette, 35)};
+  --color-blue-40: #{map.get(theme.$primary-palette, 40)};
+  --color-blue-50: #{map.get(theme.$primary-palette, 50)};
+  --color-blue: #{map.get(theme.$primary-palette, 60)};
+  --color-blue-60: #{map.get(theme.$primary-palette, 60)};
+  --color-blue-70: #{map.get(theme.$primary-palette, 70)};
+  --color-blue-80: #{map.get(theme.$primary-palette, 80)};
+  --color-blue-90: #{map.get(theme.$primary-palette, 90)};
+  --color-blue-95: #{map.get(theme.$primary-palette, 95)};
+  --color-blue-98: #{map.get(theme.$primary-palette, 98)};
+  --color-blue-99: #{map.get(theme.$primary-palette, 99)};
+  --color-blue-100: #{map.get(theme.$primary-palette, 100)};
+
+  // Secondary
+  --color-blue-gray-0: #{map.get(theme.$secondary-palette, 0)};
+  --color-blue-gray-10: #{map.get(theme.$secondary-palette, 10)};
+  --color-blue-gray-20: #{map.get(theme.$secondary-palette, 20)};
+  --color-blue-gray-25: #{map.get(theme.$secondary-palette, 25)};
+  --color-blue-gray-30: #{map.get(theme.$secondary-palette, 30)};
+  --color-blue-gray-35: #{map.get(theme.$secondary-palette, 35)};
+  --color-blue-gray-40: #{map.get(theme.$secondary-palette, 40)};
+  --color-blue-gray-50: #{map.get(theme.$secondary-palette, 50)};
+  --color-blue-gray: #{map.get(theme.$secondary-palette, 60)};
+  --color-blue-gray-60: #{map.get(theme.$secondary-palette, 60)};
+  --color-blue-gray-70: #{map.get(theme.$secondary-palette, 70)};
+  --color-blue-gray-80: #{map.get(theme.$secondary-palette, 80)};
+  --color-blue-gray-90: #{map.get(theme.$secondary-palette, 90)};
+  --color-blue-gray-95: #{map.get(theme.$secondary-palette, 95)};
+  --color-blue-gray-98: #{map.get(theme.$secondary-palette, 98)};
+  --color-blue-gray-99: #{map.get(theme.$secondary-palette, 99)};
+  --color-blue-gray-100: #{map.get(theme.$secondary-palette, 100)};
+
+  // Tertiary
+  --color-vivid-purple-0: #{map.get(theme.$tertiary-palette, 0)};
+  --color-vivid-purple-10: #{map.get(theme.$tertiary-palette, 10)};
+  --color-vivid-purple-20: #{map.get(theme.$tertiary-palette, 20)};
+  --color-vivid-purple-25: #{map.get(theme.$tertiary-palette, 25)};
+  --color-vivid-purple-30: #{map.get(theme.$tertiary-palette, 30)};
+  --color-vivid-purple-35: #{map.get(theme.$tertiary-palette, 35)};
+  --color-vivid-purple-40: #{map.get(theme.$tertiary-palette, 40)};
+  --color-vivid-purple-50: #{map.get(theme.$tertiary-palette, 50)};
+  --color-vivid-purple: #{map.get(theme.$tertiary-palette, 60)};
+  --color-vivid-purple-60: #{map.get(theme.$tertiary-palette, 60)};
+  --color-vivid-purple-70: #{map.get(theme.$tertiary-palette, 70)};
+  --color-vivid-purple-80: #{map.get(theme.$tertiary-palette, 80)};
+  --color-vivid-purple-90: #{map.get(theme.$tertiary-palette, 90)};
+  --color-vivid-purple-95: #{map.get(theme.$tertiary-palette, 95)};
+  --color-vivid-purple-98: #{map.get(theme.$tertiary-palette, 98)};
+  --color-vivid-purple-99: #{map.get(theme.$tertiary-palette, 99)};
+  --color-vivid-purple-100: #{map.get(theme.$tertiary-palette, 100)};
+
+  // Error
+  --color-red-0: #{map.get(theme.$error-palette, 0)};
+  --color-red-10: #{map.get(theme.$error-palette, 10)};
+  --color-red-20: #{map.get(theme.$error-palette, 20)};
+  --color-red-25: #{map.get(theme.$error-palette, 25)};
+  --color-red-30: #{map.get(theme.$error-palette, 30)};
+  --color-red-35: #{map.get(theme.$error-palette, 35)};
+  --color-red-40: #{map.get(theme.$error-palette, 40)};
+  --color-red-50: #{map.get(theme.$error-palette, 50)};
+  --color-red: #{map.get(theme.$error-palette, 60)};
+  --color-red-60: #{map.get(theme.$error-palette, 60)};
+  --color-red-70: #{map.get(theme.$error-palette, 70)};
+  --color-red-80: #{map.get(theme.$error-palette, 80)};
+  --color-red-90: #{map.get(theme.$error-palette, 90)};
+  --color-red-95: #{map.get(theme.$error-palette, 95)};
+  --color-red-98: #{map.get(theme.$error-palette, 98)};
+  --color-red-99: #{map.get(theme.$error-palette, 99)};
+  --color-red-100: #{map.get(theme.$error-palette, 100)};
+
+  // Neutral
+  --color-neutral-0: #{map.get(theme.$neutral-palette, 0)};
+  --color-neutral-4: #{map.get(theme.$neutral-palette, 4)};
+  --color-neutral-6: #{map.get(theme.$neutral-palette, 6)};
+  --color-neutral-10: #{map.get(theme.$neutral-palette, 10)};
+  --color-neutral-12: #{map.get(theme.$neutral-palette, 12)};
+  --color-neutral-17: #{map.get(theme.$neutral-palette, 17)};
+  --color-neutral-20: #{map.get(theme.$neutral-palette, 20)};
+  --color-neutral-22: #{map.get(theme.$neutral-palette, 22)};
+  --color-neutral-24: #{map.get(theme.$neutral-palette, 24)};
+  --color-neutral-25: #{map.get(theme.$neutral-palette, 25)};
+  --color-neutral-30: #{map.get(theme.$neutral-palette, 30)};
+  --color-neutral-35: #{map.get(theme.$neutral-palette, 35)};
+  --color-neutral-40: #{map.get(theme.$neutral-palette, 40)};
+  --color-neutral-50: #{map.get(theme.$neutral-palette, 50)};
+  --color-neutral: #{map.get(theme.$neutral-palette, 60)};
+  --color-neutral-60: #{map.get(theme.$neutral-palette, 60)};
+  --color-neutral-70: #{map.get(theme.$neutral-palette, 70)};
+  --color-neutral-80: #{map.get(theme.$neutral-palette, 80)};
+  --color-neutral-87: #{map.get(theme.$neutral-palette, 87)};
+  --color-neutral-90: #{map.get(theme.$neutral-palette, 90)};
+  --color-neutral-92: #{map.get(theme.$neutral-palette, 92)};
+  --color-neutral-94: #{map.get(theme.$neutral-palette, 94)};
+  --color-neutral-95: #{map.get(theme.$neutral-palette, 95)};
+  --color-neutral-96: #{map.get(theme.$neutral-palette, 96)};
+  --color-neutral-98: #{map.get(theme.$neutral-palette, 98)};
+  --color-neutral-99: #{map.get(theme.$neutral-palette, 99)};
+  --color-neutral-100: #{map.get(theme.$neutral-palette, 100)};
 }
