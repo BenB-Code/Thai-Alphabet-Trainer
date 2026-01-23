@@ -1,7 +1,11 @@
 // tab
 .mat-mdc-tab-body-content {
-  padding: 1rem;
+  padding: 3rem;
   height: auto !important;
+}
+
+mat-tab-group {
+  background: var(--color-neutral-100) !important;
 }
 
 .mat-mdc-tab-label-container {
@@ -32,4 +36,14 @@
 // button
 .mdc-button.mat-mdc-button-base {
   background: var(--color-blue) !important;
+}
+
+@media only screen and (max-width: 1280px) {
+  .mat-mdc-tab-label-container {
+    border-radius: 0;
+  }
+
+  .mat-mdc-tab-body-content {
+    padding: 1rem;
+  }
 }
