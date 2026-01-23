@@ -5,7 +5,11 @@
     </ng-template>
     <app-selection-button-container [kind]="CONSONANT" />
     @for (list of dataService.getAllConsonantsSorted() | keyvalue: keepOrder; track list.key) {
-    <app-cards-container [list]="list.value" [color]="TypeClassColorsMap[list.value[0].class]"></app-cards-container>
+    <app-cards-container
+      [list]="list.value"
+      [kind]="list.key"
+      [color]="TypeClassColorsMap[list.value[0].class]"
+    ></app-cards-container>
     }
   </mat-tab>
 
@@ -15,7 +19,11 @@
     </ng-template>
     <app-selection-button-container [kind]="VOWEL" />
     @for (list of dataService.getAllVowelsSorted() | keyvalue: keepOrder; track list.key) {
-    <app-cards-container [list]="list.value" [color]="TypeClassColorsMap[list.value[0].type]"></app-cards-container>
+    <app-cards-container
+      [list]="list.value"
+      [kind]="list.key"
+      [color]="TypeClassColorsMap[list.value[0].type]"
+    ></app-cards-container>
     }
   </mat-tab>
 </mat-tab-group>

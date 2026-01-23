@@ -12,6 +12,14 @@
   color: var(--color-neutral-40);
 }
 
+.mdc-tab.mat-mdc-tab.mat-focus-indicator.mdc-tab--active {
+  background-color: var(--color-blue-90);
+}
+
+.mdc-tab.mat-mdc-tab.mat-focus-indicator:not(.mdc-tab--active) {
+  background-color: var(--color-neutral-92);
+}
+
 .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label,
 .mat-mdc-tab:hover .mdc-tab__text-label {
   color: var(--color-blue) !important;

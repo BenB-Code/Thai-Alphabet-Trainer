@@ -1,29 +1,39 @@
-import { computed, inject, Injectable, signal, WritableSignal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { DataService } from '../data-service/data-service';
-import { CONSONANT, LetterKind, ThaiConsonant, ThaiVowel, VOWEL } from '../../shared/models';
+import { CONSONANT, LetterKind, ThaiLetter, VOWEL } from '../../shared/models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StateService {
-  private readonly dataService = inject<DataService>(DataService);
+  private readonly dataService = inject(DataService);
 
-  private readonly _selectedConsonants = signal<Set<ThaiConsonant>>(new Set());
-  private readonly _selectedVowels = signal<Set<ThaiVowel>>(new Set());
+  private readonly _selected = {
+    [CONSONANT]: signal<Set<ThaiLetter>>(new Set()),
+    [VOWEL]: signal<Set<ThaiLetter>>(new Set()),
+  };
 
-  selectedConsonants = this._selectedConsonants.asReadonly();
-  selectedVowels = this._selectedVowels.asReadonly();
-  selectedConsonantsCount = computed(() => this._selectedConsonants().size);
-  selectedVowelsCount = computed(() => this._selectedVowels().size);
+  selectedConsonants = this._selected[CONSONANT].asReadonly();
+  selectedVowels = this._selected[VOWEL].asReadonly();
+  selectedConsonantsCount = computed(() => this._selected[CONSONANT]().size);
+  selectedVowelsCount = computed(() => this._selected[VOWEL]().size);
   total = computed(() => new Set([...this.selectedConsonants(), ...this.selectedVowels()]));
   totalCount = computed(() => this.total().size);
 
-  private getSetByKind(kind: LetterKind): WritableSignal<Set<ThaiConsonant | ThaiVowel>> {
-    return kind === CONSONANT ? this._selectedConsonants : this._selectedVowels;
+  selectLetter(letter: ThaiLetter): void {
+    this._selected[letter.kind].update(set => new Set(set).add(letter));
   }
 
-  toggleLetter(letter: ThaiConsonant | ThaiVowel): void {
-    this.getSetByKind(letter.kind).update(set => {
+  deselectLetter(letter: ThaiLetter): void {
+    this._selected[letter.kind].update(set => {
+      const newSet = new Set(set);
+      newSet.delete(letter);
+      return newSet;
+    });
+  }
+
+  toggleLetter(letter: ThaiLetter): void {
+    this._selected[letter.kind].update(set => {
       const newSet = new Set(set);
       if (newSet.has(letter)) {
         newSet.delete(letter);
@@ -34,13 +44,15 @@ export class StateService {
     });
   }
 
-  selectAll(kind: typeof CONSONANT | typeof VOWEL): void {
-    if (kind === CONSONANT) this._selectedConsonants.set(new Set(this.dataService.getAllConsonants()));
-    if (kind === VOWEL) this._selectedVowels.set(new Set(this.dataService.getAllVowels()));
+  selectAll(kind: LetterKind): void {
+    if (kind === CONSONANT) {
+      this._selected[CONSONANT].set(new Set(this.dataService.getAllConsonants()));
+    } else {
+      this._selected[VOWEL].set(new Set(this.dataService.getAllVowels()));
+    }
   }
 
-  deselectAll(kind: typeof CONSONANT | typeof VOWEL): void {
-    if (kind === CONSONANT) this._selectedConsonants.set(new Set());
-    if (kind === VOWEL) this._selectedVowels.set(new Set());
+  deselectAll(kind: LetterKind): void {
+    this._selected[kind].set(new Set());
   }
 }
