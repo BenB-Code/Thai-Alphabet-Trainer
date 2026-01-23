@@ -59,9 +59,13 @@ body {
 }
 
 body {
-  margin: 0;
+  margin: auto;
   padding: 2%;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  display: flex;
+  max-width: 80rem;
+  justify-content: center;
+  height: auto;
 }
 
 .shadow-box {

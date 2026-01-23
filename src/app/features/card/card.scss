@@ -3,8 +3,8 @@
     position: relative;
     cursor: pointer;
     display: flex;
-    width: 13rem;
-    height: 13rem;
+    width: 10rem;
+    height: 10rem;
     text-align: center;
     transition: all 0.3s ease-in-out;
     border: 2px solid transparent;
@@ -23,12 +23,12 @@
           top: 0.5rem;
           right: 0.5rem;
           color: var(--mat-sys-background);
-          width: 2rem;
-          height: 2rem;
+          width: 1.75rem;
+          height: 1.75rem;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.2rem;
+          font-size: 1rem;
           font-weight: bold;
           background: var(--color-green-70);
           border-radius: 50%;
@@ -46,16 +46,18 @@
     .big-letter {
       font-size: 4rem;
       font-weight: 400;
+      margin: 2rem;
     }
 
     .mid-letter {
       font-size: 1.25rem;
       color: var(--card-color);
       font-weight: 300;
+      margin: 0;
     }
 
     .name {
-      margin: 0.5rem;
+      margin: 0.25rem 0.5rem;
       font-size: 1rem;
       font-weight: 500;
       color: var(--card-color);
@@ -64,6 +66,8 @@
     .infos {
       font-style: italic;
       margin-top: 0;
+      font-size: 0.75rem;
+      white-space: nowrap;
     }
   }
 }
