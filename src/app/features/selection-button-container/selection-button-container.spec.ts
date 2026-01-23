@@ -9,14 +9,13 @@ import { TranslateModule } from '@ngx-translate/core';
 describe('SelectionButtonContainer', () => {
   let component: SelectionButtonContainer;
   let fixture: ComponentFixture<SelectionButtonContainer>;
-  let stateService: jasmine.SpyObj<StateService>;
+  let stateServiceSpy: jasmine.SpyObj<StateService>;
 
   beforeEach(async () => {
-    const stateServiceSpy = jasmine.createSpyObj('stateService', ['selectAll', 'deselectAll'], {
+    stateServiceSpy = jasmine.createSpyObj('stateService', ['selectAll', 'deselectAll'], {
       total: jasmine.createSpy().and.returnValue(new Set()),
       toggleLetter: jasmine.createSpy(),
     });
-    stateService = stateServiceSpy;
 
     await TestBed.configureTestingModule({
       imports: [SelectionButtonContainer, TranslateModule.forRoot()],
@@ -43,12 +42,12 @@ describe('SelectionButtonContainer', () => {
   it('selectAll', () => {
     component.selectAll();
 
-    expect(stateService.selectAll).toHaveBeenCalledTimes(1);
+    expect(stateServiceSpy.selectAll).toHaveBeenCalledTimes(1);
   });
 
   it('deselectAll', () => {
     component.deselectAll();
 
-    expect(stateService.deselectAll).toHaveBeenCalledTimes(1);
+    expect(stateServiceSpy.deselectAll).toHaveBeenCalledTimes(1);
   });
 });

@@ -29,6 +29,5 @@ export class CardsContainer {
     const action = this.isAllSelected() ? this.stateService.deselectLetter : this.stateService.selectLetter;
 
     this.list().forEach(letter => action.call(this.stateService, letter));
-    console.log(this.stateService.total());
   }
 }
