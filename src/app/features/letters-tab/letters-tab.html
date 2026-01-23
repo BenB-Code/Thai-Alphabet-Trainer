@@ -1,1 +1,29 @@
-<p>letters-tab works!</p>
+<mat-tab-group mat-stretch-tabs class="shadow-box">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span class="tab-label">{{ 'app.consonants' | translate }}</span>
+    </ng-template>
+    <app-selection-button-container [kind]="CONSONANT" />
+    @for (list of dataService.getAllConsonantsSorted() | keyvalue: keepOrder; track list.key) {
+    <app-cards-container
+      [list]="list.value"
+      [kind]="list.key"
+      [color]="TypeClassColorsMap[list.value[0].class]"
+    ></app-cards-container>
+    }
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span class="tab-label">{{ 'app.vowels' | translate }}</span>
+    </ng-template>
+    <app-selection-button-container [kind]="VOWEL" />
+    @for (list of dataService.getAllVowelsSorted() | keyvalue: keepOrder; track list.key) {
+    <app-cards-container
+      [list]="list.value"
+      [kind]="list.key"
+      [color]="TypeClassColorsMap[list.value[0].type]"
+    ></app-cards-container>
+    }
+  </mat-tab>
+</mat-tab-group>

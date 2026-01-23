@@ -1,0 +1,17 @@
+{
+  "app": {
+    "consonants": "Consonants",
+    "vowels": "Vowels",
+    "select-all": "Select all",
+    "deselect-all": "Deselect all"
+  },
+  "titles": {
+    "mid": "Mid Class Consonants",
+    "high": "High Class Consonants",
+    "low": "Low Class Consonants",
+    "short": "Short Vowels",
+    "long": "Long Vowels",
+    "diphthong": "Diphthongs",
+    "special": "Special Vowels"
+  }
+}

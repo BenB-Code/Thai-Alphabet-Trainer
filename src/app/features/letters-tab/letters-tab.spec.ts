@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LettersTab } from './letters-tab';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('LettersTab', () => {
   let component: LettersTab;
@@ -9,7 +10,7 @@ describe('LettersTab', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LettersTab],
+      imports: [LettersTab, TranslateModule.forRoot()],
       providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
@@ -20,5 +21,9 @@ describe('LettersTab', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('keepOrder - it should return 0', () => {
+    expect(component.keepOrder()).toBe(0);
   });
 });

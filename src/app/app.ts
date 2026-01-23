@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { LettersTab } from './features/letters-tab/letters-tab';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
+  imports: [MatButtonModule, LettersTab],
 })
-export class App {
-  protected title = 'Thai-Alphabet-Trainer';
-}
+export class App {}

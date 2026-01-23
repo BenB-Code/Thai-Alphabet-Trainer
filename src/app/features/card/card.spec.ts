@@ -10,9 +10,7 @@ import { THAI_CONSONANTS } from '../../data';
 describe('Card', () => {
   let component: Card;
   let fixture: ComponentFixture<Card>;
-  //
   let stateService: jasmine.SpyObj<StateService>;
-  // const i18nService: jasmine.SpyObj<I18nService>;
 
   beforeEach(async () => {
     const stateServiceSpy = jasmine.createSpyObj('stateService', ['setState'], {

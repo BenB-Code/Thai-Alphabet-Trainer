@@ -1,0 +1,17 @@
+{
+  "app": {
+    "consonants": "Consonnes",
+    "vowels": "Voyelles",
+    "select-all": "Tout sélectionner",
+    "deselect-all": "Tout désélectionner"
+  },
+  "titles": {
+    "mid": "Consonnes Moyennes",
+    "high": "Consonnes Hautes",
+    "low": "Consonnes Basses",
+    "short": "Voyelles Courtes",
+    "long": "Voyelles Longues",
+    "diphthong": "Diphtongues",
+    "special": "Voyelles Spéciales"
+  }
+}

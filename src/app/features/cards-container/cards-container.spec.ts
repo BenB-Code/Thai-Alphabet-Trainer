@@ -2,23 +2,57 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardsContainer } from './cards-container';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { GREEN } from '../../shared/constants';
+import { THAI_CONSONANTS } from '../../data';
+import { CONSONANT } from '../../shared/models';
+import { StateService } from '../../services/state-service/state-service';
 
 describe('CardsContainer', () => {
   let component: CardsContainer;
   let fixture: ComponentFixture<CardsContainer>;
+  let stateServiceSpy: jasmine.SpyObj<StateService>;
 
   beforeEach(async () => {
+    stateServiceSpy = jasmine.createSpyObj('StateService', ['selectLetter', 'deselectLetter'], {
+      total: jasmine.createSpy().and.returnValue(new Set()),
+    });
+
     await TestBed.configureTestingModule({
-      imports: [CardsContainer],
-      providers: [provideZonelessChangeDetection()],
+      imports: [CardsContainer, TranslateModule.forRoot()],
+      providers: [provideZonelessChangeDetection(), { provide: StateService, useValue: stateServiceSpy }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CardsContainer);
     component = fixture.componentInstance;
+
+    fixture.componentRef.setInput('list', THAI_CONSONANTS);
+    fixture.componentRef.setInput('color', GREEN);
+    fixture.componentRef.setInput('kind', CONSONANT);
     await fixture.whenStable();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('toggleSelection', () => {
+    it('should call deselectLetter when all selected', () => {
+      stateServiceSpy.total.and.returnValue(new Set(THAI_CONSONANTS));
+
+      component.toggleSelection();
+
+      expect(stateServiceSpy.deselectLetter).toHaveBeenCalledTimes(THAI_CONSONANTS.length);
+      expect(stateServiceSpy.selectLetter).not.toHaveBeenCalled();
+    });
+
+    it('should call selectLetter when not all selected', () => {
+      stateServiceSpy.total.and.returnValue(new Set());
+
+      component.toggleSelection();
+
+      expect(stateServiceSpy.selectLetter).toHaveBeenCalledTimes(THAI_CONSONANTS.length);
+      expect(stateServiceSpy.deselectLetter).not.toHaveBeenCalled();
+    });
   });
 });

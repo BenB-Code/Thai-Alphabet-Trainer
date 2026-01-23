@@ -7,6 +7,7 @@
 @use 'app/styles/_theme-colors' as theme;
 @use 'app/styles/_custom-colors' as colors;
 @use 'app/styles/_animations' as animations;
+@use 'app/styles/_mat_overrides' as overrides;
 
 html {
   @include colors.custom-color-vars();
@@ -58,8 +59,25 @@ body {
 }
 
 body {
-  margin: 0;
+  margin: auto;
+  padding: 2%;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  display: flex;
+  max-width: 80rem;
+  justify-content: center;
+  height: auto;
+  background: var(--color-neutral-80);
+}
+
+@media only screen and (max-width: 1280px) {
+  body {
+    padding: 0;
+  }
+}
+
+.shadow-box {
+  box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.15);
+  border-radius: var(--mat-sys-corner-medium);
 }
 
 .noto-serif-thai-normal {
