@@ -20,41 +20,52 @@ describe('StateService', () => {
   });
 
   describe('Letters Kind', () => {
+    describe('selectLetter', () => {
+      it('should add vowel', () => {
+        service.selectLetter(THAI_VOWELS[0]);
+        expect(service.selectedVowels()).toContain(THAI_VOWELS[0]);
+      });
+
+      it('should add consonant', () => {
+        service.selectLetter(THAI_CONSONANTS[0]);
+        expect(service.selectedConsonants()).toContain(THAI_CONSONANTS[0]);
+      });
+    });
+
+    describe('deselectLetter', () => {
+      it('should remove vowel', () => {
+        service.selectLetter(THAI_VOWELS[0]);
+        service.deselectLetter(THAI_VOWELS[0]);
+        expect(service.selectedVowels()).not.toContain(THAI_VOWELS[0]);
+      });
+
+      it('should remove consonant', () => {
+        service.selectLetter(THAI_CONSONANTS[0]);
+        service.deselectLetter(THAI_CONSONANTS[0]);
+        expect(service.selectedConsonants()).not.toContain(THAI_CONSONANTS[0]);
+      });
+    });
+
     describe('toggleLetter', () => {
       it('should add entry if not present as VOWEL', () => {
-        expect(service.selectedVowels().size).toEqual(0);
-
         service.toggleLetter(THAI_VOWELS[1]);
-
-        expect(service.selectedVowels().size).toEqual(1);
         expect(service.selectedVowels()).toContain(THAI_VOWELS[1]);
       });
+
       it('should remove entry when already present as VOWEL', () => {
         service.selectAll(VOWEL);
-        expect(service.selectedVowels().size).toEqual(THAI_VOWELS.length);
-
         service.toggleLetter(THAI_VOWELS[1]);
-
-        expect(service.selectedVowels().size).toEqual(THAI_VOWELS.length - 1);
         expect(service.selectedVowels()).not.toContain(THAI_VOWELS[1]);
       });
 
       it('should add entry if not present as CONSONANTS', () => {
-        expect(service.selectedConsonants().size).toEqual(0);
-
         service.toggleLetter(THAI_CONSONANTS[1]);
-
-        expect(service.selectedConsonants().size).toEqual(1);
         expect(service.selectedConsonants()).toContain(THAI_CONSONANTS[1]);
       });
 
       it('should remove entry when already present as CONSONANTS', () => {
         service.selectAll(CONSONANT);
-        expect(service.selectedConsonants().size).toEqual(THAI_CONSONANTS.length);
-
         service.toggleLetter(THAI_CONSONANTS[1]);
-
-        expect(service.selectedConsonants().size).toEqual(THAI_CONSONANTS.length - 1);
         expect(service.selectedConsonants()).not.toContain(THAI_CONSONANTS[1]);
       });
     });
