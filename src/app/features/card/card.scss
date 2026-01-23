@@ -10,6 +10,7 @@
     border: 2px solid transparent;
     border-left: 0.25rem solid var(--card-color);
     box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.15);
+    background: var(--color-neutral-100);
 
     &.isActive {
       border-right-color: var(--card-color);
