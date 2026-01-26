@@ -19,8 +19,8 @@
     "delay": "Temps de réponse",
     "character-display": "Origine du caractère affiché",
     "thai": "Thaï",
-    "roman": "Romain",
-    "random": "Aléatoire",
+    "latin": "Latin",
+    "mixed": "Mélangé",
     "start": "Démarrer le Quiz",
     "total-selected": "Cartes sélectionnées",
     "indication": "Sélectionner au moins 1 carte pour démarrer le quiz"

@@ -25,8 +25,8 @@ export class QuizPanelForm {
     delay: [2, 3, 5, 10],
     display: [
       {
-        value: 'roman',
-        label: 'quiz.roman',
+        value: 'latin',
+        label: 'quiz.latin',
       },
       {
         value: 'thai',
@@ -34,7 +34,7 @@ export class QuizPanelForm {
       },
       {
         value: 'thai',
-        label: 'quiz.random',
+        label: 'quiz.mixed',
       },
     ],
   };
