@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Letters } from './letters';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('Letters', () => {
   let component: Letters;
@@ -9,7 +10,7 @@ describe('Letters', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Letters],
+      imports: [Letters, TranslateModule.forRoot()],
       providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
