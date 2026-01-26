@@ -1,15 +1,3 @@
 :host {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-
-  app-quiz-panel {
-    margin-bottom: 2rem;
-  }
-
-  @media (max-width: 768px) {
-    app-quiz-panel {
-      margin-bottom: 1rem;
-    }
-  }
 }

@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { App } from './app';
+import { Letters } from './features/letters/letters';
 
 export const routes: Routes = [
   {
     path: '',
-    component: App,
+    component: Letters,
   },
   {
     path: 'quiz',
