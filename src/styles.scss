@@ -69,15 +69,24 @@ body {
   background: var(--color-neutral-80);
 }
 
-@media only screen and (max-width: 1280px) {
+.shadow-box,
+.mat-mdc-card.shadow-box {
+  box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.15);
+  border-radius: var(--mat-sys-corner-medium);
+}
+
+@media (max-width: 1280px) {
   body {
     padding: 0;
   }
 }
 
-.shadow-box {
-  box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.15);
-  border-radius: var(--mat-sys-corner-medium);
+@media (max-width: 768px) {
+  .shadow-box,
+  .mat-mdc-card.shadow-box {
+    box-shadow: none;
+    border-radius: 0;
+  }
 }
 
 .noto-serif-thai-normal {

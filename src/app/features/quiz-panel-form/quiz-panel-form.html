@@ -1,0 +1,28 @@
+<form [formGroup]="quiz">
+  <div class="question-container">
+    <label for="questions">{{ 'quiz.questions' | translate }}</label>
+    <input
+      id="questions"
+      type="number"
+      [min]="baseValues.questions.min"
+      [max]="baseValues.questions.max"
+      formControlName="questions"
+    />
+  </div>
+  <div class="question-container">
+    <label for="delay">{{ 'quiz.delay' | translate }}</label>
+    <select name="delay" id="delay" formControlName="delay">
+      @for (delay of baseValues.delay; track delay) {
+      <option [value]="delay">{{ delay }}</option>
+      }
+    </select>
+  </div>
+  <div class="question-container">
+    <label for="character-display">{{ 'quiz.character-display' | translate }}</label>
+    <mat-radio-group id="character-display" name="character-display" formControlName="display">
+      @for (option of baseValues.display; track option) {
+      <mat-radio-button [value]="option.value">{{ option.label | translate }}</mat-radio-button>
+      }
+    </mat-radio-group>
+  </div>
+</form>

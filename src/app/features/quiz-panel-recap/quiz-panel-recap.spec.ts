@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuizPanel } from './quiz-panel';
+import { QuizPanelRecap } from './quiz-panel-recap';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
-describe('QuizPanel', () => {
-  let component: QuizPanel;
-  let fixture: ComponentFixture<QuizPanel>;
+describe('QuizPanelRecap', () => {
+  let component: QuizPanelRecap;
+  let fixture: ComponentFixture<QuizPanelRecap>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [QuizPanel, TranslateModule.forRoot()],
+      imports: [QuizPanelRecap, TranslateModule.forRoot()],
       providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(QuizPanel);
+    fixture = TestBed.createComponent(QuizPanelRecap);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
