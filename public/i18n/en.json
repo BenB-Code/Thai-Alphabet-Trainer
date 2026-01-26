@@ -13,5 +13,15 @@
     "long": "Long Vowels",
     "diphthong": "Diphthongs",
     "special": "Special Vowels"
+  },
+  "quiz": {
+    "questions": "Number of questions",
+    "delay": "Delay to answer",
+    "character-display": "Question character display",
+    "thai": "Thai",
+    "roman": "Roman",
+    "random": "Random",
+    "start": "Start Quiz",
+    "total-selected": "Cards selected"
   }
 }

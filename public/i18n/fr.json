@@ -13,5 +13,15 @@
     "long": "Voyelles Longues",
     "diphthong": "Diphtongues",
     "special": "Voyelles Spéciales"
+  },
+  "quiz": {
+    "questions": "Nombre de questions",
+    "delay": "Temps de réponse",
+    "character-display": "Origine du caractère affiché",
+    "thai": "Thaï",
+    "roman": "Romain",
+    "random": "Aléatoire",
+    "start": "Démarrer le Quiz",
+    "total-selected": "Cartes sélectionnées"
   }
 }
