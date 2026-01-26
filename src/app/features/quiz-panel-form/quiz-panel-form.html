@@ -1,0 +1,23 @@
+<form>
+  <div class="question-container">
+    <label for="questions">{{ 'quiz.questions' | translate }}</label>
+    <input id="questions" type="number" min="1" max="250" />
+  </div>
+  <div class="question-container">
+    <label for="delay">{{ 'quiz.delay' | translate }}</label>
+    <select name="delay" id="delay">
+      <option value="2">2</option>
+      <option value="2">3</option>
+      <option value="2">5</option>
+      <option value="2">10</option>
+    </select>
+  </div>
+  <div class="question-container">
+    <label for="character-display">{{ 'quiz.character-display' | translate }}</label>
+    <mat-radio-group id="character-display" name="character-display">
+      <mat-radio-button>{{ 'quiz.thai' | translate }}</mat-radio-button>
+      <mat-radio-button>{{ 'quiz.roman' | translate }}</mat-radio-button>
+      <mat-radio-button>{{ 'quiz.random' | translate }}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</form>
