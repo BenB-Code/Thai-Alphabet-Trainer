@@ -22,4 +22,16 @@ describe('QuizPanelForm', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set questions value to minimum', () => {
+    component.quiz.patchValue({ questions: -5 });
+
+    expect(component.quiz.value.questions).toEqual(component.baseValues.questions.min);
+  });
+
+  it('should set questions value to maximum', () => {
+    component.quiz.patchValue({ questions: 999 });
+
+    expect(component.quiz.value.questions).toEqual(component.baseValues.questions.max);
+  });
 });
