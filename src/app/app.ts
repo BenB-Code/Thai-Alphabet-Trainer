@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { LettersTab } from './features/letters-tab/letters-tab';
+import { LangContainer } from './features/lang-container/lang-container';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  imports: [MatButtonModule, LettersTab],
+  imports: [MatButtonModule, LettersTab, LangContainer],
 })
 export class App {}
