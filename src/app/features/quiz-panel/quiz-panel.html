@@ -1,1 +1,11 @@
-<p>quiz-panel works!</p>
+<mat-card class="shadow-box panel">
+  <section class="left-panel">
+    <app-quiz-panel-form></app-quiz-panel-form>
+  </section>
+  <section class="right-panel">
+    <app-quiz-panel-recap></app-quiz-panel-recap>
+  </section>
+  <section class="actions">
+    <button matButton="filled">{{ 'quiz.start' | translate }}</button>
+  </section>
+</mat-card>
