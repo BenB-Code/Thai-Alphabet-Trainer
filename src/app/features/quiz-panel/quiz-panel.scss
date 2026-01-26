@@ -20,6 +20,15 @@
       grid-area: actions;
       display: flex;
       justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .indication {
+        font-size: smaller;
+        color: var(--color-neutral);
+        font-style: italic;
+        margin: 0.5rem 0 0 0;
+      }
     }
   }
 
