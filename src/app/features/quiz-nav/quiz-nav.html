@@ -1,0 +1,15 @@
+<div class="shadow-box">
+  <button matFab class="outlined" (click)="previousCard()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <button matFab (click)="toggleQuizPlay()" class="filled">
+    @if (isPlayed()) {
+    <mat-icon>pause</mat-icon>
+    } @else {
+    <mat-icon>play_arrow</mat-icon>
+    }
+  </button>
+  <button matFab class="outlined" (click)="nextCard()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>
