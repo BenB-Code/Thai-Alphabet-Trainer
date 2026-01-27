@@ -5,6 +5,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { StateService } from '../../services/state-service/state-service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { QuizService } from '../../services/quiz-service/quiz-service';
+import { DisplayType, LATIN, MIXED, THAI } from '../../shared/models';
 
 @Component({
   selector: 'app-quiz-panel-form',
@@ -25,16 +26,16 @@ export class QuizPanelForm {
     delay: [2, 3, 5, 10],
     display: [
       {
-        value: 'latin',
-        label: 'quiz.latin',
+        value: LATIN as DisplayType,
+        label: `quiz.${LATIN}`,
       },
       {
-        value: 'thai',
-        label: 'quiz.thai',
+        value: THAI as DisplayType,
+        label: `quiz.${THAI}`,
       },
       {
-        value: 'thai',
-        label: 'quiz.mixed',
+        value: MIXED as DisplayType,
+        label: `quiz.${MIXED}`,
       },
     ],
   };
@@ -46,7 +47,7 @@ export class QuizPanelForm {
       Validators.max(this.baseValues.questions.max),
     ]),
     delay: new FormControl(this.baseValues.delay[2], Validators.required),
-    display: new FormControl(this.baseValues.display[0].value, Validators.required),
+    display: new FormControl<DisplayType>(this.baseValues.display[0].value, Validators.required),
     selected: new FormControl(this.stateService.total(), [
       Validators.required,
       Validators.min(this.baseValues.questions.min),
