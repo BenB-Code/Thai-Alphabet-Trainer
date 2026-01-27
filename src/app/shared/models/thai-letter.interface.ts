@@ -1,3 +1,5 @@
+import { LetterKind } from './letter-kind.type';
+
 export interface ThaiLetter {
   id: number;
   kind: LetterKind;
@@ -14,8 +16,3 @@ export interface ThaiLetter {
     details?: string;
   };
 }
-
-export type LetterKind = typeof CONSONANT | typeof VOWEL;
-
-export const CONSONANT = 'consonant';
-export const VOWEL = 'vowel';

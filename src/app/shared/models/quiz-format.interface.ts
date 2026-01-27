@@ -1,14 +1,9 @@
-import { ThaiLetter } from './thai-letter.interface';
+import { ThaiCharacter } from './thai-character.type';
+import { DisplayType } from './display.type';
 
 export interface QuizFormat {
-  questions: number | null;
-  delay: number | null;
-  display: DisplayType | null;
-  selected: Set<ThaiLetter> | null;
+  questions: number;
+  delay: number;
+  display: DisplayType;
+  selected: ThaiCharacter[];
 }
-
-export type DisplayType = typeof LATIN | typeof THAI | typeof MIXED;
-
-export const LATIN = 'latin';
-export const THAI = 'thai';
-export const MIXED = 'mixed';
