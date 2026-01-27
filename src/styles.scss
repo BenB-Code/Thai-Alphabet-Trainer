@@ -82,10 +82,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .shadow-box,
-  .mat-mdc-card.shadow-box {
-    box-shadow: none;
-    border-radius: 0;
+  body {
+    padding: 1rem;
   }
 }
 
