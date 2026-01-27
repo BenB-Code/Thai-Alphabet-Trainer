@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { QuizPanelRecap } from '../quiz-panel-recap/quiz-panel-recap';
 import { QuizPanelForm } from '../quiz-panel-form/quiz-panel-form';
 import { QuizService } from '../../services/quiz-service/quiz-service';
+import { NavigationService } from '../../services/navigation-service/navigation-service';
 
 @Component({
   selector: 'app-quiz-panel',
@@ -15,5 +16,10 @@ import { QuizService } from '../../services/quiz-service/quiz-service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizPanel {
-  quizService = inject<QuizService>(QuizService);
+  protected readonly quizService = inject<QuizService>(QuizService);
+  private readonly navigationService = inject<NavigationService>(NavigationService);
+
+  startQuiz() {
+    return this.navigationService.navigate('quiz');
+  }
 }
