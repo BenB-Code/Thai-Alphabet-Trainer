@@ -14,7 +14,7 @@ export const routes: Routes = [
     canMatch: [
       () => {
         const quizService = inject<QuizService>(QuizService);
-        return !!quizService.formValues();
+        return !!quizService.quizSettings();
       },
     ],
   },

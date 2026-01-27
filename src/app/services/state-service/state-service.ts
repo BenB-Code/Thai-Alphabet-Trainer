@@ -1,6 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { DataService } from '../data-service/data-service';
-import { CONSONANT, LetterKind, ThaiLetter, VOWEL } from '../../shared/models';
+import { CONSONANT, VOWEL } from '../../shared/constants';
+import { LetterKind, ThaiCharacter } from '../../shared/models';
 
 @Injectable({
   providedIn: 'root',
@@ -8,51 +9,40 @@ import { CONSONANT, LetterKind, ThaiLetter, VOWEL } from '../../shared/models';
 export class StateService {
   private readonly dataService = inject(DataService);
 
-  private readonly _selected = {
-    [CONSONANT]: signal<Set<ThaiLetter>>(new Set()),
-    [VOWEL]: signal<Set<ThaiLetter>>(new Set()),
-  };
+  selectedConsonants = computed(() => this.selected().filter(el => el.kind === CONSONANT));
+  selectedVowels = computed(() => this.selected().filter(el => el.kind === VOWEL));
+  selectedConsonantsCount = computed(() => this.selectedConsonants().length);
+  selectedVowelsCount = computed(() => this.selectedVowels().length);
+  selected = signal<ThaiCharacter[]>([]);
+  totalCount = computed(() => this.selected().length);
 
-  selectedConsonants = this._selected[CONSONANT].asReadonly();
-  selectedVowels = this._selected[VOWEL].asReadonly();
-  selectedConsonantsCount = computed(() => this._selected[CONSONANT]().size);
-  selectedVowelsCount = computed(() => this._selected[VOWEL]().size);
-  total = computed(() => new Set([...this.selectedConsonants(), ...this.selectedVowels()]));
-  totalCount = computed(() => this.total().size);
-
-  selectLetter(letter: ThaiLetter): void {
-    this._selected[letter.kind].update(set => new Set(set).add(letter));
+  selectLetter(letter: ThaiCharacter): void {
+    this.selected.update(set => [...set, letter]);
   }
 
-  deselectLetter(letter: ThaiLetter): void {
-    this._selected[letter.kind].update(set => {
-      const newSet = new Set(set);
-      newSet.delete(letter);
-      return newSet;
-    });
+  deselectLetter(letter: ThaiCharacter): void {
+    this.selected.update(arr => arr.filter(el => !(el.id === letter.id && el.kind === letter.kind)));
   }
 
-  toggleLetter(letter: ThaiLetter): void {
-    this._selected[letter.kind].update(set => {
-      const newSet = new Set(set);
-      if (newSet.has(letter)) {
-        newSet.delete(letter);
+  toggleLetter(letter: ThaiCharacter): void {
+    this.selected.update(set => {
+      let newSet = [...set];
+
+      if (set.some(el => el.id === letter.id && el.kind === letter.kind)) {
+        newSet = newSet.filter(el => el.id !== letter.id && el.kind !== letter.kind);
       } else {
-        newSet.add(letter);
+        newSet = [...newSet, letter];
       }
       return newSet;
     });
   }
 
   selectAll(kind: LetterKind): void {
-    if (kind === CONSONANT) {
-      this._selected[CONSONANT].set(new Set(this.dataService.getAllConsonants()));
-    } else {
-      this._selected[VOWEL].set(new Set(this.dataService.getAllVowels()));
-    }
+    const toAdd = kind === CONSONANT ? this.dataService.getAllConsonants() : this.dataService.getAllVowels();
+    this.selected.update(arr => [...arr.filter(el => el.kind !== kind), ...toAdd]);
   }
 
   deselectAll(kind: LetterKind): void {
-    this._selected[kind].set(new Set());
+    this.selected.update(arr => arr.filter(el => el.kind !== kind));
   }
 }
