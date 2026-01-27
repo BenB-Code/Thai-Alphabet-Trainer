@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { QuizCard } from './quiz-card';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('QuizCard', () => {
   let component: QuizCard;
@@ -9,7 +10,7 @@ describe('QuizCard', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [QuizCard],
+      imports: [QuizCard, TranslateModule.forRoot()],
       providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
