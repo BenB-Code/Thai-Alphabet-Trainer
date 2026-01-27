@@ -43,10 +43,6 @@ button.mat-mdc-outlined-button:not(:disabled) {
 }
 
 @media (max-width: 1280px) {
-  .mat-mdc-tab-label-container {
-    border-radius: 0;
-  }
-
   .mat-mdc-tab-body-content {
     padding: 1rem;
   }

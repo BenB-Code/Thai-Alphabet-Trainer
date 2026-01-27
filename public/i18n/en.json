@@ -3,7 +3,9 @@
     "consonants": "Consonants",
     "vowels": "Vowels",
     "select-all": "Select all",
-    "deselect-all": "Deselect all"
+    "deselect-all": "Deselect all",
+    "exit": "Exit",
+    "card": "Card"
   },
   "titles": {
     "mid": "Mid Class Consonants",
