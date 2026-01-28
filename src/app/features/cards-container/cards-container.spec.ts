@@ -14,7 +14,7 @@ describe('CardsContainer', () => {
 
   beforeEach(async () => {
     stateServiceSpy = jasmine.createSpyObj('StateService', ['selectLetter', 'deselectLetter'], {
-      selected: jasmine.createSpy().and.returnValue(new Set()),
+      selected: jasmine.createSpy().and.returnValue([]),
     });
 
     await TestBed.configureTestingModule({

@@ -14,7 +14,7 @@ describe('Card', () => {
 
   beforeEach(async () => {
     const stateServiceSpy = jasmine.createSpyObj('stateService', ['setState'], {
-      total: jasmine.createSpy().and.returnValue(new Set()),
+      selected: jasmine.createSpy().and.returnValue([]),
       toggleLetter: jasmine.createSpy(),
     });
     stateService = stateServiceSpy;
