@@ -1,4 +1,5 @@
-import { DIPHTHONG, LONG, SHORT, SPECIAL, ThaiVowel, VOWEL } from '../shared/models';
+import { DIPHTHONG, LONG, SHORT, SPECIAL, VOWEL } from '../shared/constants';
+import { ThaiVowel } from '../shared/models';
 
 export const THAI_VOWELS: ThaiVowel[] = [
   {

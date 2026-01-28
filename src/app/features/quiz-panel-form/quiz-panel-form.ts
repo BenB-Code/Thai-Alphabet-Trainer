@@ -5,7 +5,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { StateService } from '../../services/state-service/state-service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { QuizService } from '../../services/quiz-service/quiz-service';
-import { DisplayType, LATIN, MIXED, THAI } from '../../shared/models';
+import { DisplayType, QuizFormat } from '../../shared/models';
+import { LATIN, MIXED, THAI } from '../../shared/constants';
 
 @Component({
   selector: 'app-quiz-panel-form',
@@ -48,7 +49,7 @@ export class QuizPanelForm {
     ]),
     delay: new FormControl(this.baseValues.delay[2], Validators.required),
     display: new FormControl<DisplayType>(this.baseValues.display[0].value, Validators.required),
-    selected: new FormControl(this.stateService.total(), [
+    selected: new FormControl(this.stateService.selected(), [
       Validators.required,
       Validators.min(this.baseValues.questions.min),
     ]),
@@ -56,7 +57,7 @@ export class QuizPanelForm {
 
   constructor() {
     effect(() => {
-      this.quiz.patchValue({ selected: this.stateService.total() });
+      this.quiz.patchValue({ selected: this.stateService.selected() });
     });
 
     this.quiz.valueChanges.pipe(takeUntilDestroyed()).subscribe(changes => {
@@ -68,7 +69,7 @@ export class QuizPanelForm {
       }
 
       this.quizService.isValid.set(this.quiz.valid);
-      this.quizService.formValues.set(this.quiz.getRawValue());
+      this.quizService.quizSettings.set(this.quiz.getRawValue() as QuizFormat);
     });
   }
 }

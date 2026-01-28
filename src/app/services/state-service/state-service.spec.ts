@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { StateService } from './state-service';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
-import { CONSONANT, VOWEL } from '../../shared/models';
+import { CONSONANT, VOWEL } from '../../shared/constants';
 
 describe('StateService', () => {
   let service: StateService;
@@ -76,7 +76,7 @@ describe('StateService', () => {
       it('should return a full set', () => {
         service.selectAll(CONSONANT);
 
-        expect(service.selectedConsonants().size).toEqual(THAI_CONSONANTS.length);
+        expect(service.selectedConsonants().length).toEqual(THAI_CONSONANTS.length);
         expect(service.selectedConsonantsCount()).toEqual(THAI_CONSONANTS.length);
       });
     });
@@ -84,7 +84,7 @@ describe('StateService', () => {
     describe('deselectAll', () => {
       it('should return an empty set', () => {
         service.deselectAll(CONSONANT);
-        expect(service.selectedConsonants().size).toEqual(0);
+        expect(service.selectedConsonants().length).toEqual(0);
         expect(service.selectedConsonantsCount()).toEqual(0);
       });
     });
@@ -94,7 +94,7 @@ describe('StateService', () => {
     describe('selectAll', () => {
       it('should return a full set', () => {
         service.selectAll(VOWEL);
-        expect(service.selectedVowels().size).toEqual(THAI_VOWELS.length);
+        expect(service.selectedVowels().length).toEqual(THAI_VOWELS.length);
         expect(service.selectedVowelsCount()).toEqual(THAI_VOWELS.length);
       });
     });
@@ -102,7 +102,7 @@ describe('StateService', () => {
     describe('deselectAll', () => {
       it('should return an empty set', () => {
         service.deselectAll(VOWEL);
-        expect(service.selectedVowels().size).toEqual(0);
+        expect(service.selectedVowels().length).toEqual(0);
         expect(service.selectedVowelsCount()).toEqual(0);
       });
     });
@@ -110,11 +110,11 @@ describe('StateService', () => {
 
   describe('Total', () => {
     it('should merge consonants and vowels', () => {
-      expect(service.total().size).toEqual(0);
+      expect(service.selected().length).toEqual(0);
       service.selectAll(CONSONANT);
       service.selectAll(VOWEL);
 
-      expect(service.total().size).toEqual(THAI_CONSONANTS.length + THAI_VOWELS.length);
+      expect(service.selected().length).toEqual(THAI_CONSONANTS.length + THAI_VOWELS.length);
       expect(service.totalCount()).toEqual(THAI_CONSONANTS.length + THAI_VOWELS.length);
     });
   });

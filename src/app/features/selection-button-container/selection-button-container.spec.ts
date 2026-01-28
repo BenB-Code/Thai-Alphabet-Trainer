@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SelectionButtonContainer } from './selection-button-container';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { StateService } from '../../services/state-service/state-service';
-import { CONSONANT } from '../../shared/models';
 import { TranslateModule } from '@ngx-translate/core';
+import { CONSONANT } from '../../shared/constants';
 
 describe('SelectionButtonContainer', () => {
   let component: SelectionButtonContainer;

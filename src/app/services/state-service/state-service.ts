@@ -21,19 +21,16 @@ export class StateService {
   }
 
   deselectLetter(letter: ThaiCharacter): void {
-    this.selected.update(arr => arr.filter(el => !(el.id === letter.id && el.kind === letter.kind)));
+    this.selected.update(set => set.filter(el => el.id !== letter.id || el.kind !== letter.kind));
   }
 
   toggleLetter(letter: ThaiCharacter): void {
     this.selected.update(set => {
-      let newSet = [...set];
-
-      if (set.some(el => el.id === letter.id && el.kind === letter.kind)) {
-        newSet = newSet.filter(el => el.id !== letter.id && el.kind !== letter.kind);
-      } else {
-        newSet = [...newSet, letter];
+      const isPresent = set.some(el => el.id === letter.id && el.kind === letter.kind);
+      if (isPresent) {
+        return set.filter(el => el.id !== letter.id || el.kind !== letter.kind);
       }
-      return newSet;
+      return [...set, letter];
     });
   }
 

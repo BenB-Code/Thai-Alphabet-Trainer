@@ -1,4 +1,5 @@
-import { CONSONANT, HIGH, LOW, MID, ThaiConsonant } from '../shared/models';
+import { CONSONANT, HIGH, LOW, MID } from '../shared/constants';
+import { ThaiConsonant } from '../shared/models';
 
 export const THAI_CONSONANTS: ThaiConsonant[] = [
   {

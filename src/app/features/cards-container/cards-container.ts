@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import { ThaiConsonant, ThaiVowel } from '../../shared/models';
+import { Colors, ThaiConsonant, ThaiVowel } from '../../shared/models';
 import { Card } from '../card/card';
-import { COLORS, PRIMARY } from '../../shared/constants';
+import { PRIMARY } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MatMiniFabButton } from '@angular/material/button';
 import { StateService } from '../../services/state-service/state-service';
@@ -18,16 +18,20 @@ import { MatIconModule } from '@angular/material/icon';
   },
 })
 export class CardsContainer {
-  color = input<COLORS>(PRIMARY);
+  color = input<Colors>(PRIMARY);
   kind = input.required<string>();
   list = input.required<ThaiConsonant[] | ThaiVowel[]>();
-  isAllSelected = computed(() => this.list().every(letter => this.stateService.total().has(letter)));
+  isAllSelected = computed(() =>
+    this.list().every(letter => this.stateService.selected().some(el => el.id === letter.id && el.kind === letter.kind))
+  );
 
   protected readonly stateService: StateService = inject<StateService>(StateService);
 
   toggleSelection(): void {
+    console.log(this.isAllSelected());
     const action = this.isAllSelected() ? this.stateService.deselectLetter : this.stateService.selectLetter;
 
+    console.log(action);
     this.list().forEach(letter => action.call(this.stateService, letter));
   }
 }

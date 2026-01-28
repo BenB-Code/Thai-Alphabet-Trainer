@@ -3,9 +3,8 @@ import { CardsContainer } from '../cards-container/cards-container';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DataService } from '../../services/data-service/data-service';
 import { KeyValuePipe } from '@angular/common';
-import { TypeClassColorsMap } from '../../shared/constants';
+import { CONSONANT, TypeClassColorsMap, VOWEL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
-import { CONSONANT, VOWEL } from '../../shared/models';
 import { SelectionButtonContainer } from '../selection-button-container/selection-button-container';
 
 @Component({
