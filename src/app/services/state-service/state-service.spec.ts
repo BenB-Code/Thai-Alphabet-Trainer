@@ -73,7 +73,7 @@ describe('StateService', () => {
 
   describe('Thai Consonants', () => {
     describe('selectAll', () => {
-      it('should return a full set', () => {
+      it('should return a full array', () => {
         service.selectAll(CONSONANT);
 
         expect(service.selectedConsonants().length).toEqual(THAI_CONSONANTS.length);
@@ -82,8 +82,10 @@ describe('StateService', () => {
     });
 
     describe('deselectAll', () => {
-      it('should return an empty set', () => {
+      it('should return an empty array', () => {
+        service.selectAll(CONSONANT);
         service.deselectAll(CONSONANT);
+
         expect(service.selectedConsonants().length).toEqual(0);
         expect(service.selectedConsonantsCount()).toEqual(0);
       });
@@ -92,7 +94,7 @@ describe('StateService', () => {
 
   describe('Thai Vowels', () => {
     describe('selectAll', () => {
-      it('should return a full set', () => {
+      it('should return a full array', () => {
         service.selectAll(VOWEL);
         expect(service.selectedVowels().length).toEqual(THAI_VOWELS.length);
         expect(service.selectedVowelsCount()).toEqual(THAI_VOWELS.length);
@@ -100,7 +102,7 @@ describe('StateService', () => {
     });
 
     describe('deselectAll', () => {
-      it('should return an empty set', () => {
+      it('should return an empty array', () => {
         service.deselectAll(VOWEL);
         expect(service.selectedVowels().length).toEqual(0);
         expect(service.selectedVowelsCount()).toEqual(0);
