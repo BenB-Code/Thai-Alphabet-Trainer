@@ -25,6 +25,7 @@
     "mixed": "Mélangé",
     "start": "Démarrer le Quiz",
     "total-selected": "Cartes sélectionnées",
-    "indication": "Sélectionner au moins 1 carte pour démarrer le quiz"
+    "indication": "Sélectionner au moins 1 carte pour démarrer le quiz",
+    "flip": "Cliquer pour retourner"
   }
 }
