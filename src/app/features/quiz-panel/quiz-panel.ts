@@ -20,6 +20,7 @@ export class QuizPanel {
   private readonly navigationService = inject<NavigationService>(NavigationService);
 
   startQuiz() {
-    return this.navigationService.navigate('quiz');
+    this.quizService.generateQuizList();
+    this.navigationService.navigate('quiz');
   }
 }

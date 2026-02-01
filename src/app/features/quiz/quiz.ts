@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { QuizCard } from '../quiz-card/quiz-card';
 import { QuizHeader } from '../quiz-header/quiz-header';
 import { QuizNav } from '../quiz-nav/quiz-nav';
-import { THAI_CONSONANTS } from '../../data';
+import { QuizService } from '../../services/quiz-service/quiz-service';
 
 @Component({
   selector: 'app-quiz',
@@ -12,5 +12,5 @@ import { THAI_CONSONANTS } from '../../data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Quiz {
-  protected readonly THAI_CONSONANTS = THAI_CONSONANTS;
+  protected readonly quizService = inject<QuizService>(QuizService);
 }

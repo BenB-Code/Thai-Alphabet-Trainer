@@ -1,15 +1,15 @@
 <div class="shadow-box">
-  <button matFab class="outlined" (click)="previousCard()">
+  <button matFab class="outlined" [disabled]="!quizService.canGoBack()" (click)="quizService.decrProgress()">
     <mat-icon>keyboard_arrow_left</mat-icon>
   </button>
-  <button matFab (click)="toggleQuizPlay()" class="filled">
-    @if (isPlayed()) {
+  <button matFab (click)="quizService.toggleProgressState()" class="filled">
+    @if (quizService.state() === IN_PROGRESS) {
     <mat-icon>pause</mat-icon>
     } @else {
     <mat-icon>play_arrow</mat-icon>
     }
   </button>
-  <button matFab class="outlined" (click)="nextCard()">
+  <button matFab class="outlined" [disabled]="!quizService.canGoForward()" (click)="quizService.incrProgress()">
     <mat-icon>keyboard_arrow_right</mat-icon>
   </button>
 </div>

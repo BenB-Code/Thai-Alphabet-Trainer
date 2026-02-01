@@ -32,6 +32,12 @@
         background: var(--color-blue-50);
       }
 
+      &.mat-mdc-button-disabled {
+        color: var(--color-neutral-80);
+        background: var(--color-neutral-90);
+        border: 2px solid var(--color-neutral-80);
+      }
+
       mat-icon {
         font-size: 3rem;
         width: auto;

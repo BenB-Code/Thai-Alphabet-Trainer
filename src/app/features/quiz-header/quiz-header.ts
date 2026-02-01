@@ -16,6 +16,6 @@ export class QuizHeader {
   protected readonly quizService = inject<QuizService>(QuizService);
 
   exit() {
-    return this.navigationService.navigate('');
+    this.navigationService.navigate('');
   }
 }

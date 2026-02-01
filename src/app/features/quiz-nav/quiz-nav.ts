@@ -1,6 +1,9 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { QuizService } from '../../services/quiz-service/quiz-service';
+import { FINISHED, IN_PROGRESS } from '../../shared/constants';
+import { NavigationService } from '../../services/navigation-service/navigation-service';
 
 @Component({
   selector: 'app-quiz-nav',
@@ -10,17 +13,15 @@ import { MatIconModule } from '@angular/material/icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizNav {
-  isPlayed = signal<boolean>(true);
+  protected readonly quizService = inject<QuizService>(QuizService);
+  protected readonly navigationService = inject<NavigationService>(NavigationService);
+  protected readonly IN_PROGRESS = IN_PROGRESS;
 
-  toggleQuizPlay() {
-    this.isPlayed.set(!this.isPlayed());
-  }
-
-  nextCard(): void {
-    console.log('next card');
-  }
-
-  previousCard(): void {
-    console.log('previous card');
+  constructor() {
+    effect(() => {
+      if (this.quizService.state() === FINISHED) {
+        this.navigationService.navigate('result');
+      }
+    });
   }
 }

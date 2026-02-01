@@ -1,4 +1,4 @@
 <div class="shadow-box">
   <button matButton="tonal" (click)="exit()">{{ 'app.exit' | translate }}</button>
-  <p>{{ 'app.card' | translate }} 9999 / {{ quizService.quizSettings()?.questions }}</p>
+  <p>{{ 'app.card' | translate }} {{ quizService.index() + 1 }} / {{ quizService.quizSettings().questions }}</p>
 </div>
