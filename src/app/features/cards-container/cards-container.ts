@@ -28,10 +28,7 @@ export class CardsContainer {
   protected readonly stateService: StateService = inject<StateService>(StateService);
 
   toggleSelection(): void {
-    console.log(this.isAllSelected());
     const action = this.isAllSelected() ? this.stateService.deselectLetter : this.stateService.selectLetter;
-
-    console.log(action);
     this.list().forEach(letter => action.call(this.stateService, letter));
   }
 }

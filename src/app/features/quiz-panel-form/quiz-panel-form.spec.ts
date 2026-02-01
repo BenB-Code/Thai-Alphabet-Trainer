@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { QuizPanelForm } from './quiz-panel-form';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { QUIZ_FORM_BASE_CONF } from '../../shared/constants';
 
 describe('QuizPanelForm', () => {
   let component: QuizPanelForm;
@@ -26,12 +27,12 @@ describe('QuizPanelForm', () => {
   it('should set questions value to minimum', () => {
     component.quiz.patchValue({ questions: -5 });
 
-    expect(component.quiz.value.questions).toEqual(component.baseValues.questions.min);
+    expect(component.quiz.value.questions).toEqual(QUIZ_FORM_BASE_CONF.questions.min);
   });
 
   it('should set questions value to maximum', () => {
     component.quiz.patchValue({ questions: 999 });
 
-    expect(component.quiz.value.questions).toEqual(component.baseValues.questions.max);
+    expect(component.quiz.value.questions).toEqual(QUIZ_FORM_BASE_CONF.questions.max);
   });
 });

@@ -13,7 +13,6 @@ describe('SelectionButtonContainer', () => {
 
   beforeEach(async () => {
     stateServiceSpy = jasmine.createSpyObj('stateService', ['selectAll', 'deselectAll'], {
-      total: jasmine.createSpy().and.returnValue(new Set()),
       toggleLetter: jasmine.createSpy(),
     });
 

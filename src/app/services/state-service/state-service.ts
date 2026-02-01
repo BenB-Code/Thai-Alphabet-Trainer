@@ -9,11 +9,11 @@ import { LetterKind, ThaiCharacter } from '../../shared/models';
 export class StateService {
   private readonly dataService = inject(DataService);
 
+  selected = signal<ThaiCharacter[]>([]);
   selectedConsonants = computed(() => this.selected().filter(el => el.kind === CONSONANT));
   selectedVowels = computed(() => this.selected().filter(el => el.kind === VOWEL));
   selectedConsonantsCount = computed(() => this.selectedConsonants().length);
   selectedVowelsCount = computed(() => this.selectedVowels().length);
-  selected = signal<ThaiCharacter[]>([]);
   totalCount = computed(() => this.selected().length);
 
   selectLetter(letter: ThaiCharacter): void {

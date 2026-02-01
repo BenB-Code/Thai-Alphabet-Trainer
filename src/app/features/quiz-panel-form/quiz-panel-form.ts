@@ -6,7 +6,7 @@ import { StateService } from '../../services/state-service/state-service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { QuizService } from '../../services/quiz-service/quiz-service';
 import { DisplayType, QuizFormat } from '../../shared/models';
-import { LATIN, MIXED, THAI } from '../../shared/constants';
+import { QUIZ_FORM_BASE_CONF } from '../../shared/constants';
 
 @Component({
   selector: 'app-quiz-panel-form',
@@ -19,39 +19,17 @@ export class QuizPanelForm {
   stateService = inject<StateService>(StateService);
   quizService = inject<QuizService>(QuizService);
 
-  baseValues = {
-    questions: {
-      min: 1,
-      max: 500,
-    },
-    delay: [2, 3, 5, 10],
-    display: [
-      {
-        value: LATIN as DisplayType,
-        label: `quiz.${LATIN}`,
-      },
-      {
-        value: THAI as DisplayType,
-        label: `quiz.${THAI}`,
-      },
-      {
-        value: MIXED as DisplayType,
-        label: `quiz.${MIXED}`,
-      },
-    ],
-  };
-
   quiz = new FormGroup({
-    questions: new FormControl(10, [
+    questions: new FormControl(this.quizService.quizSettings().questions, [
       Validators.required,
-      Validators.min(this.baseValues.questions.min),
-      Validators.max(this.baseValues.questions.max),
+      Validators.min(QUIZ_FORM_BASE_CONF.questions.min),
+      Validators.max(QUIZ_FORM_BASE_CONF.questions.max),
     ]),
-    delay: new FormControl(this.baseValues.delay[2], Validators.required),
-    display: new FormControl<DisplayType>(this.baseValues.display[0].value, Validators.required),
-    selected: new FormControl(this.stateService.selected(), [
+    delay: new FormControl(this.quizService.quizSettings().delay, Validators.required),
+    display: new FormControl<DisplayType>(this.quizService.quizSettings().display, Validators.required),
+    selected: new FormControl(this.quizService.quizSettings().selected, [
       Validators.required,
-      Validators.min(this.baseValues.questions.min),
+      Validators.min(QUIZ_FORM_BASE_CONF.questions.min),
     ]),
   });
 
@@ -61,15 +39,17 @@ export class QuizPanelForm {
     });
 
     this.quiz.valueChanges.pipe(takeUntilDestroyed()).subscribe(changes => {
-      if (!changes.questions || changes.questions < this.baseValues.questions.min) {
-        this.quiz.patchValue({ questions: this.baseValues.questions.min });
+      if (!changes.questions || changes.questions < QUIZ_FORM_BASE_CONF.questions.min) {
+        this.quiz.patchValue({ questions: QUIZ_FORM_BASE_CONF.questions.min });
       }
-      if (changes.questions && changes.questions > this.baseValues.questions.max) {
-        this.quiz.patchValue({ questions: this.baseValues.questions.max });
+      if (changes.questions && changes.questions > QUIZ_FORM_BASE_CONF.questions.max) {
+        this.quiz.patchValue({ questions: QUIZ_FORM_BASE_CONF.questions.max });
       }
 
       this.quizService.isValid.set(this.quiz.valid);
       this.quizService.quizSettings.set(this.quiz.getRawValue() as QuizFormat);
     });
   }
+
+  protected readonly QUIZ_FORM_BASE_CONF = QUIZ_FORM_BASE_CONF;
 }
