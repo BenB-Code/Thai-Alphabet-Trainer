@@ -1,4 +1,5 @@
 import { LetterKind } from './letter-kind.type';
+import { DisplayType } from './display.type';
 
 export interface ThaiLetter {
   id: number;
@@ -15,4 +16,5 @@ export interface ThaiLetter {
     exampleMeaning: string;
     details?: string;
   };
+  display?: DisplayType;
 }

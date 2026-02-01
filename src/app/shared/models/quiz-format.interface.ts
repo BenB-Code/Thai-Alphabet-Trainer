@@ -6,4 +6,5 @@ export interface QuizFormat {
   delay: number;
   display: DisplayType;
   selected: ThaiCharacter[];
+  randomized: ThaiCharacter[];
 }

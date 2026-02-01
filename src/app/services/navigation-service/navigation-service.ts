@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 export class NavigationService {
   router = inject<Router>(Router);
 
-  navigate(route: string, ...args: string[]) {
-    return this.router.navigate([route, ...args]);
+  navigate(route: string, ...args: string[]): void {
+    this.router.navigate([route, ...args]);
   }
 }
