@@ -64,4 +64,13 @@
       opacity: 1;
     }
   }
+
+  @keyframes timerCountdown {
+    from {
+      transform: scaleX(1);
+    }
+    to {
+      transform: scaleX(0);
+    }
+  }
 }
