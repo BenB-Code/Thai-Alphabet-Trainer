@@ -27,6 +27,8 @@ describe('Quiz', () => {
       state: jasmine.createSpy().and.returnValue(IN_PROGRESS),
       canGoBack: jasmine.createSpy().and.returnValue(false),
       canGoForward: jasmine.createSpy().and.returnValue(true),
+      flipped: jasmine.createSpy().and.returnValue(false),
+      slideAnimation: jasmine.createSpy().and.returnValue(null),
     });
 
     await TestBed.configureTestingModule({

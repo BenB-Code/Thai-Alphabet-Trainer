@@ -9,10 +9,15 @@ describe('QuizService', () => {
   let service: QuizService;
 
   beforeEach(() => {
+    jasmine.clock().install();
     TestBed.configureTestingModule({
       providers: [provideZonelessChangeDetection()],
     });
     service = TestBed.inject(QuizService);
+  });
+
+  afterEach(() => {
+    jasmine.clock().uninstall();
   });
 
   it('should be created', () => {
@@ -65,6 +70,7 @@ describe('QuizService', () => {
       service.index.update(() => 5);
 
       service.incrProgress();
+      jasmine.clock().tick(1000);
 
       expect(service.canGoBack()).toEqual(true);
       expect(service.canGoForward()).toEqual(true);
@@ -73,8 +79,10 @@ describe('QuizService', () => {
 
     it('should update state', () => {
       service.index.update(() => service.quizSettings().questions - 2);
+      service.flipped.update(() => true);
 
       service.incrProgress();
+      jasmine.clock().tick(1000);
 
       expect(service.state()).toEqual(FINISHED);
       expect(service.canGoBack()).toEqual(true);
@@ -86,6 +94,7 @@ describe('QuizService', () => {
       service.index.update(() => 999);
 
       service.incrProgress();
+      jasmine.clock().tick(1000);
 
       expect(service.canGoForward()).toEqual(false);
     });
@@ -96,13 +105,18 @@ describe('QuizService', () => {
       service.index.update(() => 5);
       service.decrProgress();
 
+      jasmine.clock().tick(1000);
+
       expect(service.canGoBack()).toEqual(true);
       expect(service.index()).toEqual(4);
     });
 
     it('should update canGoBack', () => {
       service.index.update(() => 1);
+      service.flipped.update(() => true);
       service.decrProgress();
+
+      jasmine.clock().tick(1000);
 
       expect(service.canGoBack()).toEqual(false);
       expect(service.index()).toEqual(0);
@@ -121,6 +135,16 @@ describe('QuizService', () => {
       service.toggleProgressState();
 
       expect(service.state()).toEqual(IN_PROGRESS);
+    });
+  });
+
+  describe('toggleFlip', () => {
+    it('should change flipped status', () => {
+      expect(service.flipped()).toBe(false);
+
+      service.toggleFlip();
+
+      expect(service.flipped()).toBe(true);
     });
   });
 

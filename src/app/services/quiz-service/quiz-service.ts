@@ -18,6 +18,8 @@ export class QuizService {
   canGoForward = signal<boolean>(true);
   index = signal<number>(0);
   state = signal<ProgressState>(IN_PROGRESS);
+  flipped = signal<boolean>(false);
+  slideAnimation = signal<string | null>(null);
 
   generateQuizList() {
     let newList: ThaiCharacter[] = [];
@@ -53,20 +55,43 @@ export class QuizService {
   }
 
   incrProgress() {
-    this.index.update(i => i + 1);
-    if (this.index() === this.quizSettings().questions - 1) {
-      this.state.update(() => FINISHED);
-    } else if (this.index() < this.quizSettings().questions - 1) {
-      this.canGoForward.update(() => true);
-    } else {
-      this.canGoForward.update(() => false);
-    }
-    this.setCanGoBack();
+    const flipDelay = this.flipped() ? 300 : 0;
+    this.flipped.set(false);
+
+    setTimeout(() => {
+      this.slideAnimation.set('slide-out-left');
+      setTimeout(() => {
+        this.index.update(i => i + 1);
+        if (this.index() === this.quizSettings().questions - 1) {
+          this.state.update(() => FINISHED);
+        } else if (this.index() < this.quizSettings().questions - 1) {
+          this.canGoForward.update(() => true);
+        } else {
+          this.canGoForward.update(() => false);
+        }
+        this.setCanGoBack();
+        this.slideAnimation.set('slide-in-left');
+        setTimeout(() => this.slideAnimation.set(null), 300);
+      }, 300);
+    }, flipDelay);
   }
 
   decrProgress() {
-    this.index.update(i => i - 1);
-    this.setCanGoBack();
+    const flipDelay = this.flipped() ? 300 : 0;
+    this.flipped.set(false);
+    setTimeout(() => {
+      this.slideAnimation.set('slide-out-right');
+      setTimeout(() => {
+        this.index.update(i => i - 1);
+        this.setCanGoBack();
+        this.slideAnimation.set('slide-in-right');
+        setTimeout(() => this.slideAnimation.set(null), 300);
+      }, 300);
+    }, flipDelay);
+  }
+
+  toggleFlip() {
+    this.flipped.update(status => !status);
   }
 
   toggleProgressState() {

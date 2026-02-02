@@ -23,6 +23,9 @@ describe('QuizCard', () => {
         randomized: [{ ...THAI_CONSONANTS[0], display: MIXED }],
       }),
       index: jasmine.createSpy().and.returnValue(0),
+      flipped: jasmine.createSpy().and.returnValue(true),
+      toggleFlip: jasmine.createSpy(),
+      slideAnimation: jasmine.createSpy().and.returnValue(null),
     });
 
     await TestBed.configureTestingModule({

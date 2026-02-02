@@ -1,21 +1,21 @@
-<div class="card-container">
-  <section class="card-face shadow-box recto">
+<div class="card-container" [class.flipped]="quizService.flipped()" [class]="quizService.slideAnimation()">
+  <button (click)="quizService.toggleFlip()" class="card-face shadow-box recto">
     @if (letter().display === LATIN) {
     <h1>{{ letter().romanization }}</h1>
     <p>{{ letter().exampleWord }}</p>
     <p>{{ letter()[i18nService.activeLanguage()].exampleMeaning }}</p>
     } @else {
-    <h1>{{ letter().character }}</h1>
+    <h1 class="thai-char">{{ letter().character }}</h1>
     }
     <p class="indication">{{ 'quiz.flip' | translate }}</p>
-  </section>
-  <section class="card-face shadow-box verso">
+  </button>
+  <button (click)="quizService.toggleFlip()" class="card-face shadow-box verso">
     @if (letter().display === LATIN) {
-    <h1>{{ letter().character }}</h1>
+    <h1 class="thai-char">{{ letter().character }}</h1>
     } @else {
     <h1>{{ letter().romanization }}</h1>
     <p>{{ letter().exampleWord }}</p>
     <p>{{ letter()[i18nService.activeLanguage()].exampleMeaning }}</p>
     }
-  </section>
+  </button>
 </div>
