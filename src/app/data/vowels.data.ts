@@ -169,8 +169,8 @@ export const THAI_VOWELS: ThaiVowel[] = [
     exampleWord: {
       roman: '',
       thai: '',
-      en: 'informal)',
-      fr: ' (familier)',
+      en: '',
+      fr: '',
     },
   },
   {
