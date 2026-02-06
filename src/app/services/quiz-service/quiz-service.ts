@@ -37,48 +37,6 @@ export class QuizService {
     });
   }
 
-  startTimer() {
-    if (this.timerRef) {
-      return;
-    }
-
-    const intervalDelay = 1000;
-    const delay = this.quizSettings().delay * 1000;
-
-    if (this.timeLeft <= 0) {
-      this.timeLeft = delay;
-      this.timerPercent.set(100);
-    }
-
-    this.timerRef = setInterval(() => {
-      this.timeLeft = this.timeLeft - intervalDelay;
-      const restant = (this.timeLeft / delay) * 100;
-      this.timerPercent.set(restant);
-
-      if (restant <= 0) {
-        this.incrProgress();
-      }
-    }, intervalDelay);
-  }
-
-  stopTimer() {
-    if (this.timerRef) {
-      clearInterval(this.timerRef);
-      this.timerRef = null;
-    }
-  }
-
-  resetTimer() {
-    this.stopTimer();
-    this.timeLeft = 0;
-    this.skipTransition.set(true);
-    this.timerPercent.set(100);
-
-    requestAnimationFrame(() => {
-      this.skipTransition.set(false);
-    });
-  }
-
   generateQuizList() {
     let newList: ThaiCharacter[] = [];
     const quantity = this.quizSettings().questions;
@@ -97,26 +55,8 @@ export class QuizService {
     this.quizSettings.update(setting => ({ ...setting, randomized: newList }));
   }
 
-  generateDisplayType() {
-    if (this.quizSettings()?.display === MIXED) {
-      return Math.random() < 0.5 ? LATIN : THAI;
-    }
-    return this.quizSettings()?.display;
-  }
-
-  setCanGoBack() {
-    if (this.index() === 0) {
-      this.canGoBack.update(() => false);
-    } else {
-      this.canGoBack.update(() => true);
-    }
-  }
-
   incrProgress() {
-    const flipDelay = this.flipped() ? 300 : 0;
-    this.flipped.set(false);
-    this.resetTimer();
-
+    const flipDelay = this.newCardPrep();
     setTimeout(() => {
       this.slideAnimation.set('slide-out-left');
       setTimeout(() => {
@@ -128,29 +68,20 @@ export class QuizService {
         } else {
           this.canGoForward.update(() => false);
         }
-        this.setCanGoBack();
         this.slideAnimation.set('slide-in-left');
-        setTimeout(() => this.slideAnimation.set(null), 300);
-        this.startTimer();
-        this.state.update(() => IN_PROGRESS);
+        this.cardChangePrep();
       }, 300);
     }, flipDelay);
   }
 
   decrProgress() {
-    const flipDelay = this.flipped() ? 300 : 0;
-    this.flipped.set(false);
-    this.resetTimer();
-
+    const flipDelay = this.newCardPrep();
     setTimeout(() => {
       this.slideAnimation.set('slide-out-right');
       setTimeout(() => {
         this.index.update(i => i - 1);
-        this.setCanGoBack();
         this.slideAnimation.set('slide-in-right');
-        setTimeout(() => this.slideAnimation.set(null), 300);
-        this.startTimer();
-        this.state.update(() => IN_PROGRESS);
+        this.cardChangePrep();
       }, 300);
     }, flipDelay);
   }
@@ -174,5 +105,75 @@ export class QuizService {
     this.canGoForward.update(() => true);
     this.index.update(() => 0);
     this.state.update(() => IN_PROGRESS);
+  }
+
+  private generateDisplayType() {
+    if (this.quizSettings()?.display === MIXED) {
+      return Math.random() < 0.5 ? LATIN : THAI;
+    }
+    return this.quizSettings()?.display;
+  }
+
+  private setCanGoBack() {
+    if (this.index() === 0) {
+      this.canGoBack.update(() => false);
+    } else {
+      this.canGoBack.update(() => true);
+    }
+  }
+
+  private newCardPrep() {
+    this.flipped.set(false);
+    this.resetTimer();
+    return this.flipped() ? 300 : 0;
+  }
+
+  private cardChangePrep() {
+    this.setCanGoBack();
+    setTimeout(() => this.slideAnimation.set(null), 300);
+    this.startTimer();
+    this.state.update(() => IN_PROGRESS);
+  }
+
+  private startTimer() {
+    if (this.timerRef) {
+      return;
+    }
+
+    const intervalDelay = 1000;
+    const delay = this.quizSettings().delay * 1000;
+
+    if (this.timeLeft <= 0) {
+      this.timeLeft = delay;
+      this.timerPercent.set(100);
+    }
+
+    this.timerRef = setInterval(() => {
+      this.timeLeft = this.timeLeft - intervalDelay;
+      const restant = (this.timeLeft / delay) * 100;
+      this.timerPercent.set(restant);
+
+      if (restant <= 0) {
+        this.incrProgress();
+      }
+    }, intervalDelay);
+  }
+
+  private stopTimer() {
+    if (this.timerRef) {
+      clearInterval(this.timerRef);
+      this.timerRef = null;
+    }
+  }
+
+  private resetTimer() {
+    this.stopTimer();
+    this.timeLeft = 0;
+    this.skipTransition.set(true);
+    this.timerPercent.set(100);
+
+    requestAnimationFrame(() => {
+      this.skipTransition.set(false);
+    });
   }
 }
