@@ -4,5 +4,5 @@ import { VowelPositionType } from './vowel-position.type';
 
 export interface ThaiVowel extends ThaiLetter {
   type: VowelType;
-  position: VowelPositionType;
+  position: VowelPositionType[];
 }

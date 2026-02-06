@@ -5,7 +5,7 @@
   </button>
 </div>
 <div class="cards-container">
-  @for (letter of list(); track letter.id) {
+  @for (letter of list(); track letter) {
   <app-card [letter]="letter" [color]="color()"><</app-card>
   }
 </div>

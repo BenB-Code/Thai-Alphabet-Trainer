@@ -170,7 +170,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     class: LOW,
     character: {
       thai: 'ฒ',
-      roman: 'thr',
+      roman: 'tor',
     },
     live: false,
     obsolete: false,
@@ -777,7 +777,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     },
   },
   {
-    id: 20,
+    id: 44,
     kind: CONSONANT,
     class: HIGH,
     character: {
