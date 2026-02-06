@@ -4,12 +4,19 @@
   grid-template-rows: 3fr;
   grid-template-areas:
     'header'
+    'progress-bar'
     'card'
     'nav';
 
   app-quiz-header {
     grid-area: header;
     justify-content: center;
+    display: flex;
+  }
+
+  app-quiz-progress-bar {
+    grid-area: progress-bar;
+    justify-self: center;
     display: flex;
   }
 
