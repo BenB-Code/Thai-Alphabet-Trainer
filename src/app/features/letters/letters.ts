@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LettersTab } from '../letters-tab/letters-tab';
 import { QuizPanel } from '../quiz-panel/quiz-panel';
+import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
 
 @Component({
   selector: 'app-letters',
@@ -9,4 +10,10 @@ import { QuizPanel } from '../quiz-panel/quiz-panel';
   styleUrl: './letters.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Letters {}
+export class Letters {
+  private readonly sessionService = inject<QuizSessionService>(QuizSessionService);
+
+  constructor() {
+    this.sessionService.reset();
+  }
+}

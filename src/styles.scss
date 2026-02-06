@@ -45,20 +45,11 @@ body {
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
 
   // Reset the user agent margin.
-  margin: 0;
-}
 
-html,
-body {
-  height: 100%;
-}
-
-body {
   margin: auto;
   padding: 2%;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
@@ -82,10 +73,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .shadow-box,
-  .mat-mdc-card.shadow-box {
-    box-shadow: none;
-    border-radius: 0;
+  body {
+    padding: 1rem;
   }
 }
 

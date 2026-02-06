@@ -1,0 +1,35 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr;
+  grid-template-areas:
+    'header'
+    'progress-bar'
+    'card'
+    'nav';
+
+  app-quiz-header {
+    grid-area: header;
+    justify-content: center;
+    display: flex;
+  }
+
+  app-quiz-progress-bar {
+    grid-area: progress-bar;
+    justify-self: center;
+    display: flex;
+  }
+
+  app-quiz-card {
+    grid-area: card;
+    min-height: 10rem;
+    justify-content: center;
+    display: flex;
+  }
+
+  app-quiz-nav {
+    grid-area: nav;
+    justify-content: center;
+    display: flex;
+  }
+}

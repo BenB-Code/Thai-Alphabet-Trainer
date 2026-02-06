@@ -4,7 +4,9 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { StateService } from '../../services/state-service/state-service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { QuizService } from '../../services/quiz-service/quiz-service';
+import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
+import { DisplayType, QuizFormat } from '../../shared/models';
+import { QUIZ_FORM_BASE_CONF } from '../../shared/constants';
 
 @Component({
   selector: 'app-quiz-panel-form',
@@ -14,60 +16,40 @@ import { QuizService } from '../../services/quiz-service/quiz-service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizPanelForm {
-  stateService = inject<StateService>(StateService);
-  quizService = inject<QuizService>(QuizService);
-
-  baseValues = {
-    questions: {
-      min: 1,
-      max: 500,
-    },
-    delay: [2, 3, 5, 10],
-    display: [
-      {
-        value: 'latin',
-        label: 'quiz.latin',
-      },
-      {
-        value: 'thai',
-        label: 'quiz.thai',
-      },
-      {
-        value: 'thai',
-        label: 'quiz.mixed',
-      },
-    ],
-  };
+  private readonly stateService = inject<StateService>(StateService);
+  private readonly prepService = inject<QuizPreparationService>(QuizPreparationService);
 
   quiz = new FormGroup({
-    questions: new FormControl(10, [
+    questions: new FormControl(this.prepService.quizSettings().questions, [
       Validators.required,
-      Validators.min(this.baseValues.questions.min),
-      Validators.max(this.baseValues.questions.max),
+      Validators.min(QUIZ_FORM_BASE_CONF.questions.min),
+      Validators.max(QUIZ_FORM_BASE_CONF.questions.max),
     ]),
-    delay: new FormControl(this.baseValues.delay[2], Validators.required),
-    display: new FormControl(this.baseValues.display[0].value, Validators.required),
-    selected: new FormControl(this.stateService.total(), [
+    delay: new FormControl(this.prepService.quizSettings().delay, Validators.required),
+    display: new FormControl<DisplayType>(this.prepService.quizSettings().display, Validators.required),
+    selected: new FormControl(this.prepService.quizSettings().selected, [
       Validators.required,
-      Validators.min(this.baseValues.questions.min),
+      Validators.min(QUIZ_FORM_BASE_CONF.questions.min),
     ]),
   });
 
   constructor() {
     effect(() => {
-      this.quiz.patchValue({ selected: this.stateService.total() });
+      this.quiz.patchValue({ selected: this.stateService.selected() });
     });
 
     this.quiz.valueChanges.pipe(takeUntilDestroyed()).subscribe(changes => {
-      if (!changes.questions || changes.questions < this.baseValues.questions.min) {
-        this.quiz.patchValue({ questions: this.baseValues.questions.min });
+      if (!changes.questions || changes.questions < QUIZ_FORM_BASE_CONF.questions.min) {
+        this.quiz.patchValue({ questions: QUIZ_FORM_BASE_CONF.questions.min });
       }
-      if (changes.questions && changes.questions > this.baseValues.questions.max) {
-        this.quiz.patchValue({ questions: this.baseValues.questions.max });
+      if (changes.questions && changes.questions > QUIZ_FORM_BASE_CONF.questions.max) {
+        this.quiz.patchValue({ questions: QUIZ_FORM_BASE_CONF.questions.max });
       }
 
-      this.quizService.isValid.set(this.quiz.valid);
-      this.quizService.formValues.set(this.quiz.getRawValue());
+      this.prepService.isValid.set(this.quiz.valid);
+      this.prepService.quizSettings.set(this.quiz.getRawValue() as QuizFormat);
     });
   }
+
+  protected readonly QUIZ_FORM_BASE_CONF = QUIZ_FORM_BASE_CONF;
 }

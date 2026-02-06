@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { CONSONANT, VOWEL } from '../../shared/models';
 import { StateService } from '../../services/state-service/state-service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { CONSONANT, VOWEL } from '../../shared/constants';
 
 @Component({
   selector: 'app-selection-button-container',

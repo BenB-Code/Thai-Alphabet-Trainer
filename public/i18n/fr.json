@@ -3,7 +3,9 @@
     "consonants": "Consonnes",
     "vowels": "Voyelles",
     "select-all": "Tout sélectionner",
-    "deselect-all": "Tout désélectionner"
+    "deselect-all": "Tout désélectionner",
+    "exit": "Quitter",
+    "card": "Carte"
   },
   "titles": {
     "mid": "Consonnes Moyennes",
@@ -23,6 +25,7 @@
     "mixed": "Mélangé",
     "start": "Démarrer le Quiz",
     "total-selected": "Cartes sélectionnées",
-    "indication": "Sélectionner au moins 1 carte pour démarrer le quiz"
+    "indication": "Sélectionner au moins 1 carte pour démarrer le quiz",
+    "flip": "Cliquer pour retourner"
   }
 }

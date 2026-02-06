@@ -3,9 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CardsContainer } from './cards-container';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { GREEN } from '../../shared/constants';
+import { CONSONANT, GREEN } from '../../shared/constants';
 import { THAI_CONSONANTS } from '../../data';
-import { CONSONANT } from '../../shared/models';
 import { StateService } from '../../services/state-service/state-service';
 
 describe('CardsContainer', () => {
@@ -15,7 +14,7 @@ describe('CardsContainer', () => {
 
   beforeEach(async () => {
     stateServiceSpy = jasmine.createSpyObj('StateService', ['selectLetter', 'deselectLetter'], {
-      total: jasmine.createSpy().and.returnValue(new Set()),
+      selected: jasmine.createSpy().and.returnValue([]),
     });
 
     await TestBed.configureTestingModule({
@@ -38,7 +37,7 @@ describe('CardsContainer', () => {
 
   describe('toggleSelection', () => {
     it('should call deselectLetter when all selected', () => {
-      stateServiceSpy.total.and.returnValue(new Set(THAI_CONSONANTS));
+      stateServiceSpy.selected.and.returnValue(THAI_CONSONANTS);
 
       component.toggleSelection();
 
@@ -47,7 +46,7 @@ describe('CardsContainer', () => {
     });
 
     it('should call selectLetter when not all selected', () => {
-      stateServiceSpy.total.and.returnValue(new Set());
+      stateServiceSpy.selected.and.returnValue([]);
 
       component.toggleSelection();
 

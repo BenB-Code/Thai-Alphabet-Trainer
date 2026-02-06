@@ -10,4 +10,67 @@
       transform: scale(1);
     }
   }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOutLeft {
+    from {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-120%) scale(0.9);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(120%) scale(0.9);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(120%) scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(-120%) scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes timerCountdown {
+    from {
+      transform: scaleX(1);
+    }
+    to {
+      transform: scaleX(0);
+    }
+  }
 }

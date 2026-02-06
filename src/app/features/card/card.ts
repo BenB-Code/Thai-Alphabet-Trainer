@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { MatCard, MatCardContent } from '@angular/material/card';
-import { ThaiConsonant, ThaiVowel } from '../../shared/models';
+import { Colors, ThaiConsonant, ThaiVowel } from '../../shared/models';
 import { StateService } from '../../services/state-service/state-service';
-import { COLORS, PRIMARY } from '../../shared/constants';
+import { PRIMARY } from '../../shared/constants';
 import { I18nService } from '../../services/i18n-service/i18n-service';
 
 @Component({
@@ -20,9 +20,11 @@ export class Card {
   protected readonly i18nService: I18nService = inject<I18nService>(I18nService);
 
   letter = input.required<ThaiConsonant | ThaiVowel>();
-  color = input<COLORS>(PRIMARY);
+  color = input<Colors>(PRIMARY);
 
-  isActive = computed(() => this.stateService.total().has(this.letter()));
+  isActive = computed((): boolean =>
+    this.stateService.selected().some(el => el.id === this.letter().id && el.kind === this.letter().kind)
+  );
 
   toggleLetter(): void {
     this.stateService.toggleLetter(this.letter());

@@ -6,7 +6,7 @@ import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
   providedIn: 'root',
 })
 export class DataService {
-  getAllConsonants(): readonly ThaiConsonant[] {
+  getAllConsonants(): ThaiConsonant[] {
     return [...THAI_CONSONANTS];
   }
 
@@ -14,15 +14,15 @@ export class DataService {
     return this.groupBy([...THAI_CONSONANTS], 'class');
   }
 
-  getConsonantById(id: number): Readonly<ThaiConsonant> | undefined {
+  getConsonantById(id: number): ThaiConsonant | undefined {
     return THAI_CONSONANTS.find(o => o.id === id);
   }
 
-  getConsonantByClass(consonantClass: ConsonantClass): readonly ThaiConsonant[] {
+  getConsonantByClass(consonantClass: ConsonantClass): ThaiConsonant[] {
     return THAI_CONSONANTS.filter(o => o.class === consonantClass);
   }
 
-  getAllVowels(): readonly ThaiVowel[] {
+  getAllVowels(): ThaiVowel[] {
     return [...THAI_VOWELS];
   }
 
@@ -30,11 +30,11 @@ export class DataService {
     return this.groupBy([...THAI_VOWELS], 'type');
   }
 
-  getVowelById(id: number): Readonly<ThaiVowel> | undefined {
+  getVowelById(id: number): ThaiVowel | undefined {
     return THAI_VOWELS.find(o => o.id === id);
   }
 
-  getVowelByType(consonantClass: VowelType): readonly ThaiVowel[] {
+  getVowelByType(consonantClass: VowelType): ThaiVowel[] {
     return THAI_VOWELS.filter(o => o.type === consonantClass);
   }
 
