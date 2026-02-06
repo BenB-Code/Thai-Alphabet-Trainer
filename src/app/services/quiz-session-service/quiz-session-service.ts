@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { ProgressState } from '../../shared/models';
-import { FINISHED, IN_PROGRESS, PAUSE } from '../../shared/constants';
+import { BACKWARD, FINISHED, FORWARD, IN_PROGRESS, PAUSE } from '../../shared/constants';
 import { QuizPreparationService } from '../quiz-preparation-service/quiz-preparation-service';
 import { QuizTimerService } from '../quiz-timer-service/quiz-timer-service';
 
@@ -34,11 +34,11 @@ export class QuizSessionService {
   }
 
   next() {
-    this.navigate('forward');
+    this.navigate(FORWARD);
   }
 
   previous() {
-    this.navigate('backward');
+    this.navigate(BACKWARD);
   }
 
   toggleFlip() {
@@ -71,10 +71,10 @@ export class QuizSessionService {
     }
   }
 
-  private navigate(direction: 'forward' | 'backward') {
+  private navigate(direction: typeof FORWARD | typeof BACKWARD) {
     const maxIndex = this.getMaxIndex();
     const currentIndex = this.index();
-    const nextIndex = direction === 'forward' ? currentIndex + 1 : currentIndex - 1;
+    const nextIndex = direction === FORWARD ? currentIndex + 1 : currentIndex - 1;
 
     if (nextIndex < 0 || nextIndex > maxIndex) {
       this.updateNavigationState();
@@ -88,8 +88,8 @@ export class QuizSessionService {
     this.flipped.set(false);
     this.timerService.reset(this.getDelayMs());
 
-    const slideOut = direction === 'forward' ? 'slide-out-left' : 'slide-out-right';
-    const slideIn = direction === 'forward' ? 'slide-in-left' : 'slide-in-right';
+    const slideOut = direction === FORWARD ? 'slide-out-left' : 'slide-out-right';
+    const slideIn = direction === FORWARD ? 'slide-in-left' : 'slide-in-right';
 
     this.cardAnimation.set(slideOut);
 
