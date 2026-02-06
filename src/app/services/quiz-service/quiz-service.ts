@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, effect, Injectable, signal } from '@angular/core';
 import { ProgressState, QuizFormat, ThaiCharacter } from '../../shared/models';
 import { FINISHED, IN_PROGRESS, LATIN, MIXED, PAUSE, QUIZ_FORM_BASE_CONF, THAI } from '../../shared/constants';
 
@@ -20,6 +20,64 @@ export class QuizService {
   state = signal<ProgressState>(IN_PROGRESS);
   flipped = signal<boolean>(false);
   slideAnimation = signal<string | null>(null);
+  timerPercent = signal<number>(100);
+  skipTransition = signal<boolean>(false);
+  shouldRun = computed(() => this.state() === IN_PROGRESS && !this.flipped());
+
+  private timerRef: ReturnType<typeof setInterval> | null = null;
+  private timeLeft = 0;
+
+  constructor() {
+    effect(() => {
+      if (this.shouldRun()) {
+        this.startTimer();
+      } else {
+        this.stopTimer();
+      }
+    });
+  }
+
+  startTimer() {
+    if (this.timerRef) {
+      return;
+    }
+
+    const intervalDelay = 1000;
+    const delay = this.quizSettings().delay * 1000;
+
+    if (this.timeLeft <= 0) {
+      this.timeLeft = delay;
+      this.timerPercent.set(100);
+    }
+
+    this.timerRef = setInterval(() => {
+      this.timeLeft = this.timeLeft - intervalDelay;
+      const restant = (this.timeLeft / delay) * 100;
+      this.timerPercent.set(restant);
+
+      if (restant <= 0) {
+        this.incrProgress();
+      }
+    }, intervalDelay);
+  }
+
+  stopTimer() {
+    if (this.timerRef) {
+      clearInterval(this.timerRef);
+      this.timerRef = null;
+    }
+  }
+
+  resetTimer() {
+    this.stopTimer();
+    this.timeLeft = 0;
+    this.skipTransition.set(true);
+    this.timerPercent.set(100);
+
+    requestAnimationFrame(() => {
+      this.skipTransition.set(false);
+    });
+  }
 
   generateQuizList() {
     let newList: ThaiCharacter[] = [];
@@ -57,6 +115,7 @@ export class QuizService {
   incrProgress() {
     const flipDelay = this.flipped() ? 300 : 0;
     this.flipped.set(false);
+    this.resetTimer();
 
     setTimeout(() => {
       this.slideAnimation.set('slide-out-left');
@@ -72,6 +131,8 @@ export class QuizService {
         this.setCanGoBack();
         this.slideAnimation.set('slide-in-left');
         setTimeout(() => this.slideAnimation.set(null), 300);
+        this.startTimer();
+        this.state.update(() => IN_PROGRESS);
       }, 300);
     }, flipDelay);
   }
@@ -79,6 +140,8 @@ export class QuizService {
   decrProgress() {
     const flipDelay = this.flipped() ? 300 : 0;
     this.flipped.set(false);
+    this.resetTimer();
+
     setTimeout(() => {
       this.slideAnimation.set('slide-out-right');
       setTimeout(() => {
@@ -86,12 +149,19 @@ export class QuizService {
         this.setCanGoBack();
         this.slideAnimation.set('slide-in-right');
         setTimeout(() => this.slideAnimation.set(null), 300);
+        this.startTimer();
+        this.state.update(() => IN_PROGRESS);
       }, 300);
     }, flipDelay);
   }
 
   toggleFlip() {
     this.flipped.update(status => !status);
+    if (this.flipped()) {
+      this.state.update(() => PAUSE);
+    } else {
+      this.state.update(() => IN_PROGRESS);
+    }
   }
 
   toggleProgressState() {
