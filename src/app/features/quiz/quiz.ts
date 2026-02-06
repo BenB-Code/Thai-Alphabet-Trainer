@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { QuizCard } from '../quiz-card/quiz-card';
 import { QuizHeader } from '../quiz-header/quiz-header';
 import { QuizNav } from '../quiz-nav/quiz-nav';
-import { QuizService } from '../../services/quiz-service/quiz-service';
 import { QuizProgressBar } from '../quiz-progress-bar/quiz-progress-bar';
+import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
 
 @Component({
   selector: 'app-quiz',
@@ -13,5 +13,9 @@ import { QuizProgressBar } from '../quiz-progress-bar/quiz-progress-bar';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Quiz {
-  protected readonly quizService = inject<QuizService>(QuizService);
+  private readonly sessionService = inject<QuizSessionService>(QuizSessionService);
+
+  constructor() {
+    this.sessionService.start();
+  }
 }

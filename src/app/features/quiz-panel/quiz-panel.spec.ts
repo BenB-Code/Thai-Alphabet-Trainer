@@ -4,7 +4,8 @@ import { QuizPanel } from './quiz-panel';
 import { provideZonelessChangeDetection, signal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
-import { QuizService } from '../../services/quiz-service/quiz-service';
+import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
+import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
 import { QuizFormat } from '../../shared/models';
 import { LATIN, QUIZ_FORM_BASE_CONF } from '../../shared/constants';
 
@@ -13,11 +14,12 @@ describe('QuizPanel', () => {
   let fixture: ComponentFixture<QuizPanel>;
 
   let navigationServiceSpy: jasmine.SpyObj<NavigationService>;
-  let quizServiceSpy: jasmine.SpyObj<QuizService>;
+  let prepServiceSpy: jasmine.SpyObj<QuizPreparationService>;
+  let sessionServiceSpy: jasmine.SpyObj<QuizSessionService>;
 
   beforeEach(async () => {
     navigationServiceSpy = jasmine.createSpyObj('NavigationService', ['navigate']);
-    quizServiceSpy = jasmine.createSpyObj('QuizService', ['generateQuizList'], {
+    prepServiceSpy = jasmine.createSpyObj('QuizPreparationService', ['generateQuizList'], {
       quizSettings: signal<QuizFormat>({
         display: LATIN,
         questions: 10,
@@ -27,19 +29,15 @@ describe('QuizPanel', () => {
       }),
       isValid: signal(true),
     });
+    sessionServiceSpy = jasmine.createSpyObj('QuizSessionService', ['reset']);
 
     await TestBed.configureTestingModule({
       imports: [QuizPanel, TranslateModule.forRoot()],
       providers: [
         provideZonelessChangeDetection(),
-        {
-          provide: NavigationService,
-          useValue: navigationServiceSpy,
-        },
-        {
-          provide: QuizService,
-          useValue: quizServiceSpy,
-        },
+        { provide: NavigationService, useValue: navigationServiceSpy },
+        { provide: QuizPreparationService, useValue: prepServiceSpy },
+        { provide: QuizSessionService, useValue: sessionServiceSpy },
       ],
     }).compileComponents();
 
@@ -55,7 +53,7 @@ describe('QuizPanel', () => {
   it('should generate quiz list and navigate correctly', () => {
     component.startQuiz();
 
-    expect(quizServiceSpy.generateQuizList).toHaveBeenCalledTimes(1);
+    expect(prepServiceSpy.generateQuizList).toHaveBeenCalledTimes(1);
     expect(navigationServiceSpy.navigate).toHaveBeenCalledTimes(1);
     expect(navigationServiceSpy.navigate).toHaveBeenCalledWith('quiz');
   });

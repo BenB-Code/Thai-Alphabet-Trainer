@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { QuizService } from '../../services/quiz-service/quiz-service';
+import { QuizTimerService } from '../../services/quiz-timer-service/quiz-timer-service';
 
 @Component({
   selector: 'app-quiz-progress-bar',
@@ -9,5 +9,5 @@ import { QuizService } from '../../services/quiz-service/quiz-service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizProgressBar {
-  protected readonly quizService = inject<QuizService>(QuizService);
+  protected readonly timerService = inject<QuizTimerService>(QuizTimerService);
 }

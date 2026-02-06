@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { QuizNav } from './quiz-nav';
 import { provideZonelessChangeDetection, signal } from '@angular/core';
-import { QuizService } from '../../services/quiz-service/quiz-service';
+import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
 import { FINISHED, IN_PROGRESS } from '../../shared/constants';
 
@@ -10,31 +10,23 @@ describe('QuizNav', () => {
   let component: QuizNav;
   let fixture: ComponentFixture<QuizNav>;
 
-  let quizServiceSpy: jasmine.SpyObj<QuizService>;
+  let sessionServiceSpy: jasmine.SpyObj<QuizSessionService>;
   let navigationServiceSpy: jasmine.SpyObj<NavigationService>;
 
   beforeEach(async () => {
-    quizServiceSpy = jasmine.createSpyObj(
-      'QuizService',
-      ['canGoBack', 'decrProgress', 'canGoForward', 'incrProgress'],
-      {
-        state: signal(IN_PROGRESS),
-      }
-    );
+    sessionServiceSpy = jasmine.createSpyObj('QuizSessionService', ['next', 'previous', 'togglePause'], {
+      progressState: signal(IN_PROGRESS),
+      canGoBack: signal(false),
+      canGoForward: signal(true),
+    });
     navigationServiceSpy = jasmine.createSpyObj('NavigationService', ['navigate']);
 
     await TestBed.configureTestingModule({
       imports: [QuizNav],
       providers: [
         provideZonelessChangeDetection(),
-        {
-          provide: QuizService,
-          useValue: quizServiceSpy,
-        },
-        {
-          provide: NavigationService,
-          useValue: navigationServiceSpy,
-        },
+        { provide: QuizSessionService, useValue: sessionServiceSpy },
+        { provide: NavigationService, useValue: navigationServiceSpy },
       ],
     }).compileComponents();
 
@@ -48,7 +40,7 @@ describe('QuizNav', () => {
   });
 
   it('should call navigate to result page', () => {
-    quizServiceSpy.state.update(() => FINISHED);
+    sessionServiceSpy.progressState.update(() => FINISHED);
     fixture.detectChanges();
 
     expect(navigationServiceSpy.navigate).toHaveBeenCalledTimes(1);

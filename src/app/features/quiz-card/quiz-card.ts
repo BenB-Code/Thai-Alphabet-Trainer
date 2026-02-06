@@ -2,7 +2,8 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { LATIN } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { I18nService } from '../../services/i18n-service/i18n-service';
-import { QuizService } from '../../services/quiz-service/quiz-service';
+import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
+import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
 
 @Component({
   selector: 'app-quiz-card',
@@ -12,10 +13,10 @@ import { QuizService } from '../../services/quiz-service/quiz-service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizCard {
-  i18nService = inject<I18nService>(I18nService);
-  quizService = inject<QuizService>(QuizService);
+  protected readonly i18nService = inject<I18nService>(I18nService);
+  protected readonly prepService = inject<QuizPreparationService>(QuizPreparationService);
+  protected readonly sessionService = inject<QuizSessionService>(QuizSessionService);
 
-  letter = computed(() => this.quizService.quizSettings().randomized[this.quizService.index()]);
-
+  protected readonly letter = computed(() => this.prepService.quizSettings().randomized[this.sessionService.index()]);
   protected readonly LATIN = LATIN;
 }

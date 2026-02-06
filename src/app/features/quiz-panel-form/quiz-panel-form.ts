@@ -4,7 +4,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { StateService } from '../../services/state-service/state-service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { QuizService } from '../../services/quiz-service/quiz-service';
+import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
 import { DisplayType, QuizFormat } from '../../shared/models';
 import { QUIZ_FORM_BASE_CONF } from '../../shared/constants';
 
@@ -16,18 +16,18 @@ import { QUIZ_FORM_BASE_CONF } from '../../shared/constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizPanelForm {
-  stateService = inject<StateService>(StateService);
-  quizService = inject<QuizService>(QuizService);
+  private readonly stateService = inject<StateService>(StateService);
+  private readonly prepService = inject<QuizPreparationService>(QuizPreparationService);
 
   quiz = new FormGroup({
-    questions: new FormControl(this.quizService.quizSettings().questions, [
+    questions: new FormControl(this.prepService.quizSettings().questions, [
       Validators.required,
       Validators.min(QUIZ_FORM_BASE_CONF.questions.min),
       Validators.max(QUIZ_FORM_BASE_CONF.questions.max),
     ]),
-    delay: new FormControl(this.quizService.quizSettings().delay, Validators.required),
-    display: new FormControl<DisplayType>(this.quizService.quizSettings().display, Validators.required),
-    selected: new FormControl(this.quizService.quizSettings().selected, [
+    delay: new FormControl(this.prepService.quizSettings().delay, Validators.required),
+    display: new FormControl<DisplayType>(this.prepService.quizSettings().display, Validators.required),
+    selected: new FormControl(this.prepService.quizSettings().selected, [
       Validators.required,
       Validators.min(QUIZ_FORM_BASE_CONF.questions.min),
     ]),
@@ -46,8 +46,8 @@ export class QuizPanelForm {
         this.quiz.patchValue({ questions: QUIZ_FORM_BASE_CONF.questions.max });
       }
 
-      this.quizService.isValid.set(this.quiz.valid);
-      this.quizService.quizSettings.set(this.quiz.getRawValue() as QuizFormat);
+      this.prepService.isValid.set(this.quiz.valid);
+      this.prepService.quizSettings.set(this.quiz.getRawValue() as QuizFormat);
     });
   }
 

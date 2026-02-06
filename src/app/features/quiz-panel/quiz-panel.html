@@ -6,7 +6,7 @@
     <app-quiz-panel-recap></app-quiz-panel-recap>
   </section>
   <section class="actions">
-    <button matButton="filled" [disabled]="!quizService.isValid()" (click)="startQuiz()">
+    <button matButton="filled" [disabled]="!prepService.isValid()" (click)="startQuiz()">
       {{ 'quiz.start' | translate }}
     </button>
     <p class="indication">{{ "quiz.indication" | translate }}</p>

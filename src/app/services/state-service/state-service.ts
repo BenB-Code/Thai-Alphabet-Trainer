@@ -7,7 +7,7 @@ import { LetterKind, ThaiCharacter } from '../../shared/models';
   providedIn: 'root',
 })
 export class StateService {
-  private readonly dataService = inject(DataService);
+  private readonly dataService = inject<DataService>(DataService);
 
   selected = signal<ThaiCharacter[]>([]);
   selectedConsonants = computed(() => this.selected().filter(el => el.kind === CONSONANT));
