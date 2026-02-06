@@ -1,442 +1,500 @@
-import { DIPHTHONG, LONG, SHORT, SPECIAL, VOWEL } from '../shared/constants';
+import { DIPHTHONG, LONG, MEDIAL, SHORT, SPECIAL, VOWEL } from '../shared/constants';
 import { ThaiVowel } from '../shared/models';
 
 export const THAI_VOWELS: ThaiVowel[] = [
   {
     id: 1,
     kind: VOWEL,
-    character: '◌ะ',
-    romanization: 'a',
-    exampleWord: 'ka',
-    exampleWordThai: 'กะ',
-    en: {
-      exampleMeaning: 'to estimate',
+    live: false,
+    character: {
+      thai: '◌ะ',
+      roman: 'a',
     },
-    fr: {
-      exampleMeaning: 'estimer',
+    exampleWord: {
+      roman: 'ka',
+      thai: 'กะ',
+      en: 'to estimate',
+      fr: 'estimer',
     },
     type: SHORT,
+    position: MEDIAL,
   },
   {
     id: 2,
     kind: VOWEL,
-    character: '◌า',
-    romanization: 'aa',
-    exampleWord: 'kaa',
-    exampleWordThai: 'กา',
-    en: {
-      exampleMeaning: 'crow',
+    live: false,
+    character: {
+      thai: '◌า',
+      roman: 'aa',
     },
-    fr: {
-      exampleMeaning: 'corbeau',
+    exampleWord: {
+      roman: 'kaa',
+      thai: 'กา',
+      en: 'crow',
+      fr: 'corbeau',
     },
     type: LONG,
+    position: MEDIAL,
   },
   {
     id: 3,
     kind: VOWEL,
-    character: '◌ิ',
-    romanization: 'i',
-    exampleWord: 'ki',
-    exampleWordThai: 'กิ',
-    en: {
-      exampleMeaning: 'prefix',
+    live: false,
+    character: {
+      thai: '◌ิ',
+      roman: 'i',
     },
-    fr: {
-      exampleMeaning: 'préfixe',
+    exampleWord: {
+      roman: 'ki',
+      thai: 'กิ',
+      en: 'prefix',
+      fr: 'préfixe',
     },
     type: SHORT,
+    position: MEDIAL,
   },
   {
     id: 4,
     kind: VOWEL,
-    character: '◌ี',
-    romanization: 'ii',
-    exampleWord: 'kii',
-    exampleWordThai: 'กี',
-    en: {
-      exampleMeaning: 'to hinder',
+    live: false,
+    character: {
+      thai: '◌ี',
+      roman: 'ii',
     },
-    fr: {
-      exampleMeaning: 'gêner',
+    exampleWord: {
+      roman: 'kii',
+      thai: 'กี',
+      en: 'to hinder',
+      fr: 'gêner',
     },
     type: LONG,
+    position: MEDIAL,
   },
   {
     id: 5,
     kind: VOWEL,
-    character: '◌ึ',
-    romanization: 'ue',
-    exampleWord: 'kuek',
-    exampleWordThai: 'กึก',
-    en: {
-      exampleMeaning: 'sound',
+    live: false,
+    character: {
+      thai: '◌ึ',
+      roman: 'ue',
     },
-    fr: {
-      exampleMeaning: 'son',
+    exampleWord: {
+      roman: 'kuek',
+      thai: 'กึก',
+      en: 'sound',
+      fr: 'son',
     },
     type: SHORT,
+    position: MEDIAL,
   },
   {
     id: 6,
     kind: VOWEL,
-    character: '◌ื',
-    romanization: 'uue',
-    exampleWord: 'kuue',
-    exampleWordThai: 'กื',
-    en: {
-      exampleMeaning: 'prefix',
+    live: false,
+    character: {
+      thai: '◌ื',
+      roman: 'uue',
     },
-    fr: {
-      exampleMeaning: 'préfixe',
+    exampleWord: {
+      roman: 'kuue',
+      thai: 'กื',
+      en: 'prefix',
+      fr: 'préfixe',
     },
     type: LONG,
+    position: MEDIAL,
   },
   {
     id: 7,
     kind: VOWEL,
-    character: '◌ุ',
-    romanization: 'u',
-    exampleWord: 'ku',
-    exampleWordThai: 'กุ',
-    en: {
-      exampleMeaning: 'prefix',
+    live: false,
+    character: {
+      thai: '◌ุ',
+      roman: 'u',
     },
-    fr: {
-      exampleMeaning: 'préfixe',
+    exampleWord: {
+      roman: 'ku',
+      thai: 'กุ',
+      en: 'prefix',
+      fr: 'préfixe',
     },
     type: SHORT,
+    position: MEDIAL,
   },
   {
     id: 8,
     kind: VOWEL,
-    character: '◌ู',
-    romanization: 'uu',
-    exampleWord: 'kuu',
-    exampleWordThai: 'กู',
-    en: {
-      exampleMeaning: 'I (informal)',
+    live: false,
+    character: {
+      thai: '◌ู',
+      roman: 'uu',
     },
-    fr: {
-      exampleMeaning: 'je (familier)',
+    exampleWord: {
+      roman: 'kuu',
+      thai: 'กู',
+      en: 'I (informal)',
+      fr: 'je (familier)',
     },
     type: LONG,
+    position: MEDIAL,
   },
   {
     id: 9,
     kind: VOWEL,
-    character: 'เ◌ะ',
-    romanization: 'e',
-    exampleWord: 'ke',
-    exampleWordThai: 'เกะ',
-    en: {
-      exampleMeaning: 'messy',
+    live: false,
+    character: {
+      thai: 'เ◌ะ',
+      roman: 'e',
     },
-    fr: {
-      exampleMeaning: 'désordonné',
+    exampleWord: {
+      roman: 'ke',
+      thai: 'เกะ',
+      en: 'messy',
+      fr: 'désordonné',
     },
     type: SHORT,
+    position: MEDIAL,
   },
   {
     id: 10,
     kind: VOWEL,
-    character: 'เ◌',
-    romanization: 'ee',
-    exampleWord: 'kee',
-    exampleWordThai: 'เก',
-    en: {
-      exampleMeaning: 'old',
+    live: false,
+    character: {
+      thai: 'เ◌',
+      roman: 'ee',
     },
-    fr: {
-      exampleMeaning: 'vieux',
+    exampleWord: {
+      roman: 'kee',
+      thai: 'เก',
+      en: 'old',
+      fr: 'vieux',
     },
     type: LONG,
+    position: MEDIAL,
   },
   {
     id: 11,
     kind: VOWEL,
-    character: 'แ◌ะ',
-    romanization: 'ae',
-    exampleWord: 'kae',
-    exampleWordThai: 'แกะ',
-    en: {
-      exampleMeaning: 'sheep',
+    live: false,
+    character: {
+      thai: 'แ◌ะ',
+      roman: 'ae',
     },
-    fr: {
-      exampleMeaning: 'mouton',
+    exampleWord: {
+      roman: 'kae',
+      thai: 'แกะ',
+      en: 'sheep',
+      fr: 'mouton',
     },
     type: SHORT,
+    position: MEDIAL,
   },
   {
     id: 12,
     kind: VOWEL,
-    character: 'แ◌',
-    romanization: 'aae',
-    exampleWord: 'kaae',
-    exampleWordThai: 'แก',
-    en: {
-      exampleMeaning: 'old',
+    live: false,
+    character: {
+      thai: 'แ◌',
+      roman: 'aae',
     },
-    fr: {
-      exampleMeaning: 'vieux',
+    exampleWord: {
+      roman: 'kaae',
+      thai: 'แก',
+      en: 'old',
+      fr: 'vieux',
     },
     type: LONG,
+    position: MEDIAL,
   },
   {
     id: 13,
     kind: VOWEL,
-    character: 'โ◌ะ',
-    romanization: 'o',
-    exampleWord: 'ko',
-    exampleWordThai: 'โกะ',
-    en: {
-      exampleMeaning: 'bald',
+    live: false,
+    character: {
+      thai: 'โ◌ะ',
+      roman: 'o',
     },
-    fr: {
-      exampleMeaning: 'chauve',
+    exampleWord: {
+      roman: 'ko',
+      thai: 'โกะ',
+      en: 'bald',
+      fr: 'chauve',
     },
     type: SHORT,
+    position: MEDIAL,
   },
   {
     id: 14,
     kind: VOWEL,
-    character: 'โ◌',
-    romanization: 'oo',
-    exampleWord: 'koo',
-    exampleWordThai: 'โก',
-    en: {
-      exampleMeaning: 'to cheat',
+    live: false,
+    character: {
+      thai: 'โ◌',
+      roman: 'oo',
     },
-    fr: {
-      exampleMeaning: 'tricher',
+    exampleWord: {
+      roman: 'koo',
+      thai: 'โก',
+      en: 'to cheat',
+      fr: 'tricher',
     },
     type: LONG,
+    position: MEDIAL,
   },
   {
     id: 15,
     kind: VOWEL,
-    character: 'เ◌าะ',
-    romanization: 'aw',
-    exampleWord: 'kaw',
-    exampleWordThai: 'เกาะ',
-    en: {
-      exampleMeaning: 'island',
+    live: false,
+    character: {
+      thai: 'เ◌าะ',
+      roman: 'aw',
     },
-    fr: {
-      exampleMeaning: 'île',
+    exampleWord: {
+      roman: 'kaw',
+      thai: 'เกาะ',
+      en: 'island',
+      fr: 'île',
     },
     type: SHORT,
+    position: MEDIAL,
   },
   {
     id: 16,
     kind: VOWEL,
-    character: '◌อ',
-    romanization: 'aaw',
-    exampleWord: 'kaaw',
-    exampleWordThai: 'กอ',
-    en: {
-      exampleMeaning: 'to embrace',
+    live: false,
+    character: {
+      thai: '◌อ',
+      roman: 'aaw',
     },
-    fr: {
-      exampleMeaning: 'embrasser',
+    exampleWord: {
+      roman: 'kaaw',
+      thai: 'กอ',
+      en: 'to embrace',
+      fr: 'embrasser',
     },
     type: LONG,
+    position: MEDIAL,
   },
   {
     id: 17,
     kind: VOWEL,
-    character: 'เ◌อะ',
-    romanization: 'oe',
-    exampleWord: 'koe',
-    exampleWordThai: 'เกอะ',
-    en: {
-      exampleMeaning: 'informal',
+    live: false,
+    character: {
+      thai: 'เ◌อะ',
+      roman: 'oe',
     },
-    fr: {
-      exampleMeaning: 'informel',
+    exampleWord: {
+      roman: 'koe',
+      thai: 'เกอะ',
+      en: 'informal',
+      fr: 'informel',
     },
     type: SHORT,
+    position: MEDIAL,
   },
   {
     id: 18,
     kind: VOWEL,
-    character: 'เ◌อ',
-    romanization: 'ooe',
-    exampleWord: 'kooe',
-    exampleWordThai: 'เกอ',
-    en: {
-      exampleMeaning: 'prefix',
+    live: false,
+    character: {
+      thai: 'เ◌อ',
+      roman: 'ooe',
     },
-    fr: {
-      exampleMeaning: 'préfixe',
+    exampleWord: {
+      roman: 'kooe',
+      thai: 'เกอ',
+      en: 'prefix',
+      fr: 'préfixe',
     },
     type: LONG,
+    position: MEDIAL,
   },
   // Diphthongs
   {
     id: 19,
     kind: VOWEL,
-    character: 'เ◌ีย',
-    romanization: 'ia',
-    exampleWord: 'kia',
-    exampleWordThai: 'เกีย',
-    en: {
-      exampleMeaning: 'related to',
+    live: false,
+    character: {
+      thai: 'เ◌ีย',
+      roman: 'ia',
     },
-    fr: {
-      exampleMeaning: 'lié à',
+    exampleWord: {
+      roman: 'kia',
+      thai: 'เกีย',
+      en: 'related to',
+      fr: 'lié à',
     },
     type: DIPHTHONG,
+    position: MEDIAL,
   },
   {
     id: 20,
     kind: VOWEL,
-    character: 'เ◌ือ',
-    romanization: 'uea',
-    exampleWord: 'kuea',
-    exampleWordThai: 'เกือ',
-    en: {
-      exampleMeaning: 'almost',
+    live: false,
+    character: {
+      thai: 'เ◌ือ',
+      roman: 'uea',
     },
-    fr: {
-      exampleMeaning: 'presque',
+    exampleWord: {
+      roman: 'kuea',
+      thai: 'เกือ',
+      en: 'almost',
+      fr: 'presque',
     },
     type: DIPHTHONG,
+    position: MEDIAL,
   },
   {
     id: 21,
     kind: VOWEL,
-    character: '◌ัว',
-    romanization: 'ua',
-    exampleWord: 'kua',
-    exampleWordThai: 'กัว',
-    en: {
-      exampleMeaning: 'to stir',
+    live: false,
+    character: {
+      thai: '◌ัว',
+      roman: 'ua',
     },
-    fr: {
-      exampleMeaning: 'remuer',
+    exampleWord: {
+      roman: 'kua',
+      thai: 'กัว',
+      en: 'to stir',
+      fr: 'remuer',
     },
     type: DIPHTHONG,
+    position: MEDIAL,
   },
   {
     id: 22,
     kind: VOWEL,
-    character: 'ไ◌',
-    romanization: 'ai',
-    exampleWord: 'kai',
-    exampleWordThai: 'ไก',
-    en: {
-      exampleMeaning: 'far',
+    live: false,
+    character: {
+      thai: 'ไ◌',
+      roman: 'ai',
     },
-    fr: {
-      exampleMeaning: 'loin',
+    exampleWord: {
+      roman: 'kai',
+      thai: 'ไก',
+      en: 'far',
+      fr: 'loin',
     },
     type: DIPHTHONG,
+    position: MEDIAL,
   },
   {
     id: 23,
     kind: VOWEL,
-    character: 'ใ◌',
-    romanization: 'ai',
-    exampleWord: 'kai',
-    exampleWordThai: 'ใก',
-    en: {
-      exampleMeaning: 'near',
+    live: false,
+    character: {
+      thai: 'ใ◌',
+      roman: 'ai',
     },
-    fr: {
-      exampleMeaning: 'près',
+    exampleWord: {
+      roman: 'kai',
+      thai: 'ใก',
+      en: 'near',
+      fr: 'près',
     },
     type: DIPHTHONG,
+    position: MEDIAL,
   },
   {
     id: 24,
     kind: VOWEL,
-    character: 'เ◌า',
-    romanization: 'ao',
-    exampleWord: 'kao',
-    exampleWordThai: 'เกา',
-    en: {
-      exampleMeaning: 'to scratch',
+    live: false,
+    character: {
+      thai: 'เ◌า',
+      roman: 'ao',
     },
-    fr: {
-      exampleMeaning: 'gratter',
+    exampleWord: {
+      roman: 'kao',
+      thai: 'เกา',
+      en: 'to scratch',
+      fr: 'gratter',
     },
     type: DIPHTHONG,
+    position: MEDIAL,
   },
   // Special
   {
     id: 25,
     kind: VOWEL,
-    character: '◌ำ', //
-    romanization: 'am',
-    exampleWord: 'kam',
-    exampleWordThai: 'กำ',
-    en: {
-      exampleMeaning: 'to grasp',
-    },
-    fr: {
-      exampleMeaning: 'saisir',
+    live: false,
+    character: {
+      thai: '◌ำ',
+      roman: 'am',
+    }, //
+    exampleWord: {
+      roman: 'kam',
+      thai: 'กำ',
+      en: 'to grasp',
+      fr: 'saisir',
     },
     type: SPECIAL,
+    position: MEDIAL,
   },
   {
     id: 26,
     kind: VOWEL,
-    character: 'ฤ',
-    romanization: 'rue',
-    exampleWord: 'krue',
-    exampleWordThai: 'ครุ',
-    en: {
-      exampleMeaning: 'heavy',
+    live: false,
+    character: {
+      thai: 'ฤ',
+      roman: 'rue',
     },
-    fr: {
-      exampleMeaning: 'lourd',
+    exampleWord: {
+      roman: 'krue',
+      thai: 'ครุ',
+      en: 'heavy',
+      fr: 'lourd',
     },
     type: SPECIAL,
+    position: MEDIAL,
   },
   {
     id: 27,
     kind: VOWEL,
-    character: 'ฤๅ',
-    romanization: 'ruue',
-    exampleWord: 'kruue',
-    exampleWordThai: 'กรื',
-    en: {
-      exampleMeaning: 'long rue',
+    live: false,
+    character: {
+      thai: 'ฤๅ',
+      roman: 'ruue',
     },
-    fr: {
-      exampleMeaning: 'rue long',
+    exampleWord: {
+      roman: 'kruue',
+      thai: 'กรื',
+      en: 'long rue',
+      fr: 'rue long',
     },
     type: SPECIAL,
+    position: MEDIAL,
   },
   {
     id: 28,
     kind: VOWEL,
-    character: 'ฦ',
-    romanization: 'lue',
-    exampleWord: 'klue',
-    exampleWordThai: 'กลึ',
-    en: {
-      exampleMeaning: 'to lathe',
+    live: false,
+    character: {
+      thai: 'ฦ',
+      roman: 'lue',
     },
-    fr: {
-      exampleMeaning: 'tourner',
+    exampleWord: {
+      roman: 'klue',
+      thai: 'กลึ',
+      en: 'to lathe',
+      fr: 'tourner',
     },
     type: SPECIAL,
+    position: MEDIAL,
   },
   {
     id: 29,
     kind: VOWEL,
-    character: 'ฦๅ',
-    romanization: 'luue',
-    exampleWord: 'kluue',
-    exampleWordThai: 'กลื',
-    en: {
-      exampleMeaning: 'long lue',
+    live: false,
+    character: {
+      thai: 'ฦๅ',
+      roman: 'luue',
     },
-    fr: {
-      exampleMeaning: 'lue long',
+    exampleWord: {
+      roman: 'kluue',
+      thai: 'กลื',
+      en: 'long lue',
+      fr: 'lue long',
     },
     type: SPECIAL,
+    position: MEDIAL,
   },
 ];

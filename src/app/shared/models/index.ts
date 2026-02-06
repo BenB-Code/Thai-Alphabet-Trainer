@@ -12,3 +12,4 @@ export * from './vowel.type';
 export * from './colors.type';
 export * from './progress-state.type';
 export * from './languages.type';
+export * from './vowel-position.type';

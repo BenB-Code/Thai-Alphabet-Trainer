@@ -4,3 +4,4 @@ export * from './type-class-colors.map';
 export * from './letters.const';
 export * from './quiz-form-base-conf.const';
 export * from './progress-state.const';
+export * from './positions.const';
