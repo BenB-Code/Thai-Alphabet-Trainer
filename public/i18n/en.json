@@ -28,6 +28,7 @@
     "indication": "Select at least 1 card to start the quiz",
     "flip": "Click to flip",
     "summary":  "Quiz Summary",
-    "go-back": "Go back to selection"
+    "go-back": "Go back to selection",
+    "explanation": "Here are all the cards displayed during the quiz"
   }
 }
