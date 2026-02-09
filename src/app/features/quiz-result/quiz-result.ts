@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatCard } from '@angular/material/card';
 import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
 import { Card } from '../card/card';
@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [MatCard, Card, TranslatePipe, MatButtonModule],
   templateUrl: './quiz-result.html',
   styleUrl: './quiz-result.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizResult {
   protected readonly quizPreparationService = inject<QuizPreparationService>(QuizPreparationService);
