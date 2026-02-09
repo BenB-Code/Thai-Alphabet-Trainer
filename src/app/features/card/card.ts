@@ -21,6 +21,7 @@ export class Card {
 
   letter = input.required<ThaiConsonant | ThaiVowel>();
   color = input<Colors>(PRIMARY);
+  clickable = input<boolean>(true);
 
   isActive = computed((): boolean =>
     this.stateService.selected().some(el => el.id === this.letter().id && el.kind === this.letter().kind)

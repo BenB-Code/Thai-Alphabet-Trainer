@@ -1,6 +1,10 @@
 :host {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
 
   .shadow-box {
     padding: 1rem;
@@ -8,6 +12,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--color-neutral-100);
+    width: 100%;
 
     button {
       margin: 0 1rem;
@@ -41,7 +46,19 @@
       mat-icon {
         font-size: 3rem;
         width: auto;
+        height: auto;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    display: grid;
+
+    .shadow-box {
+      width: -webkit-fill-available;
+      justify-self: center;
     }
   }
 }

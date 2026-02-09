@@ -215,7 +215,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     live: true,
     character: {
       thai: 'เ◌',
-      roman: 'ee',
+      roman: 'ay',
     },
     exampleWord: {
       roman: '',

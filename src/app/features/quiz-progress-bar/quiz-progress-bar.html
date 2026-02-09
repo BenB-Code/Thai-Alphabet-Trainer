@@ -2,6 +2,7 @@
   <div
     class="progress__bar"
     [class.no-transition]="timerService.skipTransition()"
+    [class.paused]="paused()"
     [style.width.%]="timerService.timerPercent()"
   ></div>
 </div>

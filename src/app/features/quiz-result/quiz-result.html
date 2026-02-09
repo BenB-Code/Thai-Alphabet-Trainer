@@ -1,0 +1,13 @@
+<mat-card class="sum-header shadow-box panel">
+  <p>{{ 'quiz.summary' | translate }}</p>
+  <button matButton="filled" (click)="redirect()">{{ 'quiz.go-back' | translate }}</button>
+</mat-card>
+
+<mat-card class="card-container shadow-box panel">
+  @for (letter of quizPreparationService.quizSettings().randomized; track $index) {
+  <div class="card">
+    <span class="index">{{ $index + 1 }}</span>
+    <app-card [clickable]="false" [letter]="letter" [color]="getColor(letter)"></app-card>
+  </div>
+  }
+</mat-card>

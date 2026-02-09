@@ -34,6 +34,8 @@ html {
   @media (prefers-contrast: more) {
     @include theme.high-contrast-overrides('light');
   }
+
+  min-height: 100vh;
 }
 
 body {
@@ -50,13 +52,15 @@ body {
 
   // Reset the user agent margin.
 
+  min-height: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 1rem;
   margin: auto;
-  padding: 2%;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   display: flex;
   max-width: 80rem;
   justify-content: center;
-  height: auto;
   background: var(--color-neutral-80);
 }
 
@@ -64,18 +68,6 @@ body {
 .mat-mdc-card.shadow-box {
   box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.15);
   border-radius: var(--mat-sys-corner-medium);
-}
-
-@media (max-width: 1280px) {
-  body {
-    padding: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
 }
 
 .noto-serif-thai-normal {
