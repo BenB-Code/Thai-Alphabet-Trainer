@@ -26,6 +26,10 @@
     "start": "Démarrer le Quiz",
     "total-selected": "Cartes sélectionnées",
     "indication": "Sélectionner au moins 1 carte pour démarrer le quiz",
-    "flip": "Cliquer pour retourner"
+    "flip": "Cliquer pour retourner",
+    "summary": "Récapitulatif du quiz",
+    "go-back": "Retour à la sélection",
+    "explanation": "Retrouvez ici toute les cartes affichées pendant le quiz"
+
   }
 }

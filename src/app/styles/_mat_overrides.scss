@@ -35,11 +35,11 @@ mat-tab-group {
 
 // button
 button.mat-mdc-unelevated-button:not(:disabled) {
-  background: var(--color-blue-50);
+  background: var(--color-blue);
 }
 
 button.mat-mdc-outlined-button:not(:disabled) {
-  border: 2px solid var(--color-blue-50);
+  border: 2px solid var(--color-blue);
 }
 
 @media (max-width: 1280px) {

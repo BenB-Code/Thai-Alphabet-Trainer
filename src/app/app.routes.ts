@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 import { Letters } from './features/letters/letters';
 import { inject } from '@angular/core';
 import { QuizPreparationService } from './services/quiz-preparation-service/quiz-preparation-service';
-// import { FINISHED } from './shared/constants';
+import { FINISHED } from './shared/constants';
+import { QuizSessionService } from './services/quiz-session-service/quiz-session-service';
 
 export const routes: Routes = [
   {
@@ -19,16 +20,16 @@ export const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'result',
-  //   loadComponent: () => import('./features/quiz-result/quiz-result').then(m => m.QuizResult),
-  //   canMatch: [
-  //     () => {
-  //       const prepService = inject<QuizService>(QuizService);
-  //       return prepService.state() === FINISHED;
-  //     },
-  //   ],
-  // },
+  {
+    path: 'result',
+    loadComponent: () => import('./features/quiz-result/quiz-result').then(m => m.QuizResult),
+    canMatch: [
+      () => {
+        const sessionService = inject<QuizSessionService>(QuizSessionService);
+        return sessionService.progressState() === FINISHED;
+      },
+    ],
+  },
   {
     path: '**',
     redirectTo: '',

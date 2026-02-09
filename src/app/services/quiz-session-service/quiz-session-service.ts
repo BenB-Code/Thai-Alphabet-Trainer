@@ -111,7 +111,7 @@ export class QuizSessionService {
     const currentIndex = this.index();
 
     this.canGoBack.set(currentIndex > 0);
-    this.canGoForward.set(currentIndex < maxIndex);
+    this.canGoForward.set(currentIndex <= maxIndex);
     this.progressState.set(IN_PROGRESS);
   }
 
