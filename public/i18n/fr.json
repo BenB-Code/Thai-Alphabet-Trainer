@@ -19,7 +19,9 @@
   "letters": {
     "obsolete": "Cette lettre est obselète",
     "live": "Syllable vivante",
-    "dead": "Syllable morte"
+    "dead": "Syllable morte",
+    "sound-as-final": "Syllabe en consonne finale",
+    "never-final": "Jamais en consonne finale"
   },
   "quiz": {
     "questions": "Nombre de questions",

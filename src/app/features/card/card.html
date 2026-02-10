@@ -37,11 +37,30 @@
       }
     </div>
     <h1 class="big-letter noto-serif-thai-normal">{{ letter().character.thai }}</h1>
-    <p class="name">{{ letter().character.roman }} : {{ letter().exampleWord.roman }}</p>
-    <p class="infos noto-serif-thai-normal">
-      <span class="roboto-normal">{{ letter().exampleWord[i18nService.activeLanguage()] }}</span>
-      <br />
-      <span class="mid-letter">{{ letter().exampleWord.thai }}</span>
+    <p class="name">{{ letter().character.roman }} <span>{{ letter().exampleWord.roman }}</span></p>
+    @let transliteration = hasTransliteration(); @if (transliteration) {
+    <p
+      class="translit"
+      [matTooltip]="'letters.sound-as-final' | translate"
+      matTooltipShowDelay="300"
+      matTooltipHideDelay="100"
+      matTooltipPosition="above"
+    >
+      @if (transliteration.final) { {{ transliteration.initial }} } @else {
+      <mat-icon
+        class="material-symbols-outlined"
+        [matTooltip]="'letters.never-final' | translate"
+        matTooltipShowDelay="300"
+        matTooltipHideDelay="100"
+        matTooltipPosition="above"
+        >block
+      </mat-icon>
+      }
     </p>
+    }
+    <div class="infos noto-serif-thai-normal">
+      <p class="mid-letter">{{ letter().exampleWord.thai }}</p>
+      <p class="roboto-normal trad">{{ letter().exampleWord[i18nService.activeLanguage()] }}</p>
+    </div>
   </mat-card-content>
 </mat-card>

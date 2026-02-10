@@ -38,4 +38,12 @@ export class Card {
     const letter = this.letter();
     return 'obsolete' in letter && letter.obsolete;
   }
+
+  hasTransliteration() {
+    const letter = this.letter();
+    if ('transliteration' in letter) {
+      return letter.transliteration;
+    }
+    return false;
+  }
 }
