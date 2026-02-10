@@ -1,3 +1,5 @@
+@use '../../styles/cards-grid' as grid;
+
 :host {
   .panel {
     padding: 1rem;
@@ -33,9 +35,7 @@
       }
 
       .card-container {
-        display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+        @include grid.cards-grid();
 
         .card {
           position: relative;

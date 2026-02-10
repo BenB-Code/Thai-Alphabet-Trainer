@@ -2,32 +2,8 @@
   <button (click)="sessionService.toggleFlip()" class="card-face shadow-box recto">
     @if (letter().display === LATIN) {
     <h1>{{ letter().character.roman }}</h1>
-    @if (letter().kind === CONSONANT) {
-    <p class="trad">
-      {{ letter().exampleWord.roman }}
-      <br />
-      <span>{{ letter().exampleWord[i18nService.activeLanguage()] }}</span>
-    </p>
-
-    @let consonantClass = hasClass(); @if (consonantClass) {
-    <div class="vowel-pos infos-container">
-      <span class="label-title">{{ 'quiz.class' | translate }} :</span>
-      <p>{{ `quiz.${consonantClass}` | translate }}</p>
-    </div>
-    } } @else if (letter().kind === VOWEL) { @let vowelType = hasType(); @if (vowelType) {
-    <div class="vow-type">
-      <span class="type">{{ 'quiz.type' | translate }} :</span>
-      <p>{{ `quiz.${vowelType}` | translate }}</p>
-    </div>
-    } @let vowelPosition = hasVowelPosition(); @if (vowelPosition) {
-    <div class="vowel-pos infos-container">
-      <span class="label-title">{{ 'quiz.position' | translate }} :</span>
-      <p>
-        @if (vowelPosition.includes(MEDIAL)) { {{ 'quiz.medial' | translate }} } @if (vowelPosition.includes(MEDIAL) &&
-        vowelPosition.includes(FINAL)) { | } @if (vowelPosition.includes(FINAL)) { {{ 'quiz.final' | translate }} }
-      </p>
-    </div>
-    } } } @else {
+    <app-letter-detail-info [letter]="letter()" />
+    } @else {
     <h1 class="thai-char">{{ letter().character.thai }}</h1>
     }
     <p class="indication">{{ 'quiz.flip' | translate }}</p>
@@ -38,31 +14,7 @@
     <h1 class="thai-char">{{ letter().character.thai }}</h1>
     } @else {
     <h1>{{ letter().character.roman }}</h1>
-    @if (letter().kind === CONSONANT) {
-    <p class="trad">
-      {{ letter().exampleWord.roman }}
-      <br />
-      <span>{{ letter().exampleWord[i18nService.activeLanguage()] }}</span>
-    </p>
-
-    @let consonantClass = hasClass(); @if (consonantClass) {
-    <div class="vowel-pos infos-container">
-      <span class="label-title">{{ 'quiz.class' | translate }} :</span>
-      <p>{{ `quiz.${consonantClass}` | translate }}</p>
-    </div>
-    } } @else if (letter().kind === VOWEL) { @let vowelType = hasType(); @if (vowelType) {
-    <div class="vow-type">
-      <span class="type">{{ 'quiz.type' | translate }} :</span>
-      <p>{{ `quiz.${vowelType}` | translate }}</p>
-    </div>
-    } @let vowelPosition = hasVowelPosition(); @if (vowelPosition) {
-    <div class="vowel-pos">
-      <span class="position">{{ 'quiz.position' | translate }} :</span>
-      <p>
-        @if (vowelPosition.includes(MEDIAL)) { {{ 'quiz.medial' | translate }} } @if (vowelPosition.includes(MEDIAL) &&
-        vowelPosition.includes(FINAL)) { | } @if (vowelPosition.includes(FINAL)) { {{ 'quiz.final' | translate }} }
-      </p>
-    </div>
-    } } }
+    <app-letter-detail-info [letter]="letter()" />
+    }
   </button>
 </div>

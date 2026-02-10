@@ -8,7 +8,7 @@
     <app-cards-container
       [list]="list.value"
       [kind]="list.key"
-      [color]="TypeClassColorsMap[list.value[0].class]"
+      [color]="letterUtils.getLetterColor(list.value[0])"
     ></app-cards-container>
     }
   </mat-tab>
@@ -22,7 +22,7 @@
     <app-cards-container
       [list]="list.value"
       [kind]="list.key"
-      [color]="TypeClassColorsMap[list.value[0].type]"
+      [color]="letterUtils.getLetterColor(list.value[0])"
     ></app-cards-container>
     }
   </mat-tab>

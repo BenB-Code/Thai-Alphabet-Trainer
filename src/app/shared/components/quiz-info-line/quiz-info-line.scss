@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+
+  .label {
+    font-weight: 700;
+    font-size: medium;
+  }
+
+  p {
+    margin: 0.5rem;
+  }
+}

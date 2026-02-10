@@ -38,7 +38,7 @@
     </div>
     <h1 class="big-letter noto-serif-thai-normal">{{ letter().character.thai }}</h1>
     <p class="name">{{ letter().character.roman }} <span>{{ letter().exampleWord.roman }}</span></p>
-    @let transliteration = hasTransliteration(); @if (transliteration) {
+    @let translit = transliteration(); @if (translit) {
     <p
       class="translit"
       [matTooltip]="'letters.sound-as-final' | translate"
@@ -46,7 +46,7 @@
       matTooltipHideDelay="100"
       matTooltipPosition="above"
     >
-      @if (transliteration.final) { {{ transliteration.initial }} } @else {
+      @if (translit.final) { {{ translit.initial }} } @else {
       <mat-icon
         class="material-symbols-outlined"
         [matTooltip]="'letters.never-final' | translate"
@@ -57,9 +57,9 @@
       </mat-icon>
       }
     </p>
-    } @let vowelPosition = hasVowelPosition(); @if (vowelPosition) {
+    } @let vPos = vowelPosition(); @if (vPos) {
     <div class="vowel-pos">
-      @if (vowelPosition.includes(MEDIAL)) {
+      @if (vPos.includes(MEDIAL)) {
       <span
         [matTooltip]="'letters.medial' | translate"
         matTooltipShowDelay="300"
@@ -67,8 +67,7 @@
         matTooltipPosition="above"
         >M</span
       >
-      } @if (vowelPosition.includes(MEDIAL) && vowelPosition.includes(FINAL)) { | } @if (vowelPosition.includes(FINAL))
-      {
+      } @if (vPos.includes(MEDIAL) && vPos.includes(FINAL)) { | } @if (vPos.includes(FINAL)) {
       <span
         [matTooltip]="'letters.final' | translate"
         matTooltipShowDelay="300"
