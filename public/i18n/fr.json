@@ -16,6 +16,11 @@
     "diphthong": "Diphtongues",
     "special": "Voyelles Spéciales"
   },
+  "letters": {
+    "obsolete": "Cette lettre est obselète",
+    "live": "Syllable vivante",
+    "dead": "Syllable morte"
+  },
   "quiz": {
     "questions": "Nombre de questions",
     "delay": "Temps de réponse",

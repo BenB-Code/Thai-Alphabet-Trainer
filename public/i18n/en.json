@@ -16,6 +16,11 @@
     "diphthong": "Diphthongs",
     "special": "Special Vowels"
   },
+  "letters": {
+    "obsolete": "This letter is obsolete",
+    "live": "Live syllable",
+    "dead": "Dead syllable"
+  },
   "quiz": {
     "questions": "Number of questions",
     "delay": "Delay to answer",

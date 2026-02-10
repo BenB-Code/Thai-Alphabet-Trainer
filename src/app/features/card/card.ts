@@ -4,10 +4,13 @@ import { Colors, ThaiConsonant, ThaiVowel } from '../../shared/models';
 import { StateService } from '../../services/state-service/state-service';
 import { PRIMARY } from '../../shared/constants';
 import { I18nService } from '../../services/i18n-service/i18n-service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-card',
-  imports: [MatCard, MatCardContent],
+  imports: [MatCard, MatCardContent, MatIconModule, MatTooltipModule, TranslatePipe],
   templateUrl: './card.html',
   styleUrl: './card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -29,5 +32,10 @@ export class Card {
 
   toggleLetter(): void {
     this.stateService.toggleLetter(this.letter());
+  }
+
+  isObsolete() {
+    const letter = this.letter();
+    return 'obsolete' in letter && letter.obsolete;
   }
 }
