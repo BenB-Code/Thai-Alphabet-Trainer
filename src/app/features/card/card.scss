@@ -2,7 +2,7 @@
   display: block;
   height: 100%;
 
-  mat-card {
+  mat-card.letter {
     position: relative;
     display: flex;
     width: 100%;
@@ -50,32 +50,36 @@
       border-color: var(--card-color);
     }
 
-    .big-letter {
-      font-size: 4rem;
-      font-weight: 400;
-      margin: 2.15rem 0 2rem 0;
-    }
+    .card-content {
+      padding: 0.5rem;
 
-    .mid-letter {
-      font-size: 1.25rem;
-      color: var(--card-color);
-      font-weight: 300;
-      margin: 0;
-    }
+      .big-letter {
+        font-size: 3.5rem;
+        font-weight: 400;
+        margin: 2rem 0 1.75rem 0;
+      }
 
-    .name {
-      margin: 0.25rem 0.5rem;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--card-color);
-      white-space: nowrap;
-    }
+      .name {
+        margin: 0.25rem 0.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--card-color);
+        white-space: nowrap;
+      }
 
-    .infos {
-      font-style: italic;
-      margin-top: 0;
-      font-size: 0.75rem;
-      //white-space: nowrap;
+      .infos {
+        font-style: italic;
+        margin-top: 0;
+        font-size: 0.75rem;
+
+        .mid-letter {
+          font-size: 1.25rem;
+          color: var(--card-color);
+          font-weight: 300;
+          margin: 0;
+          line-height: 1.35;
+        }
+      }
     }
   }
 }

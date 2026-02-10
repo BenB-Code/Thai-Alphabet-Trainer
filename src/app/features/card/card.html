@@ -5,12 +5,13 @@
   (click)="toggleLetter()"
   (keyup)="toggleLetter()"
 >
-  <mat-card-content>
+  <mat-card-content class="card-content">
     <h1 class="big-letter noto-serif-thai-normal">{{ letter().character.thai }}</h1>
     <p class="name">{{ letter().character.roman }} : {{ letter().exampleWord.roman }}</p>
     <p class="infos noto-serif-thai-normal">
-      <span class="mid-letter">{{ letter().exampleWord.thai }}</span> -
       <span class="roboto-normal">{{ letter().exampleWord[i18nService.activeLanguage()] }}</span>
+      <br />
+      <span class="mid-letter">{{ letter().exampleWord.thai }}</span>
     </p>
   </mat-card-content>
 </mat-card>
