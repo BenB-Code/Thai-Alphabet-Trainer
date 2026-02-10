@@ -6,6 +6,7 @@ import { StateService } from '../../services/state-service/state-service';
 import { I18nService } from '../../services/i18n-service/i18n-service';
 import { EN } from '../../shared/constants';
 import { THAI_CONSONANTS } from '../../data';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('Card', () => {
   let component: Card;
@@ -24,7 +25,7 @@ describe('Card', () => {
     });
 
     await TestBed.configureTestingModule({
-      imports: [Card],
+      imports: [Card, TranslateModule.forRoot()],
       providers: [
         provideZonelessChangeDetection(),
         {

@@ -6,6 +6,6 @@ export interface ThaiConsonant extends ThaiLetter {
     initial: string | null;
     final: string | null;
   };
-  obsolete: boolean;
+  outdated: boolean;
   class: ConsonantClass;
 }

@@ -308,10 +308,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: '',
       fr: '',
     },
-    infos: {
-      en: "Short medial [oh] vowel doesn't have a written form (camouflaged vowel)",
-      fr: "La voyelle médiane [oh] n'a pas de forme écrite (voyelle camouflée)",
-    },
+    infos: 'letters.oh-vowel',
   },
   {
     id: 19,
@@ -397,12 +394,13 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: '',
       fr: '',
     },
+    infos: 'letters.no-medial-position',
   },
   {
     id: 24,
     kind: VOWEL,
     type: LONG,
-    position: [MEDIAL],
+    position: [FINAL],
     live: true,
     character: {
       thai: 'เ◌อ',
@@ -448,6 +446,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: '',
       fr: '',
     },
+    infos: 'letters.no-medial-position',
   },
   {
     id: 27,
@@ -482,6 +481,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: '',
       fr: '',
     },
+    infos: 'letters.no-medial-position',
   },
   {
     id: 29,
@@ -516,6 +516,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: '',
       fr: '',
     },
+    infos: 'letters.no-medial-position',
   },
   {
     id: 31,
@@ -635,6 +636,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: '',
       fr: '',
     },
+    infos: 'letters.no-final',
   },
   {
     id: 38,
@@ -652,6 +654,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: '',
       fr: '',
     },
+    infos: 'letters.no-final',
   },
   {
     id: 39,

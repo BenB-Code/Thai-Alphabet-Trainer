@@ -16,8 +16,5 @@ export interface ThaiLetter {
     fr: string;
   };
   display?: DisplayType;
-  infos?: {
-    en: string;
-    fr: string;
-  };
+  infos?: string;
 }

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject, input } from '@an
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { Colors, ThaiConsonant, ThaiVowel } from '../../shared/models';
 import { StateService } from '../../services/state-service/state-service';
-import { PRIMARY } from '../../shared/constants';
+import { FINAL, MEDIAL, PRIMARY } from '../../shared/constants';
 import { I18nService } from '../../services/i18n-service/i18n-service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -22,6 +22,9 @@ export class Card {
   protected readonly stateService: StateService = inject<StateService>(StateService);
   protected readonly i18nService: I18nService = inject<I18nService>(I18nService);
 
+  protected readonly MEDIAL = MEDIAL;
+  protected readonly FINAL = FINAL;
+
   letter = input.required<ThaiConsonant | ThaiVowel>();
   color = input<Colors>(PRIMARY);
   clickable = input<boolean>(true);
@@ -34,15 +37,23 @@ export class Card {
     this.stateService.toggleLetter(this.letter());
   }
 
-  isObsolete() {
+  isOutdated() {
     const letter = this.letter();
-    return 'obsolete' in letter && letter.obsolete;
+    return 'outdated' in letter && letter.outdated;
   }
 
   hasTransliteration() {
     const letter = this.letter();
     if ('transliteration' in letter) {
       return letter.transliteration;
+    }
+    return false;
+  }
+
+  hasVowelPosition() {
+    const letter = this.letter();
+    if ('position' in letter) {
+      return letter.position;
     }
     return false;
   }

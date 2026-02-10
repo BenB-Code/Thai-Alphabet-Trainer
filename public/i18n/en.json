@@ -17,11 +17,16 @@
     "special": "Special Vowels"
   },
   "letters": {
-    "obsolete": "This letter is obsolete",
+    "outdated": "This letter is not used anymore",
     "live": "Live syllable",
     "dead": "Dead syllable",
     "sound-as-final": "Sound as final consonant",
-    "never-final": "Never occur as final consonant"
+    "never-final": "Never occur as final consonant",
+    "medial": "Medial position",
+    "final": "Final position",
+    "no-final": "Don't take final consonants",
+    "oh-vowel": "Short medial [oh] vowel doesn't have a written form (camouflaged vowel)",
+    "no-medial-position": "Don't exist in medial position"
   },
   "quiz": {
     "questions": "Number of questions",
