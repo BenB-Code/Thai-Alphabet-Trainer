@@ -53,6 +53,48 @@
         bottom: 0.5rem;
         animation: pulse 2s ease-in-out infinite;
       }
+
+      .vow-type {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+
+        .type {
+          font-weight: 700;
+          font-size: medium;
+        }
+
+        p {
+          margin: 0.5rem;
+        }
+      }
+    }
+
+    .trad {
+      margin-bottom: 2rem;
+      font-size: large;
+      font-weight: 600;
+
+      span {
+        font-weight: normal;
+        font-style: italic;
+        font-size: small;
+      }
+    }
+
+    .infos-container {
+      .label-title {
+        font-weight: 700;
+        font-size: medium;
+      }
+
+      p {
+        margin: 0.5rem;
+      }
+    }
+
+    .position {
+      font-weight: 700;
+      font-size: medium;
     }
 
     .thai-char {

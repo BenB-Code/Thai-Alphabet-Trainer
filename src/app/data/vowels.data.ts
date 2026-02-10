@@ -37,7 +37,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     },
   },
   {
-    id: 2,
+    id: 40,
     kind: VOWEL,
     type: SHORT,
     position: [MEDIAL],

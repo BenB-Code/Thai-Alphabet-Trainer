@@ -41,6 +41,16 @@
     "flip": "Click to flip",
     "summary":  "Quiz Summary",
     "go-back": "Go back to selection",
-    "explanation": "Here are all the cards displayed during the quiz"
+    "explanation": "Here are all the cards displayed during the quiz",
+    "medial": "Medial",
+    "final": "Final",
+    "short": "Short",
+    "long": "Long",
+    "position": "Position",
+    "type": "Type",
+    "class": "Class",
+    "mid": "Mid",
+    "high": "High",
+    "low": "Low"
   }
 }

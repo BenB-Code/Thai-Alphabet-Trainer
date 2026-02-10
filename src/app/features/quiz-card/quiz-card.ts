@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { LATIN } from '../../shared/constants';
+import { CONSONANT, FINAL, LATIN, MEDIAL, VOWEL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { I18nService } from '../../services/i18n-service/i18n-service';
 import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
@@ -19,4 +19,32 @@ export class QuizCard {
 
   protected readonly letter = computed(() => this.prepService.quizSettings().randomized[this.sessionService.index()]);
   protected readonly LATIN = LATIN;
+  protected readonly VOWEL = VOWEL;
+  protected readonly CONSONANT = CONSONANT;
+  protected readonly FINAL = FINAL;
+  protected readonly MEDIAL = MEDIAL;
+
+  hasVowelPosition() {
+    const letter = this.letter();
+    if ('position' in letter) {
+      return letter.position;
+    }
+    return false;
+  }
+
+  hasType() {
+    const letter = this.letter();
+    if ('type' in letter) {
+      return letter.type;
+    }
+    return false;
+  }
+
+  hasClass() {
+    const letter = this.letter();
+    if ('class' in letter) {
+      return letter.class;
+    }
+    return false;
+  }
 }
