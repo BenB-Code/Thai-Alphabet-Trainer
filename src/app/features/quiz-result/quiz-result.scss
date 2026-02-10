@@ -2,13 +2,10 @@
   .panel {
     padding: 1rem;
 
-    &:first-child {
-      margin-bottom: 1rem;
-    }
-
     &.sum-header {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      margin-bottom: 1rem;
       align-items: center;
 
       p {

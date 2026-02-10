@@ -27,11 +27,11 @@
         &::after {
           content: '✓';
           position: absolute;
-          top: 0.5rem;
-          right: 0.5rem;
+          top: 0.25rem;
+          right: 0.25rem;
           color: var(--mat-sys-background);
-          width: 1.75rem;
-          height: 1.75rem;
+          width: 1.25rem;
+          height: 1.25rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -80,7 +80,7 @@
       .big-letter {
         font-size: 3.5rem;
         font-weight: 400;
-        margin: 2rem 0 1.75rem 0;
+        margin: 2rem 0 1.5rem 0;
       }
 
       .name {

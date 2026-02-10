@@ -7,10 +7,11 @@ import { Colors, ThaiCharacter } from '../../shared/models';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
+import { LangContainer } from '../lang-container/lang-container';
 
 @Component({
   selector: 'app-quiz-result',
-  imports: [MatCard, Card, TranslatePipe, MatButtonModule],
+  imports: [MatCard, Card, TranslatePipe, MatButtonModule, LangContainer],
   templateUrl: './quiz-result.html',
   styleUrl: './quiz-result.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
