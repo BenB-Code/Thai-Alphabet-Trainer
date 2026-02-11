@@ -1,0 +1,14 @@
+# docker/compose/docker-compose.prod.yml
+services:
+  angular-app:
+    ports:
+      - "${PORT:-80}:80"
+
+    restart: always
+
+    healthcheck:
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:80/" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
