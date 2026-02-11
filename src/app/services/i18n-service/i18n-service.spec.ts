@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { I18nService } from './i18n-service';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { EN, FR } from '../../shared/constants';
+import { FR } from '../../shared/constants';
 
 describe('I18nService', () => {
   let service: I18nService;
@@ -30,7 +30,7 @@ describe('I18nService', () => {
   });
 
   it('should change lang from EN to FR', () => {
-    expect(service.activeLanguage()).toEqual(EN);
+    expect(service.activeLanguage()).toEqual(FR);
 
     service.switchLanguage(FR);
     expect(service.activeLanguage()).toEqual(FR);

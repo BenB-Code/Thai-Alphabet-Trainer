@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -8,5 +8,6 @@ import { MatDialogModule } from '@angular/material/dialog';
   imports: [TranslatePipe, MatDialogModule, MatButtonModule],
   templateUrl: './wip-dialog.html',
   styleUrl: './wip-dialog.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WipDialog {}

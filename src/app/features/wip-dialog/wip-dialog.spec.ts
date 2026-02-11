@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WipDialog } from './wip-dialog';
+import { TranslateModule } from '@ngx-translate/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('WipDialog', () => {
   let component: WipDialog;
@@ -8,7 +10,8 @@ describe('WipDialog', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WipDialog],
+      imports: [WipDialog, TranslateModule.forRoot()],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(WipDialog);
