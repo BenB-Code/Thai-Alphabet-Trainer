@@ -1,6 +1,7 @@
 :host {
   display: grid;
   flex: 1;
+  overflow: hidden;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
   grid-template-areas:

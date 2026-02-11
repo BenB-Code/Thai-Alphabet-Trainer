@@ -8,11 +8,12 @@
 
   .shadow-box {
     padding: 1rem;
+    width: -webkit-fill-available;
+    justify-self: center;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     background-color: var(--color-neutral-100);
-    width: 100%;
 
     button {
       margin: 0 1rem;
@@ -57,7 +58,6 @@
     display: grid;
 
     .shadow-box {
-      width: -webkit-fill-available;
       justify-self: center;
     }
   }

@@ -22,7 +22,6 @@ export class QuizPreparationService {
 
     for (let i = 0; i < quantity; i++) {
       const randomIndex = Math.floor(Math.random() * selected.length);
-      console.log(randomIndex);
       const letter = {
         ...selected[randomIndex],
         display: this.generateDisplayType(),
