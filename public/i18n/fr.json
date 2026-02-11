@@ -1,4 +1,22 @@
 {
+  "WIP": {
+    "title": "\uD83D\uDEA7\u200B En cours de développement \uD83D\uDEA7\u200B",
+    "1": "Bonjour,",
+    "2": "L'application est encore en cours de développement.",
+    "3": "Toute les fonctionnalités de base sont déjà présente et fonctionnelles : ",
+    "4": "Affichage de toute les consonnes",
+    "5": "Affichage de toute les voyelles",
+    "6": "Sélection des cartes souhaitées et configuration du quiz",
+    "7": "Démarrage, pause et reprise du quiz",
+    "8": "Résultats en fin de quiz",
+    "9": "Merci, bon apprentissage !",
+    "next": "Concernant les améliorations futures, voici une liste non exhaustive : ",
+    "a": "Rework complète de l'interface (à l'exception des cartes de lettre)",
+    "b": "Formulaire de contact, avis, note, etc",
+    "c": "Vue détaillée de chaque lettre dans une nouvelle interface",
+    "d": "Ajout des nombres, tons, 20 mots [ai máai múan]",
+    "close": "Fermer"
+  },
   "app": {
     "consonants": "Consonnes",
     "vowels": "Voyelles",
