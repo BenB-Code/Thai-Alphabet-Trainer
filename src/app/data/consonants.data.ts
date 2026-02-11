@@ -11,7 +11,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'kor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'k', final: 'k' },
     exampleWord: {
       roman: 'kwaai',
@@ -29,7 +29,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'kor',
     },
     live: false,
-    obsolete: true,
+    outdated: true,
     transliteration: { initial: 'k', final: 'k' },
     exampleWord: {
       roman: 'kon',
@@ -47,7 +47,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'kor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'k', final: 'k' },
     exampleWord: {
       roman: 'rákung',
@@ -65,7 +65,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'ngor',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'ng', final: 'ng' },
     exampleWord: {
       roman: 'ngoo',
@@ -83,7 +83,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'chor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'ch', final: 't' },
     exampleWord: {
       roman: 'cháang',
@@ -101,7 +101,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'sor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 's', final: 't' },
     exampleWord: {
       roman: 'sôo',
@@ -119,7 +119,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'chor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'ch', final: null },
     exampleWord: {
       roman: 'cher',
@@ -137,7 +137,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'yor',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'y', final: 'n' },
     exampleWord: {
       roman: 'yĭng',
@@ -155,7 +155,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'tor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 't', final: 't' },
     exampleWord: {
       roman: 'montoh',
@@ -173,7 +173,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'tor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 't', final: 't' },
     exampleWord: {
       roman: 'pôo-tâo',
@@ -191,7 +191,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'nor',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'n', final: 'n' },
     exampleWord: {
       roman: 'nayn',
@@ -209,7 +209,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'tor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 't', final: 't' },
     exampleWord: {
       roman: 'táhăn',
@@ -227,7 +227,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'tor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 't', final: 't' },
     exampleWord: {
       roman: 'tong',
@@ -245,7 +245,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'nor',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'n', final: 'n' },
     exampleWord: {
       roman: 'nŏo',
@@ -263,7 +263,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'por',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'p', final: 'p' },
     exampleWord: {
       roman: 'paan',
@@ -281,7 +281,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'for',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'f', final: 'p' },
     exampleWord: {
       roman: 'fun',
@@ -299,7 +299,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'por',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'p', final: 'p' },
     exampleWord: {
       roman: 'sŭmpao',
@@ -317,7 +317,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'mor',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'm', final: 'm' },
     exampleWord: {
       roman: 'máa',
@@ -335,7 +335,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'yor',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'y', final: 'i' },
     exampleWord: {
       roman: 'yúk',
@@ -353,7 +353,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'ror',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'r', final: 'n' },
     exampleWord: {
       roman: 'ruea',
@@ -371,7 +371,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'lor',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'l', final: 'n' },
     exampleWord: {
       roman: 'ling',
@@ -389,7 +389,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'wor',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'w', final: 'o' },
     exampleWord: {
       roman: 'wăn',
@@ -407,7 +407,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'lor',
     },
     live: true,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'l', final: 'n' },
     exampleWord: {
       roman: 'jùlaa',
@@ -425,7 +425,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'hor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'h', final: null },
     exampleWord: {
       roman: 'nókhôok',
@@ -443,7 +443,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'gor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'g', final: 'k' },
     exampleWord: {
       roman: 'gài',
@@ -461,7 +461,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'jor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'j', final: 't' },
     exampleWord: {
       roman: 'jaan',
@@ -479,7 +479,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'dor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'd', final: 't' },
     exampleWord: {
       roman: 'chádaa',
@@ -497,7 +497,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'dtor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'dt', final: 't' },
     exampleWord: {
       roman: 'bpà-dtùk',
@@ -515,7 +515,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'dor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'd', final: 't' },
     exampleWord: {
       roman: 'dèk',
@@ -533,7 +533,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'dtor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'dt', final: 't' },
     exampleWord: {
       roman: 'dtào',
@@ -551,7 +551,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'bor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'b', final: 'p' },
     exampleWord: {
       roman: 'baimáai',
@@ -569,7 +569,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'bpor',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'bp', final: 'p' },
     exampleWord: {
       roman: 'bpla',
@@ -587,7 +587,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'or',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: null, final: null },
     exampleWord: {
       roman: 'àang',
@@ -605,7 +605,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'kŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'k', final: 'k' },
     exampleWord: {
       roman: 'kài',
@@ -623,7 +623,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'kŏr',
     },
     live: false,
-    obsolete: true,
+    outdated: true,
     transliteration: { initial: 'k', final: 'k' },
     exampleWord: {
       roman: 'kùat',
@@ -641,7 +641,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'chŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'ch', final: 't' },
     exampleWord: {
       roman: 'chìng',
@@ -659,7 +659,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'tŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 't', final: 't' },
     exampleWord: {
       roman: 'tăan',
@@ -677,7 +677,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'tŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 't', final: 't' },
     exampleWord: {
       roman: "tŏo'ng",
@@ -695,7 +695,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'pŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'ph', final: null },
     exampleWord: {
       roman: "pûe'ng",
@@ -713,7 +713,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'fŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'f', final: null },
     exampleWord: {
       roman: 'făa',
@@ -731,7 +731,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'sŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 's', final: 't' },
     exampleWord: {
       roman: 'săalaa',
@@ -749,7 +749,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'sŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 's', final: 't' },
     exampleWord: {
       roman: 'ruesĕe',
@@ -767,7 +767,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'sŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 's', final: 't' },
     exampleWord: {
       roman: 'sŭea',
@@ -785,7 +785,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
       roman: 'hŏr',
     },
     live: false,
-    obsolete: false,
+    outdated: false,
     transliteration: { initial: 'h', final: null },
     exampleWord: {
       roman: 'hèep',

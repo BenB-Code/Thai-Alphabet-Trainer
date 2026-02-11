@@ -16,6 +16,18 @@
     "diphthong": "Diphtongues",
     "special": "Voyelles Spéciales"
   },
+  "letters": {
+    "outdated": "Cette lettre n'est plus utilisée",
+    "live": "Syllable vivante",
+    "dead": "Syllable morte",
+    "sound-as-final": "Syllabe en consonne finale",
+    "never-final": "Jamais en consonne finale",
+    "medial": "Position médiane",
+    "final": "Position finale",
+    "no-final": "N'accepte pas de consonnes finales",
+    "oh-vowel": "La voyelle médiane [oh] n'a pas de forme écrite (voyelle camouflée)",
+    "no-medial-position": "N'éxiste pas en position médiane"
+  },
   "quiz": {
     "questions": "Nombre de questions",
     "delay": "Temps de réponse",
@@ -29,7 +41,12 @@
     "flip": "Cliquer pour retourner",
     "summary": "Récapitulatif du quiz",
     "go-back": "Retour à la sélection",
-    "explanation": "Retrouvez ici toute les cartes affichées pendant le quiz"
-
+    "explanation": "Retrouvez ici toute les cartes affichées pendant le quiz",
+    "medial": "Médiane",
+    "final": "Finale",
+    "short": "Courte",
+    "long": "Longue",
+    "position": "Position",
+    "type": "Type"
   }
 }

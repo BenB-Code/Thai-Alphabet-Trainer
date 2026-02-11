@@ -16,6 +16,18 @@
     "diphthong": "Diphthongs",
     "special": "Special Vowels"
   },
+  "letters": {
+    "outdated": "This letter is not used anymore",
+    "live": "Live syllable",
+    "dead": "Dead syllable",
+    "sound-as-final": "Sound as final consonant",
+    "never-final": "Never occur as final consonant",
+    "medial": "Medial position",
+    "final": "Final position",
+    "no-final": "Don't take final consonants",
+    "oh-vowel": "Short medial [oh] vowel doesn't have a written form (camouflaged vowel)",
+    "no-medial-position": "Don't exist in medial position"
+  },
   "quiz": {
     "questions": "Number of questions",
     "delay": "Delay to answer",
@@ -29,6 +41,16 @@
     "flip": "Click to flip",
     "summary":  "Quiz Summary",
     "go-back": "Go back to selection",
-    "explanation": "Here are all the cards displayed during the quiz"
+    "explanation": "Here are all the cards displayed during the quiz",
+    "medial": "Medial",
+    "final": "Final",
+    "short": "Short",
+    "long": "Long",
+    "position": "Position",
+    "type": "Type",
+    "class": "Class",
+    "mid": "Mid",
+    "high": "High",
+    "low": "Low"
   }
 }

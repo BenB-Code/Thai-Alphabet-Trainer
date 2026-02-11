@@ -1,14 +1,13 @@
+@use '../../styles/cards-grid' as grid;
+
 :host {
   .panel {
     padding: 1rem;
 
-    &:first-child {
-      margin-bottom: 1rem;
-    }
-
     &.sum-header {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      margin-bottom: 1rem;
       align-items: center;
 
       p {
@@ -36,9 +35,7 @@
       }
 
       .card-container {
-        display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+        @include grid.cards-grid();
 
         .card {
           position: relative;

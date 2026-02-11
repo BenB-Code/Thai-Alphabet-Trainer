@@ -3,9 +3,10 @@ import { CardsContainer } from '../cards-container/cards-container';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DataService } from '../../services/data-service/data-service';
 import { KeyValuePipe } from '@angular/common';
-import { CONSONANT, TypeClassColorsMap, VOWEL } from '../../shared/constants';
+import { CONSONANT, VOWEL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SelectionButtonContainer } from '../selection-button-container/selection-button-container';
+import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 
 @Component({
   selector: 'app-letters-tab',
@@ -16,9 +17,9 @@ import { SelectionButtonContainer } from '../selection-button-container/selectio
 })
 export class LettersTab {
   protected readonly dataService = inject<DataService>(DataService);
+  protected readonly letterUtils = inject<LetterUtilsService>(LetterUtilsService);
   keepOrder = () => 0;
 
-  protected readonly TypeClassColorsMap = TypeClassColorsMap;
   protected readonly CONSONANT = CONSONANT;
   protected readonly VOWEL = VOWEL;
 }

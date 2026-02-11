@@ -4,10 +4,11 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { I18nService } from '../../services/i18n-service/i18n-service';
 import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
 import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
+import { LetterDetailInfo } from '../../shared/components/letter-detail-info/letter-detail-info';
 
 @Component({
   selector: 'app-quiz-card',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, LetterDetailInfo],
   templateUrl: './quiz-card.html',
   styleUrl: './quiz-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

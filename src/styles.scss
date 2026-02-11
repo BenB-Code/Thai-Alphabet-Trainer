@@ -34,8 +34,6 @@ html {
   @media (prefers-contrast: more) {
     @include theme.high-contrast-overrides('light');
   }
-
-  min-height: 100vh;
 }
 
 body {
