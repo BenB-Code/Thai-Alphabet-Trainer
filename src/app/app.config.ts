@@ -9,7 +9,7 @@ import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
-import { EN } from './shared/constants';
+import { EN, FR } from './shared/constants';
 import { provideServiceWorker } from '@angular/service-worker';
 
 export const appConfig: ApplicationConfig = {
@@ -24,7 +24,7 @@ export const appConfig: ApplicationConfig = {
         suffix: '.json',
       }),
       fallbackLang: EN,
-      lang: EN,
+      lang: navigator.language.split('-')[0] === FR ? FR : EN,
     }),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
