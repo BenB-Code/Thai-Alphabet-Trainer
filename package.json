@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:pwa:sw": "npm run build && npx http-server dist/Thai-Alphabet-Trainer/browser -p 4200",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -24,6 +25,7 @@
     "@angular/material": "~20.2.14",
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "@angular/service-worker": "^20.0.0",
     "@ngx-translate/core": "^17.0.0",
     "@ngx-translate/http-loader": "^17.0.0",
     "rxjs": "~7.8.0",
