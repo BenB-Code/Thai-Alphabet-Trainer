@@ -1,10 +1,10 @@
 :host {
   border-radius: var(--mat-sys-corner-medium);
-  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+  z-index: 2;
 
   img {
     width: 100%;
@@ -12,9 +12,13 @@
   }
 
   .configs {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+
+    button {
+      width: fit-content;
+    }
   }
 }
 

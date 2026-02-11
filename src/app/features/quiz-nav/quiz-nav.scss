@@ -56,6 +56,7 @@
 @media (max-width: 768px) {
   :host {
     display: grid;
+    margin-top: 1rem;
 
     .shadow-box {
       justify-self: center;
