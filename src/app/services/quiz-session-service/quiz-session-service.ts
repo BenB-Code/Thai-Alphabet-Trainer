@@ -25,7 +25,7 @@ export class QuizSessionService {
 
   reset() {
     this.canGoBack.set(false);
-    this.canGoForward.set(this.prepService.quizSettings().questions > 1);
+    this.canGoForward.set(this.prepService.quizSettings().questions >= 1);
     this.index.set(0);
     this.progressState.set(PAUSE);
     this.flipped.set(false);
