@@ -1,0 +1,70 @@
+{
+  "WIP": {
+    "title": "\uD83D\uDEA7\u200B En cours de développement \uD83D\uDEA7\u200B",
+    "1": "Bonjour,",
+    "2": "L'application est encore en cours de développement.",
+    "3": "Toute les fonctionnalités de base sont déjà présente et fonctionnelles : ",
+    "4": "Affichage de toute les consonnes",
+    "5": "Affichage de toute les voyelles",
+    "6": "Sélection des cartes souhaitées et configuration du quiz",
+    "7": "Démarrage, pause et reprise du quiz",
+    "8": "Résultats en fin de quiz",
+    "9": "Merci, bon apprentissage !",
+    "next": "Concernant les améliorations futures, voici une liste non exhaustive : ",
+    "a": "Rework complète de l'interface (à l'exception des cartes de lettre)",
+    "b": "Formulaire de contact, avis, note, etc",
+    "c": "Vue détaillée de chaque lettre dans une nouvelle interface",
+    "d": "Ajout des nombres, tons, 20 mots [ai máai múan]",
+    "close": "Fermer"
+  },
+  "app": {
+    "consonants": "Consonnes",
+    "vowels": "Voyelles",
+    "select-all": "Tout sélectionner",
+    "deselect-all": "Tout désélectionner",
+    "exit": "Quitter",
+    "card": "Carte"
+  },
+  "titles": {
+    "mid": "Consonnes Moyennes",
+    "high": "Consonnes Hautes",
+    "low": "Consonnes Basses",
+    "short": "Voyelles Courtes",
+    "long": "Voyelles Longues",
+    "diphthong": "Diphtongues",
+    "special": "Voyelles Spéciales"
+  },
+  "letters": {
+    "outdated": "Cette lettre n'est plus utilisée",
+    "live": "Syllable vivante",
+    "dead": "Syllable morte",
+    "sound-as-final": "Syllabe en consonne finale",
+    "never-final": "Jamais en consonne finale",
+    "medial": "Position médiane",
+    "final": "Position finale",
+    "no-final": "N'accepte pas de consonnes finales",
+    "oh-vowel": "La voyelle médiane [oh] n'a pas de forme écrite (voyelle camouflée)",
+    "no-medial-position": "N'éxiste pas en position médiane"
+  },
+  "quiz": {
+    "questions": "Nombre de questions",
+    "delay": "Temps de réponse",
+    "character-display": "Origine du caractère affiché",
+    "thai": "Thaï",
+    "latin": "Latin",
+    "mixed": "Mélangé",
+    "start": "Démarrer le Quiz",
+    "total-selected": "Cartes sélectionnées",
+    "indication": "Sélectionner au moins 1 carte pour démarrer le quiz",
+    "flip": "Cliquer pour retourner",
+    "summary": "Récapitulatif du quiz",
+    "go-back": "Retour à la sélection",
+    "explanation": "Retrouvez ici toute les cartes affichées pendant le quiz",
+    "medial": "Médiane",
+    "final": "Finale",
+    "short": "Courte",
+    "long": "Longue",
+    "position": "Position",
+    "type": "Type"
+  }
+}

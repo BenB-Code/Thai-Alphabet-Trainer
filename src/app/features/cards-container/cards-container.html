@@ -1,0 +1,11 @@
+<div class="kind-title">
+  {{ `titles.${kind()}` | translate }} ({{ list().length }})
+  <button mat-mini-fab="outlined" (click)="toggleSelection()">
+    <mat-icon>select_all</mat-icon>
+  </button>
+</div>
+<div class="cards-container">
+  @for (letter of list(); track letter) {
+  <app-card [letter]="letter" [color]="color()"><</app-card>
+  }
+</div>

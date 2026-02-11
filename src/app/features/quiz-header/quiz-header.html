@@ -1,0 +1,4 @@
+<div class="shadow-box">
+  <button matButton="tonal" (click)="exit()">{{ 'app.exit' | translate }}</button>
+  <p>{{ 'app.card' | translate }} {{ sessionService.index() + 1 }} / {{ prepService.quizSettings().questions }}</p>
+</div>

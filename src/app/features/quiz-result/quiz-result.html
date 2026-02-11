@@ -1,0 +1,18 @@
+<app-banner></app-banner>
+
+<mat-card class="sum-header shadow-box panel">
+  <p>{{ 'quiz.summary' | translate }}</p>
+  <button matButton="filled" (click)="redirect()">{{ 'quiz.go-back' | translate }}</button>
+</mat-card>
+
+<mat-card class="recap-container shadow-box panel">
+  <h3>{{ 'quiz.explanation' | translate }}</h3>
+  <div class="card-container">
+    @for (letter of quizPreparationService.quizSettings().randomized; track $index) {
+    <div class="card">
+      <span class="index">{{ $index + 1 }}</span>
+      <app-card [clickable]="false" [letter]="letter" [color]="getColor(letter)"></app-card>
+    </div>
+    }
+  </div>
+</mat-card>

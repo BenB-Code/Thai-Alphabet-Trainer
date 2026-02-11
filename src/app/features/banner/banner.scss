@@ -1,0 +1,25 @@
+:host {
+  border-radius: var(--mat-sys-corner-medium);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .configs {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    margin-bottom: 1rem;
+  }
+}

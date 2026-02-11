@@ -1,0 +1,20 @@
+<div class="card-container" [class.flipped]="sessionService.flipped()" [class]="sessionService.cardAnimation()">
+  <button (click)="sessionService.toggleFlip()" class="card-face shadow-box recto">
+    @if (letter().display === LATIN) {
+    <h1>{{ letter().character.roman }}</h1>
+    <app-letter-detail-info [letter]="letter()" />
+    } @else {
+    <h1 class="thai-char">{{ letter().character.thai }}</h1>
+    }
+    <p class="indication">{{ 'quiz.flip' | translate }}</p>
+  </button>
+
+  <button (click)="sessionService.toggleFlip()" class="card-face shadow-box verso">
+    @if (letter().display === LATIN) {
+    <h1 class="thai-char">{{ letter().character.thai }}</h1>
+    } @else {
+    <h1>{{ letter().character.roman }}</h1>
+    <app-letter-detail-info [letter]="letter()" />
+    }
+  </button>
+</div>

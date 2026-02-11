@@ -1,0 +1,16 @@
+<button
+  matButton
+  class="shadow-box"
+  [class.active]="i18nService.activeLanguage() === EN"
+  (click)="i18nService.switchLanguage(EN)"
+>
+  {{ EN | uppercase }}
+</button>
+<button
+  matButton
+  class="shadow-box"
+  [class.active]="i18nService.activeLanguage() === FR"
+  (click)="i18nService.switchLanguage(FR)"
+>
+  {{ FR | uppercase }}
+</button>

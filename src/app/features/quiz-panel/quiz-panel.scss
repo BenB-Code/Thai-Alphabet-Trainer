@@ -1,0 +1,45 @@
+:host {
+  .panel {
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 28%;
+    grid-template-areas:
+      'settings summary'
+      'actions actions';
+
+    .left-panel {
+      grid-area: settings;
+    }
+
+    .right-panel {
+      grid-area: summary;
+      line-height: normal;
+    }
+
+    .actions {
+      grid-area: actions;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .indication {
+        font-size: smaller;
+        color: var(--color-neutral);
+        font-style: italic;
+        margin: 0.5rem 0 0 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .panel {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'settings'
+        'summary'
+        'actions';
+    }
+  }
+}
