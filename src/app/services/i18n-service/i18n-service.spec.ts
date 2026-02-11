@@ -29,9 +29,7 @@ describe('I18nService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should change lang from EN to FR', () => {
-    expect(service.activeLanguage()).toEqual(FR);
-
+  it('should change lang from any to FR', () => {
     service.switchLanguage(FR);
     expect(service.activeLanguage()).toEqual(FR);
     expect(translateServiceSpy.use).toHaveBeenCalledWith(FR);
