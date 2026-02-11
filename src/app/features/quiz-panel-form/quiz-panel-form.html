@@ -18,8 +18,8 @@
     </select>
   </div>
   <div class="question-container">
-    <label for="character-display">{{ 'quiz.character-display' | translate }}</label>
-    <mat-radio-group id="character-display" name="character-display" formControlName="display">
+    <span id="character-display-label">{{ 'quiz.character-display' | translate }}</span>
+    <mat-radio-group aria-labelledby="character-display-label" name="character-display" formControlName="display">
       @for (option of QUIZ_FORM_BASE_CONF.display; track option) {
       <mat-radio-button [value]="option.value">{{ option.label | translate }}</mat-radio-button>
       }

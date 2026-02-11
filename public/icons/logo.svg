@@ -7,9 +7,9 @@
 
   <!-- THAI FLAG -->
   <rect x="0" y="0" width="512" height="85.3333" fill="#A51931"/>
-  <rect x="0" y="85.3333" width="512" height="85.3333" fill="#FFFFFF"/>
+  <rect x="0" y="85.3333" width="512" height="85.3333" fill="#F4F5F8"/>
   <rect x="0" y="170.6667" width="512" height="170.6667" fill="#2D2A4A"/>
-  <rect x="0" y="341.3334" width="512" height="85.3333" fill="#FFFFFF"/>
+  <rect x="0" y="341.3334" width="512" height="85.3333" fill="#F4F5F8"/>
   <rect x="0" y="426.6667" width="512" height="85.3333" fill="#A51931"/>
 
   <!-- FLASHCARD AGRANDIE DE 15% SUPPLÉMENTAIRE -->

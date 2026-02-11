@@ -7,11 +7,11 @@ import { NavigationService } from '../../services/navigation-service/navigation-
 import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
-import { LangContainer } from '../lang-container/lang-container';
+import { Banner } from '../banner/banner';
 
 @Component({
   selector: 'app-quiz-result',
-  imports: [MatCard, Card, TranslatePipe, MatButtonModule, LangContainer],
+  imports: [MatCard, Card, TranslatePipe, MatButtonModule, Banner],
   templateUrl: './quiz-result.html',
   styleUrl: './quiz-result.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

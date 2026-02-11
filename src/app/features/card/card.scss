@@ -44,10 +44,12 @@
       }
     }
 
-    &:hover.clickable {
-      transform: translateY(-0.15rem);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      border-color: var(--card-color);
+    @media (pointer: fine) {
+      &:hover.clickable {
+        transform: translateY(-0.15rem);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-color: var(--card-color);
+      }
     }
 
     .card-content {
