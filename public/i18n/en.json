@@ -41,9 +41,9 @@
     "never-final": "Never occur as final consonant",
     "medial": "Medial position",
     "final": "Final position",
-    "no-final": "Don't take final consonants",
+    "no-final": "Doesn't take final consonants",
     "oh-vowel": "Short medial [oh] vowel doesn't have a written form (camouflaged vowel)",
-    "no-medial-position": "Don't exist in medial position"
+    "no-medial-position": "Doesn't exist in medial position"
   },
   "quiz": {
     "questions": "Number of questions",
