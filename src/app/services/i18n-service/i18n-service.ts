@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { EN } from '../../shared/constants';
+import { EN, FR } from '../../shared/constants';
 import { Languages } from '../../shared/models';
 
 @Injectable({
@@ -9,12 +9,17 @@ import { Languages } from '../../shared/models';
 export class I18nService {
   private readonly translateService = inject<TranslateService>(TranslateService);
 
-  private readonly _activeLanguage = signal<Languages>(EN);
+  private readonly _activeLanguage = signal<Languages>(this.detectLanguage());
 
   activeLanguage = this._activeLanguage.asReadonly();
 
   switchLanguage(language: Languages) {
     this._activeLanguage.set(language);
     this.translateService.use(language);
+  }
+
+  private detectLanguage(): Languages {
+    const browserLang = navigator.language.split('-')[0];
+    return browserLang === FR ? FR : EN;
   }
 }

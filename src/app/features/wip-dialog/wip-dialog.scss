@@ -1,0 +1,30 @@
+:host {
+  .centered {
+    text-align: center;
+  }
+
+  .intro {
+    margin: 0 0 2rem 0;
+    font-size: 1.2rem;
+    width: 85%;
+    justify-self: center;
+
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  h1 {
+    font-weight: bold;
+    margin: 1rem;
+  }
+
+  hr {
+    width: 50%;
+    margin: 1.5rem auto;
+  }
+
+  .bye {
+    margin-top: 2rem;
+  }
+}
