@@ -33,7 +33,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     transliteration: { initial: 'k', final: 'k' },
     exampleWord: {
       roman: 'kon',
-      thai: 'คน',
+      thai: 'ตน',
       en: 'human',
       fr: 'humain',
     },

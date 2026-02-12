@@ -39,14 +39,17 @@
     <h1 class="big-letter noto-serif-thai-normal">{{ letter().character.thai }}</h1>
     <p class="name">{{ letter().character.roman }} <span>{{ letter().exampleWord.roman }}</span></p>
     @let translit = transliteration(); @if (translit) {
-    <p
-      class="translit"
-      [matTooltip]="'letters.sound-as-final' | translate"
-      matTooltipShowDelay="300"
-      matTooltipHideDelay="100"
-      matTooltipPosition="above"
-    >
-      @if (translit.final) { {{ translit.initial }} } @else {
+    <div class="translit">
+      @if (translit.final) {
+      <p
+        [matTooltip]="'letters.sound-as-final' | translate"
+        matTooltipShowDelay="300"
+        matTooltipHideDelay="100"
+        matTooltipPosition="above"
+      >
+        {{ translit.initial }}
+      </p>
+      } @else {
       <mat-icon
         class="material-symbols-outlined"
         [matTooltip]="'letters.never-final' | translate"
@@ -56,7 +59,7 @@
         >block
       </mat-icon>
       }
-    </p>
+    </div>
     } @let vPos = vowelPosition(); @if (vPos) {
     <div class="vowel-pos">
       @if (vPos.includes(MEDIAL)) {

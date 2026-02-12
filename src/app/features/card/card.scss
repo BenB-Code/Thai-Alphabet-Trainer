@@ -90,7 +90,6 @@
         font-size: 1rem;
         font-weight: 500;
         color: var(--card-color);
-        white-space: nowrap;
 
         span {
           font-weight: 300;
@@ -126,11 +125,14 @@
         align-items: center;
         color: var(--color-neutral-50);
 
+        p {
+          margin: 0;
+        }
+
         mat-icon {
           height: 1rem;
           width: 1rem;
           font-size: 1rem;
-          margin-left: 0.25rem;
         }
       }
 

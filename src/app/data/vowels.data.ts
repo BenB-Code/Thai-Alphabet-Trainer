@@ -36,23 +36,23 @@ export const THAI_VOWELS: ThaiVowel[] = [
       fr: 'légume',
     },
   },
-  {
-    id: 40,
-    kind: VOWEL,
-    type: SHORT,
-    position: [MEDIAL],
-    live: false,
-    character: {
-      thai: '◌รร◌',
-      roman: 'a',
-    },
-    exampleWord: {
-      roman: 'gangrai',
-      thai: 'กรรไกร',
-      en: 'scissors',
-      fr: 'ciseaux',
-    },
-  },
+  // {
+  //   id: 40,
+  //   kind: VOWEL,
+  //   type: SHORT,
+  //   position: [MEDIAL],
+  //   live: false,
+  //   character: {
+  //     thai: '◌รร◌',
+  //     roman: 'a',
+  //   },
+  //   exampleWord: {
+  //     roman: 'gangrai',
+  //     thai: 'กรรไกร',
+  //     en: 'scissors',
+  //     fr: 'ciseaux',
+  //   },
+  // },
   {
     id: 3,
     kind: VOWEL,
@@ -577,7 +577,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     live: false,
     character: {
       thai: 'ไ◌',
-      roman: 'ai',
+      roman: 'ai maái malaai',
     },
     exampleWord: {
       roman: 'bpai',
@@ -594,7 +594,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     live: false,
     character: {
       thai: 'ใ◌',
-      roman: 'ai',
+      roman: 'ai maái múan',
     },
     exampleWord: {
       roman: 'jai',
@@ -619,6 +619,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: 'age',
       fr: 'âge',
     },
+    infos: 'Variation',
   },
   {
     id: 36,

@@ -3,7 +3,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
   z-index: 2;
 
   img {
@@ -19,11 +18,5 @@
     button {
       width: fit-content;
     }
-  }
-}
-
-@media (max-width: 768px) {
-  :host {
-    margin-bottom: 1rem;
   }
 }
