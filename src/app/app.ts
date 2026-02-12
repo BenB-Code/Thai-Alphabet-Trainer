@@ -18,10 +18,6 @@ export class App implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(WipDialog);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(WipDialog);
   }
 }
