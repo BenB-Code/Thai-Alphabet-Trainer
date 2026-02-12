@@ -16,26 +16,37 @@ export class QuizPreparationService {
   isValid = signal<boolean>(false);
 
   generateQuizList() {
-    const quantity = this.quizSettings().questions;
-    const selected = this.quizSettings().selected;
-    const newList: ThaiCharacter[] = [];
+    const { questions, selected, display } = this.quizSettings();
+    const base = Math.floor(questions / selected.length);
+    const remainder = questions % selected.length;
+    const shuffledIndexes = this.shuffled([...selected.keys()]);
 
-    for (let i = 0; i < quantity; i++) {
-      const randomIndex = Math.floor(Math.random() * selected.length);
-      const letter = {
-        ...selected[randomIndex],
-        display: this.generateDisplayType(),
-      };
-      newList.push(letter);
+    const newList: ThaiCharacter[] = [];
+    for (let i = 0; i < selected.length; i++) {
+      const count = base + (shuffledIndexes.indexOf(i) < remainder ? 1 : 0);
+      const displays = this.distributeDisplayTypes(count, display);
+      for (let j = 0; j < count; j++) {
+        newList.push({ ...selected[i], display: displays[j] });
+      }
     }
 
-    this.quizSettings.update(setting => ({ ...setting, randomized: newList }));
+    this.quizSettings.update(s => ({ ...s, randomized: this.shuffled(newList) }));
   }
 
-  private generateDisplayType() {
-    if (this.quizSettings()?.display === MIXED) {
-      return Math.random() < 0.5 ? LATIN : THAI;
+  private distributeDisplayTypes(count: number, display: string) {
+    if (display !== MIXED) {
+      return new Array(count).fill(display);
     }
-    return this.quizSettings()?.display;
+    const half = Math.floor(count / 2);
+    const types = [...new Array(half).fill(LATIN), ...new Array(count - half).fill(THAI)];
+    return this.shuffled(types);
+  }
+
+  private shuffled<T>(array: T[]): T[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 }
