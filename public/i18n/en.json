@@ -43,7 +43,8 @@
     "final": "Final position",
     "no-final": "Doesn't take final consonants",
     "oh-vowel": "Short medial [oh] vowel doesn't have a written form (camouflaged vowel)",
-    "no-medial-position": "Doesn't exist in medial position"
+    "no-medial-position": "Doesn't exist in medial position",
+    "variation": "Variation"
   },
   "quiz": {
     "questions": "Number of questions",
