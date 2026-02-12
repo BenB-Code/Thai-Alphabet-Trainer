@@ -17,16 +17,5 @@
         "files": ["/**/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)", "/i18n/*.json"]
       }
     }
-  ],
-  "dataGroups": [
-    {
-      "name": "google-fonts",
-      "urls": ["https://fonts.googleapis.com/**", "https://fonts.gstatic.com/**"],
-      "cacheConfig": {
-        "maxSize": 20,
-        "maxAge": "365d",
-        "strategy": "performance"
-      }
-    }
   ]
 }

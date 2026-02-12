@@ -44,7 +44,8 @@
     "final": "Position finale",
     "no-final": "N'accepte pas de consonnes finales",
     "oh-vowel": "La voyelle médiane [oh] n'a pas de forme écrite (voyelle camouflée)",
-    "no-medial-position": "N'éxiste pas en position médiane"
+    "no-medial-position": "N'éxiste pas en position médiane",
+    "variation": "Variation"
   },
   "quiz": {
     "questions": "Nombre de questions",

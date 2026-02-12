@@ -619,7 +619,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: 'age',
       fr: 'âge',
     },
-    infos: 'Variation',
+    infos: 'letters.variation',
   },
   {
     id: 36,
@@ -672,7 +672,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
       en: 'to touch',
       fr: 'toucher',
     },
-    infos: 'letters.no-final',
+    infos: 'letters.variation',
   },
   {
     id: 39,
