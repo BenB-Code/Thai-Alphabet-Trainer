@@ -25,7 +25,6 @@ export const appConfig: ApplicationConfig = {
         suffix: '.json',
       }),
       fallbackLang: EN,
-      defaultLanguage: EN,
     }),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
