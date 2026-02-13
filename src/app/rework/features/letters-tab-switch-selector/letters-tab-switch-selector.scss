@@ -1,0 +1,19 @@
+:host {
+  position: sticky;
+  top: 3.5rem;
+  border-bottom-width: 1px;
+  background-color: hsl(var(--background) / 0.8);
+  z-index: 30;
+  padding: 0.5rem 1rem;
+  display: flex;
+
+  .count {
+    font-weight: 400;
+  }
+
+  ::ng-deep {
+    app-switch-selector {
+      padding: 0.25rem;
+    }
+  }
+}

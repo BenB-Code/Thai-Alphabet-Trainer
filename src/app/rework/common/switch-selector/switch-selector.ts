@@ -1,14 +1,16 @@
-import { ChangeDetectionStrategy, Component, input, output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output, signal, TemplateRef } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-switch-selector',
-  imports: [],
+  imports: [NgTemplateOutlet],
   templateUrl: './switch-selector.html',
   styleUrl: './switch-selector.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SwitchSelector {
   dark = input(false);
+  labelTemplate = input<TemplateRef<unknown>>();
   list = input<
     {
       label: {

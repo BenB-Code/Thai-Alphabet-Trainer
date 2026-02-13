@@ -1,4 +1,4 @@
-import { DOCUMENT, effect, inject, Injectable, signal } from '@angular/core';
+import { computed, DOCUMENT, effect, inject, Injectable, signal } from '@angular/core';
 import { DARK, KANIT, LIGHT, MOON, SARABUN, SRIRACHA, SUN } from '../../shared/constants';
 import { FontsType, ThemeType } from '../../shared/types';
 
@@ -9,6 +9,7 @@ export class ThemeService {
   private readonly document = inject(DOCUMENT);
 
   theme = signal<{ color: ThemeType; icon: string }>({ color: LIGHT, icon: `icons/${MOON}.svg` });
+  isDarkThemeActive = computed(() => this.theme().color === DARK);
   font = signal<FontsType>(SARABUN);
 
   constructor() {

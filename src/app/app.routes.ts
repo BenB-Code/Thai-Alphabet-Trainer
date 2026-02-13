@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { Letters } from './features/letters/letters';
 import { inject } from '@angular/core';
 import { QuizPreparationService } from './services/quiz-preparation-service/quiz-preparation-service';
 import { FINISHED } from './shared/constants';
 import { QuizSessionService } from './services/quiz-session-service/quiz-session-service';
+import { Letters } from './rework/features/letters/letters';
 
 export const routes: Routes = [
   {

@@ -1,0 +1,11 @@
+<ng-template #customLabel let-item>
+  {{ item.label.text | translate }}
+  <span class="count">{{ item.count }}</span>
+</ng-template>
+
+<app-switch-selector
+  [list]="tabsList"
+  [dark]="themeService.isDarkThemeActive()"
+  (activeItem)="selectActive($event)"
+  [labelTemplate]="customLabel"
+/>

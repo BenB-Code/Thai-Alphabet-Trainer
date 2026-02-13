@@ -8,9 +8,11 @@
 >
   @if (item.icon.display) {
   <img class="icon" [src]="item.icon.path" [alt]="item.icon.alt" />
-  } @if (item.label.display) {
+  } @if (item.label.display) { @if (labelTemplate()) {
+  <ng-container *ngTemplateOutlet="labelTemplate(); context: { $implicit: item }" />
+  } @else {
   <span>{{ item.label.text }}</span>
-  }
+  } }
   <ng-content />
 </button>
 }

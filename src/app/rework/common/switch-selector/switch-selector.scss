@@ -16,6 +16,12 @@
     cursor: pointer;
     text-transform: none;
 
+    @media (pointer: fine) {
+      &:hover {
+        color: hsl(var(--foreground) / 0.9);
+      }
+    }
+
     &.active {
       background-color: hsl(var(--background) / 1);
       color: hsl(var(--foreground) / 1);

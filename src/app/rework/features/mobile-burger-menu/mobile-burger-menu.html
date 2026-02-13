@@ -1,6 +1,6 @@
-<app-burger-menu [dark]="themeService.theme().color === DARK" [right]="true">
+<app-burger-menu [dark]="themeService.isDarkThemeActive()" [right]="true">
   <app-button
-    [dark]="themeService.theme().color === DARK"
+    [dark]="themeService.isDarkThemeActive()"
     [icon]="'icons/globe.svg'"
     [uppercase]="true"
     [alt]="i18nService.activeLanguage()"
@@ -8,7 +8,7 @@
     [text]="i18nService.activeLanguage()"
   />
   <app-button
-    [dark]="themeService.theme().color === DARK"
+    [dark]="themeService.isDarkThemeActive()"
     [icon]="themeService.theme().icon"
     [alt]="themeService.theme().color"
     [text]="`app.theme` | translate"
@@ -18,7 +18,7 @@
   <app-font-switch-selector></app-font-switch-selector>
   <hr />
   <app-button
-    [dark]="themeService.theme().color === DARK"
+    [dark]="themeService.isDarkThemeActive()"
     [icon]="'icons/mail.svg'"
     [alt]="'app.contact' | translate"
     [text]="'app.contact' | translate"

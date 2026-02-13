@@ -4,7 +4,6 @@ import { Header } from '../../common/header/header';
 import { I18nService } from '../../../services/i18n-service/i18n-service';
 import { ThemeService } from '../../services/theme-service/theme-service';
 import { TranslatePipe } from '@ngx-translate/core';
-import { DARK } from '../../shared/constants';
 import { FontSwitchSelector } from '../font-switch-selector/font-switch-selector';
 import { MobileBurgerMenu } from '../mobile-burger-menu/mobile-burger-menu';
 import { ContactService } from '../../services/contact.service/contact.service';
@@ -23,6 +22,4 @@ export class ThaiHeader {
   protected readonly i18nService = inject(I18nService);
   protected readonly contactService = inject(ContactService);
   protected readonly themeService = inject(ThemeService);
-
-  protected readonly DARK = DARK;
 }
