@@ -8,7 +8,7 @@ import { ThemeType } from '../../shared/types';
 export class ThemeService {
   private readonly document = inject(DOCUMENT);
 
-  theme = signal<{ color: ThemeType; icon: string }>({ color: LIGHT, icon: `icons/${SUN}.svg` });
+  theme = signal<{ color: ThemeType; icon: string }>({ color: LIGHT, icon: `icons/${MOON}.svg` });
 
   constructor() {
     effect(() => {
@@ -22,7 +22,7 @@ export class ThemeService {
 
   toggleTheme() {
     this.theme.update(theme =>
-      theme.color === LIGHT ? { color: DARK, icon: `icons/${MOON}.svg` } : { color: LIGHT, icon: `icons/${SUN}.svg` }
+      theme.color === LIGHT ? { color: DARK, icon: `icons/${SUN}.svg` } : { color: LIGHT, icon: `icons/${MOON}.svg` }
     );
   }
 }

@@ -24,7 +24,9 @@
     "deselect-all": "Tout désélectionner",
     "exit": "Quitter",
     "card": "Carte",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu",
+    "theme": "Thème"
   },
   "titles": {
     "mid": "Consonnes Moyennes",

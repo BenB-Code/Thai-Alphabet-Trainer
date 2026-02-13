@@ -1,0 +1,25 @@
+<app-burger-menu [dark]="themeService.theme().color === DARK" [right]="true">
+  <app-button
+    [dark]="themeService.theme().color === DARK"
+    [icon]="'icons/globe.svg'"
+    [uppercase]="true"
+    [alt]="i18nService.activeLanguage()"
+    (clicked)="i18nService.toggleLanguage()"
+    [text]="i18nService.activeLanguage()"
+  />
+  <app-button
+    [dark]="themeService.theme().color === DARK"
+    [icon]="themeService.theme().icon"
+    [alt]="themeService.theme().color"
+    [text]="`app.theme` | translate"
+    (clicked)="themeService.toggleTheme()"
+  />
+  <hr />
+  <app-button
+    [dark]="themeService.theme().color === DARK"
+    [icon]="'icons/mail.svg'"
+    [alt]="'app.contact' | translate"
+    [text]="'app.contact' | translate"
+    (clicked)="contactService.sendMail()"
+  />
+</app-burger-menu>

@@ -1,0 +1,11 @@
+<app-button
+  [dark]="dark()"
+  [icon]="'icons/menu.svg'"
+  [alt]="'app.menu' | translate"
+  (clicked)="toggleMenu()"
+  [class.is-active]="isBurgerOpen()"
+  class="burger-btn backdrop-blur"
+/>
+<div class="burger backdrop-blur" [class.right]="right()" [class.burger-visible]="isBurgerOpen()">
+  <ng-content />
+</div>

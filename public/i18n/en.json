@@ -23,7 +23,9 @@
     "deselect-all": "Deselect all",
     "exit": "Exit",
     "card": "Card",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu",
+    "theme": "Theme"
   },
   "titles": {
     "mid": "Mid Class Consonants",
