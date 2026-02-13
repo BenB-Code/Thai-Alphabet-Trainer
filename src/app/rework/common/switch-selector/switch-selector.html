@@ -4,7 +4,7 @@
   [class.dark]="dark()"
   [class.right-icon]="item.icon.right"
   [class.active]="item.id === activeIndex()"
-  [class]="'transition'+ ' ' + item.class"
+  [class]="item.class"
 >
   @if (item.icon.display) {
   <img class="icon" [src]="item.icon.path" [alt]="item.icon.alt" />

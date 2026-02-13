@@ -7,6 +7,7 @@
   align-items: center;
 
   button {
+    transition: none;
     color: hsl(var(--muted-foreground) / 1);
     line-height: 1;
     font-size: 1rem;
