@@ -12,20 +12,22 @@ button {
   line-height: 1rem;
   font-weight: 500;
 
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-duration: 0.15s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
   &.uppercase {
     text-transform: uppercase;
   }
 
-  &:not(.dark):hover {
-    color: hsl(var(--accent-foreground) / 1);
-    background-color: hsl(var(--accent) / 1);
+  &.right-icon {
+    flex-direction: row-reverse;
+  }
 
-    img {
-      filter: invert(100%);
+  @media (pointer: fine) {
+    &:not(.dark):hover {
+      color: hsl(var(--accent-foreground) / 1);
+      background-color: hsl(var(--accent) / 1);
+
+      img {
+        filter: invert(100%);
+      }
     }
   }
 
@@ -36,8 +38,10 @@ button {
       filter: invert(100%);
     }
 
-    &:hover {
-      background-color: hsl(var(--accent) / 1);
+    @media (pointer: fine) {
+      &:hover {
+        background-color: hsl(var(--accent) / 1);
+      }
     }
   }
 }

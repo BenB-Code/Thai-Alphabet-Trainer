@@ -15,4 +15,5 @@ export class Button {
   alt = input<string>('');
   uppercase = input(false);
   dark = input(false);
+  rightIcon = input(false);
 }
