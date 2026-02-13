@@ -5,6 +5,11 @@
   border: 0 solid #e5e7eb;
 }
 
+* {
+  border-color: hsl(var(--border) / 1);
+  text-wrap: balance;
+}
+
 html,
 :host {
   -webkit-tap-highlight-color: transparent;
@@ -14,6 +19,7 @@ html,
   font-feature-settings: normal;
   font-variation-settings: normal;
   font-family:
+    roboto,
     ui-sans-serif,
     system-ui,
     sans-serif,
@@ -32,6 +38,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   font-family:
+    roboto,
     ui-sans-serif,
     system-ui,
     sans-serif,
@@ -40,9 +47,34 @@ body {
     Segoe UI Symbol,
     Noto Color Emoji;
 
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: hsl(var(--background) / 1);
+  color: hsl(var(--foreground) / 1);
 
   line-height: inherit;
   margin: 0;
+}
+
+.backdrop-blur {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+button {
+  -webkit-appearance: button;
+  background-color: #0000;
+  background-image: none;
+}
+
+.icon {
+  flex-shrink: 0;
+  height: 1rem;
+  width: 1rem;
+  pointer-events: none;
+  vertical-align: middle;
+  display: block;
 }
