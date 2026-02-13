@@ -23,7 +23,8 @@
     "select-all": "Tout sélectionner",
     "deselect-all": "Tout désélectionner",
     "exit": "Quitter",
-    "card": "Carte"
+    "card": "Carte",
+    "contact": "Contact"
   },
   "titles": {
     "mid": "Consonnes Moyennes",

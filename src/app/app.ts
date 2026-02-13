@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterOutlet } from '@angular/router';
+import { ThaiHeader } from './rework/features/thai-header/thai-header';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  imports: [MatButtonModule, RouterOutlet],
+  imports: [MatButtonModule, RouterOutlet, ThaiHeader],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
   // readonly dialog = inject(MatDialog);
