@@ -1,0 +1,23 @@
+:host {
+  display: grid;
+
+  .burger-container {
+    display: none;
+  }
+
+  .inline-items {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .inline-items {
+      display: none;
+    }
+
+    .burger-container {
+      display: grid;
+    }
+  }
+}

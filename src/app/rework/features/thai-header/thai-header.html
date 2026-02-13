@@ -1,22 +1,30 @@
 <app-header class="backdrop-blur" [title]="title" [subtitle]="subtitle">
-  <app-button
-    [dark]="themeService.theme().color === DARK"
-    [icon]="'icons/globe.svg'"
-    [uppercase]="true"
-    [alt]="i18nService.activeLanguage()"
-    (clicked)="i18nService.toggleLanguage()"
-    [text]="i18nService.activeLanguage()"
-  />
-  <app-button
-    [dark]="themeService.theme().color === DARK"
-    [icon]="themeService.theme().icon"
-    [alt]="themeService.theme().color"
-    (clicked)="themeService.toggleTheme()"
-  />
-  <app-button
-    [dark]="themeService.theme().color === DARK"
-    [icon]="'icons/mail.svg'"
-    [alt]="'app.contact' | translate"
-    (clicked)="sendMail()"
-  />
+  <div class="burger-container transition">
+    <app-mobile-burger-menu></app-mobile-burger-menu>
+  </div>
+  <div class="inline-items">
+    <app-button
+      [dark]="themeService.theme().color === DARK"
+      [icon]="'icons/globe.svg'"
+      [uppercase]="true"
+      [alt]="i18nService.activeLanguage()"
+      (clicked)="i18nService.toggleLanguage()"
+      [text]="i18nService.activeLanguage()"
+    />
+
+    <app-font-switch-selector></app-font-switch-selector>
+
+    <app-button
+      [dark]="themeService.theme().color === DARK"
+      [icon]="themeService.theme().icon"
+      [alt]="themeService.theme().color"
+      (clicked)="themeService.toggleTheme()"
+    />
+    <app-button
+      [dark]="themeService.theme().color === DARK"
+      [icon]="'icons/mail.svg'"
+      [alt]="'app.contact' | translate"
+      (clicked)="contactService.sendMail()"
+    />
+  </div>
 </app-header>

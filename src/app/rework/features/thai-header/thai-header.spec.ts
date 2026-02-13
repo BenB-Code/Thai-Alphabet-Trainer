@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ThaiHeader } from './thai-header';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('ThaiHeader', () => {
   let component: ThaiHeader;
@@ -9,7 +10,7 @@ describe('ThaiHeader', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ThaiHeader],
+      imports: [ThaiHeader, TranslateModule.forRoot()],
       providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
