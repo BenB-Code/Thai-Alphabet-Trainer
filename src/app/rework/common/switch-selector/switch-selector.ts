@@ -22,6 +22,7 @@ export class SwitchSelector {
         right: boolean;
       };
       id: number;
+      class: string;
     }[]
   >([
     {
@@ -36,6 +37,7 @@ export class SwitchSelector {
         right: false,
       },
       id: 0,
+      class: '',
     },
   ]);
 

@@ -22,12 +22,45 @@
     U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
 @font-face {
-  font-family: 'Noto Serif Thai';
+  font-family: 'sarabun';
   font-style: normal;
-  font-weight: 100 900;
-  font-stretch: 100%;
+  font-weight: 500;
   font-display: swap;
-  src: url('/fonts/noto-serif-thai-variable.woff2') format('woff2');
+  src: url('/fonts/Sarabun-Medium.ttf') format('truetype');
   unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+
+.sarabun {
+  font-family: 'sarabun', sans-serif;
+}
+
+@font-face {
+  font-family: 'kanit';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Kanit-Medium.ttf') format('truetype');
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+
+.kanit {
+  font-family: 'kanit', sans-serif;
+}
+
+@font-face {
+  font-family: 'sriracha';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Sriracha-Regular.ttf') format('truetype');
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+
+.sriracha {
+  font-family: 'sriracha', sans-serif;
 }
