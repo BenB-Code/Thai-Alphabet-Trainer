@@ -19,7 +19,6 @@
   --input: 220 15% 88%;
   --ring: 220 70% 50%;
   --radius: 0.75rem;
-  --thai-font: 'sarabun';
 
   /* Thai card class colors — vibrant */
   --thai-mid: 217 90% 48%;
@@ -82,7 +81,6 @@
   --border: 220 15% 20%;
   --input: 220 15% 20%;
   --ring: 220 70% 55%;
-  --thai-font: 'sarabun';
 
   --thai-mid: 217 85% 62%;
   --thai-mid-bg: 217 55% 14%;
@@ -121,4 +119,16 @@
   --chart-3: 30 80% 55%;
   --chart-4: 280 65% 60%;
   --chart-5: 340 75% 55%;
+}
+
+.sarabun {
+  --thai-font: 'sarabun';
+}
+
+.sriracha {
+  --thai-font: 'sriracha';
+}
+
+.kanit {
+  --thai-font: 'kanit';
 }
