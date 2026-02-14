@@ -1,0 +1,65 @@
+@let totalCount = stateService.totalCount(); @let totalQuestions = quizPreparationService.quizSettings().questions;
+
+<div class="left-section">
+  <span class="count" [class.highlighted]="totalCount > 0">{{ totalCount }}</span>
+  <span class="selected">
+    @if (totalCount > 1) { {{ 'quiz.selecteds' | translate }} } @else { {{ 'quiz.selected' | translate }} }</span
+  >
+  <span
+    >{{ quizPreparationService.quizSettings().delay }}@if (quizPreparationService.quizSettings().delay) { s } @else {
+    <img src="icons/time-off.svg" alt="off" class="timer" />
+    }
+  </span>
+  <span class="questions"
+    >{{ quizPreparationService.quizSettings().questions }} @if (totalQuestions > 1) { {{ 'quiz.questions' | translate }}
+    } @else { {{ 'quiz.question' | translate }} }</span
+  >
+  <span class="mobile-question">
+    {{ quizPreparationService.quizSettings().questions }} {{ 'quiz.abbrev-questions' | translate }}
+  </span>
+</div>
+<div class="right-section">
+  <app-button
+    [dark]="themeService.isDarkThemeActive()"
+    [icon]="'icons/settings.svg'"
+    [text]="'app.settings' | translate "
+    (clicked)="toggleOpenEvent()"
+    class="toggle-btn"
+  >
+    @if (isOpen()) {
+    <img class="panel-arrow" [class.dark]="themeService.isDarkThemeActive()" src="icons/chevron-down.svg" alt="open" />
+    } @else {
+    <img class="panel-arrow" [class.dark]="themeService.isDarkThemeActive()" src="icons/chevron-up.svg" alt="open" />
+    }
+  </app-button>
+  <app-button
+    [dark]="themeService.isDarkThemeActive()"
+    [icon]="'icons/settings.svg'"
+    (clicked)="toggleOpenEvent()"
+    class="mobile-toggle-btn"
+  >
+    @if (isOpen()) {
+    <img class="panel-arrow" [class.dark]="themeService.isDarkThemeActive()" src="icons/chevron-down.svg" alt="open" />
+    } @else {
+    <img class="panel-arrow" [class.dark]="themeService.isDarkThemeActive()" src="icons/chevron-up.svg" alt="open" />
+    }
+  </app-button>
+
+  <app-button
+    class="start-btn"
+    [dark]="themeService.isDarkThemeActive()"
+    [icon]="'icons/play.svg'"
+    [text]="'quiz.start' | translate "
+    [color]="'--primary'"
+    [inverted]="true"
+    [disabled]="false"
+  ></app-button>
+  <app-button
+    class="mobile-start-btn"
+    [dark]="themeService.isDarkThemeActive()"
+    [icon]="'icons/play.svg'"
+    [color]="'--primary'"
+    [inverted]="true"
+    [disabled]="false"
+  ></app-button>
+</div>
