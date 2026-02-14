@@ -26,7 +26,8 @@
     "card": "Carte",
     "contact": "Contact",
     "menu": "Menu",
-    "theme": "Thème"
+    "theme": "Thème",
+    "settings": "Options"
   },
   "titles": {
     "mid": "Consonnes Moyennes",
@@ -51,13 +52,17 @@
     "variation": "Variation"
   },
   "quiz": {
-    "questions": "Nombre de questions",
+    "selected": "lettre",
+    "selecteds": "lettres",
+    "question": "question",
+    "questions": "questions",
+    "questions-number": "Nombre de questions",
     "delay": "Temps de réponse",
     "character-display": "Origine du caractère affiché",
     "thai": "Thaï",
     "latin": "Latin",
     "mixed": "Mélangé",
-    "start": "Démarrer le Quiz",
+    "start": "Lancer le Quiz",
     "total-selected": "Cartes sélectionnées",
     "indication": "Sélectionner au moins 1 carte pour démarrer le quiz",
     "flip": "Cliquer pour retourner",

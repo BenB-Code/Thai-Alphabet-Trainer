@@ -25,7 +25,8 @@
     "card": "Card",
     "contact": "Contact",
     "menu": "Menu",
-    "theme": "Theme"
+    "theme": "Theme",
+    "settings": "Settings"
   },
   "titles": {
     "mid": "Mid Class Consonants",
@@ -50,7 +51,11 @@
     "variation": "Variation"
   },
   "quiz": {
-    "questions": "Number of questions",
+    "selected": "selected",
+    "selecteds": "selected",
+    "question": "question",
+    "questions": "questions",
+    "questions-number": "Number of questions",
     "delay": "Delay to answer",
     "character-display": "Question character display",
     "thai": "Thai",

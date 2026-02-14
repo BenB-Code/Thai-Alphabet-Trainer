@@ -6,7 +6,7 @@ export const QUIZ_FORM_BASE_CONF = {
     min: 1,
     max: 500,
   },
-  delay: [2, 3, 5, 10],
+  delay: [2, 3, 5, 10, 0],
   display: [
     {
       value: LATIN as DisplayType,
