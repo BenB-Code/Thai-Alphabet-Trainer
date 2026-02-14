@@ -1,54 +1,93 @@
 @let totalCount = stateService.totalCount(); @let totalQuestions = quizPreparationService.quizSettings().questions;
 
-<app-extension-panel>
+<app-extension-panel [open]="openPanel()" class="backdrop-blur">
   <div class="bar" ngProjectAs="bar">
     <div class="left-section">
       <span class="count" [class.highlighted]="totalCount > 0">{{ totalCount }}</span>
       <span class="selected">
         @if (totalCount > 1) { {{ 'quiz.selecteds' | translate }} } @else { {{ 'quiz.selected' | translate }} }</span
       >
-      <span class="count"
-        >{{ quizPreparationService.quizSettings().delay }}@if (quizPreparationService.quizSettings().delay) { s }</span
-      >
-      <span class="count"
+      <span
+        >{{ quizPreparationService.quizSettings().delay }}@if (quizPreparationService.quizSettings().delay) { s } @else
+        {
+        <img src="icons/time-off.svg" alt="off" class="timer" />
+        }
+      </span>
+
+      <span class="questions"
         >{{ quizPreparationService.quizSettings().questions }} @if (totalQuestions > 1) { {{ 'quiz.questions' |
         translate }} } @else { {{ 'quiz.question' | translate }} }</span
       >
-    </div>
-    <div class="right-section">
-      <app-button
-        [dark]="themeService.isDarkThemeActive()"
-        [icon]="'icons/settings.svg'"
-        [text]="'app.settings' | translate "
-      ></app-button>
-      <app-button
-        [dark]="themeService.isDarkThemeActive()"
-        [icon]="'icons/play.svg'"
-        [text]="'quiz.start' | translate "
-      ></app-button>
-    </div>
-  </div>
 
-  <div class="panel" ngProjectAs="panel">
-    <div class="left-section">
-      <span class="count" [class.highlighted]="totalCount > 0">{{ totalCount }}</span>
-      <span class="selected">{{ 'quiz.selected' | translate }}</span>
-      <span class="count">{{ quizPreparationService.quizSettings().delay }}@if (totalCount > 0) { s }</span>
-      <span class="count"
-        >{{ quizPreparationService.quizSettings().questions }} {{ 'quiz.questions' | translate }}</span
-      >
+      <span class="mobile-question">
+        {{ quizPreparationService.quizSettings().questions }} {{ 'quiz.abbrev-questions' | translate }}
+      </span>
     </div>
     <div class="right-section">
       <app-button
         [dark]="themeService.isDarkThemeActive()"
         [icon]="'icons/settings.svg'"
         [text]="'app.settings' | translate "
-      ></app-button>
+        (clicked)="toggleOpen()"
+        class="toggle-btn"
+      >
+        @if (openPanel()) {
+        <img
+          class="panel-arrow"
+          [class.dark]="themeService.isDarkThemeActive()"
+          src="icons/chevron-down.svg"
+          alt="open"
+        />
+        } @else {
+        <img
+          class="panel-arrow"
+          [class.dark]="themeService.isDarkThemeActive()"
+          src="icons/chevron-up.svg"
+          alt="open"
+        />
+        }
+      </app-button>
       <app-button
+        [dark]="themeService.isDarkThemeActive()"
+        [icon]="'icons/settings.svg'"
+        (clicked)="toggleOpen()"
+        class="mobile-toggle-btn"
+      >
+        @if (openPanel()) {
+        <img
+          class="panel-arrow"
+          [class.dark]="themeService.isDarkThemeActive()"
+          src="icons/chevron-down.svg"
+          alt="open"
+        />
+        } @else {
+        <img
+          class="panel-arrow"
+          [class.dark]="themeService.isDarkThemeActive()"
+          src="icons/chevron-up.svg"
+          alt="open"
+        />
+        }
+      </app-button>
+
+      <app-button
+        class="start-btn"
         [dark]="themeService.isDarkThemeActive()"
         [icon]="'icons/play.svg'"
         [text]="'quiz.start' | translate "
+        [color]="'--primary'"
+        [inverted]="true"
+        [disabled]="false"
+      ></app-button>
+      <app-button
+        class="mobile-start-btn"
+        [dark]="themeService.isDarkThemeActive()"
+        [icon]="'icons/play.svg'"
+        [color]="'--primary'"
+        [inverted]="true"
+        [disabled]="false"
       ></app-button>
     </div>
   </div>
+  <div class="panel" ngProjectAs="panel"></div>
 </app-extension-panel>

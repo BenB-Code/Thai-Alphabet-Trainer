@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { ExtensionPanel } from '../../common/extension-panel/extension-panel';
 import { Button } from '../../common/button/button';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -17,4 +17,10 @@ export class QuizSettingsPanel {
   protected readonly quizPreparationService = inject(QuizPreparationService);
   protected readonly stateService = inject(StateService);
   protected readonly themeService = inject(ThemeService);
+
+  openPanel = signal(false);
+
+  toggleOpen() {
+    this.openPanel.update(open => !open);
+  }
 }

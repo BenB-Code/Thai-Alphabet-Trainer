@@ -55,6 +55,7 @@
     "selecteds": "selected",
     "question": "question",
     "questions": "questions",
+    "abbrev-questions": "ques.",
     "questions-number": "Number of questions",
     "delay": "Delay to answer",
     "character-display": "Question character display",
