@@ -19,7 +19,7 @@ html,
   font-feature-settings: normal;
   font-variation-settings: normal;
   font-family:
-    roboto,
+    Inter,
     ui-sans-serif,
     system-ui,
     sans-serif,
@@ -37,21 +37,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-family:
-    roboto,
-    ui-sans-serif,
-    system-ui,
-    sans-serif,
-    Apple Color Emoji,
-    Segoe UI Emoji,
-    Segoe UI Symbol,
-    Noto Color Emoji;
+  font-family: inherit;
 
   background-color: hsl(var(--background) / 1);
   color: hsl(var(--foreground) / 1);
 
   line-height: inherit;
   margin: 0;
+
+  background: linear-gradient(
+    75deg,
+    red 10%,
+    green 10% 20%,
+    red 20% 30%,
+    green 30% 40%,
+    red 40% 50%,
+    green 50% 60%,
+    red 60% 70%,
+    green 70% 80%,
+    red 80% 90%,
+    green 90%
+  );
 }
 
 .backdrop-blur {
@@ -68,6 +74,7 @@ button {
   -webkit-appearance: button;
   background-color: #0000;
   background-image: none;
+  font-family: inherit;
 
   transition-property: border-width, color, background-color, border-color, text-decoration-color, fill, stroke, filter;
   transition-duration: 0.15s;

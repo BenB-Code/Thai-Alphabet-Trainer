@@ -59,6 +59,6 @@ export class FontSwitchSelector {
   ];
 
   activeId(id: number) {
-    this.themeService.switchFont(this.fontsList[id].class as FontsType);
+    this.themeService.switchThaiFont(this.fontsList[id].class as FontsType);
   }
 }

@@ -7,6 +7,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { FontSwitchSelector } from '../font-switch-selector/font-switch-selector';
 import { MobileBurgerMenu } from '../mobile-burger-menu/mobile-burger-menu';
 import { ContactService } from '../../services/contact.service/contact.service';
+import { SMALL } from '../../shared/constants';
 
 @Component({
   selector: 'app-thai-header',
@@ -22,4 +23,5 @@ export class ThaiHeader {
   protected readonly i18nService = inject(I18nService);
   protected readonly contactService = inject(ContactService);
   protected readonly themeService = inject(ThemeService);
+  protected readonly SMALL = SMALL;
 }

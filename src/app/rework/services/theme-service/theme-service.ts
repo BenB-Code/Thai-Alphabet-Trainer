@@ -1,5 +1,5 @@
 import { computed, DOCUMENT, effect, inject, Injectable, signal } from '@angular/core';
-import { DARK, KANIT, LIGHT, MOON, SARABUN, SRIRACHA, SUN } from '../../shared/constants';
+import { DARK, LIGHT, MOON, SARABUN, SUN } from '../../shared/constants';
 import { FontsType, ThemeType } from '../../shared/types';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class ThemeService {
 
   theme = signal<{ color: ThemeType; icon: string }>({ color: LIGHT, icon: `icons/${MOON}.svg` });
   isDarkThemeActive = computed(() => this.theme().color === DARK);
-  font = signal<FontsType>(SARABUN);
+  thaiFont = signal<FontsType>(SARABUN);
 
   constructor() {
     effect(() => {
@@ -19,8 +19,8 @@ export class ThemeService {
     });
   }
 
-  switchFont(font: FontsType) {
-    this.font.set(font);
+  switchThaiFont(font: FontsType) {
+    this.thaiFont.set(font);
   }
 
   toggleTheme() {
@@ -30,8 +30,9 @@ export class ThemeService {
   }
 
   private changeFont() {
-    this.document.documentElement.classList.remove(SARABUN, KANIT, SRIRACHA);
-    this.document.documentElement.classList.add(this.font());
+    // TODO replace that by component card selector when available
+    // this.document.documentElement.classList.remove(SARABUN, KANIT, SRIRACHA);
+    // this.document.documentElement.classList.add(this.thaiFont());
   }
 
   private changeTheme() {
