@@ -27,7 +27,7 @@ export class FontSwitchSelector {
         right: false,
       },
       id: 0,
-      class: 'sarabun',
+      class: 'sarabun big-letter',
     },
     {
       label: {
@@ -41,7 +41,7 @@ export class FontSwitchSelector {
         right: false,
       },
       id: 1,
-      class: 'kanit',
+      class: 'kanit big-letter',
     },
     {
       label: {
@@ -55,7 +55,7 @@ export class FontSwitchSelector {
         right: false,
       },
       id: 2,
-      class: 'sriracha',
+      class: 'sriracha big-letter',
     },
   ];
 
