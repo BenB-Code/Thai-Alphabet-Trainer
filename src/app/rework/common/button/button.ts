@@ -16,4 +16,5 @@ export class Button {
   uppercase = input(false);
   dark = input(false);
   rightIcon = input(false);
+  disabled = input(false);
 }

@@ -1,4 +1,10 @@
-<button (click)="clicked.emit()" [class.uppercase]="uppercase()" [class.dark]="dark()" [class.right-icon]="rightIcon()">
+<button
+  (click)="clicked.emit()"
+  [class.disabled]="disabled()"
+  [class.uppercase]="uppercase()"
+  [class.dark]="dark()"
+  [class.right-icon]="rightIcon()"
+>
   @if (icon()) {
   <img class="icon" [src]="icon()" [alt]="alt()" />
   } @if (text()) {

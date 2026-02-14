@@ -12,6 +12,11 @@ button {
   line-height: 1rem;
   font-weight: 500;
 
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   &.uppercase {
     text-transform: uppercase;
   }
@@ -21,7 +26,7 @@ button {
   }
 
   @media (pointer: fine) {
-    &:not(.dark):hover {
+    &:not(.dark):not(.disabled):hover {
       color: hsl(var(--accent-foreground) / 1);
       background-color: hsl(var(--accent) / 1);
 
@@ -39,7 +44,7 @@ button {
     }
 
     @media (pointer: fine) {
-      &:hover {
+      &:not(.disabled):hover {
         background-color: hsl(var(--accent) / 1);
       }
     }
