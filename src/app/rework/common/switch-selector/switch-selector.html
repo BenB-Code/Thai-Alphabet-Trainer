@@ -5,6 +5,9 @@
   [class.right-icon]="item.icon.right"
   [class.active]="item.id === activeIndex()"
   [class]="item.class"
+  [class.small]="size() === SMALL"
+  [class.medium]="size() === MEDIUM"
+  [class.large]="size() === LARGE"
 >
   @if (item.icon.display) {
   <img class="icon" [src]="item.icon.path" [alt]="item.icon.alt" />

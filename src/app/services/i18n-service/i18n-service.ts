@@ -22,4 +22,8 @@ export class I18nService {
     const activeLanguage = this._activeLanguage() === EN ? FR : EN;
     this.switchLanguage(activeLanguage);
   }
+
+  translate(key: string) {
+    return this.translateService.instant(key);
+  }
 }

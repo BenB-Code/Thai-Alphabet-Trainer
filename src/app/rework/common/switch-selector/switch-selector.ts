@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, output, signal, TemplateRef } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
+import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
 
 @Component({
   selector: 'app-switch-selector',
@@ -9,6 +10,7 @@ import { NgTemplateOutlet } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SwitchSelector {
+  size = input<typeof SMALL | typeof MEDIUM | typeof LARGE>(MEDIUM);
   dark = input(false);
   labelTemplate = input<TemplateRef<unknown>>();
   list = input<
@@ -45,6 +47,10 @@ export class SwitchSelector {
 
   activeItem = output<number>();
   activeIndex = signal(0);
+
+  protected readonly SMALL = SMALL;
+  protected readonly MEDIUM = MEDIUM;
+  protected readonly LARGE = LARGE;
 
   activate(id: number) {
     this.activeIndex.set(id);

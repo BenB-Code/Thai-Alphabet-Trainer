@@ -3,6 +3,7 @@ import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { ThemeService } from '../../services/theme-service/theme-service';
 import { DataService } from '../../../services/data-service/data-service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { LARGE } from '../../shared/constants';
 
 @Component({
   selector: 'app-letters-tab-switch-selector',
@@ -51,4 +52,6 @@ export class LettersTabSwitchSelector {
   selectActive(index: number) {
     console.log(index);
   }
+
+  protected readonly LARGE = LARGE;
 }

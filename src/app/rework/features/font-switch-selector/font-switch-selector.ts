@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { ThemeService } from '../../services/theme-service/theme-service';
 import { FontsType } from '../../shared/types';
+import { LARGE } from '../../shared/constants';
 
 @Component({
   selector: 'app-font-switch-selector',
@@ -61,4 +62,6 @@ export class FontSwitchSelector {
   activeId(id: number) {
     this.themeService.switchThaiFont(this.fontsList[id].class as FontsType);
   }
+
+  protected readonly LARGE = LARGE;
 }

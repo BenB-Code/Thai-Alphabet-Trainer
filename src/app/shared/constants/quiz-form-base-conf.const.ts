@@ -9,12 +9,12 @@ export const QUIZ_FORM_BASE_CONF = {
   delay: [2, 3, 5, 10, 0],
   display: [
     {
-      value: LATIN as DisplayType,
-      label: `quiz.${LATIN}`,
-    },
-    {
       value: THAI as DisplayType,
       label: `quiz.${THAI}`,
+    },
+    {
+      value: LATIN as DisplayType,
+      label: `quiz.${LATIN}`,
     },
     {
       value: MIXED as DisplayType,
