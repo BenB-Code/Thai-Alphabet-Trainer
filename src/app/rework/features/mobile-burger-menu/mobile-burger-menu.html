@@ -6,6 +6,7 @@
     [alt]="i18nService.activeLanguage()"
     (clicked)="i18nService.toggleLanguage()"
     [text]="i18nService.activeLanguage()"
+    [size]="SMALL"
   />
   <app-button
     [dark]="themeService.isDarkThemeActive()"
@@ -13,6 +14,7 @@
     [alt]="themeService.theme().color"
     [text]="`app.theme` | translate"
     (clicked)="themeService.toggleTheme()"
+    [size]="SMALL"
   />
   <hr />
   <app-font-switch-selector></app-font-switch-selector>
@@ -23,5 +25,6 @@
     [alt]="'app.contact' | translate"
     [text]="'app.contact' | translate"
     (clicked)="contactService.sendMail()"
+    [size]="SMALL"
   />
 </app-burger-menu>

@@ -1,0 +1,41 @@
+:host {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+
+  --shadow: 0 1px 2px 0 #0000000d;
+  --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+  box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--shadow);
+
+  border-color: hsl(var(--border) / 1);
+  background-color: hsl(var(--card) / 0.95);
+  border-width: 1px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+
+  div {
+    width: 100%;
+
+    .panel-slider {
+      opacity: 0;
+      grid-template-rows: 0fr;
+      display: grid;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 0.2s;
+      transition-property: all;
+
+      .panel-slider-content {
+        overflow: hidden;
+      }
+    }
+
+    &.open {
+      .panel-slider {
+        opacity: 1;
+        grid-template-rows: 1fr;
+        border-top-width: 1px;
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import { ThemeService } from '../../services/theme-service/theme-service';
 import { BurgerMenu } from '../../common/burger-menu/burger-menu';
 import { ContactService } from '../../services/contact.service/contact.service';
 import { FontSwitchSelector } from '../font-switch-selector/font-switch-selector';
+import { SMALL } from '../../shared/constants';
 
 @Component({
   selector: 'app-mobile-burger-menu',
@@ -18,4 +19,5 @@ export class MobileBurgerMenu {
   protected readonly i18nService = inject(I18nService);
   protected readonly themeService = inject(ThemeService);
   protected readonly contactService = inject(ContactService);
+  protected readonly SMALL = SMALL;
 }
