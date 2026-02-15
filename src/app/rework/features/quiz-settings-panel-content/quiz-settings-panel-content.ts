@@ -1,14 +1,11 @@
-import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { QuizPreparationService } from '../../../services/quiz-preparation-service/quiz-preparation-service';
 import { StateService } from '../../../services/state-service/state-service';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { DisplayType, QuizFormat } from '../../../shared/models';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { QUIZ_FORM_BASE_CONF } from '../../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { I18nService } from '../../../services/i18n-service/i18n-service';
-import { MEDIUM } from '../../shared/constants';
 import { ThemeService } from '../../services/theme-service/theme-service';
 
 @Component({
@@ -24,19 +21,11 @@ export class QuizSettingsPanelContent {
   protected readonly i18nService = inject(I18nService);
   protected readonly themeService = inject(ThemeService);
 
-  quiz = new FormGroup({
-    questions: new FormControl(this.quizPreparationService.quizSettings().questions, [
-      Validators.required,
-      Validators.min(QUIZ_FORM_BASE_CONF.questions.min),
-      Validators.max(QUIZ_FORM_BASE_CONF.questions.max),
-    ]),
-    delay: new FormControl(this.quizPreparationService.quizSettings().delay, Validators.required),
-    display: new FormControl<DisplayType>(this.quizPreparationService.quizSettings().display, Validators.required),
-    selected: new FormControl(this.quizPreparationService.quizSettings().selected, [
-      Validators.required,
-      Validators.min(QUIZ_FORM_BASE_CONF.questions.min),
-    ]),
-  });
+  questions = new FormControl(this.quizPreparationService.quizSettings().questions, [
+    Validators.required,
+    Validators.min(QUIZ_FORM_BASE_CONF.questions.min),
+    Validators.max(QUIZ_FORM_BASE_CONF.questions.max),
+  ]);
 
   delayList = [
     {
@@ -107,7 +96,7 @@ export class QuizSettingsPanelContent {
         right: false,
       },
       id: 4,
-      class: '',
+      class: 'lighter-icon',
     },
   ];
 
@@ -156,32 +145,35 @@ export class QuizSettingsPanelContent {
     },
   ];
 
-  constructor() {
-    effect(() => {
-      this.quiz.patchValue({ selected: this.stateService.selected() });
-    });
-
-    this.quiz.valueChanges.pipe(takeUntilDestroyed()).subscribe(changes => {
-      if (!changes.questions || changes.questions < QUIZ_FORM_BASE_CONF.questions.min) {
-        this.quiz.patchValue({ questions: QUIZ_FORM_BASE_CONF.questions.min });
-      }
-      if (changes.questions && changes.questions > QUIZ_FORM_BASE_CONF.questions.max) {
-        this.quiz.patchValue({ questions: QUIZ_FORM_BASE_CONF.questions.max });
-      }
-
-      this.quizPreparationService.isValid.set(this.quiz.valid);
-      this.quizPreparationService.quizSettings.set(this.quiz.getRawValue() as QuizFormat);
-    });
-  }
+  initialDelayIndex = QUIZ_FORM_BASE_CONF.delay.findIndex(d => d === this.quizPreparationService.quizSettings().delay);
+  initialDisplayIndex = QUIZ_FORM_BASE_CONF.display.findIndex(
+    d => d.value === this.quizPreparationService.quizSettings().display
+  );
 
   delayChange(delayId: number) {
-    console.log('delay', QUIZ_FORM_BASE_CONF.delay[delayId]);
+    this.quizPreparationService.quizSettings.update(settings => ({
+      ...settings,
+      delay: QUIZ_FORM_BASE_CONF.delay[delayId],
+    }));
   }
 
   displayChange(displayId: number) {
-    console.log('display', QUIZ_FORM_BASE_CONF.display[displayId].value);
+    this.quizPreparationService.quizSettings.update(settings => ({
+      ...settings,
+      display: QUIZ_FORM_BASE_CONF.display[displayId].value,
+    }));
+  }
+
+  questionsChange(question: Event) {
+    let val = +(question.target as HTMLInputElement).value;
+    val = Math.max(val, QUIZ_FORM_BASE_CONF.questions.min);
+    val = Math.min(val, QUIZ_FORM_BASE_CONF.questions.max);
+
+    this.quizPreparationService.quizSettings.update(settings => ({
+      ...settings,
+      questions: val,
+    }));
   }
 
   protected readonly QUIZ_FORM_BASE_CONF = QUIZ_FORM_BASE_CONF;
-  protected readonly MEDIUM = MEDIUM;
 }

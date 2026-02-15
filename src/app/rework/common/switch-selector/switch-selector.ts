@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, output, signal, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, linkedSignal, output, TemplateRef } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
 
@@ -13,6 +13,7 @@ export class SwitchSelector {
   size = input<typeof SMALL | typeof MEDIUM | typeof LARGE>(MEDIUM);
   dark = input(false);
   labelTemplate = input<TemplateRef<unknown>>();
+  initialIndex = input(0);
   list = input<
     {
       label: {
@@ -46,7 +47,7 @@ export class SwitchSelector {
   ]);
 
   activeItem = output<number>();
-  activeIndex = signal(0);
+  activeIndex = linkedSignal(() => this.initialIndex());
 
   protected readonly SMALL = SMALL;
   protected readonly MEDIUM = MEDIUM;

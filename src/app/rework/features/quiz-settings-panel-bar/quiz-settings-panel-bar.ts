@@ -4,6 +4,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { QuizPreparationService } from '../../../services/quiz-preparation-service/quiz-preparation-service';
 import { StateService } from '../../../services/state-service/state-service';
 import { ThemeService } from '../../services/theme-service/theme-service';
+import { NavigationService } from '../../../services/navigation-service/navigation-service';
 
 @Component({
   selector: 'app-quiz-settings-panel-bar',
@@ -16,6 +17,7 @@ export class QuizSettingsPanelBar {
   protected readonly quizPreparationService = inject(QuizPreparationService);
   protected readonly stateService = inject(StateService);
   protected readonly themeService = inject(ThemeService);
+  protected readonly navigationService = inject(NavigationService);
 
   toggleOpen = output<boolean>();
   isOpen = signal(false);
@@ -23,5 +25,10 @@ export class QuizSettingsPanelBar {
   toggleOpenEvent() {
     this.isOpen.update(open => !open);
     this.toggleOpen.emit(this.isOpen());
+  }
+
+  startQuiz() {
+    this.quizPreparationService.generateQuizList();
+    this.navigationService.navigate('quiz');
   }
 }

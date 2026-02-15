@@ -113,3 +113,9 @@ hr {
   font-size: 1.5rem !important;
   line-height: 26px !important;
 }
+
+.lighter-icon {
+  img {
+    filter: invert(40%) !important;
+  }
+}

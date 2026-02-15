@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { QuizFormat, ThaiCharacter } from '../../shared/models';
 import { LATIN, MIXED, QUIZ_FORM_BASE_CONF, THAI } from '../../shared/constants';
 
@@ -7,13 +7,26 @@ import { LATIN, MIXED, QUIZ_FORM_BASE_CONF, THAI } from '../../shared/constants'
 })
 export class QuizPreparationService {
   quizSettings = signal<QuizFormat>({
-    display: LATIN,
+    display: THAI,
     questions: 10,
     selected: [],
     delay: QUIZ_FORM_BASE_CONF.delay[2],
     randomized: [],
   });
   isValid = signal<boolean>(false);
+
+  isQuizValid = computed(() => {
+    if (!this.quizSettings().display) return false;
+    if (
+      !this.quizSettings().questions ||
+      this.quizSettings().questions < QUIZ_FORM_BASE_CONF.questions.min ||
+      this.quizSettings().questions > QUIZ_FORM_BASE_CONF.questions.max
+    )
+      return false;
+    if (this.quizSettings().selected.length <= 0) return false;
+    if (!this.quizSettings().delay) return false;
+    return true;
+  });
 
   generateQuizList() {
     const { questions, selected, display } = this.quizSettings();

@@ -6,7 +6,7 @@
     @if (totalCount > 1) { {{ 'quiz.selecteds' | translate }} } @else { {{ 'quiz.selected' | translate }} }</span
   >
   <span
-    >{{ quizPreparationService.quizSettings().delay }}@if (quizPreparationService.quizSettings().delay) { s } @else {
+    >@if (quizPreparationService.quizSettings().delay) { {{ quizPreparationService.quizSettings().delay }}s } @else {
     <img src="icons/time-off.svg" alt="off" class="timer" />
     }
   </span>
@@ -47,19 +47,21 @@
 
   <app-button
     class="start-btn"
+    (clicked)="startQuiz()"
     [dark]="themeService.isDarkThemeActive()"
     [icon]="'icons/play.svg'"
     [text]="'quiz.start' | translate "
     [color]="'--primary'"
     [inverted]="true"
-    [disabled]="false"
+    [disabled]="!quizPreparationService.isQuizValid()"
   ></app-button>
   <app-button
     class="mobile-start-btn"
+    (clicked)="startQuiz()"
     [dark]="themeService.isDarkThemeActive()"
     [icon]="'icons/play.svg'"
     [color]="'--primary'"
     [inverted]="true"
-    [disabled]="false"
+    [disabled]="!quizPreparationService.isQuizValid()"
   ></app-button>
 </div>
