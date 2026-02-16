@@ -4,9 +4,9 @@
 </ng-template>
 
 <app-switch-selector
-  [list]="tabsList"
+  [list]="tabsService.getTabsSwitchConfig()"
   [dark]="themeService.isDarkThemeActive()"
-  (activeItem)="selectActive($event)"
+  (activeItem)="tabsService.changeActiveTab($event)"
   [labelTemplate]="customLabel"
   [size]="LARGE"
 />

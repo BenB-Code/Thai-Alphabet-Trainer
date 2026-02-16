@@ -1,0 +1,9 @@
+:host {
+  .tab {
+    display: none;
+
+    &.visible {
+      display: flex;
+    }
+  }
+}
