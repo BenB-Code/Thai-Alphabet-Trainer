@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { Button } from '../../common/button/button';
 import { SMALL } from '../../shared/constants';
 import { ThemeService } from '../../services/theme-service/theme-service';
@@ -10,6 +10,7 @@ import { QuizPreparationService } from '../../../services/quiz-preparation-servi
   imports: [Button, TranslatePipe],
   templateUrl: './letters-category-header.html',
   styleUrl: './letters-category-header.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LettersCategoryHeader {
   protected readonly themeService = inject(ThemeService);
