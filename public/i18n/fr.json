@@ -29,14 +29,19 @@
     "theme": "Thème",
     "settings": "Options"
   },
+  "buttons": {
+    "all": "Tout",
+    "none": "Aucun",
+    "toggle": "Inverser"
+  },
   "titles": {
-    "mid": "Consonnes Moyennes",
-    "high": "Consonnes Hautes",
-    "low": "Consonnes Basses",
-    "short": "Voyelles Courtes",
-    "long": "Voyelles Longues",
+    "mid": "Moyennes",
+    "high": "Hautes",
+    "low": "Basses",
+    "short": "Courtes",
+    "long": "Longues",
     "diphthong": "Diphtongues",
-    "special": "Voyelles Spéciales"
+    "special": "Spéciales"
   },
   "letters": {
     "outdated": "Cette lettre n'est plus utilisée",

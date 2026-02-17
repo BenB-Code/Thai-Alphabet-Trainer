@@ -28,14 +28,19 @@
     "theme": "Theme",
     "settings": "Settings"
   },
+  "buttons": {
+    "all": "All",
+    "none": "None",
+    "toggle": "Toggle"
+  },
   "titles": {
-    "mid": "Mid Class Consonants",
-    "high": "High Class Consonants",
-    "low": "Low Class Consonants",
-    "short": "Short Vowels",
-    "long": "Long Vowels",
+    "mid": "Mid Class",
+    "high": "High Class",
+    "low": "Low Class",
+    "short": "Short",
+    "long": "Long",
     "diphthong": "Diphthongs",
-    "special": "Special Vowels"
+    "special": "Special"
   },
   "letters": {
     "outdated": "This letter is not used anymore",

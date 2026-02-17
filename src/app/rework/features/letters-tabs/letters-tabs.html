@@ -2,6 +2,8 @@
 <section [class.visible]="tabsService.activeTab() === tab.tabSwitchConfig.id" class="tab">
   <!-- filter component -->
 
-  @for (list of tab.payload(); track $index) { {{ list | json }} }
+  @for (list of tab.payload | keyvalue; track list.key) {
+  <app-letters-category-container [category]="list.key" [list]="list.value" />
+  }
 </section>
 }

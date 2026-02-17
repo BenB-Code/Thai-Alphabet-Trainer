@@ -46,6 +46,17 @@ export class QuizPreparationService {
     this.quizSettings.update(s => ({ ...s, randomized: this.shuffled(newList) }));
   }
 
+  getCountByCategory(category: string): number {
+    return this.quizSettings().selected.filter(letter => {
+      if ('type' in letter) {
+        return letter.type === category;
+      } else if ('class' in letter) {
+        return letter.class === category;
+      }
+      return false;
+    }).length;
+  }
+
   private distributeDisplayTypes(count: number, display: string) {
     if (display !== MIXED) {
       return new Array(count).fill(display);
