@@ -1,5 +1,9 @@
 :host {
-  display: grid;
+  position: sticky;
+  top: 0;
+  border-bottom-width: 1px;
+  background-color: hsl(var(--background) / 0.8);
+  z-index: 50;
 
   .burger-container {
     display: none;

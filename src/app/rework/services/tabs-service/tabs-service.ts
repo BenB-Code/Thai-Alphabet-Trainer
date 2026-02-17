@@ -1,5 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { DataService } from '../../../services/data-service/data-service';
+import { TabsConfig } from '../../shared/interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import { DataService } from '../../../services/data-service/data-service';
 export class TabsService {
   protected readonly dataService = inject(DataService);
 
-  private readonly _tabsConfig = [
+  private readonly _tabsConfig: TabsConfig[] = [
     {
       tabSwitchConfig: {
         label: {
@@ -23,7 +24,7 @@ export class TabsService {
         class: 'letter-tab-switch-selector',
         id: 0,
       },
-      payload: this.dataService.getAllConsonants,
+      payload: this.dataService.getAllConsonantsSorted(),
     },
     {
       tabSwitchConfig: {
@@ -40,7 +41,7 @@ export class TabsService {
         id: 1,
         class: 'letter-tab-switch-selector',
       },
-      payload: this.dataService.getAllVowels,
+      payload: this.dataService.getAllVowelsSorted(),
     },
   ];
 

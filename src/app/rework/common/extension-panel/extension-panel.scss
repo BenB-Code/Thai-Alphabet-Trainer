@@ -2,19 +2,22 @@
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1rem;
   display: flex;
-
   --shadow: 0 1px 2px 0 #0000000d;
   --shadow-colored: 0 1px 2px 0 var(--shadow-color);
   box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--shadow);
 
-  border-color: hsl(var(--border) / 1);
-  background-color: hsl(var(--card) / 0.95);
-  border-width: 1px;
-  border-radius: 0.75rem;
-  overflow: hidden;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 
-  div {
+  .container {
+    border-color: hsl(var(--border) / 1);
+    background-color: hsl(var(--card) / 0.95);
+    border-width: 1px;
+    border-radius: 0.75rem;
+    overflow: hidden;
     width: 100%;
 
     .panel-slider {
