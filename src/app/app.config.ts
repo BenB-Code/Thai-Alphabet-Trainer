@@ -12,6 +12,10 @@ import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { EN } from './shared/constants';
 import { provideServiceWorker } from '@angular/service-worker';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideRouterStore } from '@ngrx/router-store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -31,5 +35,9 @@ export const appConfig: ApplicationConfig = {
       registrationStrategy: 'registerWhenStable:30000',
     }),
     provideClientHydration(withEventReplay()),
+    provideStore(),
+    provideEffects(),
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideRouterStore(),
   ],
 };
