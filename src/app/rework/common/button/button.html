@@ -1,8 +1,9 @@
 <button
   (click)="clicked.emit()"
+  [disabled]="disabled()"
   [class.disabled]="disabled()"
   [class.uppercase]="uppercase()"
-  [class.dark]="dark()"
+  [class.dark]="themeService.isDarkThemeActive()"
   [class.right-icon]="rightIcon()"
   [class.small]="size() === 'small'"
   [class.medium]="size() === 'medium'"

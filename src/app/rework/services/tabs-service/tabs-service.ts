@@ -1,6 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { DataService } from '../../../services/data-service/data-service';
 import { TabsConfig } from '../../shared/interfaces';
+import { SwitchSelectorItem } from '../../shared/types';
 
 @Injectable({
   providedIn: 'root',
@@ -51,11 +52,11 @@ export class TabsService {
     this.activeTab.set(index);
   }
 
-  getTabsConfig() {
+  getTabsConfig(): readonly TabsConfig[] {
     return this._tabsConfig;
   }
 
-  getTabsSwitchConfig() {
+  getTabsSwitchConfig(): readonly SwitchSelectorItem[] {
     return this._tabsConfig.map(tabConf => tabConf.tabSwitchConfig);
   }
 }

@@ -1,6 +1,4 @@
-@let isDark = themeService.isDarkThemeActive();
-
-<app-card [dark]="isDark">
+<app-card>
   <div class="card-content">
     @if (letterUtilsService.isOutdated(letter())) {
     <div class="outdated">
@@ -14,13 +12,13 @@
     letterUtilsService.getVowelPosition(letter());
     <div class="sounds">
       @if (translit) { @if (translit.initial) { {{ translit.initial }} } @else {
-      <img [class.dark]="isDark" src="icons/line.svg" alt="n/a" />
+      <img appDarkMode src="icons/line.svg" alt="n/a" />
       }
-      <img [class.dark]="isDark" src="icons/arrow-right.svg" alt="to" />
+      <img appDarkMode src="icons/arrow-right.svg" alt="to" />
       @if (translit.final) {
       <span> {{ translit.final }} </span>
       } @else {
-      <img [class.dark]="isDark" src="icons/line.svg" alt="n/a" />
+      <img appDarkMode src="icons/line.svg" alt="n/a" />
       } } @else if (vowelPos) {
       <div class="vowel-pos">
         <span>
@@ -30,10 +28,10 @@
       </div>
       }
     </div>
-    <div class="status" [class.dark]="isDark">
+    <div class="status" appDarkMode>
       @if (letter().live) {
       <app-status-badge class="green">
-        @if (isDark) {
+        @if (themeService.isDarkThemeActive()) {
         <img src="icons/lighting-dark.svg" alt="live" />
         } @else {
         <img src="icons/lighting.svg" alt="live" />
@@ -41,7 +39,7 @@
       </app-status-badge>
       } @else {
       <app-status-badge class="red">
-        @if (isDark) {
+        @if (themeService.isDarkThemeActive()) {
         <img src="icons/lighting-slashed-dark.svg" alt="dead" />
         } @else {
         <img src="icons/lighting-slashed.svg" alt="dead" />

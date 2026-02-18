@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { Button } from '../../common/button/button';
 import { SMALL } from '../../shared/constants';
-import { ThemeService } from '../../services/theme-service/theme-service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { QuizPreparationService } from '../../../services/quiz-preparation-service/quiz-preparation-service';
 
@@ -13,7 +12,6 @@ import { QuizPreparationService } from '../../../services/quiz-preparation-servi
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LettersCategoryHeader {
-  protected readonly themeService = inject(ThemeService);
   protected readonly quizPreparationService = inject(QuizPreparationService);
 
   category = input.required<string>();

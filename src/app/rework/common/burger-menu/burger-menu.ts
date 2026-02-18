@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, inject, input, signal } from '@angular/core';
 import { Button } from '../button/button';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -10,12 +10,20 @@ import { TranslatePipe } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BurgerMenu {
+  private readonly elementRef = inject(ElementRef);
+
   protected isBurgerOpen = signal(false);
 
-  dark = input(false);
   right = input(false);
 
   toggleMenu() {
     this.isBurgerOpen.update(isOpen => !isOpen);
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  onClickOutside(target: EventTarget | null) {
+    if (this.isBurgerOpen() && !this.elementRef.nativeElement.contains(target)) {
+      this.isBurgerOpen.set(false);
+    }
   }
 }

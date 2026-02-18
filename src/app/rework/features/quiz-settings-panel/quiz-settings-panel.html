@@ -1,6 +1,6 @@
 <app-extension-panel [open]="isOpen()">
   <div class="bar" ngProjectAs="bar">
-    <app-quiz-settings-panel-bar (toggleOpen)="toggleOpen()"></app-quiz-settings-panel-bar>
+    <app-quiz-settings-panel-bar [isOpen]="isOpen()" (toggleOpen)="toggleOpen()"></app-quiz-settings-panel-bar>
   </div>
   <div class="panel" ngProjectAs="panel">
     <app-quiz-settings-panel-content></app-quiz-settings-panel-content>

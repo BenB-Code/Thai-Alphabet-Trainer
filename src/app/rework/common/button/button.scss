@@ -15,6 +15,10 @@ button {
     pointer-events: none;
   }
 
+  span {
+    display: var(--btn-text-display, inline);
+  }
+
   &.uppercase {
     text-transform: uppercase;
   }

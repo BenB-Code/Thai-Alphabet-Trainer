@@ -65,8 +65,7 @@
     line-height: 1rem;
     font-weight: 500;
 
-    .toggle-btn,
-    .mobile-toggle-btn {
+    .toggle-btn {
       --btn-font-size: 0.9rem;
       --btn-font-weight: 400;
 
@@ -83,11 +82,6 @@
       }
     }
 
-    .mobile-toggle-btn,
-    .mobile-start-btn {
-      display: none;
-    }
-
     .start-btn {
       --btn-font-weight: 700;
     }
@@ -95,11 +89,7 @@
     @media (max-width: 768px) {
       .toggle-btn,
       .start-btn {
-        display: none;
-      }
-      .mobile-toggle-btn,
-      .mobile-start-btn {
-        display: flex;
+        --btn-text-display: none;
       }
     }
   }

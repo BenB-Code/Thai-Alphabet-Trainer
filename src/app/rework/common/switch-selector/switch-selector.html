@@ -1,7 +1,7 @@
 @for (item of list(); track item.id) {
 <button
   (click)="activate(item.id)"
-  [class.dark]="dark()"
+  [class.dark]="themeService.isDarkThemeActive()"
   [class.right-icon]="item.icon.right"
   [class.active]="item.id === activeIndex()"
   [class]="item.class"

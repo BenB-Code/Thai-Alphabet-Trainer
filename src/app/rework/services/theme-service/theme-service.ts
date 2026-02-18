@@ -8,9 +8,10 @@ import { FontsType, ThemeType } from '../../shared/types';
 export class ThemeService {
   private readonly document = inject(DOCUMENT);
 
-  theme = signal<{ color: ThemeType; icon: string }>({ color: LIGHT, icon: `icons/${MOON}.svg` });
-  isDarkThemeActive = computed(() => this.theme().color === DARK);
-  thaiFont = signal<FontsType>(KANIT);
+  theme = signal<ThemeType>(LIGHT);
+  themeIcon = computed(() => (this.theme() === DARK ? `icons/${SUN}.svg` : `icons/${MOON}.svg`));
+  isDarkThemeActive = computed(() => this.theme() === DARK);
+  thaiFont = signal<FontsType>(SARABUN);
 
   constructor() {
     effect(() => {
@@ -27,9 +28,7 @@ export class ThemeService {
   }
 
   toggleTheme() {
-    this.theme.update(theme =>
-      theme.color === LIGHT ? { color: DARK, icon: `icons/${SUN}.svg` } : { color: LIGHT, icon: `icons/${MOON}.svg` }
-    );
+    this.theme.update(theme => (theme === LIGHT ? DARK : LIGHT));
   }
 
   private changeFont() {
@@ -41,7 +40,7 @@ export class ThemeService {
   }
 
   private changeTheme() {
-    if (this.theme().color === DARK) {
+    if (this.theme() === DARK) {
       this.document.documentElement.classList.add(DARK);
     } else {
       this.document.documentElement.classList.remove(DARK);

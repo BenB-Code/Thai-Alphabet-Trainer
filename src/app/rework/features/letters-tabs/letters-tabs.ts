@@ -1,17 +1,21 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { TabsService } from '../../services/tabs-service/tabs-service';
-import { LetterUtilsService } from '../../../services/letter-utils-service/letter-utils-service';
 import { LettersCategoryContainer } from '../letters-category-container/letters-category-container';
-import { KeyValuePipe } from '@angular/common';
 
 @Component({
   selector: 'app-letters-tabs',
-  imports: [LettersCategoryContainer, KeyValuePipe],
+  imports: [LettersCategoryContainer],
   templateUrl: './letters-tabs.html',
   styleUrl: './letters-tabs.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LettersTabs {
   protected readonly tabsService = inject(TabsService);
-  protected readonly letterUtils = inject(LetterUtilsService);
+
+  protected readonly tabEntries = computed(() =>
+    this.tabsService.getTabsConfig().map(tab => ({
+      id: tab.tabSwitchConfig.id,
+      categories: Object.entries(tab.payload),
+    }))
+  );
 }

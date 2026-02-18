@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, Component, input, linkedSignal, output, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, linkedSignal, output, TemplateRef } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
+import { SwitchSelectorItem } from '../../shared/types';
+import { ThemeService } from '../../services/theme-service/theme-service';
 
 @Component({
   selector: 'app-switch-selector',
@@ -10,41 +12,12 @@ import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SwitchSelector {
+  protected readonly themeService = inject(ThemeService);
+
   size = input<typeof SMALL | typeof MEDIUM | typeof LARGE>(MEDIUM);
-  dark = input(false);
   labelTemplate = input<TemplateRef<unknown>>();
   initialIndex = input(0);
-  list = input<
-    {
-      label: {
-        display: boolean;
-        text: string;
-      };
-      icon: {
-        display: boolean;
-        path: string;
-        alt: string;
-        right: boolean;
-      };
-      id: number;
-      class: string;
-    }[]
-  >([
-    {
-      label: {
-        display: true,
-        text: '',
-      },
-      icon: {
-        display: true,
-        path: '',
-        alt: '',
-        right: false,
-      },
-      id: 0,
-      class: '',
-    },
-  ]);
+  list = input<readonly SwitchSelectorItem[]>([]);
 
   activeItem = output<number>();
   activeIndex = linkedSignal(() => this.initialIndex());

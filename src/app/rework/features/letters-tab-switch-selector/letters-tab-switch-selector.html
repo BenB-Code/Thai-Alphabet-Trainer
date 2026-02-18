@@ -5,7 +5,6 @@
 
 <app-switch-selector
   [list]="tabsService.getTabsSwitchConfig()"
-  [dark]="themeService.isDarkThemeActive()"
   (activeItem)="tabsService.changeActiveTab($event)"
   [labelTemplate]="customLabel"
   [size]="LARGE"

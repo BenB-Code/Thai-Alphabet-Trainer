@@ -7,18 +7,19 @@ import { I18nService } from '../../../services/i18n-service/i18n-service';
 import { FINAL, MEDIAL } from '../../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { StatusBadge } from '../../common/status-badge/status-badge';
+import { DarkMode } from '../../common/dark-mode/dark-mode';
 
 @Component({
   selector: 'app-letters-card',
-  imports: [Card, TranslatePipe, StatusBadge],
+  imports: [Card, TranslatePipe, StatusBadge, DarkMode],
   templateUrl: './letters-card.html',
   styleUrl: './letters-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LettersCard {
-  protected themeService = inject(ThemeService);
-  protected i18nService = inject(I18nService);
-  protected letterUtilsService = inject(LetterUtilsService);
+  protected readonly themeService = inject(ThemeService);
+  protected readonly i18nService = inject(I18nService);
+  protected readonly letterUtilsService = inject(LetterUtilsService);
 
   letter = input.required<ThaiCharacter>();
   protected readonly FINAL = FINAL;

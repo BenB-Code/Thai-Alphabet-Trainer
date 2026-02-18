@@ -17,7 +17,6 @@
   <label for="delay">{{ 'quiz.delay' | translate }}</label>
   <app-switch-selector
     class="delay"
-    [dark]="themeService.isDarkThemeActive()"
     (activeItem)="delayChange($event)"
     [list]="delayList"
     [initialIndex]="initialDelayIndex"
@@ -29,7 +28,7 @@
   <app-switch-selector
     class="display"
     (activeItem)="displayChange($event)"
-    [list]="displayList"
+    [list]="displayList()"
     [initialIndex]="initialDisplayIndex"
   ></app-switch-selector>
 </div>

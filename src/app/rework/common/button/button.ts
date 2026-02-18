@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
+import { ThemeService } from '../../services/theme-service/theme-service';
 
 @Component({
   selector: 'app-button',
@@ -12,13 +13,14 @@ import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
   },
 })
 export class Button {
+  protected readonly themeService = inject(ThemeService);
+
   clicked = output();
 
   text = input<string | null>();
   icon = input<string | null>(null);
   alt = input<string>('');
   uppercase = input(false);
-  dark = input(false);
   rightIcon = input(false);
   disabled = input(false);
   size = input<typeof SMALL | typeof MEDIUM | typeof LARGE>(MEDIUM);

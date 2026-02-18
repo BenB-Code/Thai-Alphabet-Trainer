@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { ThemeService } from '../../services/theme-service/theme-service';
-import { FontsType } from '../../shared/types';
-import { LARGE } from '../../shared/constants';
+import { FontsType, SwitchSelectorItem } from '../../shared/types';
+import { LARGE, KANIT, SARABUN, SRIRACHA } from '../../shared/constants';
 
 @Component({
   selector: 'app-font-switch-selector',
@@ -14,53 +14,29 @@ import { LARGE } from '../../shared/constants';
 export class FontSwitchSelector {
   private readonly themeService = inject(ThemeService);
 
-  fontsList = [
+  readonly fontsList: (SwitchSelectorItem & { class: FontsType })[] = [
     {
-      label: {
-        display: true,
-        text: 'ก',
-      },
-      icon: {
-        display: false,
-        path: '',
-        alt: '',
-        right: false,
-      },
+      label: { display: true, text: '\u0E01' },
+      icon: { display: false, path: '', alt: '', right: false },
       id: 0,
-      class: 'sarabun',
+      class: SARABUN,
     },
     {
-      label: {
-        display: true,
-        text: 'ก',
-      },
-      icon: {
-        display: false,
-        path: '',
-        alt: '',
-        right: false,
-      },
+      label: { display: true, text: '\u0E01' },
+      icon: { display: false, path: '', alt: '', right: false },
       id: 1,
-      class: 'kanit',
+      class: KANIT,
     },
     {
-      label: {
-        display: true,
-        text: 'ก',
-      },
-      icon: {
-        display: false,
-        path: '',
-        alt: '',
-        right: false,
-      },
+      label: { display: true, text: '\u0E01' },
+      icon: { display: false, path: '', alt: '', right: false },
       id: 2,
-      class: 'sriracha',
+      class: SRIRACHA,
     },
   ];
 
   activeId(id: number) {
-    this.themeService.switchThaiFont(this.fontsList[id].class as FontsType);
+    this.themeService.switchThaiFont(this.fontsList[id].class);
   }
 
   protected readonly LARGE = LARGE;

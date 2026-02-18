@@ -11,7 +11,6 @@ export class Card {
   disabled = input(false);
   clickable = input(true);
   isActive = input(false);
-  dark = input(false);
 
   clicked = output();
 }
