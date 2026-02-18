@@ -15,11 +15,21 @@ export class ThemeService {
 
   constructor() {
     effect(() => {
-      this.changeTheme();
+      const theme = this.theme();
+      if (theme === DARK) {
+        this.document.documentElement.classList.add(DARK);
+      } else {
+        this.document.documentElement.classList.remove(DARK);
+      }
     });
 
     effect(() => {
-      this.changeFont();
+      const font = this.thaiFont();
+      const list = this.document.getElementsByClassName('thai');
+      Array.from(list).forEach(item => {
+        item.classList.remove(SARABUN, KANIT, SRIRACHA);
+        item.classList.add(font);
+      });
     });
   }
 
@@ -29,21 +39,5 @@ export class ThemeService {
 
   toggleTheme() {
     this.theme.update(theme => (theme === LIGHT ? DARK : LIGHT));
-  }
-
-  private changeFont() {
-    const list = this.document.getElementsByClassName('thai');
-    Array.from(list).forEach(item => {
-      item.classList.remove(SARABUN, KANIT, SRIRACHA);
-      item.classList.add(this.thaiFont());
-    });
-  }
-
-  private changeTheme() {
-    if (this.theme() === DARK) {
-      this.document.documentElement.classList.add(DARK);
-    } else {
-      this.document.documentElement.classList.remove(DARK);
-    }
   }
 }

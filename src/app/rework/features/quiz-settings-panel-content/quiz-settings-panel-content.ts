@@ -5,6 +5,7 @@ import { QUIZ_FORM_BASE_CONF } from '../../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { I18nService } from '../../../services/i18n-service/i18n-service';
+import { SwitchSelectorItem } from '../../shared/types';
 
 @Component({
   selector: 'app-quiz-settings-panel-content',
@@ -18,7 +19,7 @@ export class QuizSettingsPanelContent {
   protected readonly stateService = inject(StateService);
   protected readonly i18nService = inject(I18nService);
 
-  delayList = [
+  readonly delayList: readonly SwitchSelectorItem[] = [
     {
       label: {
         display: true,

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { ThemeService } from '../../services/theme-service/theme-service';
-import { FontsType, SwitchSelectorItem } from '../../shared/types';
+import { FontSwitchItem } from '../../shared/types';
 import { LARGE, KANIT, SARABUN, SRIRACHA } from '../../shared/constants';
 
 @Component({
@@ -14,7 +14,7 @@ import { LARGE, KANIT, SARABUN, SRIRACHA } from '../../shared/constants';
 export class FontSwitchSelector {
   private readonly themeService = inject(ThemeService);
 
-  readonly fontsList: (SwitchSelectorItem & { class: FontsType })[] = [
+  readonly fontsList: FontSwitchItem[] = [
     {
       label: { display: true, text: '\u0E01' },
       icon: { display: false, path: '', alt: '', right: false },

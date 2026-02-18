@@ -1,3 +1,5 @@
+import { FontsType } from './theme.type';
+
 export interface SwitchSelectorItem {
   label: {
     display: boolean;
@@ -11,4 +13,8 @@ export interface SwitchSelectorItem {
   };
   id: number;
   class: string;
+}
+
+export interface FontSwitchItem extends SwitchSelectorItem {
+  class: FontsType;
 }

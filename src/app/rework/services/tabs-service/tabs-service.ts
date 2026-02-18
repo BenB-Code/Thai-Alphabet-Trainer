@@ -7,7 +7,7 @@ import { SwitchSelectorItem } from '../../shared/types';
   providedIn: 'root',
 })
 export class TabsService {
-  protected readonly dataService = inject(DataService);
+  private readonly dataService = inject(DataService);
 
   private readonly _tabsConfig: TabsConfig[] = [
     {
