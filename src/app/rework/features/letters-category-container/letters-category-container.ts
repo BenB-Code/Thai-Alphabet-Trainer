@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { JsonPipe } from '@angular/common';
 import { ThaiCharacter } from '../../../shared/models';
 import { LettersCategoryHeader } from '../letters-category-header/letters-category-header';
+import { LettersCard } from '../letters-card/letters-card';
 
 @Component({
   selector: 'app-letters-category-container',
-  imports: [JsonPipe, LettersCategoryHeader],
+  imports: [LettersCategoryHeader, LettersCard],
   templateUrl: './letters-category-container.html',
   styleUrl: './letters-category-container.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

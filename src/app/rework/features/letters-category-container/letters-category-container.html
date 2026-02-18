@@ -1,2 +1,7 @@
 <app-letters-category-header [category]="category()" [count]="list().length + 1" />
-<p>{{ list() | json }}</p>
+
+<div class="letter-container">
+  @for (letter of list(); track letter.id) {
+  <app-letters-card [letter]="letter"></app-letters-card>
+  }
+</div>
