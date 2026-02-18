@@ -1,0 +1,10 @@
+:host {
+  app-switch-selector {
+    ::ng-deep {
+      button {
+        font-size: 1.25rem !important;
+        line-height: 1.5rem !important;
+      }
+    }
+  }
+}

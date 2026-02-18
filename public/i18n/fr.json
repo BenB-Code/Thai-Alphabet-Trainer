@@ -45,6 +45,7 @@
   },
   "letters": {
     "outdated": "Cette lettre n'est plus utilisée",
+    "obsolete": "Obsolète",
     "live": "Syllable vivante",
     "dead": "Syllable morte",
     "sound-as-final": "Syllabe en consonne finale",
