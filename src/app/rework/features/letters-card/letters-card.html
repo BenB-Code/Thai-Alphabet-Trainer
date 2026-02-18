@@ -7,7 +7,7 @@
       <img src="icons/triangle-alert.svg" alt="alert" /> <span>{{ 'letters.obsolete' | translate }} </span>
     </div>
     }
-    <div class="thai-character thai">{{ letter().character.thai }}</div>
+    <div [class]="'thai-character thai ' + themeService.thaiFont()">{{ letter().character.thai }}</div>
     <div class="roman-character">{{ letter().character.roman }}</div>
 
     @let translit = letterUtilsService.getTransliteration(letter()); @let vowelPos =
@@ -50,7 +50,7 @@
       }
     </div>
     <div class="translations">
-      <span class="thai">{{ letter().exampleWord.thai }}</span>
+      <span [class]="'thai ' + themeService.thaiFont()">{{ letter().exampleWord.thai }}</span>
       <span class="trad">{{ letter().exampleWord[i18nService.activeLanguage()] }}</span>
     </div>
   </div>

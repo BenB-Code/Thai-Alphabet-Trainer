@@ -12,7 +12,7 @@
     [dark]="themeService.isDarkThemeActive()"
     [icon]="themeService.theme().icon"
     [alt]="themeService.theme().color"
-    [text]="`app.theme` | translate"
+    [text]="'app.theme' | translate"
     (clicked)="themeService.toggleTheme()"
     [size]="SMALL"
   />

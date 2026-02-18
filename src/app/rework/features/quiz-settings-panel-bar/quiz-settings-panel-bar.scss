@@ -67,12 +67,8 @@
 
     .toggle-btn,
     .mobile-toggle-btn {
-      &::ng-deep {
-        button {
-          font-size: 0.9rem;
-          font-weight: 400 !important;
-        }
-      }
+      --btn-font-size: 0.9rem;
+      --btn-font-weight: 400;
 
       @media (pointer: fine) {
         &:hover {
@@ -93,9 +89,7 @@
     }
 
     .start-btn {
-      &::ng-deep {
-        font-weight: 700;
-      }
+      --btn-font-weight: 700;
     }
 
     @media (max-width: 768px) {

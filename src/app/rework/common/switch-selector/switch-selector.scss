@@ -1,6 +1,6 @@
 :host {
   display: flex;
-  padding: 0.125rem;
+  padding: var(--switch-selector-padding, 0.125rem);
   background-color: hsl(var(--muted) / 0.5);
   border: 1px solid hsl(var(--border) / 1);
   border-radius: calc(var(--radius) - 2px);
@@ -15,20 +15,20 @@
     height: 100%;
 
     &.small {
-      font-size: 0.75rem;
-      line-height: 1;
+      font-size: var(--switch-btn-font-size, 0.75rem);
+      line-height: var(--switch-btn-line-height, 1);
       padding: 0.25rem 0.5rem;
     }
 
     &.medium {
-      font-size: 0.75rem;
-      line-height: 1;
+      font-size: var(--switch-btn-font-size, 0.75rem);
+      line-height: var(--switch-btn-line-height, 1);
       padding: 0.25rem 0.75rem;
     }
 
     &.large {
-      font-size: 1rem;
-      line-height: 1.25rem;
+      font-size: var(--switch-btn-font-size, 1rem);
+      line-height: var(--switch-btn-line-height, 1.25rem);
       padding: 0.375rem 0.75rem;
     }
 

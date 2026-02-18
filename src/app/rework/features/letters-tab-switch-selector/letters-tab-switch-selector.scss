@@ -11,9 +11,7 @@
     font-weight: 400;
   }
 
-  ::ng-deep {
-    app-switch-selector {
-      padding: 0.25rem;
-    }
+  app-switch-selector {
+    --switch-selector-padding: 0.25rem;
   }
 }
