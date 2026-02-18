@@ -46,8 +46,8 @@
   "letters": {
     "outdated": "Cette lettre n'est plus utilisée",
     "obsolete": "Obsolète",
-    "live": "Syllable vivante",
-    "dead": "Syllable morte",
+    "live": "Vivante",
+    "dead": "Morte",
     "sound-as-final": "Syllabe en consonne finale",
     "never-final": "Jamais en consonne finale",
     "medial": "Position médiane",

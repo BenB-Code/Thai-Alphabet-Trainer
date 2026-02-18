@@ -1,4 +1,6 @@
-<app-card [dark]="themeService.isDarkThemeActive()">
+@let isDark = themeService.isDarkThemeActive();
+
+<app-card [dark]="isDark">
   <div class="card-content">
     @if (letterUtilsService.isOutdated(letter())) {
     <div class="outdated">
@@ -7,17 +9,18 @@
     }
     <div class="thai-character thai">{{ letter().character.thai }}</div>
     <div class="roman-character">{{ letter().character.roman }}</div>
+
     @let translit = letterUtilsService.getTransliteration(letter()); @let vowelPos =
     letterUtilsService.getVowelPosition(letter());
     <div class="sounds">
       @if (translit) { @if (translit.initial) { {{ translit.initial }} } @else {
-      <img [class.dark]="themeService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
+      <img [class.dark]="isDark" src="icons/line.svg" alt="n/a" />
       }
-      <img [class.dark]="themeService.isDarkThemeActive()" src="icons/arrow-right.svg" alt="to" />
+      <img [class.dark]="isDark" src="icons/arrow-right.svg" alt="to" />
       @if (translit.final) {
       <span> {{ translit.final }} </span>
       } @else {
-      <img [class.dark]="themeService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
+      <img [class.dark]="isDark" src="icons/line.svg" alt="n/a" />
       } } @else if (vowelPos) {
       <div class="vowel-pos">
         <span>
@@ -27,7 +30,25 @@
       </div>
       }
     </div>
-    <div class="status">@if (letter().live) { LIVE } @else { DEAD }</div>
+    <div class="status" [class.dark]="isDark">
+      @if (letter().live) {
+      <app-status-badge class="green">
+        @if (isDark) {
+        <img src="icons/lighting-dark.svg" alt="live" />
+        } @else {
+        <img src="icons/lighting.svg" alt="live" />
+        } {{ 'letters.live' | translate }}
+      </app-status-badge>
+      } @else {
+      <app-status-badge class="red">
+        @if (isDark) {
+        <img src="icons/lighting-slashed-dark.svg" alt="dead" />
+        } @else {
+        <img src="icons/lighting-slashed.svg" alt="dead" />
+        } {{ 'letters.dead' | translate }}
+      </app-status-badge>
+      }
+    </div>
     <div class="translations">
       <span class="thai">{{ letter().exampleWord.thai }}</span>
       <span class="trad">{{ letter().exampleWord[i18nService.activeLanguage()] }}</span>

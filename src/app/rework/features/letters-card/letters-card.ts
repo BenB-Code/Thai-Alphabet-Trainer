@@ -6,10 +6,11 @@ import { LetterUtilsService } from '../../../services/letter-utils-service/lette
 import { I18nService } from '../../../services/i18n-service/i18n-service';
 import { FINAL, MEDIAL } from '../../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
+import { StatusBadge } from '../../common/status-badge/status-badge';
 
 @Component({
   selector: 'app-letters-card',
-  imports: [Card, TranslatePipe],
+  imports: [Card, TranslatePipe, StatusBadge],
   templateUrl: './letters-card.html',
   styleUrl: './letters-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
