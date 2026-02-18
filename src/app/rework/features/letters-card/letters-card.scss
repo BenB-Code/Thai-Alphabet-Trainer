@@ -109,25 +109,13 @@
         }
 
         .green {
-          color: rgb(4 120 87 / 1);
-          background-color: rgb(209 250 229 / 1);
+          color: hsl(var(--status-live) / 1);
+          background-color: hsl(var(--status-live-bg) / 1);
         }
 
         .red {
-          color: rgb(190 18 60 / 1);
-          background-color: rgb(255 228 230 / 1);
-        }
-
-        &.dark {
-          .green {
-            color: rgb(52 211 153 / 1);
-            background-color: #064e3b66;
-          }
-
-          .red {
-            color: rgb(251 113 133 / 1);
-            background-color: #88133766;
-          }
+          color: hsl(var(--status-dead) / 1);
+          background-color: hsl(var(--status-dead-bg) / 1);
         }
       }
 
