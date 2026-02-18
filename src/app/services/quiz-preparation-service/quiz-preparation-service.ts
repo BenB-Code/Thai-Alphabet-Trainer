@@ -1,11 +1,14 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { QuizFormat, ThaiCharacter } from '../../shared/models';
 import { LATIN, MIXED, QUIZ_FORM_BASE_CONF, THAI } from '../../shared/constants';
+import { LetterUtilsService } from '../letter-utils-service/letter-utils-service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuizPreparationService {
+  private readonly letterUtilsService = inject(LetterUtilsService);
+
   quizSettings = signal<QuizFormat>({
     display: THAI,
     questions: 10,
@@ -48,9 +51,9 @@ export class QuizPreparationService {
 
   getCountByCategory(category: string): number {
     return this.quizSettings().selected.filter(letter => {
-      if ('type' in letter) {
+      if (this.letterUtilsService.isVowel(letter)) {
         return letter.type === category;
-      } else if ('class' in letter) {
+      } else if (this.letterUtilsService.isConsonant(letter)) {
         return letter.class === category;
       }
       return false;
