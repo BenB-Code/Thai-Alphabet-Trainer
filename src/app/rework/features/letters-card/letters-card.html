@@ -1,4 +1,4 @@
-<app-card [isActive]="isActive()" (clicked)="selectLetter()" [color]="color()">
+<app-card [clickable]="clickable()" [isActive]="isActive() && activable()" (clicked)="selectLetter()" [color]="color()">
   <div class="card-content">
     @if (letterUtilsService.isOutdated(letter())) {
     <div class="outdated">

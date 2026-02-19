@@ -20,7 +20,7 @@ export const routes: Routes = [
   },
   {
     path: 'result',
-    loadComponent: () => import('./features/quiz-result/quiz-result').then(m => m.QuizResult),
+    loadComponent: () => import('./rework/features/result/result').then(m => m.Result),
     canMatch: [
       () => {
         const quizStoreService = inject<QuizStoreService>(QuizStoreService);

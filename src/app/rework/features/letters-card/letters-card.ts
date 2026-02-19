@@ -3,7 +3,7 @@ import { Colors, ThaiCharacter } from '../../../shared/models';
 import { Card } from '../../common/card/card';
 import { LetterUtilsService } from '../../../services/letter-utils-service/letter-utils-service';
 import { AppStoreService } from '../../store/app/app-store.service';
-import { FINAL, MEDIAL } from '../../../shared/constants';
+import { FINAL, MEDIAL, TERTIARY } from '../../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { StatusBadge } from '../../common/status-badge/status-badge';
 import { DarkMode } from '../../directives/dark-mode/dark-mode';
@@ -23,8 +23,9 @@ export class LettersCard {
   protected readonly letterUtilsService = inject(LetterUtilsService);
 
   letter = input.required<ThaiCharacter>();
-  color = input.required<Colors>();
-
+  color = input<Colors>(TERTIARY);
+  clickable = input<boolean>(true);
+  activable = input<boolean>(true);
   isActive = computed((): boolean =>
     this.selectionStoreService.selected().some(el => el.id === this.letter().id && el.kind === this.letter().kind)
   );

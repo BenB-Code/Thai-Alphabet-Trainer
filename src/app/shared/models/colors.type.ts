@@ -1,4 +1,4 @@
-import { GREEN, GREEN_BLUE, ORANGE, PRIMARY, PURPLE, SECONDARY, TRANSPARENT, YELLOW } from '../constants';
+import { GREEN, GREEN_BLUE, ORANGE, PRIMARY, PURPLE, SECONDARY, TERTIARY, TRANSPARENT, YELLOW } from '../constants';
 
 export type Colors =
   | typeof GREEN
@@ -8,4 +8,5 @@ export type Colors =
   | typeof YELLOW
   | typeof PRIMARY
   | typeof SECONDARY
+  | typeof TERTIARY
   | typeof TRANSPARENT;
