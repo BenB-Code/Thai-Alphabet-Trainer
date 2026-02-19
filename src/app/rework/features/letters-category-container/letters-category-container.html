@@ -1,7 +1,7 @@
-<app-letters-category-header [category]="category()" [count]="list().length" />
+<app-letters-category-header [color]="color()" [category]="category()" [count]="list().length" />
 
 <div class="letter-container">
   @for (letter of list(); track letter.id) {
-  <app-letters-card [letter]="letter"></app-letters-card>
+  <app-letters-card [color]="color()" [letter]="letter"></app-letters-card>
   }
 </div>
