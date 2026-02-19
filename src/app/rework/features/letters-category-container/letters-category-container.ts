@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { ThaiCharacter } from '../../../shared/models';
+import { ConsonantClass, ThaiCharacter, VowelType } from '../../../shared/models';
 import { LettersCategoryHeader } from '../letters-category-header/letters-category-header';
 import { LettersCard } from '../letters-card/letters-card';
 
@@ -11,6 +11,6 @@ import { LettersCard } from '../letters-card/letters-card';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LettersCategoryContainer {
-  category = input.required<string>();
+  category = input.required<ConsonantClass | VowelType>();
   list = input.required<ThaiCharacter[]>();
 }

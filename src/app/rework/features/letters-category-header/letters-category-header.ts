@@ -3,6 +3,7 @@ import { Button } from '../../common/button/button';
 import { SMALL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
+import { ConsonantClass, VowelType } from '../../../shared/models';
 
 @Component({
   selector: 'app-letters-category-header',
@@ -14,7 +15,18 @@ import { SelectionStoreService } from '../../store/selection/selection-store.ser
 export class LettersCategoryHeader {
   protected readonly selectionStoreService = inject(SelectionStoreService);
 
-  category = input.required<string>();
+  category = input.required<ConsonantClass | VowelType>();
   count = input.required<number>();
+
+  selectAll() {
+    this.selectionStoreService.selectByCategory(this.category());
+  }
+  deselectAll() {
+    this.selectionStoreService.deselectByCategory(this.category());
+  }
+  toggleSelection() {
+    this.selectionStoreService.toggleByCategory(this.category());
+  }
+
   protected readonly SMALL = SMALL;
 }

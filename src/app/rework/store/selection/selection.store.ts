@@ -81,18 +81,11 @@ export const SelectionStore = signalStore(
       },
 
       toggleByCategory(category: ConsonantClass | VowelType): void {
-        const letters = getLettersByCategory(category);
+        const allInCategory = getLettersByCategory(category);
         const current = store.selected();
-        const allSelected = letters.every(l => current.some(el => isSameCharacter(el, l)));
-
-        if (allSelected) {
-          patchState(store, {
-            selected: current.filter(el => !letters.some(l => isSameCharacter(l, el))),
-          });
-        } else {
-          const toAdd = letters.filter(l => !current.some(el => isSameCharacter(el, l)));
-          patchState(store, { selected: [...current, ...toAdd] });
-        }
+        const currentlyNotSelected = allInCategory.filter(l => !current.some(el => isSameCharacter(el, l)));
+        const withoutCategory = current.filter(el => !allInCategory.some(l => isSameCharacter(l, el)));
+        patchState(store, { selected: [...withoutCategory, ...currentlyNotSelected] });
       },
     };
   })

@@ -8,18 +8,18 @@
     [size]="SMALL"
     [icon]="'icons/circle-checkmark.svg'"
     [text]="'buttons.all'| translate"
-    [disabled]="true"
+    (clicked)="selectAll()"
   ></app-button>
   <app-button
     [size]="SMALL"
     [icon]="'icons/circle-cross.svg'"
     [text]="'buttons.none'| translate"
-    [disabled]="true"
+    (clicked)="deselectAll()"
   ></app-button>
   <app-button
     [size]="SMALL"
     [icon]="'icons/toggle-left.svg'"
     [text]="'buttons.toggle'| translate"
-    [disabled]="true"
+    (clicked)="toggleSelection()"
   ></app-button>
 </div>
