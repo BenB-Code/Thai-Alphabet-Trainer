@@ -1,6 +1,6 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
-import { INITIAL_QUIZ_STATE } from './quiz.state';
+import { INITIAL_QUIZ_STATE, INITIAL_SESSION_STATE } from './quiz.state';
 import { FINISHED, IN_PROGRESS, PAUSE } from '../../../shared/constants';
 
 export const quizFeature = createFeature({
@@ -35,22 +35,12 @@ export const quizFeature = createFeature({
 
     on(QuizSessionActions.start, state => ({
       ...state,
-      session: {
-        index: 0,
-        progressState: IN_PROGRESS,
-        flipped: false,
-        cardAnimation: null,
-      },
+      session: { ...INITIAL_SESSION_STATE, progressState: IN_PROGRESS },
     })),
 
     on(QuizSessionActions.reset, state => ({
       ...state,
-      session: {
-        index: 0,
-        progressState: PAUSE,
-        flipped: false,
-        cardAnimation: null,
-      },
+      session: INITIAL_SESSION_STATE,
     })),
 
     on(QuizSessionActions.setIndex, (state, { index }) => ({

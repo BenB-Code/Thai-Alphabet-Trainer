@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { DisplayType, ThaiCharacter } from '../../../shared/models';
+import { CardAnimation, DisplayType, ThaiCharacter } from '../../../shared/models';
 
 export const QuizSettingsActions = createActionGroup({
   source: 'Quiz Settings',
@@ -22,7 +22,7 @@ export const QuizSessionActions = createActionGroup({
     'Toggle Flip': emptyProps(),
     'Toggle Pause': emptyProps(),
     'Set Index': props<{ index: number }>(),
-    'Set Animation': props<{ animation: string | null }>(),
+    'Set Animation': props<{ animation: CardAnimation }>(),
     Finish: emptyProps(),
     'Timer Expired': emptyProps(),
   },

@@ -13,3 +13,4 @@ export * from './colors.type';
 export * from './progress-state.type';
 export * from './languages.type';
 export * from './vowel-position.type';
+export * from './card-animation.type';

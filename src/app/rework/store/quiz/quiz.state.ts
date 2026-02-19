@@ -1,4 +1,4 @@
-import { DisplayType, ProgressState, ThaiCharacter } from '../../../shared/models';
+import { CardAnimation, DisplayType, ProgressState, ThaiCharacter } from '../../../shared/models';
 import { PAUSE, QUIZ_FORM_BASE_CONF, THAI } from '../../../shared/constants';
 
 export interface QuizSettingsState {
@@ -13,7 +13,7 @@ export interface QuizSessionState {
   index: number;
   progressState: ProgressState;
   flipped: boolean;
-  cardAnimation: string | null;
+  cardAnimation: CardAnimation;
 }
 
 export interface QuizState {

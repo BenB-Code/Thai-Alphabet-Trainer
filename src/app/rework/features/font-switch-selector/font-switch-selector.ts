@@ -12,7 +12,7 @@ import { LARGE, KANIT, SARABUN, SRIRACHA } from '../../shared/constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FontSwitchSelector {
-  private readonly appStoreService = inject(AppStoreService);
+  protected readonly appStoreService = inject(AppStoreService);
 
   readonly fontsList: FontSwitchItem[] = [
     {

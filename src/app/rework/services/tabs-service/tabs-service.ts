@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { DataService } from '../../../services/data-service/data-service';
 import { TabsConfig } from '../../shared/interfaces';
 import { SwitchSelectorItem } from '../../shared/types';
@@ -46,17 +46,6 @@ export class TabsService {
     },
   ];
 
-  activeTab = signal(0);
-
-  changeActiveTab(index: number): void {
-    this.activeTab.set(index);
-  }
-
-  getTabsConfig(): readonly TabsConfig[] {
-    return this._tabsConfig;
-  }
-
-  getTabsSwitchConfig(): readonly SwitchSelectorItem[] {
-    return this._tabsConfig.map(tabConf => tabConf.tabSwitchConfig);
-  }
+  readonly tabsConfig: readonly TabsConfig[] = this._tabsConfig;
+  readonly tabsSwitchConfig: readonly SwitchSelectorItem[] = this._tabsConfig.map(tabConf => tabConf.tabSwitchConfig);
 }

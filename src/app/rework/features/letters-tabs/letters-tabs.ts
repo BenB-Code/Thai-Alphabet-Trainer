@@ -16,7 +16,7 @@ export class LettersTabs {
   private readonly tabsService = inject(TabsService);
 
   protected readonly tabEntries = computed(() =>
-    this.tabsService.getTabsConfig().map(tab => ({
+    this.tabsService.tabsConfig.map(tab => ({
       id: tab.tabSwitchConfig.id,
       categories: Object.entries(tab.payload) as [ConsonantClass | VowelType, ThaiCharacter[]][],
     }))

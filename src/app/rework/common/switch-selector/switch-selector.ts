@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject, input, linkedSignal, output, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, linkedSignal, output, TemplateRef } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
 import { SwitchSelectorItem } from '../../shared/types';
-import { AppStoreService } from '../../store/app/app-store.service';
 
 @Component({
   selector: 'app-switch-selector',
@@ -12,8 +11,7 @@ import { AppStoreService } from '../../store/app/app-store.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SwitchSelector {
-  protected readonly appStoreService = inject(AppStoreService);
-
+  darkMode = input(false);
   size = input<typeof SMALL | typeof MEDIUM | typeof LARGE>(MEDIUM);
   labelTemplate = input<TemplateRef<unknown>>();
   initialIndex = input(0);
