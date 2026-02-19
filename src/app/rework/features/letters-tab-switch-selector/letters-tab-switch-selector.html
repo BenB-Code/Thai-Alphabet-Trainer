@@ -5,6 +5,7 @@
 
 <app-switch-selector
   [list]="tabsService.getTabsSwitchConfig()"
+  [initialIndex]="appStoreService.activeTab()"
   (activeItem)="appStoreService.changeTab($event)"
   [labelTemplate]="customLabel"
   [size]="LARGE"
