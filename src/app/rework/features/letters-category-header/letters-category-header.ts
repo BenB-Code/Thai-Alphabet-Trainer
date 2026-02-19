@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { Button } from '../../common/button/button';
 import { SMALL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -21,6 +21,8 @@ export class LettersCategoryHeader {
   category = input.required<ConsonantClass | VowelType>();
   count = input.required<number>();
   color = input.required<Colors>();
+  isOpen = input(true);
+  toggleOpen = output();
 
   selectAll() {
     this.selectionStoreService.selectByCategory(this.category());

@@ -1,7 +1,15 @@
-<div class="title">
+<div
+  class="title"
+  role="button"
+  tabindex="0"
+  (click)="toggleOpen.emit()"
+  (keydown.enter)="toggleOpen.emit()"
+  (keydown.space)="toggleOpen.emit()"
+>
   <div class="dot"></div>
   <h3>{{ `titles.${category()}` | translate }}</h3>
   <span> {{ selectionStoreService.getCountByCategory(category()) }}/{{ count() }} </span>
+  <img class="chevron" [class.collapsed]="!isOpen()" src="icons/chevron-down.svg" alt="toggle" />
 </div>
 <div class="buttons">
   <app-button

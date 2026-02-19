@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { ConsonantClass, ThaiCharacter, VowelType } from '../../../shared/models';
 import { LettersCategoryHeader } from '../letters-category-header/letters-category-header';
 import { LettersCard } from '../letters-card/letters-card';
@@ -20,4 +20,10 @@ export class LettersCategoryContainer {
   category = input.required<ConsonantClass | VowelType>();
   list = input.required<ThaiCharacter[]>();
   color = computed(() => this.letterUtilsService.getLetterColor(this.category()));
+
+  isOpen = signal(true);
+
+  toggleOpen(): void {
+    this.isOpen.update(v => !v);
+  }
 }

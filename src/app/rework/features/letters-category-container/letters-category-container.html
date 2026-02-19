@@ -1,7 +1,15 @@
-<app-letters-category-header [color]="color()" [category]="category()" [count]="list().length" />
+<app-letters-category-header
+  [color]="color()"
+  [category]="category()"
+  [count]="list().length"
+  [isOpen]="isOpen()"
+  (toggleOpen)="toggleOpen()"
+/>
 
-<div class="letter-container">
-  @for (letter of list(); track letter.id) {
-  <app-letters-card [color]="color()" [letter]="letter"></app-letters-card>
-  }
+<div class="letter-slider" [class.open]="isOpen()">
+  <div class="letter-container">
+    @for (letter of list(); track letter.id) {
+    <app-letters-card [color]="color()" [letter]="letter"></app-letters-card>
+    }
+  </div>
 </div>
