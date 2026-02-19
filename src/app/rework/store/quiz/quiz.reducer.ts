@@ -35,7 +35,12 @@ export const quizFeature = createFeature({
 
     on(QuizSessionActions.start, state => ({
       ...state,
-      session: { ...state.session, progressState: IN_PROGRESS },
+      session: {
+        index: 0,
+        progressState: IN_PROGRESS,
+        flipped: false,
+        cardAnimation: null,
+      },
     })),
 
     on(QuizSessionActions.reset, state => ({
