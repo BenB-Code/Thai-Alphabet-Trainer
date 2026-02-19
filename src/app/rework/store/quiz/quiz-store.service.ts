@@ -49,9 +49,6 @@ export class QuizStoreService {
   readonly isPaused = this.store.selectSignal(selectIsPaused);
   readonly isQuizValid = this.store.selectSignal(selectIsQuizValid);
 
-  readonly timerPercent = this.timerService.timerPercent;
-  readonly skipTransition = this.timerService.skipTransition;
-
   updateDisplay(display: DisplayType): void {
     this.store.dispatch(QuizSettingsActions.updateDisplay({ display }));
   }

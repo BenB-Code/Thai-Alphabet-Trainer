@@ -1,6 +1,5 @@
 import { DisplayType, ProgressState, ThaiCharacter } from '../../../shared/models';
-import { PAUSE, THAI } from '../../../shared/constants';
-import { QUIZ_FORM_BASE_CONF } from '../../../shared/constants';
+import { PAUSE, QUIZ_FORM_BASE_CONF, THAI } from '../../../shared/constants';
 
 export interface QuizSettingsState {
   display: DisplayType;
