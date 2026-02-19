@@ -16,6 +16,8 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideRouterStore } from '@ngrx/router-store';
+import { quizFeature } from './rework/store/quiz/quiz.reducer';
+import { QuizEffects } from './rework/store/quiz/quiz.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -35,8 +37,8 @@ export const appConfig: ApplicationConfig = {
       registrationStrategy: 'registerWhenStable:30000',
     }),
     provideClientHydration(withEventReplay()),
-    provideStore(),
-    provideEffects(),
+    provideStore({ [quizFeature.name]: quizFeature.reducer }),
+    provideEffects(QuizEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideRouterStore(),
   ],
