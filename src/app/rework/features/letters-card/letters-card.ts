@@ -6,7 +6,7 @@ import { AppStoreService } from '../../store/app/app-store.service';
 import { FINAL, MEDIAL } from '../../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { StatusBadge } from '../../common/status-badge/status-badge';
-import { DarkMode } from '../../common/dark-mode/dark-mode';
+import { DarkMode } from '../../directives/dark-mode/dark-mode';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { select } from '@ngrx/store';
 

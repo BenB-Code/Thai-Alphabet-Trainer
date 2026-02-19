@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, input, output } from '@angu
 import { Button } from '../../common/button/button';
 import { TranslatePipe } from '@ngx-translate/core';
 import { NavigationService } from '../../../services/navigation-service/navigation-service';
-import { DarkMode } from '../../common/dark-mode/dark-mode';
+import { DarkMode } from '../../directives/dark-mode/dark-mode';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 

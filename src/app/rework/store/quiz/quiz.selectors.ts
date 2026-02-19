@@ -1,7 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import { quizFeature } from './quiz.reducer';
-import { FINISHED, IN_PROGRESS, PAUSE } from '../../../shared/constants';
-import { QUIZ_FORM_BASE_CONF } from '../../../shared/constants';
+import { FINISHED, IN_PROGRESS, PAUSE, QUIZ_FORM_BASE_CONF } from '../../../shared/constants';
 
 export const selectQuizState = quizFeature.selectQuizState;
 
@@ -52,6 +51,6 @@ export const selectIsQuizValid = createSelector(selectSettings, settings => {
   )
     return false;
   if (settings.selected.length <= 0) return false;
-  if (!settings.delay) return false;
+  if (settings.delay == null || settings.delay < 0) return false;
   return true;
 });

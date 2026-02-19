@@ -4,7 +4,7 @@ import { SMALL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { Colors, ConsonantClass, VowelType } from '../../../shared/models';
-import { DarkMode } from '../../common/dark-mode/dark-mode';
+import { DarkMode } from '../../directives/dark-mode/dark-mode';
 
 @Component({
   selector: 'app-letters-category-header',
