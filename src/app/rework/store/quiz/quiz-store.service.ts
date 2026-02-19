@@ -21,13 +21,11 @@ import {
   selectSelected,
 } from './quiz.selectors';
 import { DisplayType, ThaiCharacter } from '../../../shared/models';
-import { QuizTimerService } from '../../../services/quiz-timer-service/quiz-timer-service';
 import { LATIN, MIXED, THAI } from '../../../shared/constants';
 
 @Injectable({ providedIn: 'root' })
 export class QuizStoreService {
   private readonly store = inject(Store);
-  private readonly timerService = inject(QuizTimerService);
 
   readonly display = this.store.selectSignal(selectDisplay);
   readonly questions = this.store.selectSignal(selectQuestions);
