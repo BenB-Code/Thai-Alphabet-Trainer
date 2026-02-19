@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core
 import { Button } from '../../common/button/button';
 import { SMALL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
-import { QuizPreparationService } from '../../../services/quiz-preparation-service/quiz-preparation-service';
+import { SelectionStoreService } from '../../store/selection/selection-store.service';
 
 @Component({
   selector: 'app-letters-category-header',
@@ -12,7 +12,7 @@ import { QuizPreparationService } from '../../../services/quiz-preparation-servi
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LettersCategoryHeader {
-  protected readonly quizPreparationService = inject(QuizPreparationService);
+  protected readonly selectionStoreService = inject(SelectionStoreService);
 
   category = input.required<string>();
   count = input.required<number>();

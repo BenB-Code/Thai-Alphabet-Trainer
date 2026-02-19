@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, input, linkedSignal, output
 import { NgTemplateOutlet } from '@angular/common';
 import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
 import { SwitchSelectorItem } from '../../shared/types';
-import { ThemeService } from '../../services/theme-service/theme-service';
+import { AppStoreService } from '../../store/app/app-store.service';
 
 @Component({
   selector: 'app-switch-selector',
@@ -12,7 +12,7 @@ import { ThemeService } from '../../services/theme-service/theme-service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SwitchSelector {
-  protected readonly themeService = inject(ThemeService);
+  protected readonly appStoreService = inject(AppStoreService);
 
   size = input<typeof SMALL | typeof MEDIUM | typeof LARGE>(MEDIUM);
   labelTemplate = input<TemplateRef<unknown>>();

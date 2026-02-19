@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { Button } from '../../common/button/button';
 import { TranslatePipe } from '@ngx-translate/core';
-import { QuizPreparationService } from '../../../services/quiz-preparation-service/quiz-preparation-service';
-import { StateService } from '../../../services/state-service/state-service';
 import { NavigationService } from '../../../services/navigation-service/navigation-service';
 import { DarkMode } from '../../common/dark-mode/dark-mode';
+import { QuizStoreService } from '../../store/quiz/quiz-store.service';
+import { SelectionStoreService } from '../../store/selection/selection-store.service';
 
 @Component({
   selector: 'app-quiz-settings-panel-bar',
@@ -14,8 +14,8 @@ import { DarkMode } from '../../common/dark-mode/dark-mode';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizSettingsPanelBar {
-  protected readonly quizPreparationService = inject(QuizPreparationService);
-  protected readonly stateService = inject(StateService);
+  protected readonly quizStoreService = inject(QuizStoreService);
+  protected readonly selectionStoreService = inject(SelectionStoreService);
   protected readonly navigationService = inject(NavigationService);
 
   isOpen = input(false);
@@ -26,7 +26,7 @@ export class QuizSettingsPanelBar {
   }
 
   startQuiz() {
-    this.quizPreparationService.generateQuizList();
+    this.quizStoreService.generateQuizList();
     this.navigationService.navigate('quiz');
   }
 }

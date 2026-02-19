@@ -1,5 +1,5 @@
 @for (tab of tabEntries(); track tab.id) {
-<section [class.visible]="tabsService.activeTab() === tab.id" class="tab">
+<section [class.visible]="appStoreService.activeTab() === tab.id" class="tab">
   @for (category of tab.categories; track category[0]) {
   <app-letters-category-container [category]="category[0]" [list]="category[1]" />
   }

@@ -1,11 +1,11 @@
-<app-card>
+<app-card [isActive]="isActive()" (clicked)="selectLetter()">
   <div class="card-content">
     @if (letterUtilsService.isOutdated(letter())) {
     <div class="outdated">
       <img src="icons/triangle-alert.svg" alt="alert" /> <span>{{ 'letters.obsolete' | translate }} </span>
     </div>
     }
-    <div [class]="'thai-character thai ' + themeService.thaiFont()">{{ letter().character.thai }}</div>
+    <div [class]="'thai-character thai ' + appStoreService.thaiFont()">{{ letter().character.thai }}</div>
     <div class="roman-character">{{ letter().character.roman }}</div>
 
     @let translit = letterUtilsService.getTransliteration(letter()); @let vowelPos =
@@ -31,7 +31,7 @@
     <div class="status">
       @if (letter().live) {
       <app-status-badge class="green">
-        @if (themeService.isDarkThemeActive()) {
+        @if (appStoreService.isDarkThemeActive()) {
         <img src="icons/lighting-dark.svg" alt="live" />
         } @else {
         <img src="icons/lighting.svg" alt="live" />
@@ -39,7 +39,7 @@
       </app-status-badge>
       } @else {
       <app-status-badge class="red">
-        @if (themeService.isDarkThemeActive()) {
+        @if (appStoreService.isDarkThemeActive()) {
         <img src="icons/lighting-slashed-dark.svg" alt="dead" />
         } @else {
         <img src="icons/lighting-slashed.svg" alt="dead" />
@@ -48,8 +48,8 @@
       }
     </div>
     <div class="translations">
-      <span [class]="'thai ' + themeService.thaiFont()">{{ letter().exampleWord.thai }}</span>
-      <span class="trad">{{ letter().exampleWord[i18nService.activeLanguage()] }}</span>
+      <span [class]="'thai ' + appStoreService.thaiFont()">{{ letter().exampleWord.thai }}</span>
+      <span class="trad">{{ letter().exampleWord[appStoreService.language()] }}</span>
     </div>
   </div>
 </app-card>

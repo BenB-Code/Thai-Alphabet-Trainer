@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
-import { ThemeService } from '../../services/theme-service/theme-service';
+import { AppStoreService } from '../../store/app/app-store.service';
 import { FontSwitchItem } from '../../shared/types';
 import { LARGE, KANIT, SARABUN, SRIRACHA } from '../../shared/constants';
 
@@ -12,7 +12,7 @@ import { LARGE, KANIT, SARABUN, SRIRACHA } from '../../shared/constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FontSwitchSelector {
-  private readonly themeService = inject(ThemeService);
+  private readonly appStoreService = inject(AppStoreService);
 
   readonly fontsList: FontSwitchItem[] = [
     {
@@ -36,7 +36,7 @@ export class FontSwitchSelector {
   ];
 
   activeId(id: number) {
-    this.themeService.switchThaiFont(this.fontsList[id].class);
+    this.appStoreService.switchFont(this.fontsList[id].class);
   }
 
   protected readonly LARGE = LARGE;

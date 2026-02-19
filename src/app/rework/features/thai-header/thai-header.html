@@ -6,15 +6,19 @@
     <app-button
       [icon]="'icons/globe.svg'"
       [uppercase]="true"
-      [alt]="i18nService.activeLanguage()"
-      (clicked)="i18nService.toggleLanguage()"
-      [text]="i18nService.activeLanguage()"
+      [alt]="appStoreService.language()"
+      (clicked)="appStoreService.toggleLanguage()"
+      [text]="appStoreService.language()"
       [size]="SMALL"
     />
 
     <app-font-switch-selector></app-font-switch-selector>
 
-    <app-button [icon]="themeService.themeIcon()" [alt]="themeService.theme()" (clicked)="themeService.toggleTheme()" />
+    <app-button
+      [icon]="appStoreService.themeIcon()"
+      [alt]="appStoreService.theme()"
+      (clicked)="appStoreService.toggleTheme()"
+    />
     <app-button [icon]="'icons/mail.svg'" [alt]="'app.contact' | translate" (clicked)="contactService.sendMail()" />
   </div>
 </app-header>

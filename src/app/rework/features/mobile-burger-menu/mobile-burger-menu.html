@@ -2,16 +2,16 @@
   <app-button
     [icon]="'icons/globe.svg'"
     [uppercase]="true"
-    [alt]="i18nService.activeLanguage()"
-    (clicked)="i18nService.toggleLanguage()"
-    [text]="i18nService.activeLanguage()"
+    [alt]="appStoreService.language()"
+    (clicked)="appStoreService.toggleLanguage()"
+    [text]="appStoreService.language()"
     [size]="SMALL"
   />
   <app-button
-    [icon]="themeService.themeIcon()"
-    [alt]="themeService.theme()"
+    [icon]="appStoreService.themeIcon()"
+    [alt]="appStoreService.theme()"
     [text]="'app.theme' | translate"
-    (clicked)="themeService.toggleTheme()"
+    (clicked)="appStoreService.toggleTheme()"
     [size]="SMALL"
   />
   <hr />

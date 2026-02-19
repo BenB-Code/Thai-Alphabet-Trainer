@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
-import { ThemeService } from '../../services/theme-service/theme-service';
+import { AppStoreService } from '../../store/app/app-store.service';
 
 @Component({
   selector: 'app-button',
@@ -13,7 +13,7 @@ import { ThemeService } from '../../services/theme-service/theme-service';
   },
 })
 export class Button {
-  protected readonly themeService = inject(ThemeService);
+  protected readonly appStoreService = inject(AppStoreService);
 
   clicked = output();
 

@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Button } from '../../common/button/button';
 import { TranslatePipe } from '@ngx-translate/core';
-import { I18nService } from '../../../services/i18n-service/i18n-service';
-import { ThemeService } from '../../services/theme-service/theme-service';
 import { BurgerMenu } from '../../common/burger-menu/burger-menu';
 import { ContactService } from '../../services/contact.service/contact.service';
 import { FontSwitchSelector } from '../font-switch-selector/font-switch-selector';
 import { SMALL } from '../../shared/constants';
+import { AppStoreService } from '../../store/app/app-store.service';
 
 @Component({
   selector: 'app-mobile-burger-menu',
@@ -16,8 +15,7 @@ import { SMALL } from '../../shared/constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MobileBurgerMenu {
-  protected readonly i18nService = inject(I18nService);
-  protected readonly themeService = inject(ThemeService);
+  protected readonly appStoreService = inject(AppStoreService);
   protected readonly contactService = inject(ContactService);
   protected readonly SMALL = SMALL;
 }

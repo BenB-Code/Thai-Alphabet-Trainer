@@ -1,4 +1,4 @@
-@let totalCount = stateService.totalCount(); @let totalQuestions = quizPreparationService.quizSettings().questions;
+@let totalCount = selectionStoreService.totalCount(); @let totalQuestions = quizStoreService.questions();
 
 <div class="left-section">
   <span class="count" [class.highlighted]="totalCount > 0">{{ totalCount }}</span>
@@ -6,17 +6,15 @@
     @if (totalCount > 1) { {{ 'quiz.selecteds' | translate }} } @else { {{ 'quiz.selected' | translate }} }</span
   >
   <span
-    >@if (quizPreparationService.quizSettings().delay) { {{ quizPreparationService.quizSettings().delay }}s } @else {
+    >@if (quizStoreService.delay()) { {{ quizStoreService.delay() }}s } @else {
     <img src="icons/time-off.svg" alt="off" class="timer" />
     }
   </span>
   <span class="questions"
-    >{{ quizPreparationService.quizSettings().questions }} @if (totalQuestions > 1) { {{ 'quiz.questions' | translate }}
-    } @else { {{ 'quiz.question' | translate }} }</span
+    >{{ quizStoreService.questions() }} @if (totalQuestions > 1) { {{ 'quiz.questions' | translate }} } @else { {{
+    'quiz.question' | translate }} }</span
   >
-  <span class="mobile-question">
-    {{ quizPreparationService.quizSettings().questions }} {{ 'quiz.abbrev-questions' | translate }}
-  </span>
+  <span class="mobile-question"> {{ quizStoreService.questions() }} {{ 'quiz.abbrev-questions' | translate }} </span>
 </div>
 <div class="right-section">
   <app-button
@@ -39,6 +37,6 @@
     [text]="'quiz.start' | translate"
     [color]="'--primary'"
     [inverted]="true"
-    [disabled]="!quizPreparationService.isQuizValid()"
+    [disabled]="!quizStoreService.isQuizValid()"
   ></app-button>
 </div>

@@ -3,6 +3,7 @@ import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LARGE } from '../../shared/constants';
 import { TabsService } from '../../services/tabs-service/tabs-service';
+import { AppStoreService } from '../../store/app/app-store.service';
 
 @Component({
   selector: 'app-letters-tab-switch-selector',
@@ -12,6 +13,7 @@ import { TabsService } from '../../services/tabs-service/tabs-service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LettersTabSwitchSelector {
+  protected readonly appStoreService = inject(AppStoreService);
   protected readonly tabsService = inject(TabsService);
 
   protected readonly LARGE = LARGE;

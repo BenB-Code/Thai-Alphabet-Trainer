@@ -1,13 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Button } from '../../common/button/button';
 import { Header } from '../../common/header/header';
-import { I18nService } from '../../../services/i18n-service/i18n-service';
-import { ThemeService } from '../../services/theme-service/theme-service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { FontSwitchSelector } from '../font-switch-selector/font-switch-selector';
 import { MobileBurgerMenu } from '../mobile-burger-menu/mobile-burger-menu';
 import { ContactService } from '../../services/contact.service/contact.service';
 import { SMALL } from '../../shared/constants';
+import { AppStoreService } from '../../store/app/app-store.service';
 
 @Component({
   selector: 'app-thai-header',
@@ -20,8 +19,7 @@ export class ThaiHeader {
   title = 'Thai';
   subtitle = 'Flashcards';
 
-  protected readonly i18nService = inject(I18nService);
+  protected readonly appStoreService = inject(AppStoreService);
   protected readonly contactService = inject(ContactService);
-  protected readonly themeService = inject(ThemeService);
   protected readonly SMALL = SMALL;
 }

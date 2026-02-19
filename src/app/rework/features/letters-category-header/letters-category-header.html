@@ -1,7 +1,7 @@
 <div class="title">
   <div class="dot"></div>
   <h3>{{ `titles.${category()}` | translate }}</h3>
-  <span> {{ quizPreparationService.getCountByCategory(category()) }}/{{ count() }} </span>
+  <span> {{ selectionStoreService.getCountByCategory(category()) }}/{{ count() }} </span>
 </div>
 <div class="buttons">
   <app-button

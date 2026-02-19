@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { QuizPreparationService } from '../../../services/quiz-preparation-service/quiz-preparation-service';
-import { StateService } from '../../../services/state-service/state-service';
 import { QUIZ_FORM_BASE_CONF } from '../../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
-import { I18nService } from '../../../services/i18n-service/i18n-service';
 import { SwitchSelectorItem } from '../../shared/types';
+import { QuizStoreService } from '../../store/quiz/quiz-store.service';
+import { AppStoreService } from '../../store/app/app-store.service';
 
 @Component({
   selector: 'app-quiz-settings-panel-content',
@@ -15,9 +14,8 @@ import { SwitchSelectorItem } from '../../shared/types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizSettingsPanelContent {
-  protected readonly quizPreparationService = inject(QuizPreparationService);
-  protected readonly stateService = inject(StateService);
-  protected readonly i18nService = inject(I18nService);
+  protected readonly quizStoreService = inject(QuizStoreService);
+  protected readonly appStoreService = inject(AppStoreService);
 
   readonly delayList: readonly SwitchSelectorItem[] = [
     {
@@ -93,32 +91,24 @@ export class QuizSettingsPanelContent {
   ];
 
   displayList = computed(() => {
-    this.i18nService.activeLanguage();
+    this.appStoreService.language();
     return QUIZ_FORM_BASE_CONF.display.map((item, index) => ({
-      label: { display: true, text: this.i18nService.translate(item.label) },
+      label: { display: true, text: this.appStoreService.translate(item.label) },
       icon: { display: false, path: '', alt: '', right: false },
       id: index,
       class: '',
     }));
   });
 
-  initialDelayIndex = QUIZ_FORM_BASE_CONF.delay.findIndex(d => d === this.quizPreparationService.quizSettings().delay);
-  initialDisplayIndex = QUIZ_FORM_BASE_CONF.display.findIndex(
-    d => d.value === this.quizPreparationService.quizSettings().display
-  );
+  initialDelayIndex = QUIZ_FORM_BASE_CONF.delay.findIndex(d => d === this.quizStoreService.delay());
+  initialDisplayIndex = QUIZ_FORM_BASE_CONF.display.findIndex(d => d.value === this.quizStoreService.display());
 
   delayChange(delayId: number) {
-    this.quizPreparationService.quizSettings.update(settings => ({
-      ...settings,
-      delay: QUIZ_FORM_BASE_CONF.delay[delayId],
-    }));
+    this.quizStoreService.updateDelay(QUIZ_FORM_BASE_CONF.delay[delayId]);
   }
 
   displayChange(displayId: number) {
-    this.quizPreparationService.quizSettings.update(settings => ({
-      ...settings,
-      display: QUIZ_FORM_BASE_CONF.display[displayId].value,
-    }));
+    this.quizStoreService.updateDisplay(QUIZ_FORM_BASE_CONF.display[displayId].value);
   }
 
   questionsChange(question: Event) {
@@ -126,10 +116,7 @@ export class QuizSettingsPanelContent {
     val = Math.max(val, QUIZ_FORM_BASE_CONF.questions.min);
     val = Math.min(val, QUIZ_FORM_BASE_CONF.questions.max);
 
-    this.quizPreparationService.quizSettings.update(settings => ({
-      ...settings,
-      questions: val,
-    }));
+    this.quizStoreService.updateQuestions(val);
   }
 
   protected readonly QUIZ_FORM_BASE_CONF = QUIZ_FORM_BASE_CONF;
