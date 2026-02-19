@@ -4,10 +4,11 @@ import { SMALL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { Colors, ConsonantClass, VowelType } from '../../../shared/models';
+import { DarkMode } from '../../common/dark-mode/dark-mode';
 
 @Component({
   selector: 'app-letters-category-header',
-  imports: [Button, TranslatePipe],
+  imports: [Button, TranslatePipe, DarkMode],
   templateUrl: './letters-category-header.html',
   styleUrl: './letters-category-header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
