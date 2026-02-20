@@ -1,0 +1,36 @@
+:host {
+  margin-bottom: 2rem;
+
+  .letter-slider {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition-property: grid-template-rows, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.open {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+  }
+
+  .letter-container {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .letter-container {
+      grid-template-columns: repeat(3, minmax(0px, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .letter-container {
+      grid-template-columns: repeat(5, minmax(0px, 1fr));
+    }
+  }
+}

@@ -1,24 +1,21 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
-import { MatButtonModule } from '@angular/material/button';
+import { Button } from '../../common/button/button';
+import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
-import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
-import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
 
 @Component({
   selector: 'app-quiz-header',
-  imports: [TranslatePipe, MatButtonModule],
+  imports: [Button],
   templateUrl: './quiz-header.html',
   styleUrl: './quiz-header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizHeader {
-  private readonly navigationService = inject<NavigationService>(NavigationService);
-  protected readonly prepService = inject<QuizPreparationService>(QuizPreparationService);
-  protected readonly sessionService = inject<QuizSessionService>(QuizSessionService);
+  protected readonly quizStoreService = inject(QuizStoreService);
+  private readonly navigationService = inject(NavigationService);
 
-  exit() {
-    this.sessionService.reset();
+  quit() {
+    this.quizStoreService.reset();
     this.navigationService.navigate('');
   }
 }

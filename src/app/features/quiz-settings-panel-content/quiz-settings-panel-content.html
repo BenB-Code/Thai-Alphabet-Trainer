@@ -1,0 +1,36 @@
+<div class="question-container">
+  <label for="questions">{{ 'quiz.questions' | translate }}</label>
+
+  <div class="question-input">
+    <input
+      id="questions"
+      type="number"
+      (input)="questionsChange($event)"
+      [value]="quizStoreService.questions()"
+      [min]="QUIZ_FORM_BASE_CONF.questions.min"
+      [max]="QUIZ_FORM_BASE_CONF.questions.max"
+    /><span>&nbsp;/&nbsp;{{ QUIZ_FORM_BASE_CONF.questions.max }}</span>
+  </div>
+</div>
+
+<div class="question-container">
+  <label for="delay">{{ 'quiz.delay' | translate }}</label>
+  <app-switch-selector
+    class="delay"
+    [darkMode]="appStoreService.isDarkThemeActive()"
+    (activeItem)="delayChange($event)"
+    [list]="delayList"
+    [initialIndex]="initialDelayIndex"
+  ></app-switch-selector>
+</div>
+
+<div class="question-container">
+  <label for="character-display-label">{{ 'quiz.character-display' | translate }}</label>
+  <app-switch-selector
+    class="display"
+    [darkMode]="appStoreService.isDarkThemeActive()"
+    (activeItem)="displayChange($event)"
+    [list]="displayList()"
+    [initialIndex]="initialDisplayIndex"
+  ></app-switch-selector>
+</div>

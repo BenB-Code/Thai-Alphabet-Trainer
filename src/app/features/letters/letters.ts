@@ -1,17 +1,20 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
+import { LettersTabSwitchSelector } from '../letters-tab-switch-selector/letters-tab-switch-selector';
+import { QuizSettingsPanel } from '../quiz-settings-panel/quiz-settings-panel';
+import { LettersTabs } from '../letters-tabs/letters-tabs';
+import { AppStoreService } from '../../store/app/app-store.service';
 
 @Component({
   selector: 'app-letters',
-  imports: [],
+  imports: [LettersTabSwitchSelector, QuizSettingsPanel, LettersTabs],
   templateUrl: './letters.html',
   styleUrl: './letters.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Letters {
-  private readonly sessionService = inject<QuizSessionService>(QuizSessionService);
+  private readonly appStoreService = inject(AppStoreService);
 
   constructor() {
-    this.sessionService.reset();
+    this.appStoreService.changeTab(0);
   }
 }

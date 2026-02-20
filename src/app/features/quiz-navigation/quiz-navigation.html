@@ -1,0 +1,20 @@
+<button appDarkMode [class.disabled]="!quizStoreService.canGoBack()" (click)="quizStoreService.previous()">
+  <img src="icons/chevron-left.svg" alt="prev" />
+</button>
+
+<button
+  appDarkMode
+  class="bigger"
+  (click)="quizStoreService.togglePause()"
+  [class.disabled]="quizStoreService.delay() < 1"
+>
+  @if (quizStoreService.isInProgress()) {
+  <img src="icons/pause.svg" alt="pause" />
+  } @else {
+  <img src="icons/play.svg" alt="start" />
+  }
+</button>
+
+<button appDarkMode [class.disabled]="!quizStoreService.canGoForward()" (click)="quizStoreService.next()">
+  <img src="icons/chevron-right.svg" alt="next" />
+</button>

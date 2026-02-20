@@ -1,0 +1,24 @@
+<app-header class="backdrop-blur" [title]="title" [subtitle]="subtitle">
+  <div class="burger-container transition">
+    <app-mobile-burger-menu></app-mobile-burger-menu>
+  </div>
+  <div class="inline-items">
+    <app-button
+      [icon]="'icons/globe.svg'"
+      [uppercase]="true"
+      [alt]="appStoreService.language()"
+      (clicked)="appStoreService.toggleLanguage()"
+      [text]="appStoreService.language()"
+      [size]="SMALL"
+    />
+
+    <app-font-switch-selector></app-font-switch-selector>
+
+    <app-button
+      [icon]="appStoreService.themeIcon()"
+      [alt]="appStoreService.theme()"
+      (clicked)="appStoreService.toggleTheme()"
+    />
+    <app-button [icon]="'icons/mail.svg'" [alt]="'app.contact' | translate" (clicked)="contactService.sendMail()" />
+  </div>
+</app-header>
