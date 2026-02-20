@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterOutlet } from '@angular/router';
-import { ThaiHeader } from './rework/features/thai-header/thai-header';
+import { ThaiHeader } from './features/thai-header/thai-header';
 
 @Component({
   selector: 'app-root',

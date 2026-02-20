@@ -16,8 +16,8 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideRouterStore } from '@ngrx/router-store';
-import { quizFeature } from './rework/store/quiz/quiz.reducer';
-import { QuizEffects } from './rework/store/quiz/quiz.effects';
+import { quizFeature } from './store/quiz/quiz.reducer';
+import { QuizEffects } from './store/quiz/quiz.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [

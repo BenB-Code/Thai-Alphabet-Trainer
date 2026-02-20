@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Colors, ConsonantClass, ThaiCharacter, ThaiConsonant, ThaiVowel, VowelType } from '../../shared/models';
 import { TypeClassColorsMap } from '../../shared/constants';
+import { Colors, ConsonantClass, ThaiCharacter, VowelType } from '../../shared/types';
+import { ThaiConsonant, ThaiVowel } from '../../shared/models';
 
 @Injectable({
   providedIn: 'root',

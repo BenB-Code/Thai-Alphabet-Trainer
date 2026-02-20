@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ConsonantClass, ThaiCharacter, ThaiConsonant, ThaiVowel, VowelType } from '../../shared/models';
 import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
+import { ConsonantClass, ThaiCharacter, VowelType } from '../../shared/types';
+import { ThaiConsonant, ThaiVowel } from '../../shared/models';
 
 @Injectable({
   providedIn: 'root',

@@ -1,5 +1,5 @@
-import { DisplayType } from '../models';
 import { LATIN, MIXED, THAI } from './letters.const';
+import { DisplayType } from '../types';
 
 export const QUIZ_FORM_BASE_CONF = {
   questions: {

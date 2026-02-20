@@ -1,8 +1,8 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { ProgressState } from '../../shared/models';
 import { BACKWARD, FINISHED, FORWARD, IN_PROGRESS, PAUSE } from '../../shared/constants';
 import { QuizPreparationService } from '../quiz-preparation-service/quiz-preparation-service';
 import { QuizTimerService } from '../quiz-timer-service/quiz-timer-service';
+import { ProgressState } from '../../shared/types';
 
 @Injectable({
   providedIn: 'root',

@@ -1,7 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { DataService } from '../data-service/data-service';
 import { CONSONANT, VOWEL } from '../../shared/constants';
-import { LetterKind, ThaiCharacter } from '../../shared/models';
+import { LetterKind, ThaiCharacter } from '../../shared/types';
 
 @Injectable({
   providedIn: 'root',

@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { inject } from '@angular/core';
-import { Letters } from './rework/features/letters/letters';
-import { QuizStoreService } from './rework/store/quiz/quiz-store.service';
+import { Letters } from './features/letters/letters';
+import { QuizStoreService } from './store/quiz/quiz-store.service';
 
 export const routes: Routes = [
   {
@@ -10,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path: 'quiz',
-    loadComponent: () => import('./rework/features/quiz/quiz').then(m => m.Quiz),
+    loadComponent: () => import('./features/quiz/quiz').then(m => m.Quiz),
     canMatch: [
       () => {
         const quizStoreService = inject<QuizStoreService>(QuizStoreService);
@@ -20,7 +20,7 @@ export const routes: Routes = [
   },
   {
     path: 'result',
-    loadComponent: () => import('./rework/features/result/result').then(m => m.Result),
+    loadComponent: () => import('./features/result/result').then(m => m.Result),
     canMatch: [
       () => {
         const quizStoreService = inject<QuizStoreService>(QuizStoreService);

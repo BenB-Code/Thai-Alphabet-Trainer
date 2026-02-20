@@ -1,7 +1,8 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
-import { QuizFormat, ThaiCharacter } from '../../shared/models';
+import { QuizFormat } from '../../shared/models';
 import { LATIN, MIXED, QUIZ_FORM_BASE_CONF, THAI } from '../../shared/constants';
 import { LetterUtilsService } from '../letter-utils-service/letter-utils-service';
+import { ThaiCharacter } from '../../shared/types';
 
 @Injectable({
   providedIn: 'root',

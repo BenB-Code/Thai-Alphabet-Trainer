@@ -1,5 +1,4 @@
-import { ThaiCharacter } from './thai-character.type';
-import { DisplayType } from './display.type';
+import { DisplayType, ThaiCharacter } from '../types';
 
 export interface QuizFormat {
   questions: number;

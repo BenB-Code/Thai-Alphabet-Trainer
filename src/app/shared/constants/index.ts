@@ -5,3 +5,5 @@ export * from './letters.const';
 export * from './quiz-form-base-conf.const';
 export * from './progress-state.const';
 export * from './positions.const';
+export * from './theme.constants';
+export * from './sizes.constants';

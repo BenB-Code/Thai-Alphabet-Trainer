@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Languages } from '../../shared/models';
 import { EN, FR } from '../../shared/constants';
+import { Languages } from '../../shared/types';
 
 @Injectable({
   providedIn: 'root',

@@ -1,4 +1,4 @@
-import { ProgressState } from './progress-state.type';
+import { ProgressState } from '../types';
 
 export interface QuizState {
   canGoForward: boolean;

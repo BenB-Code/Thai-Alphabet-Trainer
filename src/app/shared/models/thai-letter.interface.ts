@@ -1,5 +1,4 @@
-import { LetterKind } from './letter-kind.type';
-import { DisplayType } from './display.type';
+import { DisplayType, LetterKind } from '../types';
 
 export interface ThaiLetter {
   id: number;

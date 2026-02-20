@@ -1,6 +1,0 @@
-<app-quiz-header></app-quiz-header>
-@if (quizStoreService.delay() > 0) {
-<app-progress-bar [paused]="quizStoreService.isPaused()" (completed)="onTimerComplete()"></app-progress-bar>
-}
-<app-quiz-card></app-quiz-card>
-<app-quiz-navigation></app-quiz-navigation>
