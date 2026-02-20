@@ -35,13 +35,13 @@
     "toggle": "Inverser"
   },
   "titles": {
-    "mid": "Moyennes",
-    "high": "Hautes",
-    "low": "Basses",
-    "short": "Courtes",
-    "long": "Longues",
-    "diphthong": "Diphtongues",
-    "special": "Spéciales"
+    "mid": "Consonnes Moyennes",
+    "high": "Consonnes Hautes",
+    "low": "Consonnes Basses",
+    "short": "Voyelles Courtes",
+    "long": "Voyelles Longues",
+    "diphthong": "Voyelles Diphtongues",
+    "special": "Voyelles Spéciales"
   },
   "letters": {
     "outdated": "Cette lettre n'est plus utilisée",
@@ -78,8 +78,13 @@
     "reviewed": "cartes revues",
     "medial": "Médiane",
     "final": "Finale",
-    "short": "Courte",
-    "long": "Longue",
+    "mid": "Consonne Moyenne",
+    "high": "Consonne Haute",
+    "low": "Consonne Basse",
+    "short": "Voyelle Courte",
+    "long": "Voyelle Longue",
+    "diphthong": "Voyelle Diphtongue",
+    "special": "Voyelle Spéciale",
     "position": "Position",
     "type": "Type"
   }

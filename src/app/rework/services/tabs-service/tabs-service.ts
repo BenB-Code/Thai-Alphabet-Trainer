@@ -14,7 +14,7 @@ export class TabsService {
       tabSwitchConfig: {
         label: {
           display: true,
-          text: 'app.consonants',
+          text: 'buttons.all',
         },
         icon: {
           display: false,
@@ -24,6 +24,23 @@ export class TabsService {
         },
         class: 'letter-tab-switch-selector',
         id: 0,
+      },
+      payload: this.dataService.getAll(),
+    },
+    {
+      tabSwitchConfig: {
+        label: {
+          display: true,
+          text: 'app.consonants',
+        },
+        icon: {
+          display: false,
+          path: '',
+          alt: '',
+          right: false,
+        },
+        class: 'letter-tab-switch-selector',
+        id: 1,
       },
       payload: this.dataService.getAllConsonantsSorted(),
     },
@@ -39,7 +56,7 @@ export class TabsService {
           alt: '',
           right: false,
         },
-        id: 1,
+        id: 2,
         class: 'letter-tab-switch-selector',
       },
       payload: this.dataService.getAllVowelsSorted(),

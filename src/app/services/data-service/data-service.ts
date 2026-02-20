@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import { ConsonantClass, ThaiConsonant, ThaiVowel, VowelType } from '../../shared/models';
+import { ConsonantClass, ThaiCharacter, ThaiConsonant, ThaiVowel, VowelType } from '../../shared/models';
 import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+  getAll(): Record<string, ThaiCharacter[]> {
+    return { ...this.getAllConsonantsSorted(), ...this.getAllVowelsSorted() };
+  }
+
   getAllConsonants(): ThaiConsonant[] {
     return [...THAI_CONSONANTS];
   }

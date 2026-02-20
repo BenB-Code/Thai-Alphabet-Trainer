@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, effect, inject, viewChild } from '@
 import { QuizHeader } from '../quiz-header/quiz-header';
 import { QuizCard } from '../quiz-card/quiz-card';
 import { ProgressBar } from '../../common/progress-bar/progress-bar';
-import { QuizNavigation } from '../../common/quiz-navigation/quiz-navigation';
+import { QuizNavigation } from '../quiz-navigation/quiz-navigation';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { NavigationService } from '../../../services/navigation-service/navigation-service';
 import { FINISHED, IN_PROGRESS } from '../../../shared/constants';
@@ -20,7 +20,7 @@ export class Quiz {
 
   private readonly progressBar = viewChild(ProgressBar);
 
-  private readonly delayMs = this.quizStoreService.delay() * 1000;
+  private readonly delayMs = this.quizStoreService.delayMs();
   private readonly hasDelay = this.delayMs > 0;
   private previousIndex = 0;
 

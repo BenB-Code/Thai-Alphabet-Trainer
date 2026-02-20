@@ -212,7 +212,7 @@ export const THAI_CONSONANTS: ThaiConsonant[] = [
     outdated: false,
     transliteration: { initial: 't', final: 't' },
     exampleWord: {
-      roman: 'táhăn',
+      roman: 'táhăan',
       thai: 'ทหาร',
       en: 'soldier',
       fr: 'soldat',

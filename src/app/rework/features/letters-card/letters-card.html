@@ -6,7 +6,7 @@
     </div>
     }
     <div [class]="'thai-character thai ' + appStoreService.thaiFont()">{{ letter().character.thai }}</div>
-    <div class="roman-character">{{ letter().character.roman }}</div>
+    <div class="roman-character">{{ letter().character.roman }} · {{ letter().exampleWord.roman }}</div>
 
     @let translit = letterUtilsService.getTransliteration(letter()); @let vowelPos =
     letterUtilsService.getVowelPosition(letter());

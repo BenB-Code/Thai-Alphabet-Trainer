@@ -34,13 +34,13 @@
     "toggle": "Toggle"
   },
   "titles": {
-    "mid": "Mid Class",
-    "high": "High Class",
-    "low": "Low Class",
-    "short": "Short",
-    "long": "Long",
-    "diphthong": "Diphthongs",
-    "special": "Special"
+    "mid": "Mid Class Consonants",
+    "high": "High Class Consonants",
+    "low": "Low Class Consonants",
+    "short": "Short Vowels",
+    "long": "Long Vowels",
+    "diphthong": "Diphthongs Vowels",
+    "special": "Special Vowels"
   },
   "letters": {
     "outdated": "This letter is not used anymore",
@@ -77,13 +77,15 @@
     "reviewed": "cards reviewed",
     "medial": "Medial",
     "final": "Final",
-    "short": "Short",
-    "long": "Long",
     "position": "Position",
     "type": "Type",
     "class": "Class",
-    "mid": "Mid",
-    "high": "High",
-    "low": "Low"
+    "mid": "Mid Class Consonant",
+    "high": "High Class Consonant",
+    "low": "Low Class Consonant",
+    "short": "Short Vowel",
+    "long": "Long Vowel",
+    "diphthong": "Diphthongs Vowel",
+    "special": "Special Vowel"
   }
 }

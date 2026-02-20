@@ -45,12 +45,16 @@ export const quizFeature = createFeature({
 
     on(QuizSessionActions.setIndex, (state, { index }) => ({
       ...state,
-      session: { ...state.session, index },
+      session: { ...state.session, index, progressState: IN_PROGRESS },
     })),
 
     on(QuizSessionActions.setAnimation, (state, { animation }) => ({
       ...state,
-      session: { ...state.session, cardAnimation: animation },
+      session: {
+        ...state.session,
+        cardAnimation: animation,
+        ...(animation === 'slide-out-left' || animation === 'slide-out-right' ? { flipped: false } : {}),
+      },
     })),
 
     on(QuizSessionActions.toggleFlip, state => {

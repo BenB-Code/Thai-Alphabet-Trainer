@@ -7,6 +7,7 @@ import {
   selectCardAnimation,
   selectCurrentCard,
   selectDelay,
+  selectDelayMs,
   selectDisplay,
   selectIndex,
   selectIsFinished,
@@ -30,6 +31,7 @@ export class QuizStoreService {
   readonly display = this.store.selectSignal(selectDisplay);
   readonly questions = this.store.selectSignal(selectQuestions);
   readonly delay = this.store.selectSignal(selectDelay);
+  readonly delayMs = this.store.selectSignal(selectDelayMs);
   readonly selected = this.store.selectSignal(selectSelected);
   readonly randomized = this.store.selectSignal(selectRandomized);
 
