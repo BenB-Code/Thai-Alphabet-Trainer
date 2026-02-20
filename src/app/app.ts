@@ -10,10 +10,4 @@ import { ThaiHeader } from './features/thai-header/thai-header';
   imports: [MatButtonModule, RouterOutlet, ThaiHeader],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
-  // readonly dialog = inject(MatDialog);
-
-  constructor() {
-    // afterNextRender(() => this.dialog.open(WipDialog));
-  }
-}
+export class App {}

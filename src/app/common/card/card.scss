@@ -40,7 +40,7 @@
     }
 
     &.active {
-      border-left: 3px solid hsl(var(--card-color) / 0.8);
+      border-left: 2px solid hsl(var(--card-color) / 0.8);
       --shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
       --shadow-colored: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color);
       box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--shadow);
