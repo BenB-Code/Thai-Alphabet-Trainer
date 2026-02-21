@@ -3,7 +3,6 @@ import { Card } from '../../common/card/card';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { TranslatePipe } from '@ngx-translate/core';
 import { StatusBadge } from '../../common/status-badge/status-badge';
-import { DarkMode } from '../../directives/dark-mode/dark-mode';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 import { Colors, ThaiCharacter } from '../../shared/types';
@@ -11,7 +10,7 @@ import { FINAL, MEDIAL, TERTIARY } from '../../shared/constants';
 
 @Component({
   selector: 'app-letters-card',
-  imports: [Card, TranslatePipe, StatusBadge, DarkMode],
+  imports: [Card, TranslatePipe, StatusBadge],
   templateUrl: './letters-card.html',
   styleUrl: './letters-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

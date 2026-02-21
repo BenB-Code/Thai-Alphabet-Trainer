@@ -25,9 +25,14 @@
     class="toggle-btn"
   >
     @if (isOpen()) {
-    <img appDarkMode class="panel-arrow" src="icons/chevron-down.svg" alt="open" />
+    <img
+      [class.dark]="appStoreService.isDarkThemeActive()"
+      class="panel-arrow"
+      src="icons/chevron-down.svg"
+      alt="open"
+    />
     } @else {
-    <img appDarkMode class="panel-arrow" src="icons/chevron-up.svg" alt="open" />
+    <img [class.dark]="appStoreService.isDarkThemeActive()" class="panel-arrow" src="icons/chevron-up.svg" alt="open" />
     }
   </app-button>
 

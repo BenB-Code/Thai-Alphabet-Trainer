@@ -40,13 +40,13 @@
     letterUtilsService.getVowelPosition(card);
     <div class="sounds">
       @if (translit) { @if (translit.initial) { {{ translit.initial }} } @else {
-      <img appDarkMode src="icons/line.svg" alt="n/a" />
+      <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
       }
-      <img appDarkMode src="icons/arrow-right.svg" alt="to" />
+      <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/arrow-right.svg" alt="to" />
       @if (translit.final) {
       <span> {{ translit.final }} </span>
       } @else {
-      <img appDarkMode src="icons/line.svg" alt="n/a" />
+      <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
       } } @else if (vowelPos) {
       <div class="vowel-pos">
         <span>

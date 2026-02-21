@@ -1,15 +1,14 @@
-import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, output } from '@angular/core';
 import { Button } from '../../common/button/button';
 import { SMALL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { AppStoreService } from '../../store/app/app-store.service';
-import { DarkMode } from '../../directives/dark-mode/dark-mode';
 import { Colors, ConsonantClass, VowelType } from '../../shared/types';
 
 @Component({
   selector: 'app-letters-category-header',
-  imports: [Button, TranslatePipe, DarkMode],
+  imports: [Button, TranslatePipe],
   templateUrl: './letters-category-header.html',
   styleUrl: './letters-category-header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,6 +25,8 @@ export class LettersCategoryHeader {
   color = input.required<Colors>();
   isOpen = input(true);
   toggleOpen = output();
+
+  categoryCount = computed(() => this.selectionStoreService.getCountByCategory(this.category()));
 
   selectAll() {
     this.selectionStoreService.selectByCategory(this.category());

@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { EMPTY, map, switchMap, tap, timer, withLatestFrom } from 'rxjs';
+import { concat, EMPTY, map, of, switchMap, timer, withLatestFrom } from 'rxjs';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
 import { selectIndex, selectIsInProgress, selectMaxIndex } from './quiz.selectors';
@@ -33,20 +33,23 @@ export class QuizEffects {
         if (nextIndex < 0) return EMPTY;
 
         if (nextIndex > maxIndex) {
-          return [QuizSessionActions.finish()];
+          return of(QuizSessionActions.finish());
         }
 
         const slideOut = direction === FORWARD ? 'slide-out-left' : 'slide-out-right';
         const slideIn = direction === FORWARD ? 'slide-in-left' : 'slide-in-right';
 
-        this.store.dispatch(QuizSessionActions.setAnimation({ animation: slideOut }));
-
-        return timer(300).pipe(
-          tap(() => {
-            this.store.dispatch(QuizSessionActions.setIndex({ index: nextIndex }));
-            this.store.dispatch(QuizSessionActions.setAnimation({ animation: slideIn }));
-          }),
-          switchMap(() => timer(300).pipe(map(() => QuizSessionActions.setAnimation({ animation: null }))))
+        return concat(
+          of(QuizSessionActions.setAnimation({ animation: slideOut })),
+          timer(300).pipe(
+            switchMap(() =>
+              of(
+                QuizSessionActions.setIndex({ index: nextIndex }),
+                QuizSessionActions.setAnimation({ animation: slideIn })
+              )
+            )
+          ),
+          timer(300).pipe(map(() => QuizSessionActions.setAnimation({ animation: null })))
         );
       })
     )

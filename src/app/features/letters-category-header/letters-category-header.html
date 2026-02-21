@@ -1,8 +1,14 @@
 <button class="title" (click)="toggleOpen.emit()">
   <div class="dot"></div>
   <h3>{{ `titles.${category()}` | translate }}</h3>
-  <span> {{ selectionStoreService.getCountByCategory(category()) }}/{{ count() }} </span>
-  <img class="chevron" appDarkMode [class.collapsed]="!isOpen()" src="icons/chevron-down.svg" alt="toggle" />
+  <span> {{ categoryCount() }}/{{ count() }} </span>
+  <img
+    class="chevron"
+    [class.dark]="appStoreService.isDarkThemeActive()"
+    [class.collapsed]="!isOpen()"
+    src="icons/chevron-down.svg"
+    alt="toggle"
+  />
 </button>
 <div class="buttons">
   <app-button
