@@ -7,7 +7,7 @@
 </div>
 
 <div class="letters-container">
-  @for (letter of quizStoreService.randomized(); track $index) {
+  @for (letter of quizStoreService.randomized(); track letter.id + letter.kind) {
   <div class="letter">
     <span class="index">{{ $index + 1 }}</span>
     <app-letters-card [clickable]="false" [letter]="letter" [activable]="false"></app-letters-card>

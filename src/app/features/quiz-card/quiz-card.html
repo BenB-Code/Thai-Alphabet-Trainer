@@ -7,7 +7,7 @@
   (click)="flip()"
 >
   <button class="card-face recto">
-    @if (quizStoreService.currentCard().display === THAI) {
+    @if (card.display === THAI) {
     <div [class]="'thai-character ' + appStoreService.thaiFont()">{{ card.character.thai }}</div>
     } @else {
     <div class="roman-character">{{ card.character.roman }}</div>
@@ -15,7 +15,7 @@
       @if (card.kind === CONSONANT) { {{ card.exampleWord.roman }} } @else if (card.kind === VOWEL) { {{ 'quiz.' +
       letterUtilsService.getVowelType(card) | translate }} }
     </div>
-    @let vowelPos = letterUtilsService.getVowelPosition(quizStoreService.currentCard());
+    @let vowelPos = letterUtilsService.getVowelPosition(card);
     <div class="sounds">
       @if (vowelPos) {
       <div class="vowel-pos">
@@ -36,8 +36,8 @@
     }
     <div [class]="'thai-character ' + appStoreService.thaiFont()">{{ card.character.thai }}</div>
     <span class="roman">{{ card.character.roman }} · {{ card.exampleWord.roman }}</span>
-    @let translit = letterUtilsService.getTransliteration(quizStoreService.currentCard()); @let vowelPos =
-    letterUtilsService.getVowelPosition(quizStoreService.currentCard());
+    @let translit = letterUtilsService.getTransliteration(card); @let vowelPos =
+    letterUtilsService.getVowelPosition(card);
     <div class="sounds">
       @if (translit) { @if (translit.initial) { {{ translit.initial }} } @else {
       <img appDarkMode src="icons/line.svg" alt="n/a" />
@@ -57,7 +57,7 @@
       }
     </div>
     <div class="status">
-      @if (quizStoreService.currentCard().live) {
+      @if (card.live) {
       <app-status-badge class="green">
         @if (appStoreService.isDarkThemeActive()) {
         <img src="icons/lighting-dark.svg" alt="live" />
@@ -76,8 +76,8 @@
       }
     </div>
     <div class="translations">
-      <span [class]="'thai ' + appStoreService.thaiFont()">{{ quizStoreService.currentCard().exampleWord.thai }}</span>
-      <span class="trad">{{ quizStoreService.currentCard().exampleWord[appStoreService.language()] }}</span>
+      <span [class]="'thai ' + appStoreService.thaiFont()">{{ card.exampleWord.thai }}</span>
+      <span class="trad">{{ card.exampleWord[appStoreService.language()] }}</span>
     </div>
   </button>
 </button>

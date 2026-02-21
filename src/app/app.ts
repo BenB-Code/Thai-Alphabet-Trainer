@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
 import { RouterOutlet } from '@angular/router';
 import { ThaiHeader } from './features/thai-header/thai-header';
 
@@ -7,7 +6,7 @@ import { ThaiHeader } from './features/thai-header/thai-header';
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
-  imports: [MatButtonModule, RouterOutlet, ThaiHeader],
+  imports: [RouterOutlet, ThaiHeader],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {}

@@ -5,7 +5,6 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { StatusBadge } from '../../common/status-badge/status-badge';
 import { DarkMode } from '../../directives/dark-mode/dark-mode';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
-import { select } from '@ngrx/store';
 import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 import { Colors, ThaiCharacter } from '../../shared/types';
 import { FINAL, MEDIAL, TERTIARY } from '../../shared/constants';
@@ -36,5 +35,4 @@ export class LettersCard {
 
   protected readonly FINAL = FINAL;
   protected readonly MEDIAL = MEDIAL;
-  protected readonly select = select;
 }
