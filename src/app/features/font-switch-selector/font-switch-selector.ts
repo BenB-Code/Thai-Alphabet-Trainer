@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { KANIT, LARGE, SARABUN, SRIRACHA } from '../../shared/constants';
@@ -13,6 +13,11 @@ import { FontSwitchItem } from '../../shared/interfaces/font-switch.interface';
 })
 export class FontSwitchSelector {
   protected readonly appStoreService = inject(AppStoreService);
+
+  protected readonly activeFontIndex = computed(() => {
+    const font = this.appStoreService.thaiFont();
+    return this.fontsList.findIndex(f => f.class === font);
+  });
 
   readonly fontsList: FontSwitchItem[] = [
     {
