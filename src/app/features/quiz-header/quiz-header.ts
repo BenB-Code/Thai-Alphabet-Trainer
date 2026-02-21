@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Button } from '../../common/button/button';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
+import { AppStoreService } from '../../store/app/app-store.service';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
 
 @Component({
@@ -11,6 +12,7 @@ import { NavigationService } from '../../services/navigation-service/navigation-
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizHeader {
+  protected readonly appStoreService = inject(AppStoreService);
   protected readonly quizStoreService = inject(QuizStoreService);
   private readonly navigationService = inject(NavigationService);
 

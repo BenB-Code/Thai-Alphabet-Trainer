@@ -9,18 +9,21 @@
     [size]="SMALL"
     [icon]="'icons/circle-checkmark.svg'"
     [text]="'buttons.all'| translate"
+    [darkMode]="appStoreService.isDarkThemeActive()"
     (clicked)="selectAll()"
   ></app-button>
   <app-button
     [size]="SMALL"
     [icon]="'icons/circle-cross.svg'"
     [text]="'buttons.none'| translate"
+    [darkMode]="appStoreService.isDarkThemeActive()"
     (clicked)="deselectAll()"
   ></app-button>
   <app-button
     [size]="SMALL"
     [icon]="'icons/toggle-left.svg'"
     [text]="'buttons.toggle'| translate"
+    [darkMode]="appStoreService.isDarkThemeActive()"
     (clicked)="toggleSelection()"
   ></app-button>
 </div>

@@ -3,6 +3,7 @@ import { Button } from '../../common/button/button';
 import { SMALL } from '../../shared/constants';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
+import { AppStoreService } from '../../store/app/app-store.service';
 import { DarkMode } from '../../directives/dark-mode/dark-mode';
 import { Colors, ConsonantClass, VowelType } from '../../shared/types';
 
@@ -17,6 +18,7 @@ import { Colors, ConsonantClass, VowelType } from '../../shared/types';
   },
 })
 export class LettersCategoryHeader {
+  protected readonly appStoreService = inject(AppStoreService);
   protected readonly selectionStoreService = inject(SelectionStoreService);
 
   category = input.required<ConsonantClass | VowelType>();

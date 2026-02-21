@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, inject, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, inject, viewChild } from '@angular/core';
 import { QuizHeader } from '../quiz-header/quiz-header';
 import { QuizCard } from '../quiz-card/quiz-card';
 import { ProgressBar } from '../../common/progress-bar/progress-bar';
@@ -20,8 +20,8 @@ export class Quiz {
 
   private readonly progressBar = viewChild(ProgressBar);
 
-  private readonly delayMs = this.quizStoreService.delayMs();
-  private readonly hasDelay = this.delayMs > 0;
+  private readonly delayMs = this.quizStoreService.delayMs;
+  private readonly hasDelay = computed(() => this.delayMs() > 0);
   private previousIndex = 0;
 
   constructor() {
@@ -35,7 +35,7 @@ export class Quiz {
         return;
       }
 
-      if (!this.progressBar() || !this.hasDelay) return;
+      if (!this.progressBar() || !this.hasDelay()) return;
 
       if (state !== IN_PROGRESS) {
         this.progressBar()?.stop();
@@ -47,7 +47,7 @@ export class Quiz {
         this.progressBar()?.reset();
       }
 
-      this.progressBar()?.start(this.delayMs);
+      this.progressBar()?.start(this.delayMs());
     });
   }
 

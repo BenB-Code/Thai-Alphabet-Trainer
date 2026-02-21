@@ -20,6 +20,7 @@
   <app-button
     [icon]="'icons/settings.svg'"
     [text]="'app.settings' | translate"
+    [darkMode]="appStoreService.isDarkThemeActive()"
     (clicked)="toggleOpenEvent()"
     class="toggle-btn"
   >
@@ -37,6 +38,7 @@
     [text]="'quiz.start' | translate"
     [color]="'--primary'"
     [inverted]="true"
+    [darkMode]="appStoreService.isDarkThemeActive()"
     [disabled]="!quizStoreService.isQuizValid()"
   ></app-button>
 </div>

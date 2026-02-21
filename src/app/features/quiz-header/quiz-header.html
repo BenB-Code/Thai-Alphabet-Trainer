@@ -1,4 +1,4 @@
 <div class="counter">
   <span class="darker">{{ quizStoreService.progress().current }}</span> / {{ quizStoreService.progress().total }}
 </div>
-<app-button [icon]="'icons/cross.svg'" (clicked)="quit()"></app-button>
+<app-button [icon]="'icons/cross.svg'" [darkMode]="appStoreService.isDarkThemeActive()" (clicked)="quit()"></app-button>

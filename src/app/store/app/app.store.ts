@@ -2,7 +2,7 @@ import { computed, effect, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { FontsType, Languages, ThemeType } from '../../shared/types';
-import { DARK, EN, FR, KANIT, LIGHT, MOON, SARABUN, SRIRACHA, SUN } from '../../shared/constants';
+import { DARK, EN, FR, LIGHT, MOON, SARABUN, SUN } from '../../shared/constants';
 import { TranslateService } from '@ngx-translate/core';
 
 interface AppState {
@@ -59,15 +59,6 @@ export const AppStore = signalStore(
         } else {
           document.documentElement.classList.remove(DARK);
         }
-      });
-
-      effect(() => {
-        const font = store.thaiFont();
-        const list = document.getElementsByClassName('thai');
-        Array.from(list).forEach(item => {
-          item.classList.remove(SARABUN, KANIT, SRIRACHA);
-          item.classList.add(font);
-        });
       });
     },
   })
