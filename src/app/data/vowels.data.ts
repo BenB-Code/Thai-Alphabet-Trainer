@@ -7,7 +7,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌ะ',
       roman: 'a',
@@ -24,7 +24,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [MEDIAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌ั◌',
       roman: 'a',
@@ -41,7 +41,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   //   kind: VOWEL,
   //   type: SHORT,
   //   position: [MEDIAL],
-  //   live: false,
+  //   live: null,
   //   character: {
   //     thai: '◌รร◌',
   //     roman: 'a',
@@ -58,7 +58,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL, FINAL],
-    live: true,
+    live: null,
     character: {
       thai: '◌า',
       roman: 'aa',
@@ -75,7 +75,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [MEDIAL, FINAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌ิ',
       roman: 'i',
@@ -92,7 +92,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL, FINAL],
-    live: true,
+    live: null,
     character: {
       thai: '◌ี',
       roman: 'ee',
@@ -109,7 +109,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [MEDIAL, FINAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌ึ',
       roman: 'ue',
@@ -126,7 +126,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [FINAL],
-    live: true,
+    live: null,
     character: {
       thai: '◌ือ',
       roman: 'ue',
@@ -143,7 +143,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL],
-    live: true,
+    live: null,
     character: {
       thai: '◌ื◌',
       roman: 'ue',
@@ -161,7 +161,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [MEDIAL, FINAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌ุ',
       roman: 'u',
@@ -178,7 +178,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL, FINAL],
-    live: true,
+    live: null,
     character: {
       thai: '◌ู',
       roman: 'oo',
@@ -195,7 +195,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'เ◌ะ',
       roman: 'e',
@@ -212,7 +212,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [MEDIAL],
-    live: false,
+    live: null,
     character: {
       thai: 'เ◌็◌',
       roman: 'e',
@@ -229,7 +229,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL, FINAL],
-    live: true,
+    live: null,
     character: {
       thai: 'เ◌',
       roman: 'ay',
@@ -246,7 +246,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'แ◌ะ',
       roman: 'a',
@@ -263,7 +263,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [MEDIAL],
-    live: false,
+    live: null,
     character: {
       thai: 'แ◌็◌',
       roman: 'a',
@@ -280,7 +280,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL, FINAL],
-    live: true,
+    live: null,
     character: {
       thai: 'แ◌',
       roman: 'air',
@@ -297,7 +297,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'โ◌ะ',
       roman: 'o',
@@ -314,7 +314,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [MEDIAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌◌',
       roman: 'o',
@@ -332,7 +332,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL, FINAL],
-    live: true,
+    live: null,
     character: {
       thai: 'โ◌',
       roman: 'oh',
@@ -349,7 +349,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'เ◌าะ',
       roman: 'or',
@@ -366,7 +366,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [MEDIAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌็อ◌',
       roman: 'or',
@@ -383,7 +383,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL, FINAL],
-    live: true,
+    live: null,
     character: {
       thai: '◌อ',
       roman: 'or',
@@ -400,7 +400,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'เ◌อะ',
       roman: 'er',
@@ -418,7 +418,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [FINAL],
-    live: true,
+    live: null,
     character: {
       thai: 'เ◌อ',
       roman: 'er',
@@ -435,7 +435,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL],
-    live: true,
+    live: null,
     character: {
       thai: 'เ◌ิ◌',
       roman: 'er',
@@ -452,7 +452,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'เ◌ียะ',
       roman: 'ia',
@@ -470,7 +470,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL, FINAL],
-    live: true,
+    live: null,
     character: {
       thai: 'เ◌ีย',
       roman: 'ia',
@@ -487,7 +487,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'เ◌ือะ',
       roman: 'uea',
@@ -505,7 +505,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL, FINAL],
-    live: true,
+    live: null,
     character: {
       thai: 'เ◌ือ',
       roman: 'uea',
@@ -522,7 +522,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌ัวะ',
       roman: 'ua',
@@ -540,7 +540,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [FINAL],
-    live: true,
+    live: null,
     character: {
       thai: '◌ว◌',
       roman: 'ua',
@@ -557,7 +557,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: LONG,
     position: [MEDIAL],
-    live: true,
+    live: null,
     character: {
       thai: '◌ัว',
       roman: 'ua',
@@ -574,7 +574,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'ไ◌',
       roman: 'ai maái malaai',
@@ -591,7 +591,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'ใ◌',
       roman: 'ai maái múan',
@@ -608,7 +608,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌ัย',
       roman: 'ai',
@@ -626,7 +626,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'เ◌า',
       roman: 'ao',
@@ -643,7 +643,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌ำ',
       roman: 'um',
@@ -661,7 +661,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: '◌ัม',
       roman: 'um',
@@ -679,7 +679,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
     kind: VOWEL,
     type: SHORT,
     position: [FINAL],
-    live: false,
+    live: null,
     character: {
       thai: 'เ◌ย',
       roman: 'eui',
@@ -698,7 +698,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   //   kind: VOWEL,
   //   type: SPECIAL,
   //   position: MEDIAL,
-  //   live: false,
+  //   live: null,
   //   character: {
   //     thai: 'ฤ',
   //     roman: 'rue',
@@ -715,7 +715,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   //   kind: VOWEL,
   //   type: SPECIAL,
   //   position: MEDIAL,
-  //   live: false,
+  //   live: null,
   //   character: {
   //     thai: 'ฤๅ',
   //     roman: 'ruue',
@@ -732,7 +732,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   //   kind: VOWEL,
   //   type: SPECIAL,
   //   position: MEDIAL,
-  //   live: false,
+  //   live: null,
   //   character: {
   //     thai: 'ฦ',
   //     roman: 'lue',
@@ -749,7 +749,7 @@ export const THAI_VOWELS: ThaiVowel[] = [
   //   kind: VOWEL,
   //   type: SPECIAL,
   //   position: MEDIAL,
-  //   live: false,
+  //   live: null,
   //   character: {
   //     thai: 'ฦๅ',
   //     roman: 'luue',

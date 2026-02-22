@@ -29,7 +29,7 @@
       }
     </div>
     <div class="status">
-      @if (letter().live) {
+      @if (letter().live !== null) { @if (letter().live) {
       <app-status-badge class="green">
         @if (appStoreService.isDarkThemeActive()) {
         <img src="icons/lighting-dark.svg" alt="live" />
@@ -45,7 +45,7 @@
         <img src="icons/lighting-slashed.svg" alt="dead" />
         } {{ 'letters.dead' | translate }}
       </app-status-badge>
-      }
+      } }
     </div>
     <div class="translations">
       <span [class]="'thai ' + appStoreService.thaiFont()">{{ letter().exampleWord.thai }}</span>

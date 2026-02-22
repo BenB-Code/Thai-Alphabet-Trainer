@@ -7,7 +7,7 @@ export interface ThaiLetter {
     thai: string;
     roman: string;
   };
-  live: boolean;
+  live: boolean | null;
   exampleWord: {
     roman: string;
     thai: string;
