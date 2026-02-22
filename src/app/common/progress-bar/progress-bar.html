@@ -1,0 +1,8 @@
+<div class="progress">
+  <div
+    class="progress__bar"
+    [class.no-transition]="skipTransition()"
+    [class.paused]="paused()"
+    [style.width.%]="timerPercent()"
+  ></div>
+</div>

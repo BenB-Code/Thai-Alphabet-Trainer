@@ -32,10 +32,7 @@ COPY --from=builder /app/dist/Thai-Alphabet-Trainer/browser ./
 # Copy nginx configuration
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 
-# Expose HTTP port
 EXPOSE 80
-
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
 
 

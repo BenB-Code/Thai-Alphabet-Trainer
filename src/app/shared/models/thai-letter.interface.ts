@@ -1,5 +1,4 @@
-import { LetterKind } from './letter-kind.type';
-import { DisplayType } from './display.type';
+import { DisplayType, LetterKind } from '../types';
 
 export interface ThaiLetter {
   id: number;
@@ -8,7 +7,7 @@ export interface ThaiLetter {
     thai: string;
     roman: string;
   };
-  live: boolean;
+  live: boolean | null;
   exampleWord: {
     roman: string;
     thai: string;

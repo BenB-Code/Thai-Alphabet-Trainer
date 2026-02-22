@@ -6,29 +6,40 @@ import {
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
-import { EN, FR } from './shared/constants';
+import { EN } from './shared/constants';
 import { provideServiceWorker } from '@angular/service-worker';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideRouterStore } from '@ngrx/router-store';
+import { quizFeature } from './store/quiz/quiz.reducer';
+import { QuizEffects } from './store/quiz/quiz.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideTranslateService({
       loader: provideTranslateHttpLoader({
         prefix: '/i18n/',
         suffix: '.json',
       }),
       fallbackLang: EN,
-      lang: navigator.language.split('-')[0] === FR ? FR : EN,
     }),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    provideClientHydration(withEventReplay()),
+    provideStore({ [quizFeature.name]: quizFeature.reducer }),
+    provideEffects(QuizEffects),
+    ...(isDevMode() ? [provideStoreDevtools({ maxAge: 25 })] : []),
+    provideRouterStore(),
   ],
 };

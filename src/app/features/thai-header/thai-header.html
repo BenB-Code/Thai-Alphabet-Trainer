@@ -1,0 +1,18 @@
+<app-header class="backdrop-blur" [title]="title" [subtitle]="subtitle">
+  <div class="burger-container transition">
+    <app-mobile-burger-menu></app-mobile-burger-menu>
+  </div>
+  <div class="inline-items">
+    <app-button
+      [icon]="'icons/globe.svg'"
+      [uppercase]="true"
+      [alt]="appStoreService.language()"
+      [darkMode]="appStoreService.isDarkThemeActive()"
+      (clicked)="appStoreService.toggleLanguage()"
+      [text]="appStoreService.language()"
+      [size]="MEDIUM"
+    />
+    <app-font-switch-selector></app-font-switch-selector>
+    <app-desktop-burger-menu></app-desktop-burger-menu>
+  </div>
+</app-header>

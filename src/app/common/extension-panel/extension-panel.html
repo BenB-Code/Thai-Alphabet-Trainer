@@ -1,0 +1,10 @@
+<div class="container" [class.open]="open()">
+  <div class="panel-bar">
+    <ng-content select="bar" />
+  </div>
+  <div class="panel-slider">
+    <div class="panel-slider-content">
+      <ng-content select="panel" />
+    </div>
+  </div>
+</div>

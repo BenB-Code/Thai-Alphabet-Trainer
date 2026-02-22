@@ -1,0 +1,7 @@
+<app-switch-selector
+  [size]="LARGE"
+  [darkMode]="appStoreService.isDarkThemeActive()"
+  [initialIndex]="activeFontIndex()"
+  (activeItem)="activeId($event)"
+  [list]="fontsList"
+></app-switch-selector>

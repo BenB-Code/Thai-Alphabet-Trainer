@@ -1,0 +1,21 @@
+<div class="header">
+  <section class="resume">
+    <h2>{{ 'quiz.results' | translate }}</h2>
+    <p>{{ quizStoreService.questions() }} {{ 'quiz.reviewed' | translate }}</p>
+  </section>
+  <app-button
+    [icon]="'icons/arrow-left.svg'"
+    [text]="'quiz.go-back' | translate"
+    [darkMode]="appStoreService.isDarkThemeActive()"
+    (clicked)="goBack()"
+  ></app-button>
+</div>
+
+<div class="letters-container">
+  @for (letter of quizStoreService.randomized(); track letter.id + letter.kind) {
+  <div class="letter">
+    <span class="index">{{ $index + 1 }}</span>
+    <app-letters-card [clickable]="false" [letter]="letter" [activable]="false"></app-letters-card>
+  </div>
+  }
+</div>

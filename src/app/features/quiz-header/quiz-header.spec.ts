@@ -1,58 +1,43 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { QuizHeader } from './quiz-header';
-import { TranslateModule } from '@ngx-translate/core';
 import { provideZonelessChangeDetection, signal } from '@angular/core';
+import { QuizHeader } from './quiz-header';
+import { AppStoreService } from '../../store/app/app-store.service';
+import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
-import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
-import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
-import { LATIN, QUIZ_FORM_BASE_CONF } from '../../shared/constants';
-import { QuizFormat } from '../../shared/models';
 
 describe('QuizHeader', () => {
   let component: QuizHeader;
   let fixture: ComponentFixture<QuizHeader>;
-
-  let navigationServiceSpy: jasmine.SpyObj<NavigationService>;
-  let prepServiceSpy: jasmine.SpyObj<QuizPreparationService>;
-  let sessionServiceSpy: jasmine.SpyObj<QuizSessionService>;
+  let quizStoreService: QuizStoreService;
+  let navigationService: NavigationService;
 
   beforeEach(async () => {
-    navigationServiceSpy = jasmine.createSpyObj('NavigationService', ['navigate']);
-    prepServiceSpy = jasmine.createSpyObj('QuizPreparationService', [], {
-      quizSettings: signal<QuizFormat>({
-        display: LATIN,
-        questions: 1,
-        selected: [],
-        delay: QUIZ_FORM_BASE_CONF.delay[2],
-        randomized: [],
-      }),
-    });
-    sessionServiceSpy = jasmine.createSpyObj('QuizSessionService', ['reset'], {
-      index: signal(0),
-    });
-
     await TestBed.configureTestingModule({
-      imports: [QuizHeader, TranslateModule.forRoot()],
+      imports: [QuizHeader],
       providers: [
         provideZonelessChangeDetection(),
         {
+          provide: AppStoreService,
+          useValue: { isDarkThemeActive: signal(false) },
+        },
+        {
+          provide: QuizStoreService,
+          useValue: {
+            progress: signal({ current: 3, total: 10 }),
+            reset: jasmine.createSpy('reset'),
+          },
+        },
+        {
           provide: NavigationService,
-          useValue: navigationServiceSpy,
-        },
-        {
-          provide: QuizPreparationService,
-          useValue: prepServiceSpy,
-        },
-        {
-          provide: QuizSessionService,
-          useValue: sessionServiceSpy,
+          useValue: { navigate: jasmine.createSpy('navigate') },
         },
       ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(QuizHeader);
     component = fixture.componentInstance;
+    quizStoreService = TestBed.inject(QuizStoreService);
+    navigationService = TestBed.inject(NavigationService);
     await fixture.whenStable();
   });
 
@@ -60,9 +45,12 @@ describe('QuizHeader', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call navigation', () => {
-    component.exit();
+  describe('quit', () => {
+    it('should reset quiz and navigate to home', () => {
+      component.quit();
 
-    expect(navigationServiceSpy.navigate).toHaveBeenCalledTimes(1);
+      expect(quizStoreService.reset).toHaveBeenCalled();
+      expect(navigationService.navigate).toHaveBeenCalledWith('');
+    });
   });
 });

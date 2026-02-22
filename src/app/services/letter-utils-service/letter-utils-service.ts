@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Colors, ThaiCharacter, ThaiConsonant, ThaiVowel } from '../../shared/models';
 import { TypeClassColorsMap } from '../../shared/constants';
+import { Colors, ConsonantClass, ThaiCharacter, VowelType } from '../../shared/types';
+import { ThaiConsonant, ThaiVowel } from '../../shared/models';
 
 @Injectable({
   providedIn: 'root',
@@ -14,11 +15,8 @@ export class LetterUtilsService {
     return 'type' in letter;
   }
 
-  getLetterColor(letter: ThaiCharacter): Colors {
-    if (this.isConsonant(letter)) {
-      return TypeClassColorsMap[letter.class];
-    }
-    return TypeClassColorsMap[letter.type];
+  getLetterColor(letter: ConsonantClass | VowelType): Colors {
+    return TypeClassColorsMap[letter];
   }
 
   getVowelPosition(letter: ThaiCharacter): ThaiVowel['position'] | false {

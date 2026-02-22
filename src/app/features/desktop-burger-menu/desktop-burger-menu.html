@@ -1,0 +1,27 @@
+<app-burger-menu [right]="true" [darkMode]="appStoreService.isDarkThemeActive()">
+  <app-button
+    [icon]="appStoreService.themeIcon()"
+    [alt]="appStoreService.theme()"
+    [text]="'app.theme' | translate"
+    [darkMode]="appStoreService.isDarkThemeActive()"
+    (clicked)="appStoreService.toggleTheme()"
+    [size]="MEDIUM"
+  />
+  <hr />
+  <app-button
+    [icon]="'icons/mail.svg'"
+    [alt]="'app.contact' | translate"
+    [text]="'app.contact' | translate"
+    [darkMode]="appStoreService.isDarkThemeActive()"
+    (clicked)="contactService.sendMail()"
+    [size]="MEDIUM"
+  />
+  <app-button
+    [icon]="'icons/piggy-bank.svg'"
+    [alt]="'app.donation' | translate"
+    [text]="'app.donation' | translate"
+    [darkMode]="appStoreService.isDarkThemeActive()"
+    (clicked)="contactService.donate()"
+    [size]="MEDIUM"
+  />
+</app-burger-menu>

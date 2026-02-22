@@ -1,9 +1,7 @@
 import { Routes } from '@angular/router';
-import { Letters } from './features/letters/letters';
 import { inject } from '@angular/core';
-import { QuizPreparationService } from './services/quiz-preparation-service/quiz-preparation-service';
-import { FINISHED } from './shared/constants';
-import { QuizSessionService } from './services/quiz-session-service/quiz-session-service';
+import { Letters } from './features/letters/letters';
+import { QuizStoreService } from './store/quiz/quiz-store.service';
 
 export const routes: Routes = [
   {
@@ -15,18 +13,18 @@ export const routes: Routes = [
     loadComponent: () => import('./features/quiz/quiz').then(m => m.Quiz),
     canMatch: [
       () => {
-        const prepService = inject<QuizPreparationService>(QuizPreparationService);
-        return prepService.isValid();
+        const quizStoreService = inject<QuizStoreService>(QuizStoreService);
+        return quizStoreService.isQuizValid();
       },
     ],
   },
   {
     path: 'result',
-    loadComponent: () => import('./features/quiz-result/quiz-result').then(m => m.QuizResult),
+    loadComponent: () => import('./features/result/result').then(m => m.Result),
     canMatch: [
       () => {
-        const sessionService = inject<QuizSessionService>(QuizSessionService);
-        return sessionService.progressState() === FINISHED;
+        const quizStoreService = inject<QuizStoreService>(QuizStoreService);
+        return quizStoreService.isFinished();
       },
     ],
   },

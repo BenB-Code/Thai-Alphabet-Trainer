@@ -1,0 +1,55 @@
+<app-card [clickable]="clickable()" [isActive]="isActive() && activable()" (clicked)="selectLetter()" [color]="color()">
+  <div class="card-content">
+    @if (letterUtilsService.isOutdated(letter())) {
+    <div class="outdated">
+      <img src="icons/triangle-alert.svg" alt="alert" /> <span>{{ 'letters.obsolete' | translate }} </span>
+    </div>
+    }
+    <div [class]="'thai-character thai ' + appStoreService.thaiFont()">{{ letter().character.thai }}</div>
+    <div class="roman-character">{{ letter().character.roman }} · {{ letter().exampleWord.roman }}</div>
+
+    @let translit = letterUtilsService.getTransliteration(letter()); @let vowelPos =
+    letterUtilsService.getVowelPosition(letter());
+    <div class="sounds">
+      @if (translit) { @if (translit.initial) { {{ translit.initial }} } @else {
+      <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
+      }
+      <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/arrow-right.svg" alt="to" />
+      @if (translit.final) {
+      <span> {{ translit.final }} </span>
+      } @else {
+      <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
+      } } @else if (vowelPos) {
+      <div class="vowel-pos">
+        <span>
+          @if (vowelPos.includes(MEDIAL)) { M } @if (vowelPos.includes(MEDIAL) && vowelPos.includes(FINAL)) { | } @if
+          (vowelPos.includes(FINAL)) { F }
+        </span>
+      </div>
+      }
+    </div>
+    <div class="status">
+      @if (letter().live !== null) { @if (letter().live) {
+      <app-status-badge class="green">
+        @if (appStoreService.isDarkThemeActive()) {
+        <img src="icons/lighting-dark.svg" alt="live" />
+        } @else {
+        <img src="icons/lighting.svg" alt="live" />
+        } {{ 'letters.live' | translate }}
+      </app-status-badge>
+      } @else {
+      <app-status-badge class="red">
+        @if (appStoreService.isDarkThemeActive()) {
+        <img src="icons/lighting-slashed-dark.svg" alt="dead" />
+        } @else {
+        <img src="icons/lighting-slashed.svg" alt="dead" />
+        } {{ 'letters.dead' | translate }}
+      </app-status-badge>
+      } }
+    </div>
+    <div class="translations">
+      <span [class]="'thai ' + appStoreService.thaiFont()">{{ letter().exampleWord.thai }}</span>
+      <span class="trad">{{ letter().exampleWord[appStoreService.language()] }}</span>
+    </div>
+  </div>
+</app-card>

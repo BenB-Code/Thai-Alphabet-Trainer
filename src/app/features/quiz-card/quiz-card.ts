@@ -1,23 +1,30 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { LATIN } from '../../shared/constants';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { QuizStoreService } from '../../store/quiz/quiz-store.service';
+import { AppStoreService } from '../../store/app/app-store.service';
+import { StatusBadge } from '../../common/status-badge/status-badge';
 import { TranslatePipe } from '@ngx-translate/core';
-import { I18nService } from '../../services/i18n-service/i18n-service';
-import { QuizPreparationService } from '../../services/quiz-preparation-service/quiz-preparation-service';
-import { QuizSessionService } from '../../services/quiz-session-service/quiz-session-service';
-import { LetterDetailInfo } from '../../shared/components/letter-detail-info/letter-detail-info';
+import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
+import { CONSONANT, FINAL, MEDIAL, THAI, VOWEL } from '../../shared/constants';
 
 @Component({
   selector: 'app-quiz-card',
-  imports: [TranslatePipe, LetterDetailInfo],
+  imports: [StatusBadge, TranslatePipe],
   templateUrl: './quiz-card.html',
   styleUrl: './quiz-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizCard {
-  protected readonly i18nService = inject<I18nService>(I18nService);
-  protected readonly prepService = inject<QuizPreparationService>(QuizPreparationService);
-  protected readonly sessionService = inject<QuizSessionService>(QuizSessionService);
+  protected readonly quizStoreService = inject(QuizStoreService);
+  protected readonly appStoreService = inject(AppStoreService);
+  protected readonly letterUtilsService = inject(LetterUtilsService);
 
-  protected readonly letter = computed(() => this.prepService.quizSettings().randomized[this.sessionService.index()]);
-  protected readonly LATIN = LATIN;
+  flip(): void {
+    this.quizStoreService.toggleFlip();
+  }
+
+  protected readonly THAI = THAI;
+  protected readonly MEDIAL = MEDIAL;
+  protected readonly FINAL = FINAL;
+  protected readonly CONSONANT = CONSONANT;
+  protected readonly VOWEL = VOWEL;
 }
