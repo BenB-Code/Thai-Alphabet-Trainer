@@ -12,20 +12,7 @@
       [text]="appStoreService.language()"
       [size]="MEDIUM"
     />
-
     <app-font-switch-selector></app-font-switch-selector>
-
-    <app-button
-      [icon]="appStoreService.themeIcon()"
-      [alt]="appStoreService.theme()"
-      [darkMode]="appStoreService.isDarkThemeActive()"
-      (clicked)="appStoreService.toggleTheme()"
-    />
-    <app-button
-      [icon]="'icons/mail.svg'"
-      [alt]="'app.contact' | translate"
-      [darkMode]="appStoreService.isDarkThemeActive()"
-      (clicked)="contactService.sendMail()"
-    />
+    <app-desktop-burger-menu></app-desktop-burger-menu>
   </div>
 </app-header>

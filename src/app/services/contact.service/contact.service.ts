@@ -10,4 +10,11 @@ export class ContactService {
   sendMail(): void {
     this.window?.open('mailto:contact@thai-flashcards.app', '_self');
   }
+
+  donate(): void {
+    this.window?.open(
+      'https://www.paypal.com/donate/?business=3TU592X8462AJ&no_recurring=0&currency_code=EUR',
+      '_blank'
+    );
+  }
 }

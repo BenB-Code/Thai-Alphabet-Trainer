@@ -26,7 +26,8 @@
     "contact": "Contact",
     "menu": "Menu",
     "theme": "Theme",
-    "settings": "Settings"
+    "settings": "Settings",
+    "donation": "Donation"
   },
   "buttons": {
     "all": "All",
