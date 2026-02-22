@@ -60,7 +60,7 @@ L'application couvre les **44 consonnes** et **39 voyelles** de l'alphabet thai,
 
 - Choisis lettre par lettre ou par categorie entiere
 - Consonnes par classe : Low / Mid / High
-- Voyelles par type : Short / Long / Diphthong
+- Voyelles par type : Short / Long
 - Compteur de selection en temps reel
 
 </td>
