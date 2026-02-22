@@ -15,6 +15,7 @@ export class BurgerMenu {
   protected isBurgerOpen = signal(false);
 
   right = input(false);
+  darkMode = input(false);
 
   toggleMenu() {
     this.isBurgerOpen.update(isOpen => !isOpen);

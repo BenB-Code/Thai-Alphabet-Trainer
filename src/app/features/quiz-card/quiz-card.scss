@@ -5,6 +5,7 @@
   padding: 1rem 0;
   flex: 1;
   width: 100%;
+  overflow: hidden;
 
   .card-container {
     perspective: 1200px;
@@ -102,6 +103,7 @@
           line-height: 2.25rem;
           font-weight: 500;
           font-style: italic;
+          color: hsl(var(--foreground) / 1);
 
           &.smaller {
             font-size: 1.25rem;

@@ -39,7 +39,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideStore({ [quizFeature.name]: quizFeature.reducer }),
     provideEffects(QuizEffects),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    ...(isDevMode() ? [provideStoreDevtools({ maxAge: 25 })] : []),
     provideRouterStore(),
   ],
 };

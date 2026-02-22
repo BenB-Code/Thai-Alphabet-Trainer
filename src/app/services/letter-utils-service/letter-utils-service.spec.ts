@@ -41,13 +41,13 @@ describe('LetterUtilsService', () => {
 
   describe('getLetterColor', () => {
     it('should return color based on class for consonant', () => {
-      const result = service.getLetterColor(THAI_CONSONANTS[0]);
+      const result = service.getLetterColor(THAI_CONSONANTS[0].class);
 
       expect(result).toEqual(TypeClassColorsMap[THAI_CONSONANTS[0].class]);
     });
 
     it('should return color based on type for vowel', () => {
-      const result = service.getLetterColor(THAI_VOWELS[0]);
+      const result = service.getLetterColor(THAI_VOWELS[0].type);
 
       expect(result).toEqual(TypeClassColorsMap[THAI_VOWELS[0].type]);
     });

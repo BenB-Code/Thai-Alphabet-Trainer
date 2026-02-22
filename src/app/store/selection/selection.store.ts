@@ -24,10 +24,12 @@ export const SelectionStore = signalStore(
   withComputed(({ selected }) => ({
     selectedConsonants: computed(() => selected().filter(el => el.kind === CONSONANT)),
     selectedVowels: computed(() => selected().filter(el => el.kind === VOWEL)),
-    consonantsCount: computed(() => selected().filter(el => el.kind === CONSONANT).length),
-    vowelsCount: computed(() => selected().filter(el => el.kind === VOWEL).length),
     totalCount: computed(() => selected().length),
     isEmpty: computed(() => selected().length === 0),
+  })),
+  withComputed(({ selectedConsonants, selectedVowels }) => ({
+    consonantsCount: computed(() => selectedConsonants().length),
+    vowelsCount: computed(() => selectedVowels().length),
   })),
   withMethods((store, dataService = inject(DataService)) => {
     function getLettersByCategory(category: ConsonantClass | VowelType): ThaiCharacter[] {

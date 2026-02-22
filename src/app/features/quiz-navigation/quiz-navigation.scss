@@ -60,7 +60,7 @@
 
       @media (pointer: fine) {
         &:not(.disabled):hover {
-          background-color: hsl(var(--color) / 1);
+          background-color: hsl(var(--accent) / 1);
         }
       }
     }

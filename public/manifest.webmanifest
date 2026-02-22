@@ -1,9 +1,9 @@
 {
-  "name": "Thai Alphabet Trainer",
-  "short_name": "Thai-Trainer",
+  "name": "Thai Flashcards",
+  "short_name": "Thai Flashcards",
   "display": "standalone",
-  "theme_color": "#4d93e5",
-  "background_color": "#4d93e5",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "scope": "./",
   "start_url": "./",
   "icons": [
@@ -62,14 +62,14 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Thai Alphabet Trainer - Desktop"
+      "label": "Thai Flashcards - Desktop"
     },
     {
       "src": "screenshots/mobile.png",
       "sizes": "540x960",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Thai Alphabet Trainer - Mobile"
+      "label": "Thai Flashcards - Mobile"
     }
   ]
 }

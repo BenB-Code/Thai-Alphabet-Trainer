@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
-import { AppStoreService } from '../../store/app/app-store.service';
 
 @Component({
   selector: 'app-button',
@@ -13,8 +12,6 @@ import { AppStoreService } from '../../store/app/app-store.service';
   },
 })
 export class Button {
-  protected readonly appStoreService = inject(AppStoreService);
-
   clicked = output();
 
   text = input<string | null>();
@@ -25,5 +22,6 @@ export class Button {
   disabled = input(false);
   size = input<typeof SMALL | typeof MEDIUM | typeof LARGE>(MEDIUM);
   inverted = input(false);
+  darkMode = input(false);
   color = input('--accent');
 }

@@ -7,9 +7,10 @@
       [icon]="'icons/globe.svg'"
       [uppercase]="true"
       [alt]="appStoreService.language()"
+      [darkMode]="appStoreService.isDarkThemeActive()"
       (clicked)="appStoreService.toggleLanguage()"
       [text]="appStoreService.language()"
-      [size]="SMALL"
+      [size]="MEDIUM"
     />
 
     <app-font-switch-selector></app-font-switch-selector>
@@ -17,8 +18,14 @@
     <app-button
       [icon]="appStoreService.themeIcon()"
       [alt]="appStoreService.theme()"
+      [darkMode]="appStoreService.isDarkThemeActive()"
       (clicked)="appStoreService.toggleTheme()"
     />
-    <app-button [icon]="'icons/mail.svg'" [alt]="'app.contact' | translate" (clicked)="contactService.sendMail()" />
+    <app-button
+      [icon]="'icons/mail.svg'"
+      [alt]="'app.contact' | translate"
+      [darkMode]="appStoreService.isDarkThemeActive()"
+      (clicked)="contactService.sendMail()"
+    />
   </div>
 </app-header>

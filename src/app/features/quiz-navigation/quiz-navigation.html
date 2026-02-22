@@ -1,9 +1,13 @@
-<button appDarkMode [class.disabled]="!quizStoreService.canGoBack()" (click)="quizStoreService.previous()">
+<button
+  [class.dark]="appStoreService.isDarkThemeActive()"
+  [class.disabled]="!quizStoreService.canGoBack()"
+  (click)="quizStoreService.previous()"
+>
   <img src="icons/chevron-left.svg" alt="prev" />
 </button>
 
 <button
-  appDarkMode
+  [class.dark]="appStoreService.isDarkThemeActive()"
   class="bigger"
   (click)="quizStoreService.togglePause()"
   [class.disabled]="quizStoreService.delay() < 1"
@@ -15,6 +19,10 @@
   }
 </button>
 
-<button appDarkMode [class.disabled]="!quizStoreService.canGoForward()" (click)="quizStoreService.next()">
+<button
+  [class.dark]="appStoreService.isDarkThemeActive()"
+  [class.disabled]="!quizStoreService.canGoForward()"
+  (click)="quizStoreService.next()"
+>
   <img src="icons/chevron-right.svg" alt="next" />
 </button>
