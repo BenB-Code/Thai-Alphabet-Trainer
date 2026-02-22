@@ -25,6 +25,7 @@
       background-color: hsl(var(--background) / 0.95);
       border-radius: calc(var(--radius) - 2px);
       border-width: 1px;
+      gap: 0.25rem;
     }
 
     &.right {

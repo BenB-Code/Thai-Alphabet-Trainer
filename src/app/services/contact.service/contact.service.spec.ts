@@ -31,4 +31,15 @@ describe('ContactService', () => {
       expect(windowSpy.open).toHaveBeenCalledWith('mailto:contact@thai-flashcards.app', '_self');
     });
   });
+
+  describe('donate', () => {
+    it('should open paypal link with _blank target', () => {
+      service.donate();
+
+      expect(windowSpy.open).toHaveBeenCalledWith(
+        'https://www.paypal.com/donate/?business=3TU592X8462AJ&no_recurring=0&currency_code=EUR',
+        '_blank'
+      );
+    });
+  });
 });
