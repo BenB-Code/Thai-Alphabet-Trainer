@@ -20,7 +20,6 @@
 
 ### Status
 
-![Version](https://img.shields.io/github/package-json/v/BenB-Code/Thai-Alphabet-Trainer?style=flat-square&logo=github)
 ![Release CI](https://img.shields.io/github/actions/workflow/status/BenB-Code/Thai-Alphabet-Trainer/release.yml?style=flat-square&logo=github-actions&label=Release)
 ![CI Status](https://img.shields.io/github/actions/workflow/status/BenB-Code/Thai-Alphabet-Trainer/ci.yaml?style=flat-square&logo=github-actions&label=CI)
 
