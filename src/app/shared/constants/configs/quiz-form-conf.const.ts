@@ -1,7 +1,7 @@
-import { LATIN, MIXED, THAI } from './letters.const';
-import { DisplayType } from '../types';
+import { LATIN, MIXED, THAI } from '../display-options.constants';
+import { DisplayType } from '../../types';
 
-export const QUIZ_FORM_BASE_CONF = {
+export const QUIZ_FORM_CONF = {
   questions: {
     min: 1,
     max: 500,

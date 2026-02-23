@@ -1,7 +1,7 @@
 import { FINAL, LONG, MEDIAL, SHORT, VOWEL } from '../shared/constants';
 import { ThaiVowel } from '../shared/models';
 
-export const THAI_VOWELS: ThaiVowel[] = [
+export const VOWELS_DATA: ThaiVowel[] = [
   {
     id: 1,
     kind: VOWEL,

@@ -1,4 +1,3 @@
-import { DARK, KANIT, LIGHT, SARABUN, SRIRACHA } from '../constants';
+import { DARK, LIGHT } from '../constants/theme.constants';
 
 export type ThemeType = typeof DARK | typeof LIGHT;
-export type FontsType = typeof SARABUN | typeof KANIT | typeof SRIRACHA;

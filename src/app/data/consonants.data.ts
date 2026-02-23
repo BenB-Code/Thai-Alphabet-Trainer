@@ -1,7 +1,7 @@
 import { CONSONANT, HIGH, LOW, MID } from '../shared/constants';
 import { ThaiConsonant } from '../shared/models';
 
-export const THAI_CONSONANTS: ThaiConsonant[] = [
+export const CONSONANTS_DATA: ThaiConsonant[] = [
   {
     id: 1,
     kind: CONSONANT,

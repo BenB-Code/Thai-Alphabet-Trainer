@@ -1,0 +1,6 @@
+export const CONSONANT = 'consonant';
+export const VOWEL = 'vowel';
+export const NUMERAL = 'numeral';
+export const TONE_MARK = 'tone-mark';
+export const DIACRITIC = 'diacritic';
+export const OTHER = 'other';

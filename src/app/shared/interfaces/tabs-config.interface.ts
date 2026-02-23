@@ -1,4 +1,4 @@
-import { ThaiCharacter } from '../types';
+import { ThaiSymbol } from './symbols';
 
 export interface TabsConfig {
   tabSwitchConfig: {
@@ -15,5 +15,5 @@ export interface TabsConfig {
     class: string;
     id: number;
   };
-  payload: Record<string, ThaiCharacter[]>;
+  payload: Record<string, ThaiSymbol[]>;
 }

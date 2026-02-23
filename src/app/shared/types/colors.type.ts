@@ -1,6 +1,6 @@
 import { GREEN, GREEN_BLUE, ORANGE, PRIMARY, PURPLE, SECONDARY, TERTIARY, TRANSPARENT, YELLOW } from '../constants';
 
-export type Colors =
+export type ColorsType =
   | typeof GREEN
   | typeof GREEN_BLUE
   | typeof ORANGE
