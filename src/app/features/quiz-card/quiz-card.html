@@ -6,7 +6,7 @@
   [class]="quizStoreService.cardAnimation()"
   (click)="flip()"
 >
-  <button class="card-face recto">
+  <div class="card-face recto">
     @if (card.display === THAI) {
     <div [class]="'thai-character ' + appStoreService.thaiFont()">{{ card.character.thai }}</div>
     } @else {
@@ -27,8 +27,8 @@
       }
     </div>
     }
-  </button>
-  <button class="card-face verso">
+  </div>
+  <div class="card-face verso">
     @if (letterUtilsService.isOutdated(card)) {
     <div class="outdated">
       <img src="icons/triangle-alert.svg" alt="alert" /> <span>{{ 'letters.obsolete' | translate }} </span>
@@ -79,5 +79,5 @@
       <span [class]="'thai ' + appStoreService.thaiFont()">{{ card.exampleWord.thai }}</span>
       <span class="trad">{{ card.exampleWord[appStoreService.language()] }}</span>
     </div>
-  </button>
+  </div>
 </button>

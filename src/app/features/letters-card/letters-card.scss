@@ -110,12 +110,12 @@
 
         .green {
           color: hsl(var(--status-live) / 1);
-          background-color: hsl(var(--status-live-bg) / 1);
+          background-color: hsl(var(--status-live-bg));
         }
 
         .red {
           color: hsl(var(--status-dead) / 1);
-          background-color: hsl(var(--status-dead-bg) / 1);
+          background-color: hsl(var(--status-dead-bg));
         }
       }
 
