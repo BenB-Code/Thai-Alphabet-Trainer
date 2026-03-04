@@ -35,7 +35,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ก',
       rtgs: 'ko',
-      ipa: '',
+      ipa: '/kɔː/',
     },
     position: [
       {
@@ -63,8 +63,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ไก่',
-      rtgs: 'kai',
-      ipa: '',
+      rtgs: 'kài',
+      ipa: '/kàj/',
       translation: {
         en: 'chicken',
         fr: 'poulet',
@@ -83,8 +83,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ข',
-      rtgs: 'kho',
-      ipa: '',
+      rtgs: 'khǒ',
+      ipa: '/kʰɔː/',
     },
     position: [
       {
@@ -112,8 +112,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ไข่',
-      rtgs: 'khai',
-      ipa: '',
+      rtgs: 'khài',
+      ipa: '/kʰàj/',
       translation: {
         en: 'egg',
         fr: 'oeuf',
@@ -132,8 +132,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ฃ',
-      rtgs: 'kho',
-      ipa: '',
+      rtgs: 'khǒ',
+      ipa: '/kʰɔː/',
     },
     position: [
       {
@@ -150,16 +150,16 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ขวด',
-      rtgs: 'khuat',
-      ipa: '',
+      rtgs: 'khùat',
+      ipa: '/kʰùat/',
       translation: {
         en: 'bottle',
         fr: 'bouteille',
       },
     },
     obsolete: {
-      en: 'ฃ kho khuat is obsolete and replaced by ข kho khai, which has identical phonetic values',
-      fr: 'ฃ kho khuat est obsolète et a été remplacé par ข kho khai, qui possède une valeur phonétique identique',
+      en: 'ฃ khǒ khùat is obsolete and replaced by ข khǒ khài, which has identical phonetic values',
+      fr: 'ฃ khǒ khùat est obsolète et a été remplacé par ข khǒ khài, qui possède une valeur phonétique identique',
     },
     info: {
       en: '',
@@ -175,7 +175,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ค',
       rtgs: 'kho',
-      ipa: '',
+      ipa: '/kʰɔː/',
     },
     position: [
       {
@@ -204,7 +204,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'ควาย',
       rtgs: 'khwai',
-      ipa: '',
+      ipa: '/kʰwaːj/',
       translation: {
         en: 'buffalo',
         fr: 'buffle',
@@ -224,7 +224,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฅ',
       rtgs: 'kho',
-      ipa: '',
+      ipa: '/kʰɔː/',
     },
     position: [
       {
@@ -242,7 +242,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'คน',
       rtgs: 'khon',
-      ipa: '',
+      ipa: '/kʰon/',
       translation: {
         en: 'person',
         fr: 'humain',
@@ -266,7 +266,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฆ',
       rtgs: 'kho',
-      ipa: '',
+      ipa: '/kʰɔː/',
     },
     position: [
       {
@@ -294,8 +294,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ระฆัง',
-      rtgs: 'rakhang',
-      ipa: '',
+      rtgs: 'rákhang',
+      ipa: '/rá.kʰaŋ/',
       translation: {
         en: 'bell',
         fr: 'cloche',
@@ -315,7 +315,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ง',
       rtgs: 'ngo',
-      ipa: '',
+      ipa: '/ŋɔː/',
     },
     position: [
       {
@@ -344,7 +344,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'งู',
       rtgs: 'ngu',
-      ipa: '',
+      ipa: '/ŋuː/',
       translation: {
         en: 'snake',
         fr: 'serpent',
@@ -364,7 +364,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'จ',
       rtgs: 'cho',
-      ipa: '',
+      ipa: '/tɕɔː/',
     },
     position: [
       {
@@ -393,7 +393,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'จาน',
       rtgs: 'chan',
-      ipa: '',
+      ipa: '/tɕaːn/',
       translation: {
         en: 'plate',
         fr: 'assiette',
@@ -412,8 +412,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ฉ',
-      rtgs: 'cho',
-      ipa: '',
+      rtgs: 'chǒ',
+      ipa: '/tɕʰɔː/',
     },
     position: [
       {
@@ -430,8 +430,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ฉิ่ง',
-      rtgs: 'ching',
-      ipa: '',
+      rtgs: 'chìng',
+      ipa: '/tɕʰìŋ/',
       translation: {
         en: 'cymbals',
         fr: 'cymbales',
@@ -451,7 +451,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ช',
       rtgs: 'cho',
-      ipa: '',
+      ipa: '/tɕʰɔː/',
     },
     position: [
       {
@@ -479,8 +479,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ช้าง',
-      rtgs: 'chang',
-      ipa: '',
+      rtgs: 'cháng',
+      ipa: '/tɕʰáːŋ/',
       translation: {
         en: 'elephant',
         fr: 'éléphant',
@@ -500,7 +500,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ซ',
       rtgs: 'cho',
-      ipa: '',
+      ipa: '/sɔː/',
     },
     position: [
       {
@@ -528,8 +528,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'โซ่',
-      rtgs: 'so',
-      ipa: '',
+      rtgs: 'sô',
+      ipa: '/sôː/',
       translation: {
         en: 'chain',
         fr: 'chaîne',
@@ -549,7 +549,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฌ',
       rtgs: 'cho',
-      ipa: '',
+      ipa: '/tɕʰɔː/',
     },
     position: [
       {
@@ -578,7 +578,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'เฌอ',
       rtgs: 'choe',
-      ipa: '',
+      ipa: '/tɕʰɤː/',
       translation: {
         en: 'tree',
         fr: 'arbre',
@@ -598,7 +598,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ญ',
       rtgs: 'yo',
-      ipa: '',
+      ipa: '/jɔː/',
     },
     position: [
       {
@@ -626,8 +626,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'หญิง',
-      rtgs: 'ying',
-      ipa: '',
+      rtgs: 'yǐng',
+      ipa: '/jǐŋ/',
       translation: {
         en: 'woman',
         fr: 'femme',
@@ -647,7 +647,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฎ',
       rtgs: 'do',
-      ipa: '',
+      ipa: '/dɔː/',
     },
     position: [
       {
@@ -675,8 +675,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ชฎา',
-      rtgs: 'chada',
-      ipa: '',
+      rtgs: 'cháda',
+      ipa: '/tɕʰá.daː/',
       translation: {
         en: 'thai headdress',
         fr: 'coiffe',
@@ -696,7 +696,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฏ',
       rtgs: 'to',
-      ipa: '',
+      ipa: '/tɔː/',
     },
     position: [
       {
@@ -724,8 +724,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ปฏัก',
-      rtgs: 'patak',
-      ipa: '',
+      rtgs: 'pàtàk',
+      ipa: '/pà.tàk/',
       translation: {
         en: 'javelin',
         fr: 'aiguillon',
@@ -744,8 +744,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ฐ',
-      rtgs: 'tho',
-      ipa: '',
+      rtgs: 'thǒ',
+      ipa: '/tʰɔː/',
     },
     position: [
       {
@@ -773,8 +773,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ฐาน',
-      rtgs: 'than',
-      ipa: '',
+      rtgs: 'thǎn',
+      ipa: '/tʰǎːn/',
       translation: {
         en: 'pedestal',
         fr: 'piédestal',
@@ -794,7 +794,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฑ',
       rtgs: 'tho',
-      ipa: '',
+      ipa: '/tʰɔː/',
     },
     position: [
       {
@@ -823,7 +823,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'มณโฑ',
       rtgs: 'Montho',
-      ipa: '',
+      ipa: '/mon.tʰoː/',
       translation: {
         en: 'Montho',
         fr: 'Montho',
@@ -843,7 +843,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฒ',
       rtgs: 'tho',
-      ipa: '',
+      ipa: '/tʰɔː/',
     },
     position: [
       {
@@ -871,8 +871,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ผู้เฒ่า',
-      rtgs: 'phu thao',
-      ipa: '',
+      rtgs: 'phû thâo',
+      ipa: '/pʰûː.tʰâw/',
       translation: {
         en: 'elder',
         fr: 'aîné',
@@ -892,7 +892,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ณ',
       rtgs: 'no',
-      ipa: '',
+      ipa: '/nɔː/',
     },
     position: [
       {
@@ -921,7 +921,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'เณร',
       rtgs: 'nen',
-      ipa: '',
+      ipa: '/neːn/',
       translation: {
         en: 'novice monk',
         fr: 'moine novice',
@@ -941,7 +941,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ด',
       rtgs: 'do',
-      ipa: '',
+      ipa: '/dɔː/',
     },
     position: [
       {
@@ -969,8 +969,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'เด็ก',
-      rtgs: 'dek',
-      ipa: '',
+      rtgs: 'dèk',
+      ipa: '/dèk/',
       translation: {
         en: 'child',
         fr: 'enfant',
@@ -990,7 +990,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ต',
       rtgs: 'to',
-      ipa: '',
+      ipa: '/tɔː/',
     },
     position: [
       {
@@ -1018,8 +1018,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'เต่า',
-      rtgs: 'tao',
-      ipa: '',
+      rtgs: 'tào',
+      ipa: '/tàw/',
       translation: {
         en: 'turtle',
         fr: 'tortue',
@@ -1038,8 +1038,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ถ',
-      rtgs: 'tho',
-      ipa: '',
+      rtgs: 'thǒ',
+      ipa: '/tʰɔː/',
     },
     position: [
       {
@@ -1067,8 +1067,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ถุง',
-      rtgs: 'thung',
-      ipa: '',
+      rtgs: 'thǔng',
+      ipa: '/tʰǔŋ/',
       translation: {
         en: 'bag',
         fr: 'sac',
@@ -1088,7 +1088,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ท',
       rtgs: 'tho',
-      ipa: '',
+      ipa: '/tʰɔː/',
     },
     position: [
       {
@@ -1116,8 +1116,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ทหาร',
-      rtgs: 'thahan',
-      ipa: '',
+      rtgs: 'tháhǎn',
+      ipa: '/tʰá.hǎːn/',
       translation: {
         en: 'soldier',
         fr: 'soldat',
@@ -1137,7 +1137,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ธ',
       rtgs: 'tho',
-      ipa: '',
+      ipa: '/tʰɔː/',
     },
     position: [
       {
@@ -1166,7 +1166,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'ธง',
       rtgs: 'thong',
-      ipa: '',
+      ipa: '/tʰoŋ/',
       translation: {
         en: 'flag',
         fr: 'drapeau',
@@ -1186,7 +1186,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'น',
       rtgs: 'no',
-      ipa: '',
+      ipa: '/nɔː/',
     },
     position: [
       {
@@ -1214,8 +1214,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'หนู',
-      rtgs: 'nu',
-      ipa: '',
+      rtgs: 'nǔ',
+      ipa: '/nǔː/',
       translation: {
         en: 'mouse',
         fr: 'souris',
@@ -1235,7 +1235,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'บ',
       rtgs: 'bo',
-      ipa: '',
+      ipa: '/bɔː/',
     },
     position: [
       {
@@ -1263,8 +1263,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ใบไม้',
-      rtgs: 'baimai',
-      ipa: '',
+      rtgs: 'baimái',
+      ipa: '/baj.máːj/',
       translation: {
         en: 'leaf',
         fr: 'feuille',
@@ -1284,7 +1284,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ป',
       rtgs: 'po',
-      ipa: '',
+      ipa: '/pɔː/',
     },
     position: [
       {
@@ -1313,7 +1313,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'ปลา',
       rtgs: 'pla',
-      ipa: '',
+      ipa: '/plaː/',
       translation: {
         en: 'fish',
         fr: 'poisson',
@@ -1332,8 +1332,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ผ',
-      rtgs: 'pho',
-      ipa: '',
+      rtgs: 'phǒ',
+      ipa: '/pʰɔː/',
     },
     position: [
       {
@@ -1350,8 +1350,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ผึ้ง',
-      rtgs: 'phueng',
-      ipa: '',
+      rtgs: 'phûeng',
+      ipa: '/pʰɯ̂ŋ/',
       translation: {
         en: 'bee',
         fr: 'abeille',
@@ -1370,8 +1370,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ฝ',
-      rtgs: 'fo',
-      ipa: '',
+      rtgs: 'fǒ',
+      ipa: '/fɔː/',
     },
     position: [
       {
@@ -1388,8 +1388,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ฝา',
-      rtgs: 'fa',
-      ipa: '',
+      rtgs: 'fǎ',
+      ipa: '/fǎː/',
       translation: {
         en: 'lid',
         fr: 'couvercle',
@@ -1409,7 +1409,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'พ',
       rtgs: 'pho',
-      ipa: '',
+      ipa: '/pʰɔː/',
     },
     position: [
       {
@@ -1438,7 +1438,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'พาน',
       rtgs: 'phan',
-      ipa: '',
+      ipa: '/pʰaːn/',
       translation: {
         en: 'offering tray',
         fr: 'plateau à offrandes',
@@ -1458,7 +1458,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฟ',
       rtgs: 'fo',
-      ipa: '',
+      ipa: '/fɔː/',
     },
     position: [
       {
@@ -1487,7 +1487,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'ฟัน',
       rtgs: 'fan',
-      ipa: '',
+      ipa: '/fan/',
       translation: {
         en: 'tooth',
         fr: 'dent',
@@ -1507,7 +1507,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ภ',
       rtgs: 'pho',
-      ipa: '',
+      ipa: '/pʰɔː/',
     },
     position: [
       {
@@ -1535,8 +1535,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'สำเภา',
-      rtgs: 'samphao',
-      ipa: '',
+      rtgs: 'sǎmphao',
+      ipa: '/sǎm.pʰaw/',
       translation: {
         en: 'junk boat',
         fr: 'jonque',
@@ -1556,7 +1556,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ม',
       rtgs: 'mo',
-      ipa: '',
+      ipa: '/mɔː/',
     },
     position: [
       {
@@ -1584,8 +1584,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ม้า',
-      rtgs: 'ma',
-      ipa: '',
+      rtgs: 'má',
+      ipa: '/máː/',
       translation: {
         en: 'horse',
         fr: 'cheval',
@@ -1605,7 +1605,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ย',
       rtgs: 'yo',
-      ipa: '',
+      ipa: '/jɔː/',
     },
     position: [
       {
@@ -1633,8 +1633,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ยักษ์',
-      rtgs: 'yak',
-      ipa: '',
+      rtgs: 'yák',
+      ipa: '/ják/',
       translation: {
         en: 'giant',
         fr: 'géant',
@@ -1654,7 +1654,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ร',
       rtgs: 'ro',
-      ipa: '',
+      ipa: '/rɔː/',
     },
     position: [
       {
@@ -1683,7 +1683,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'เรือ',
       rtgs: 'ruea',
-      ipa: '',
+      ipa: '/rɯːa/',
       translation: {
         en: 'boat',
         fr: 'bateau',
@@ -1703,7 +1703,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ล',
       rtgs: 'lo',
-      ipa: '',
+      ipa: '/lɔː/',
     },
     position: [
       {
@@ -1732,7 +1732,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     exemple: {
       thai: 'ลิง',
       rtgs: 'ling',
-      ipa: '',
+      ipa: '/liŋ/',
       translation: {
         en: 'monkey',
         fr: 'singe',
@@ -1752,7 +1752,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ว',
       rtgs: 'wo',
-      ipa: '',
+      ipa: '/wɔː/',
     },
     position: [
       {
@@ -1780,8 +1780,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'แหวน',
-      rtgs: 'waen',
-      ipa: '',
+      rtgs: 'wǎen',
+      ipa: '/wɛ̌ːn/',
       translation: {
         en: 'ring',
         fr: 'anneau',
@@ -1800,8 +1800,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ศ',
-      rtgs: 'so',
-      ipa: '',
+      rtgs: 'sǒ',
+      ipa: '/sɔː/',
     },
     position: [
       {
@@ -1829,8 +1829,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ศาลา',
-      rtgs: 'sala',
-      ipa: '',
+      rtgs: 'sǎla',
+      ipa: '/sǎː.laː/',
       translation: {
         en: 'pavilion',
         fr: 'pavillon',
@@ -1849,8 +1849,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ษ',
-      rtgs: 'so',
-      ipa: '',
+      rtgs: 'sǒ',
+      ipa: '/sɔː/',
     },
     position: [
       {
@@ -1878,8 +1878,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'ฤๅษี',
-      rtgs: 'ruesi',
-      ipa: '',
+      rtgs: 'ruesǐ',
+      ipa: '/rɯː.sǐː/',
       translation: {
         en: 'hermit',
         fr: 'ermite',
@@ -1898,8 +1898,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ส',
-      rtgs: 'so',
-      ipa: '',
+      rtgs: 'sǒ',
+      ipa: '/sɔː/',
     },
     position: [
       {
@@ -1927,8 +1927,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'เสือ',
-      rtgs: 'suea',
-      ipa: '',
+      rtgs: 'sǔea',
+      ipa: '/sɯ̌ːa/',
       translation: {
         en: 'tiger',
         fr: 'tigre',
@@ -1947,8 +1947,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ห',
-      rtgs: 'ho',
-      ipa: '',
+      rtgs: 'hǒ',
+      ipa: '/hɔː/',
     },
     position: [
       {
@@ -1965,8 +1965,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'หีบ',
-      rtgs: 'hip',
-      ipa: '',
+      rtgs: 'hìp',
+      ipa: '/hìːp/',
       translation: {
         en: 'chest',
         fr: 'coffre',
@@ -1986,7 +1986,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฬ',
       rtgs: 'lo',
-      ipa: '',
+      ipa: '/lɔː/',
     },
     position: [
       {
@@ -2014,8 +2014,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'จุฬา',
-      rtgs: 'chula',
-      ipa: '',
+      rtgs: 'chùla',
+      ipa: '/tɕù.laː/',
       translation: {
         en: 'kite',
         fr: 'cerf-volant',
@@ -2035,7 +2035,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'อ',
       rtgs: 'o',
-      ipa: '',
+      ipa: '/ʔɔː/',
     },
     position: [
       {
@@ -2052,8 +2052,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'อ่าง',
-      rtgs: 'ang',
-      ipa: '',
+      rtgs: 'àng',
+      ipa: '/àːŋ/',
       translation: {
         en: 'basin',
         fr: 'bassin',
@@ -2073,7 +2073,7 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     transcriptions: {
       thai: 'ฮ',
       rtgs: 'ho',
-      ipa: '',
+      ipa: '/hɔː/',
     },
     position: [
       {
@@ -2090,8 +2090,8 @@ export const CONSONNANTS_DATA: ThaiConsonant[] = [
     ],
     exemple: {
       thai: 'นกฮูก',
-      rtgs: 'nok huk',
-      ipa: '',
+      rtgs: 'nók hûk',
+      ipa: '/nók.hûːk/',
       translation: {
         en: 'owl',
         fr: 'hiboux',
