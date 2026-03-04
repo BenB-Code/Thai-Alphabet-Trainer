@@ -1,10 +1,10 @@
-import { ConsonantArticulation } from './consonant-articulation.interface';
 import { ConsonantPosition } from './consonant-position.interface';
 import { ThaiSymbol } from './thai-symbol.interface';
+import { ConsonantClassType } from '../../types';
 
 export interface ThaiConsonant extends ThaiSymbol {
-  articulation: ConsonantArticulation;
   position: ConsonantPosition[];
+  class: ConsonantClassType;
   exemple: {
     thai: string;
     rtgs: string;
@@ -15,5 +15,8 @@ export interface ThaiConsonant extends ThaiSymbol {
     };
   };
   live: boolean;
-  obsolete?: string;
+  obsolete?: {
+    en: string;
+    fr: string;
+  };
 }

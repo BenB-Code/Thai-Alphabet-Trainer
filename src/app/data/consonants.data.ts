@@ -1,797 +1,2105 @@
-import { CONSONANT, HIGH, LOW, MID } from '../shared/constants';
-import { ThaiConsonant } from '../shared/models';
+import { ThaiConsonant } from '../shared/interfaces';
+import {
+  AFFRICATE,
+  ALVEOLAR,
+  ALVEOLO_PALATAL,
+  APPROXIMANT,
+  ASPIRATED,
+  BILABIAL,
+  CONSONANT,
+  FINAL,
+  FRICATIVE,
+  GLOTTAL,
+  HIGH,
+  INITIAL,
+  LABIO_DENTAL,
+  LATERAL,
+  LOW,
+  MID,
+  NASAL,
+  PALATAL,
+  PLOSIVE,
+  UNASPIRATED,
+  VELAR,
+  VOICED,
+  VOICELESS,
+} from '../shared/constants';
 
-export const CONSONANTS_DATA: ThaiConsonant[] = [
+export const CONSONNANTS_DATA: ThaiConsonant[] = [
+  {
+    id: 0,
+    kind: CONSONANT,
+    symbol: 'ก',
+    class: MID,
+    live: false,
+    transcriptions: {
+      thai: 'ก',
+      rtgs: 'ko',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'k',
+        ipa: '/k/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'k',
+        ipa: '/k/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ไก่',
+      rtgs: 'kai',
+      ipa: '',
+      translation: {
+        en: 'chicken',
+        fr: 'poulet',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
+    },
+  },
   {
     id: 1,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'ค',
-      roman: 'kor',
-    },
+    symbol: 'ข',
+    class: HIGH,
     live: false,
-    outdated: false,
-    transliteration: { initial: 'k', final: 'k' },
-    exampleWord: {
-      roman: 'kwaai',
-      thai: 'ควาย',
-      en: 'buffalo',
-      fr: 'buffle',
+    transcriptions: {
+      thai: 'ข',
+      rtgs: 'kho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'kh',
+        ipa: '/kʰ/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'k',
+        ipa: '/k/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ไข่',
+      rtgs: 'khai',
+      ipa: '',
+      translation: {
+        en: 'egg',
+        fr: 'oeuf',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 2,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'ฅ',
-      roman: 'kor',
-    },
+    symbol: 'ฃ',
+    class: HIGH,
     live: false,
-    outdated: true,
-    transliteration: { initial: 'k', final: 'k' },
-    exampleWord: {
-      roman: 'kon',
-      thai: 'ตน',
-      en: 'human',
-      fr: 'humain',
+    transcriptions: {
+      thai: 'ฃ',
+      rtgs: 'kho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'kh',
+        ipa: '/kʰ/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ขวด',
+      rtgs: 'khuat',
+      ipa: '',
+      translation: {
+        en: 'bottle',
+        fr: 'bouteille',
+      },
+    },
+    obsolete: {
+      en: 'ฃ kho khuat is obsolete and replaced by ข kho khai, which has identical phonetic values',
+      fr: 'ฃ kho khuat est obsolète et a été remplacé par ข kho khai, qui possède une valeur phonétique identique',
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 3,
     kind: CONSONANT,
+    symbol: 'ค',
     class: LOW,
-    character: {
-      thai: 'ฆ',
-      roman: 'kor',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 'k', final: 'k' },
-    exampleWord: {
-      roman: 'rákung',
-      thai: 'ระฆัง',
-      en: 'bell',
-      fr: 'cloche',
+    transcriptions: {
+      thai: 'ค',
+      rtgs: 'kho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'kh',
+        ipa: '/kʰ/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'k',
+        ipa: '/k/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ควาย',
+      rtgs: 'khwai',
+      ipa: '',
+      translation: {
+        en: 'buffalo',
+        fr: 'buffle',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 4,
     kind: CONSONANT,
+    symbol: 'ฅ',
     class: LOW,
-    character: {
-      thai: 'ง',
-      roman: 'ngor',
+    live: false,
+    transcriptions: {
+      thai: 'ฅ',
+      rtgs: 'kho',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'ng', final: 'ng' },
-    exampleWord: {
-      roman: 'ngoo',
-      thai: 'งู',
-      en: 'snake',
-      fr: 'serpent',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'kh',
+        ipa: '/kʰ/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'คน',
+      rtgs: 'khon',
+      ipa: '',
+      translation: {
+        en: 'person',
+        fr: 'humain',
+      },
+    },
+    obsolete: {
+      en: 'ฅ kho khon is obsolete and replaced by ค kho khwai, which has identical phonetic values.',
+      fr: 'ฅ kho khon est obsolète et a été remplacé par ค kho khwai, qui possède une valeur phonétique identique',
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 5,
     kind: CONSONANT,
+    symbol: 'ฆ',
     class: LOW,
-    character: {
-      thai: 'ช',
-      roman: 'chor',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 'ch', final: 't' },
-    exampleWord: {
-      roman: 'cháang',
-      thai: 'ช้าง',
-      en: 'elephant',
-      fr: 'éléphant',
+    transcriptions: {
+      thai: 'ฆ',
+      rtgs: 'kho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'kh',
+        ipa: '/kʰ/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'k',
+        ipa: '/k/',
+        articulation: {
+          manner: VELAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ระฆัง',
+      rtgs: 'rakhang',
+      ipa: '',
+      translation: {
+        en: 'bell',
+        fr: 'cloche',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 6,
     kind: CONSONANT,
+    symbol: 'ง',
     class: LOW,
-    character: {
-      thai: 'ซ',
-      roman: 'sor',
+    live: true,
+    transcriptions: {
+      thai: 'ง',
+      rtgs: 'ngo',
+      ipa: '',
     },
-    live: false,
-    outdated: false,
-    transliteration: { initial: 's', final: 't' },
-    exampleWord: {
-      roman: 'sôo',
-      thai: 'โซ่',
-      en: 'chain',
-      fr: 'chaîne',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'ng',
+        ipa: '/ŋ/',
+        articulation: {
+          manner: VELAR,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'ng',
+        ipa: '/ŋ/',
+        articulation: {
+          manner: VELAR,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'งู',
+      rtgs: 'ngu',
+      ipa: '',
+      translation: {
+        en: 'snake',
+        fr: 'serpent',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 7,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'ฌ',
-      roman: 'chor',
-    },
+    symbol: 'จ',
+    class: MID,
     live: false,
-    outdated: false,
-    transliteration: { initial: 'ch', final: null },
-    exampleWord: {
-      roman: 'cher',
-      thai: 'เฌอ',
-      en: 'tree',
-      fr: 'arbre',
+    transcriptions: {
+      thai: 'จ',
+      rtgs: 'cho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'ch',
+        ipa: '/tɕ/',
+        articulation: {
+          manner: ALVEOLO_PALATAL,
+          place: AFFRICATE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'จาน',
+      rtgs: 'chan',
+      ipa: '',
+      translation: {
+        en: 'plate',
+        fr: 'assiette',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 8,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'ญ',
-      roman: 'yor',
+    symbol: 'ฉ',
+    class: HIGH,
+    live: false,
+    transcriptions: {
+      thai: 'ฉ',
+      rtgs: 'cho',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'y', final: 'n' },
-    exampleWord: {
-      roman: 'yĭng',
-      thai: 'หญิง',
-      en: 'woman',
-      fr: 'femme',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'ch',
+        ipa: '/tɕʰ/',
+        articulation: {
+          manner: ALVEOLO_PALATAL,
+          place: AFFRICATE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ฉิ่ง',
+      rtgs: 'ching',
+      ipa: '',
+      translation: {
+        en: 'cymbals',
+        fr: 'cymbales',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 9,
     kind: CONSONANT,
+    symbol: 'ช',
     class: LOW,
-    character: {
-      thai: 'ฑ',
-      roman: 'tor',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 't', final: 't' },
-    exampleWord: {
-      roman: 'montoh',
-      thai: 'มณโฑ',
-      en: 'Mondodari',
-      fr: 'Mondodari',
+    transcriptions: {
+      thai: 'ช',
+      rtgs: 'cho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'ch',
+        ipa: '/tɕʰ/',
+        articulation: {
+          manner: ALVEOLO_PALATAL,
+          place: AFFRICATE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ช้าง',
+      rtgs: 'chang',
+      ipa: '',
+      translation: {
+        en: 'elephant',
+        fr: 'éléphant',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 10,
     kind: CONSONANT,
+    symbol: 'ซ',
     class: LOW,
-    character: {
-      thai: 'ฒ',
-      roman: 'tor',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 't', final: 't' },
-    exampleWord: {
-      roman: 'pôo-tâo',
-      thai: 'ผู้เฒ่า',
-      en: 'elder',
-      fr: 'aîné',
+    transcriptions: {
+      thai: 'ซ',
+      rtgs: 'cho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 's',
+        ipa: '/s/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: FRICATIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'โซ่',
+      rtgs: 'so',
+      ipa: '',
+      translation: {
+        en: 'chain',
+        fr: 'chaîne',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 11,
     kind: CONSONANT,
+    symbol: 'ฌ',
     class: LOW,
-    character: {
-      thai: 'ณ',
-      roman: 'nor',
+    live: false,
+    transcriptions: {
+      thai: 'ฌ',
+      rtgs: 'cho',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'n', final: 'n' },
-    exampleWord: {
-      roman: 'nayn',
-      thai: 'เณร',
-      en: 'novice monk',
-      fr: 'moine novice',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'ch',
+        ipa: '/tɕʰ/',
+        articulation: {
+          manner: ALVEOLO_PALATAL,
+          place: AFFRICATE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'เฌอ',
+      rtgs: 'choe',
+      ipa: '',
+      translation: {
+        en: 'tree',
+        fr: 'arbre',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 12,
     kind: CONSONANT,
+    symbol: 'ญ',
     class: LOW,
-    character: {
-      thai: 'ท',
-      roman: 'tor',
+    live: true,
+    transcriptions: {
+      thai: 'ญ',
+      rtgs: 'yo',
+      ipa: '',
     },
-    live: false,
-    outdated: false,
-    transliteration: { initial: 't', final: 't' },
-    exampleWord: {
-      roman: 'táhăan',
-      thai: 'ทหาร',
-      en: 'soldier',
-      fr: 'soldat',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'y',
+        ipa: '/j/',
+        articulation: {
+          manner: PALATAL,
+          place: APPROXIMANT,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'n',
+        ipa: '/n/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'หญิง',
+      rtgs: 'ying',
+      ipa: '',
+      translation: {
+        en: 'woman',
+        fr: 'femme',
+      },
+    },
+    info: {
+      en: 'The lower curves of the letter ญ are removed when certain letters are written below them.',
+      fr: 'Les courbes inférieures de la lettre ญ sont supprimées lorsque certaines lettres sont écrites en dessous d’elles.',
     },
   },
   {
     id: 13,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'ธ',
-      roman: 'tor',
-    },
+    symbol: 'ฎ',
+    class: MID,
     live: false,
-    outdated: false,
-    transliteration: { initial: 't', final: 't' },
-    exampleWord: {
-      roman: 'tong',
-      thai: 'ธง',
-      en: 'flag',
-      fr: 'drapeau',
+    transcriptions: {
+      thai: 'ฎ',
+      rtgs: 'do',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'd',
+        ipa: '/d/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ชฎา',
+      rtgs: 'chada',
+      ipa: '',
+      translation: {
+        en: 'thai headdress',
+        fr: 'coiffe',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 14,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'น',
-      roman: 'nor',
+    symbol: 'ฏ',
+    class: MID,
+    live: false,
+    transcriptions: {
+      thai: 'ฏ',
+      rtgs: 'to',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'n', final: 'n' },
-    exampleWord: {
-      roman: 'nŏo',
-      thai: 'หนู',
-      en: 'rat',
-      fr: 'rat',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ปฏัก',
+      rtgs: 'patak',
+      ipa: '',
+      translation: {
+        en: 'javelin',
+        fr: 'aiguillon',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 15,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'พ',
-      roman: 'por',
-    },
+    symbol: 'ฐ',
+    class: HIGH,
     live: false,
-    outdated: false,
-    transliteration: { initial: 'p', final: 'p' },
-    exampleWord: {
-      roman: 'paan',
-      thai: 'พาน',
-      en: 'offering tray',
-      fr: 'plateau à offrandes',
+    transcriptions: {
+      thai: 'ฐ',
+      rtgs: 'tho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'th',
+        ipa: '/tʰ/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ฐาน',
+      rtgs: 'than',
+      ipa: '',
+      translation: {
+        en: 'pedestal',
+        fr: 'piédestal',
+      },
+    },
+    info: {
+      en: 'The lower curves of the letter ฐ are removed when certain letters are written below them.',
+      fr: 'Les courbes inférieures de la lettre ฐ sont supprimées lorsque certaines lettres sont écrites en dessous d’elles.',
     },
   },
   {
     id: 16,
     kind: CONSONANT,
+    symbol: 'ฑ',
     class: LOW,
-    character: {
-      thai: 'ฟ',
-      roman: 'for',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 'f', final: 'p' },
-    exampleWord: {
-      roman: 'fun',
-      thai: 'ฟัน',
-      en: 'tooth',
-      fr: 'dent',
+    transcriptions: {
+      thai: 'ฑ',
+      rtgs: 'tho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'th',
+        ipa: '/tʰ/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'มณโฑ',
+      rtgs: 'Montho',
+      ipa: '',
+      translation: {
+        en: 'Montho',
+        fr: 'Montho',
+      },
+    },
+    info: {
+      en: 'Character from Ramayana',
+      fr: 'Personnage de Ramayana',
     },
   },
   {
     id: 17,
     kind: CONSONANT,
+    symbol: 'ฒ',
     class: LOW,
-    character: {
-      thai: 'ภ',
-      roman: 'por',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 'p', final: 'p' },
-    exampleWord: {
-      roman: 'sŭmpao',
-      thai: 'สำเภา',
-      en: 'junk boat',
-      fr: 'jonque',
+    transcriptions: {
+      thai: 'ฒ',
+      rtgs: 'tho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'th',
+        ipa: '/tʰ/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ผู้เฒ่า',
+      rtgs: 'phu thao',
+      ipa: '',
+      translation: {
+        en: 'elder',
+        fr: 'aîné',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 18,
     kind: CONSONANT,
+    symbol: 'ณ',
     class: LOW,
-    character: {
-      thai: 'ม',
-      roman: 'mor',
+    live: false,
+    transcriptions: {
+      thai: 'ณ',
+      rtgs: 'no',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'm', final: 'm' },
-    exampleWord: {
-      roman: 'máa',
-      thai: 'ม้า',
-      en: 'horse',
-      fr: 'cheval',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'n',
+        ipa: '/n/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'n',
+        ipa: '/n/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'เณร',
+      rtgs: 'nen',
+      ipa: '',
+      translation: {
+        en: 'novice monk',
+        fr: 'moine novice',
+      },
+    },
+    info: {
+      en: 'Called Samanera',
+      fr: 'Appelé Samanera',
     },
   },
   {
     id: 19,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'ย',
-      roman: 'yor',
+    symbol: 'ด',
+    class: MID,
+    live: false,
+    transcriptions: {
+      thai: 'ด',
+      rtgs: 'do',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'y', final: 'i' },
-    exampleWord: {
-      roman: 'yúk',
-      thai: 'ยักษ์',
-      en: 'giant',
-      fr: 'géant',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'd',
+        ipa: '/d/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'เด็ก',
+      rtgs: 'dek',
+      ipa: '',
+      translation: {
+        en: 'child',
+        fr: 'enfant',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 20,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'ร',
-      roman: 'ror',
+    symbol: 'ต',
+    class: MID,
+    live: false,
+    transcriptions: {
+      thai: 'ต',
+      rtgs: 'to',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'r', final: 'n' },
-    exampleWord: {
-      roman: 'ruea',
-      thai: 'เรือ',
-      en: 'boat',
-      fr: 'bateau',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'เต่า',
+      rtgs: 'tao',
+      ipa: '',
+      translation: {
+        en: 'turtle',
+        fr: 'tortue',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 21,
     kind: CONSONANT,
-    class: LOW,
-    character: {
-      thai: 'ล',
-      roman: 'lor',
+    symbol: 'ถ',
+    class: HIGH,
+    live: false,
+    transcriptions: {
+      thai: 'ถ',
+      rtgs: 'tho',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'l', final: 'n' },
-    exampleWord: {
-      roman: 'ling',
-      thai: 'ลิง',
-      en: 'monkey',
-      fr: 'singe',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'th',
+        ipa: '/tʰ/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ถุง',
+      rtgs: 'thung',
+      ipa: '',
+      translation: {
+        en: 'bag',
+        fr: 'sac',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 22,
     kind: CONSONANT,
+    symbol: 'ท',
     class: LOW,
-    character: {
-      thai: 'ว',
-      roman: 'wor',
+    live: false,
+    transcriptions: {
+      thai: 'ท',
+      rtgs: 'tho',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'w', final: 'o' },
-    exampleWord: {
-      roman: 'wăn',
-      thai: 'แหวน',
-      en: 'ring',
-      fr: 'bague',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'th',
+        ipa: '/tʰ/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ทหาร',
+      rtgs: 'thahan',
+      ipa: '',
+      translation: {
+        en: 'soldier',
+        fr: 'soldat',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 23,
     kind: CONSONANT,
+    symbol: 'ธ',
     class: LOW,
-    character: {
-      thai: 'ฬ',
-      roman: 'lor',
+    live: false,
+    transcriptions: {
+      thai: 'ธ',
+      rtgs: 'tho',
+      ipa: '',
     },
-    live: true,
-    outdated: false,
-    transliteration: { initial: 'l', final: 'n' },
-    exampleWord: {
-      roman: 'jùlaa',
-      thai: 'จุฬา',
-      en: 'Chula kite',
-      fr: 'cerf-volant Chula',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'th',
+        ipa: '/tʰ/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ธง',
+      rtgs: 'thong',
+      ipa: '',
+      translation: {
+        en: 'flag',
+        fr: 'drapeau',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 24,
     kind: CONSONANT,
+    symbol: 'น',
     class: LOW,
-    character: {
-      thai: 'ฮ',
-      roman: 'hor',
+    live: true,
+    transcriptions: {
+      thai: 'น',
+      rtgs: 'no',
+      ipa: '',
     },
-    live: false,
-    outdated: false,
-    transliteration: { initial: 'h', final: null },
-    exampleWord: {
-      roman: 'nókhôok',
-      thai: 'นกฮูก',
-      en: 'owl',
-      fr: 'hiboux',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'n',
+        ipa: '/n/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'n',
+        ipa: '/n/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'หนู',
+      rtgs: 'nu',
+      ipa: '',
+      translation: {
+        en: 'mouse',
+        fr: 'souris',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 25,
     kind: CONSONANT,
+    symbol: 'บ',
     class: MID,
-    character: {
-      thai: 'ก',
-      roman: 'gor',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 'g', final: 'k' },
-    exampleWord: {
-      roman: 'gài',
-      thai: 'ไก่',
-      en: 'chicken',
-      fr: 'poulet',
+    transcriptions: {
+      thai: 'บ',
+      rtgs: 'bo',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'b',
+        ipa: '/b/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'p',
+        ipa: '/p/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ใบไม้',
+      rtgs: 'baimai',
+      ipa: '',
+      translation: {
+        en: 'leaf',
+        fr: 'feuille',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 26,
     kind: CONSONANT,
+    symbol: 'ป',
     class: MID,
-    character: {
-      thai: 'จ',
-      roman: 'jor',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 'j', final: 't' },
-    exampleWord: {
-      roman: 'jaan',
-      thai: 'จาน',
-      en: 'plate',
-      fr: 'assiette',
+    transcriptions: {
+      thai: 'ป',
+      rtgs: 'po',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'p',
+        ipa: '/p/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'p',
+        ipa: '/p/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ปลา',
+      rtgs: 'pla',
+      ipa: '',
+      translation: {
+        en: 'fish',
+        fr: 'poisson',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 27,
     kind: CONSONANT,
-    class: MID,
-    character: {
-      thai: 'ฎ',
-      roman: 'dor',
-    },
+    symbol: 'ผ',
+    class: HIGH,
     live: false,
-    outdated: false,
-    transliteration: { initial: 'd', final: 't' },
-    exampleWord: {
-      roman: 'chádaa',
-      thai: 'ชฎา',
-      en: 'thai headdress',
-      fr: 'coiffe thai',
+    transcriptions: {
+      thai: 'ผ',
+      rtgs: 'pho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'ph',
+        ipa: '/pʰ/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ผึ้ง',
+      rtgs: 'phueng',
+      ipa: '',
+      translation: {
+        en: 'bee',
+        fr: 'abeille',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 28,
     kind: CONSONANT,
-    class: MID,
-    character: {
-      thai: 'ฏ',
-      roman: 'dtor',
-    },
+    symbol: 'ฝ',
+    class: HIGH,
     live: false,
-    outdated: false,
-    transliteration: { initial: 'dt', final: 't' },
-    exampleWord: {
-      roman: 'bpà-dtùk',
-      thai: 'ปฏัก',
-      en: 'javelin',
-      fr: 'aiguillon',
+    transcriptions: {
+      thai: 'ฝ',
+      rtgs: 'fo',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'f',
+        ipa: '/f/',
+        articulation: {
+          manner: LABIO_DENTAL,
+          place: FRICATIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ฝา',
+      rtgs: 'fa',
+      ipa: '',
+      translation: {
+        en: 'lid',
+        fr: 'couvercle',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 29,
     kind: CONSONANT,
-    class: MID,
-    character: {
-      thai: 'ด',
-      roman: 'dor',
-    },
+    symbol: 'พ',
+    class: LOW,
     live: false,
-    outdated: false,
-    transliteration: { initial: 'd', final: 't' },
-    exampleWord: {
-      roman: 'dèk',
-      thai: 'เด็ก',
-      en: 'child',
-      fr: 'enfant',
+    transcriptions: {
+      thai: 'พ',
+      rtgs: 'pho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'ph',
+        ipa: '/pʰ/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'p',
+        ipa: '/p/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'พาน',
+      rtgs: 'phan',
+      ipa: '',
+      translation: {
+        en: 'offering tray',
+        fr: 'plateau à offrandes',
+      },
+    },
+    info: {
+      en: 'Phan is an artistically decorated tray with pedestal',
+      fr: 'Phan est un plateau artistiquement décoré, muni d’un piédestal',
     },
   },
   {
     id: 30,
     kind: CONSONANT,
-    class: MID,
-    character: {
-      thai: 'ต',
-      roman: 'dtor',
-    },
+    symbol: 'ฟ',
+    class: LOW,
     live: false,
-    outdated: false,
-    transliteration: { initial: 'dt', final: 't' },
-    exampleWord: {
-      roman: 'dtào',
-      thai: 'เต่า',
-      en: 'tortoise',
-      fr: 'tortue',
+    transcriptions: {
+      thai: 'ฟ',
+      rtgs: 'fo',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'f',
+        ipa: '/f/',
+        articulation: {
+          manner: LABIO_DENTAL,
+          place: FRICATIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'p',
+        ipa: '/p/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ฟัน',
+      rtgs: 'fan',
+      ipa: '',
+      translation: {
+        en: 'tooth',
+        fr: 'dent',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 31,
     kind: CONSONANT,
-    class: MID,
-    character: {
-      thai: 'บ',
-      roman: 'bor',
-    },
+    symbol: 'ภ',
+    class: LOW,
     live: false,
-    outdated: false,
-    transliteration: { initial: 'b', final: 'p' },
-    exampleWord: {
-      roman: 'baimáai',
-      thai: 'ใบไม้',
-      en: 'leaf',
-      fr: 'feuille',
+    transcriptions: {
+      thai: 'ภ',
+      rtgs: 'pho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'ph',
+        ipa: '/pʰ/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'p',
+        ipa: '/p/',
+        articulation: {
+          manner: BILABIAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'สำเภา',
+      rtgs: 'samphao',
+      ipa: '',
+      translation: {
+        en: 'junk boat',
+        fr: 'jonque',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 32,
     kind: CONSONANT,
-    class: MID,
-    character: {
-      thai: 'ป',
-      roman: 'bpor',
+    symbol: 'ม',
+    class: LOW,
+    live: true,
+    transcriptions: {
+      thai: 'ม',
+      rtgs: 'mo',
+      ipa: '',
     },
-    live: false,
-    outdated: false,
-    transliteration: { initial: 'bp', final: 'p' },
-    exampleWord: {
-      roman: 'bpla',
-      thai: 'ปลา',
-      en: 'fish',
-      fr: 'poisson',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'm',
+        ipa: '/m/',
+        articulation: {
+          manner: BILABIAL,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'm',
+        ipa: '/m/',
+        articulation: {
+          manner: BILABIAL,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ม้า',
+      rtgs: 'ma',
+      ipa: '',
+      translation: {
+        en: 'horse',
+        fr: 'cheval',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 33,
     kind: CONSONANT,
-    class: MID,
-    character: {
-      thai: 'อ',
-      roman: 'or',
+    symbol: 'ย',
+    class: LOW,
+    live: true,
+    transcriptions: {
+      thai: 'ย',
+      rtgs: 'yo',
+      ipa: '',
     },
-    live: false,
-    outdated: false,
-    transliteration: { initial: null, final: null },
-    exampleWord: {
-      roman: 'àang',
-      thai: 'อ่าง',
-      en: 'basin',
-      fr: 'bassin',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'y',
+        ipa: '/j/',
+        articulation: {
+          manner: PALATAL,
+          place: APPROXIMANT,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'i',
+        ipa: '/j/',
+        articulation: {
+          manner: PALATAL,
+          place: APPROXIMANT,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ยักษ์',
+      rtgs: 'yak',
+      ipa: '',
+      translation: {
+        en: 'giant',
+        fr: 'géant',
+      },
+    },
+    info: {
+      en: 'When ย ends a syllable, it is usually part of the vowel.',
+      fr: 'Quand ย termine une syllable, il fait généralement parti de la voyelle',
     },
   },
   {
     id: 34,
     kind: CONSONANT,
-    class: HIGH,
-    character: {
-      thai: 'ข',
-      roman: 'kŏr',
+    symbol: 'ร',
+    class: LOW,
+    live: true,
+    transcriptions: {
+      thai: 'ร',
+      rtgs: 'ro',
+      ipa: '',
     },
-    live: false,
-    outdated: false,
-    transliteration: { initial: 'k', final: 'k' },
-    exampleWord: {
-      roman: 'kài',
-      thai: 'ไข่',
-      en: 'egg',
-      fr: 'oeuf',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'r',
+        ipa: '/r/',
+        articulation: {
+          manner: PALATAL,
+          place: APPROXIMANT,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'n',
+        ipa: '/n/',
+        articulation: {
+          manner: PALATAL,
+          place: APPROXIMANT,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'เรือ',
+      rtgs: 'ruea',
+      ipa: '',
+      translation: {
+        en: 'boat',
+        fr: 'bateau',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 35,
     kind: CONSONANT,
-    class: HIGH,
-    character: {
-      thai: 'ฃ',
-      roman: 'kŏr',
+    symbol: 'ล',
+    class: LOW,
+    live: true,
+    transcriptions: {
+      thai: 'ล',
+      rtgs: 'lo',
+      ipa: '',
     },
-    live: false,
-    outdated: true,
-    transliteration: { initial: 'k', final: 'k' },
-    exampleWord: {
-      roman: 'kùat',
-      thai: 'ขวด',
-      en: 'bottle',
-      fr: 'bouteille',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'l',
+        ipa: '/l/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: LATERAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'n',
+        ipa: '/n/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ลิง',
+      rtgs: 'ling',
+      ipa: '',
+      translation: {
+        en: 'monkey',
+        fr: 'singe',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 36,
     kind: CONSONANT,
-    class: HIGH,
-    character: {
-      thai: 'ฉ',
-      roman: 'chŏr',
+    symbol: 'ว',
+    class: LOW,
+    live: true,
+    transcriptions: {
+      thai: 'ว',
+      rtgs: 'wo',
+      ipa: '',
     },
-    live: false,
-    outdated: false,
-    transliteration: { initial: 'ch', final: 't' },
-    exampleWord: {
-      roman: 'chìng',
-      thai: 'ฉิ่ง',
-      en: 'cymbal',
-      fr: 'cymbale',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'w',
+        ipa: '/w/',
+        articulation: {
+          manner: BILABIAL,
+          place: APPROXIMANT,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'o',
+        ipa: '/w/',
+        articulation: {
+          manner: BILABIAL,
+          place: APPROXIMANT,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'แหวน',
+      rtgs: 'waen',
+      ipa: '',
+      translation: {
+        en: 'ring',
+        fr: 'anneau',
+      },
+    },
+    info: {
+      en: 'When ว ends a syllable, it is always part of the vowel',
+      fr: 'Quand ว termine une syllable, il est toujours associé de la voyelle',
     },
   },
   {
     id: 37,
     kind: CONSONANT,
+    symbol: 'ศ',
     class: HIGH,
-    character: {
-      thai: 'ฐ',
-      roman: 'tŏr',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 't', final: 't' },
-    exampleWord: {
-      roman: 'tăan',
-      thai: 'ฐาน',
-      en: 'pedestal',
-      fr: 'piédestal',
+    transcriptions: {
+      thai: 'ศ',
+      rtgs: 'so',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 's',
+        ipa: '/s/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: FRICATIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ศาลา',
+      rtgs: 'sala',
+      ipa: '',
+      translation: {
+        en: 'pavilion',
+        fr: 'pavillon',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 38,
     kind: CONSONANT,
+    symbol: 'ษ',
     class: HIGH,
-    character: {
-      thai: 'ถ',
-      roman: 'tŏr',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 't', final: 't' },
-    exampleWord: {
-      roman: "tŏo'ng",
-      thai: 'ถุง',
-      en: 'bag',
-      fr: 'sac',
+    transcriptions: {
+      thai: 'ษ',
+      rtgs: 'so',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 's',
+        ipa: '/s/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: FRICATIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'ฤๅษี',
+      rtgs: 'ruesi',
+      ipa: '',
+      translation: {
+        en: 'hermit',
+        fr: 'ermite',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 39,
     kind: CONSONANT,
+    symbol: 'ส',
     class: HIGH,
-    character: {
-      thai: 'ผ',
-      roman: 'pŏr',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 'ph', final: null },
-    exampleWord: {
-      roman: "pûe'ng",
-      thai: 'ผึ้ง',
-      en: 'bee',
-      fr: 'abeille',
+    transcriptions: {
+      thai: 'ส',
+      rtgs: 'so',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 's',
+        ipa: '/s/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: FRICATIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 't',
+        ipa: '/t/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'เสือ',
+      rtgs: 'suea',
+      ipa: '',
+      translation: {
+        en: 'tiger',
+        fr: 'tigre',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 40,
     kind: CONSONANT,
+    symbol: 'ห',
     class: HIGH,
-    character: {
-      thai: 'ฝ',
-      roman: 'fŏr',
-    },
     live: false,
-    outdated: false,
-    transliteration: { initial: 'f', final: null },
-    exampleWord: {
-      roman: 'făa',
-      thai: 'ฝา',
-      en: 'lid',
-      fr: 'couvercle',
+    transcriptions: {
+      thai: 'ห',
+      rtgs: 'ho',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'h',
+        ipa: '/h/',
+        articulation: {
+          manner: GLOTTAL,
+          place: FRICATIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'หีบ',
+      rtgs: 'hip',
+      ipa: '',
+      translation: {
+        en: 'chest',
+        fr: 'coffre',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 41,
     kind: CONSONANT,
-    class: HIGH,
-    character: {
-      thai: 'ศ',
-      roman: 'sŏr',
-    },
+    symbol: 'ฬ',
+    class: LOW,
     live: false,
-    outdated: false,
-    transliteration: { initial: 's', final: 't' },
-    exampleWord: {
-      roman: 'săalaa',
-      thai: 'ศาลา',
-      en: 'gazebo',
-      fr: 'belvédère',
+    transcriptions: {
+      thai: 'ฬ',
+      rtgs: 'lo',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'l',
+        ipa: '/l/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: LATERAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+      {
+        position: FINAL,
+        rtgs: 'n',
+        ipa: '/n/',
+        articulation: {
+          manner: ALVEOLAR,
+          place: NASAL,
+          voicing: VOICED,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'จุฬา',
+      rtgs: 'chula',
+      ipa: '',
+      translation: {
+        en: 'kite',
+        fr: 'cerf-volant',
+      },
+    },
+    info: {
+      en: '',
+      fr: '',
     },
   },
   {
     id: 42,
     kind: CONSONANT,
-    class: HIGH,
-    character: {
-      thai: 'ษ',
-      roman: 'sŏr',
-    },
+    symbol: 'อ',
+    class: MID,
     live: false,
-    outdated: false,
-    transliteration: { initial: 's', final: 't' },
-    exampleWord: {
-      roman: 'ruesĕe',
-      thai: 'ฤๅษี',
-      en: 'hermit',
-      fr: 'ermite',
+    transcriptions: {
+      thai: 'อ',
+      rtgs: 'o',
+      ipa: '',
+    },
+    position: [
+      {
+        position: INITIAL,
+        rtgs: '-',
+        ipa: '/ʔ/',
+        articulation: {
+          manner: GLOTTAL,
+          place: PLOSIVE,
+          voicing: VOICELESS,
+          aspiration: UNASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'อ่าง',
+      rtgs: 'ang',
+      ipa: '',
+      translation: {
+        en: 'basin',
+        fr: 'bassin',
+      },
+    },
+    info: {
+      en: 'อ is a special case in that at the beginning of a word it is used as a silent initial for syllables that start with a vowel',
+      fr: 'อ est un cas particulier : au début d’un mot, il est utilisé comme consonne initiale muette pour les syllabes qui commencent par une voyelle',
     },
   },
   {
     id: 43,
     kind: CONSONANT,
-    class: HIGH,
-    character: {
-      thai: 'ส',
-      roman: 'sŏr',
-    },
+    symbol: 'ฮ',
+    class: LOW,
     live: false,
-    outdated: false,
-    transliteration: { initial: 's', final: 't' },
-    exampleWord: {
-      roman: 'sŭea',
-      thai: 'เสือ',
-      en: 'tiger',
-      fr: 'tigre',
+    transcriptions: {
+      thai: 'ฮ',
+      rtgs: 'ho',
+      ipa: '',
     },
-  },
-  {
-    id: 44,
-    kind: CONSONANT,
-    class: HIGH,
-    character: {
-      thai: 'ห',
-      roman: 'hŏr',
+    position: [
+      {
+        position: INITIAL,
+        rtgs: 'h',
+        ipa: '/h/',
+        articulation: {
+          manner: GLOTTAL,
+          place: FRICATIVE,
+          voicing: VOICELESS,
+          aspiration: ASPIRATED,
+        },
+      },
+    ],
+    exemple: {
+      thai: 'นกฮูก',
+      rtgs: 'nok huk',
+      ipa: '',
+      translation: {
+        en: 'owl',
+        fr: 'hiboux',
+      },
     },
-    live: false,
-    outdated: false,
-    transliteration: { initial: 'h', final: null },
-    exampleWord: {
-      roman: 'hèep',
-      thai: 'หีบ',
-      en: 'chest',
-      fr: 'coffre',
+    info: {
+      en: '',
+      fr: '',
     },
   },
 ];

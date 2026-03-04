@@ -4,7 +4,7 @@ export interface ThaiSymbol {
   id: number;
   kind: LetterKindType;
   symbol: string;
-  transcriptions: {
+  transcriptions?: {
     thai: string;
     rtgs: string;
     ipa?: string;

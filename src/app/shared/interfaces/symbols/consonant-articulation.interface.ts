@@ -1,8 +1,8 @@
-import { ArticulationManner, ArticulationPlace, Aspiration, Voicing } from '../articulation';
+import { ArticulationMannerType, ArticulationPlaceType, AspirationType, VoicingType } from '../../types';
 
 export interface ConsonantArticulation {
-  manner: ArticulationManner;
-  place: ArticulationPlace;
-  voicing: Voicing;
-  aspiration: Aspiration;
+  manner: ArticulationMannerType;
+  place: ArticulationPlaceType;
+  voicing: VoicingType;
+  aspiration: AspirationType;
 }
