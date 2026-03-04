@@ -8,7 +8,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๐',
     transcriptions: {
       thai: 'ศูนย์',
-      rtgs: 'sun',
+      rtgs: 'sǔn',
       ipa: '/sǔːn/',
     },
     number: '0',
@@ -19,7 +19,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๑',
     transcriptions: {
       thai: 'หนึ่ง',
-      rtgs: 'nueng',
+      rtgs: 'nùeng',
       ipa: '/nɯ̀ŋ/',
     },
     number: '1',
@@ -30,7 +30,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๒',
     transcriptions: {
       thai: 'สอง',
-      rtgs: 'song',
+      rtgs: 'sǒng',
       ipa: '/sɔ̌ːŋ/',
     },
     number: '2',
@@ -41,7 +41,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๓',
     transcriptions: {
       thai: 'สาม',
-      rtgs: 'sam',
+      rtgs: 'sǎm',
       ipa: '/sǎːm/',
     },
     number: '3',
@@ -52,7 +52,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๔',
     transcriptions: {
       thai: 'สี่',
-      rtgs: 'si',
+      rtgs: 'sì',
       ipa: '/sìː/',
     },
     number: '4',
@@ -63,7 +63,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๕',
     transcriptions: {
       thai: 'ห้า',
-      rtgs: 'ha',
+      rtgs: 'hâ',
       ipa: '/hâː/',
     },
     number: '5',
@@ -74,7 +74,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๖',
     transcriptions: {
       thai: 'หก',
-      rtgs: 'hok',
+      rtgs: 'hòk',
       ipa: '/hòk/',
     },
     number: '6',
@@ -85,7 +85,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๗',
     transcriptions: {
       thai: 'เจ็ด',
-      rtgs: 'chet',
+      rtgs: 'chèt',
       ipa: '/tɕèt/',
     },
     number: '7',
@@ -96,7 +96,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๘',
     transcriptions: {
       thai: 'แปด',
-      rtgs: 'paet',
+      rtgs: 'pàet',
       ipa: '/pɛ̀ːt/',
     },
     number: '8',
@@ -107,7 +107,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๙',
     transcriptions: {
       thai: 'เก้า',
-      rtgs: 'kao',
+      rtgs: 'kâo',
       ipa: '/kâːw/',
     },
     number: '9',
@@ -118,7 +118,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๑๐',
     transcriptions: {
       thai: 'สิบ',
-      rtgs: 'sip',
+      rtgs: 'sìp',
       ipa: '/sìp/',
     },
     number: '10',
@@ -129,7 +129,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๑๑',
     transcriptions: {
       thai: 'เอ็ด',
-      rtgs: 'sip et',
+      rtgs: 'sìp èt',
       ipa: '/sìp ʔèt/',
     },
     number: '11',
@@ -144,7 +144,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๑๒',
     transcriptions: {
       thai: 'สอง',
-      rtgs: 'sip song',
+      rtgs: 'sìp sǒng',
       ipa: '/sìp sɔ̌ːŋ/',
     },
     number: '12',
@@ -155,7 +155,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๒๐',
     transcriptions: {
       thai: 'ยี่สิบ',
-      rtgs: 'yi sip',
+      rtgs: 'yî sìp',
       ipa: '/jîː sìp/',
     },
     number: '20',
@@ -170,7 +170,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๓๐',
     transcriptions: {
       thai: 'สามสิบ',
-      rtgs: 'sam sip',
+      rtgs: 'sǎm sìp',
       ipa: '/sǎːm sìp/',
     },
     number: '30',
@@ -181,7 +181,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๑๐๐',
     transcriptions: {
       thai: 'ร้อย',
-      rtgs: 'roi',
+      rtgs: 'rói',
       ipa: '/rɔ́ːj/',
     },
     number: '100',
@@ -203,7 +203,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๑๐๐๐๐',
     transcriptions: {
       thai: 'หมื่น',
-      rtgs: 'muen',
+      rtgs: 'mùen',
       ipa: '/mɯ̀ːn/',
     },
     number: '10000',
@@ -214,7 +214,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๑๐๐๐๐๐',
     transcriptions: {
       thai: 'แสน',
-      rtgs: 'saen',
+      rtgs: 'sǎen',
       ipa: '/sɛ̌ːn/',
     },
     number: '100000',
@@ -225,17 +225,17 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
     symbol: '๑๐๐๐๐๐๐',
     transcriptions: {
       thai: 'ล้าน',
-      rtgs: 'lan',
+      rtgs: 'lán',
       ipa: '/láːn/',
     },
     number: '1000000',
     info: {
       en:
-        'Numbers above a million are constructed by prefixing "lan" with a multiplier.\n' +
-        'For example, ten million is "sip lan", and a trillion (10¹², a billion) is "lan lan".',
+        'Numbers above a million are constructed by prefixing "lán" with a multiplier.\n' +
+        'For example, ten million is "sip lán", and a trillion (10¹², a billion) is "lán lán".',
       fr:
-        'Les nombres supérieurs à un million sont construits en préfixant "lan" avec un multiplicateur.\n' +
-        'Par exemple, dix millions se dit "sip lan", et un billion (10¹², soit un milliard) se dit "lan lan".',
+        'Les nombres supérieurs à un million sont construits en préfixant "lán" avec un multiplicateur.\n' +
+        'Par exemple, dix millions se dit "sip lán", et un billion (10¹², soit un milliard) se dit "lán lán".',
     },
   },
 ];

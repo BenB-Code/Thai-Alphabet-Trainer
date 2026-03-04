@@ -8,8 +8,8 @@ export const DIACRITICS_DATA: ThaiSymbol[] = [
     symbol: '◌็',
     transcriptions: {
       thai: 'ไม้ไต่คู้',
-      rtgs: 'mai tai khu',
-      ipa: "/máj tʰáj kʰûː/'",
+      rtgs: 'mái tài khú',
+      ipa: '/máj tàj kʰúː/',
     },
     info: {
       en: 'Shortens vowel',
@@ -22,7 +22,7 @@ export const DIACRITICS_DATA: ThaiSymbol[] = [
     symbol: '◌์',
     transcriptions: {
       thai: 'ทัณฑฆาต',
-      rtgs: 'thanthakhat',
+      rtgs: 'thǎnthákhàt',
       ipa: '/tʰǎn.tʰá.kʰàːt/',
     },
     info: {
@@ -36,7 +36,7 @@ export const DIACRITICS_DATA: ThaiSymbol[] = [
     symbol: '"',
     transcriptions: {
       thai: 'ฟันหนู',
-      rtgs: 'fan nu',
+      rtgs: 'fán nǔ',
       ipa: '/fán nǔː/',
     },
     info: {
