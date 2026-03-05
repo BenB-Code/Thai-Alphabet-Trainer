@@ -7,6 +7,7 @@ import { AppStoreService } from '../../store/app/app-store.service';
 import { DesktopBurgerMenu } from '../desktop-burger-menu/desktop-burger-menu';
 import { MEDIUM } from '../../shared/constants';
 import { PronunciationSwitchSelector } from '../pronunciation-switch-selector/pronunciation-switch-selector';
+import { NavigationService } from '../../services/navigation-service/navigation-service';
 
 @Component({
   selector: 'app-thai-header',
@@ -20,5 +21,10 @@ export class ThaiHeader {
   subtitle = 'Flashcards';
 
   protected readonly appStoreService = inject(AppStoreService);
+  protected readonly navigationService = inject(NavigationService);
   protected readonly MEDIUM = MEDIUM;
+
+  redirect() {
+    this.navigationService.navigate('');
+  }
 }
