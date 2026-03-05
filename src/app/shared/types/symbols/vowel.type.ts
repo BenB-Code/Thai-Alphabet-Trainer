@@ -1,3 +1,3 @@
-import { DIPHTHONG, EXTRA_VOWEL, PHONEMIC_DIPHTHONG, SIMPLE } from '../../constants';
+import { DIPHTHONG, EXTRA_VOWEL, SIMPLE, SPECIAL } from '../../constants';
 
-export type VowelType = typeof SIMPLE | typeof DIPHTHONG | typeof PHONEMIC_DIPHTHONG | typeof EXTRA_VOWEL;
+export type VowelType = typeof SIMPLE | typeof DIPHTHONG | typeof SPECIAL | typeof EXTRA_VOWEL;
