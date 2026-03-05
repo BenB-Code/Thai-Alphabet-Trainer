@@ -23,7 +23,7 @@ import {
 } from './quiz.selectors';
 import { INITIAL_QUIZ_STATE } from './quiz.state';
 import { FINISHED, IN_PROGRESS, PAUSE, THAI } from '../../shared/constants';
-import { THAI_CONSONANTS } from '../../data';
+import { CONSONANTS_DATA } from '../../data';
 import { DisplayType } from '../../shared/types';
 import { QuizSettingsState } from './quiz.state';
 
@@ -112,7 +112,7 @@ describe('Quiz Selectors', () => {
 
   describe('selectCurrentCard', () => {
     it('should return card at current index', () => {
-      const card = { ...THAI_CONSONANTS[0], display: THAI as DisplayType };
+      const card = { ...CONSONANTS_DATA[0], display: THAI as DisplayType };
       expect(selectCurrentCard.projector([card], 0)).toEqual(card);
     });
 
@@ -145,7 +145,7 @@ describe('Quiz Selectors', () => {
       display: THAI as DisplayType,
       questions: 10,
       delay: 3,
-      selected: [THAI_CONSONANTS[0]],
+      selected: [CONSONANTS_DATA[0]],
       randomized: [],
     };
 

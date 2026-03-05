@@ -12,9 +12,9 @@ import {
   SURROUND,
   VOWEL,
 } from '../shared/constants';
-import { ThaiVowel } from '../shared/interfaces';
+import { ThaiVowelType } from '../shared/interfaces';
 
-export const VOWELS_DATA: ThaiVowel[] = [
+export const VOWELS_DATA: ThaiVowelType[] = [
   {
     id: 0,
     kind: VOWEL,

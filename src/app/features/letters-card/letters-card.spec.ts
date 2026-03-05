@@ -4,15 +4,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LettersCard } from './letters-card';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
-import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
-import { ThaiCharacter } from '../../shared/types';
+import { THAI_CONSONANTS, VOWELS_DATA } from '../../data';
+import { ThaiSymbolType } from '../../shared/types';
 
 describe('LettersCard', () => {
   let component: LettersCard;
   let fixture: ComponentFixture<LettersCard>;
   let selectionStoreService: SelectionStoreService;
   const testConsonant = THAI_CONSONANTS[0];
-  const selectedSignal = signal<ThaiCharacter[]>([]);
+  const selectedSignal = signal<ThaiSymbolType[]>([]);
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -69,7 +69,7 @@ describe('LettersCard', () => {
     });
 
     it('should return false for same id but different kind', () => {
-      const vowelWithSameId = { ...THAI_VOWELS[0], id: testConsonant.id };
+      const vowelWithSameId = { ...VOWELS_DATA[0], id: testConsonant.id };
       selectedSignal.set([vowelWithSameId]);
 
       expect(component.isActive()).toBeFalse();

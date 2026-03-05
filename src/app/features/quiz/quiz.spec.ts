@@ -8,14 +8,14 @@ import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
 import { ProgressBar } from '../../common/progress-bar/progress-bar';
 import { FINISHED, IN_PROGRESS, PAUSE } from '../../shared/constants';
-import { THAI_CONSONANTS } from '../../data';
+import { CONSONANTS_DATA } from '../../data';
 
 describe('Quiz', () => {
   let component: Quiz;
   let fixture: ComponentFixture<Quiz>;
   let quizStoreService: QuizStoreService;
 
-  const mockCard = { ...THAI_CONSONANTS[0], display: 'thai' };
+  const mockCard = { ...CONSONANTS_DATA[0], display: 'thai' };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

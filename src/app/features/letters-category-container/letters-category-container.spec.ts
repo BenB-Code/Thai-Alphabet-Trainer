@@ -5,7 +5,7 @@ import { LettersCategoryContainer } from './letters-category-container';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { MID } from '../../shared/constants';
-import { THAI_CONSONANTS } from '../../data';
+import { CONSONANTS_DATA } from '../../data';
 
 describe('LettersCategoryContainer', () => {
   let component: LettersCategoryContainer;
@@ -41,7 +41,7 @@ describe('LettersCategoryContainer', () => {
     fixture = TestBed.createComponent(LettersCategoryContainer);
     component = fixture.componentInstance;
     fixture.componentRef.setInput('category', MID);
-    fixture.componentRef.setInput('list', THAI_CONSONANTS.slice(0, 3));
+    fixture.componentRef.setInput('list', CONSONANTS_DATA.slice(0, 3));
     await fixture.whenStable();
   });
 

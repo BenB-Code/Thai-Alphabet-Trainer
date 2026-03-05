@@ -4,8 +4,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { BurgerMenu } from '../../common/burger-menu/burger-menu';
 import { ContactService } from '../../services/contact.service/contact.service';
 import { FontSwitchSelector } from '../font-switch-selector/font-switch-selector';
-import { SMALL } from '../../shared/constants';
 import { AppStoreService } from '../../store/app/app-store.service';
+import { SMALL } from '../../shared/constants';
 
 @Component({
   selector: 'app-mobile-burger-menu',

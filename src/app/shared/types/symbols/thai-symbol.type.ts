@@ -1,3 +1,3 @@
-import { Consonant, Other, ThaiSymbol, Vowel } from '../../interfaces';
+import { ThaiConsonantType, ThaiOther, ThaiSymbol, ThaiVowelType } from '../../interfaces';
 
-export type ThaiSymbolType = Consonant | Vowel | ThaiSymbol | Other;
+export type ThaiSymbolType = ThaiConsonantType | ThaiVowelType | ThaiSymbol | ThaiOther;

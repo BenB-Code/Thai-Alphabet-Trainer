@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { SelectionStoreService } from './selection-store.service';
-import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
 import { CONSONANT, HIGH, LOW, MID, SHORT, VOWEL } from '../../shared/constants';
-import { ThaiCharacter } from '../../shared/types';
+import { ThaiSymbolType } from '../../shared/types';
+import { CONSONANTS_DATA, VOWELS_DATA } from '../../data';
 
 describe('SelectionStoreService', () => {
   let service: SelectionStoreService;
@@ -33,24 +33,24 @@ describe('SelectionStoreService', () => {
 
   describe('selectLetter', () => {
     it('should select a letter', () => {
-      service.selectLetter(THAI_CONSONANTS[0]);
+      service.selectLetter(CONSONANTS_DATA[0]);
       expect(service.totalCount()).toBe(1);
     });
   });
 
   describe('deselectLetter', () => {
     it('should deselect a letter', () => {
-      service.selectLetter(THAI_CONSONANTS[0]);
-      service.deselectLetter(THAI_CONSONANTS[0]);
+      service.selectLetter(CONSONANTS_DATA[0]);
+      service.deselectLetter(CONSONANTS_DATA[0]);
       expect(service.totalCount()).toBe(0);
     });
   });
 
   describe('toggleLetter', () => {
     it('should toggle a letter', () => {
-      service.toggleLetter(THAI_CONSONANTS[0]);
+      service.toggleLetter(CONSONANTS_DATA[0]);
       expect(service.totalCount()).toBe(1);
-      service.toggleLetter(THAI_CONSONANTS[0]);
+      service.toggleLetter(CONSONANTS_DATA[0]);
       expect(service.totalCount()).toBe(0);
     });
   });
@@ -58,7 +58,7 @@ describe('SelectionStoreService', () => {
   describe('selectAll / deselectAll', () => {
     it('should select all of a kind', () => {
       service.selectAll(CONSONANT);
-      expect(service.consonantsCount()).toBe(THAI_CONSONANTS.length);
+      expect(service.consonantsCount()).toBe(CONSONANTS_DATA.length);
     });
 
     it('should deselect all of a kind', () => {
@@ -71,7 +71,7 @@ describe('SelectionStoreService', () => {
   describe('selectByCategory / deselectByCategory', () => {
     it('should select by consonant class', () => {
       service.selectByCategory(MID);
-      const midCount = THAI_CONSONANTS.filter(c => c.class === MID).length;
+      const midCount = CONSONANTS_DATA.filter(c => c.class === MID).length;
       expect(service.totalCount()).toBe(midCount);
     });
 
@@ -85,7 +85,7 @@ describe('SelectionStoreService', () => {
   describe('toggleByCategory', () => {
     it('should toggle a category', () => {
       service.toggleByCategory(HIGH);
-      const highCount = THAI_CONSONANTS.filter(c => c.class === HIGH).length;
+      const highCount = CONSONANTS_DATA.filter(c => c.class === HIGH).length;
       expect(service.totalCount()).toBe(highCount);
     });
   });
@@ -93,13 +93,13 @@ describe('SelectionStoreService', () => {
   describe('getCountByCategory', () => {
     it('should count consonants by class', () => {
       service.selectByCategory(MID);
-      const midCount = THAI_CONSONANTS.filter(c => c.class === MID).length;
+      const midCount = CONSONANTS_DATA.filter(c => c.class === MID).length;
       expect(service.getCountByCategory(MID)).toBe(midCount);
     });
 
-    it('should count vowels by type', () => {
+    it('should count vowels by length', () => {
       service.selectByCategory(SHORT);
-      const shortCount = THAI_VOWELS.filter(v => v.type === SHORT).length;
+      const shortCount = VOWELS_DATA.filter(v => v.length === SHORT).length;
       expect(service.getCountByCategory(SHORT)).toBe(shortCount);
     });
 
@@ -113,7 +113,7 @@ describe('SelectionStoreService', () => {
     });
 
     it('should return 0 for a letter matching neither vowel nor consonant type guard', () => {
-      const malformed = { id: 999, kind: CONSONANT } as unknown as ThaiCharacter;
+      const malformed = { id: 999, kind: CONSONANT } as unknown as ThaiSymbolType;
       service.selectLetter(malformed);
 
       expect(service.totalCount()).toBe(1);

@@ -4,7 +4,7 @@ import { AppStoreService } from '../../store/app/app-store.service';
 import { StatusBadge } from '../../common/status-badge/status-badge';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
-import { CONSONANT, FINAL, MEDIAL, THAI, VOWEL } from '../../shared/constants';
+import { CONSONANT, FINAL, THAI, VOWEL } from '../../shared/constants';
 
 @Component({
   selector: 'app-quiz-card',
@@ -23,7 +23,6 @@ export class QuizCard {
   }
 
   protected readonly THAI = THAI;
-  protected readonly MEDIAL = MEDIAL;
   protected readonly FINAL = FINAL;
   protected readonly CONSONANT = CONSONANT;
   protected readonly VOWEL = VOWEL;

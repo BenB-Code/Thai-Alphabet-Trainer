@@ -1,4 +1,4 @@
-import { ThaiConsonant } from '../shared/interfaces';
+import { ThaiConsonantType } from '../shared/interfaces';
 import {
   AFFRICATE,
   ALVEOLAR,
@@ -25,7 +25,7 @@ import {
   VOICELESS,
 } from '../shared/constants';
 
-export const CONSONNANTS_DATA: ThaiConsonant[] = [
+export const CONSONANTS_DATA: ThaiConsonantType[] = [
   {
     id: 0,
     kind: CONSONANT,

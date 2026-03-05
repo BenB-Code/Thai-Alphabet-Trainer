@@ -1,6 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { TabsConfig } from '../../shared/interfaces';
-import { SwitchSelectorItem } from '../../shared/types';
+import { SwitchSelectorItem, TabsConfig } from '../../shared/interfaces';
 import { DataService } from '../data-service/data-service';
 
 @Injectable({

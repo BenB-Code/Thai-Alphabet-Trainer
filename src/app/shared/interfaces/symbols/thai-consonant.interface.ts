@@ -2,7 +2,7 @@ import { ConsonantPosition } from './consonant-position.interface';
 import { ThaiSymbol } from './thai-symbol.interface';
 import { ConsonantClassType } from '../../types';
 
-export interface ThaiConsonant extends ThaiSymbol {
+export interface ThaiConsonantType extends ThaiSymbol {
   position: ConsonantPosition[];
   class: ConsonantClassType;
   exemple: {

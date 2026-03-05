@@ -1,46 +1,46 @@
 import { Injectable } from '@angular/core';
-import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
-import { ConsonantClass, ThaiCharacter, VowelType } from '../../shared/types';
-import { ThaiConsonant, ThaiVowel } from '../../shared/models';
+import { CONSONANTS_DATA, VOWELS_DATA } from '../../data';
+import { ThaiConsonantType, ThaiVowelType } from '../../shared/interfaces';
+import { ConsonantClassType, ThaiSymbolType, VowelLengthType } from '../../shared/types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  getAll(): Record<string, ThaiCharacter[]> {
+  getAll(): Record<string, ThaiSymbolType[]> {
     return { ...this.getAllConsonantsSorted(), ...this.getAllVowelsSorted() };
   }
 
-  getAllConsonants(): ThaiConsonant[] {
-    return [...THAI_CONSONANTS];
+  getAllConsonants(): ThaiConsonantType[] {
+    return [...CONSONANTS_DATA];
   }
 
-  getAllConsonantsSorted(): Record<string, ThaiConsonant[]> {
-    return this.groupBy([...THAI_CONSONANTS], 'class');
+  getAllConsonantsSorted(): Record<string, ThaiConsonantType[]> {
+    return this.groupBy([...CONSONANTS_DATA], 'class');
   }
 
-  getConsonantById(id: number): ThaiConsonant | undefined {
-    return THAI_CONSONANTS.find(o => o.id === id);
+  getConsonantById(id: number): ThaiConsonantType | undefined {
+    return CONSONANTS_DATA.find(o => o.id === id);
   }
 
-  getConsonantByClass(consonantClass: ConsonantClass): ThaiConsonant[] {
-    return THAI_CONSONANTS.filter(o => o.class === consonantClass);
+  getConsonantByClass(ConsonantClassType: ConsonantClassType): ThaiConsonantType[] {
+    return CONSONANTS_DATA.filter(o => o.class === ConsonantClassType);
   }
 
-  getAllVowels(): ThaiVowel[] {
-    return [...THAI_VOWELS];
+  getAllVowels(): ThaiVowelType[] {
+    return [...VOWELS_DATA];
   }
 
-  getAllVowelsSorted(): Record<string, ThaiVowel[]> {
-    return this.groupBy([...THAI_VOWELS], 'type');
+  getAllVowelsSorted(): Record<string, ThaiVowelType[]> {
+    return this.groupBy([...VOWELS_DATA], 'type');
   }
 
-  getVowelById(id: number): ThaiVowel | undefined {
-    return THAI_VOWELS.find(o => o.id === id);
+  getVowelById(id: number): ThaiVowelType | undefined {
+    return VOWELS_DATA.find(o => o.id === id);
   }
 
-  getVowelByType(consonantClass: VowelType): ThaiVowel[] {
-    return THAI_VOWELS.filter(o => o.type === consonantClass);
+  getVowelByLength(vowelLength: VowelLengthType): ThaiVowelType[] {
+    return VOWELS_DATA.filter(o => o.length === vowelLength);
   }
 
   groupBy<T, K extends keyof T>(items: T[], key: K): Record<string, T[]> {

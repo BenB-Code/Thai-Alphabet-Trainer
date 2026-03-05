@@ -1,14 +1,14 @@
 import { computed, effect, inject, PLATFORM_ID } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
-import { FontsType, Languages, ThemeType } from '../../shared/types';
-import { DARK, EN, FR, KANIT, LIGHT, MOON, SARABUN, SRIRACHA, SUN } from '../../shared/constants';
 import { TranslateService } from '@ngx-translate/core';
+import { DARK, EN, FR, KANIT, LIGHT, MOON, SARABUN, SRIRACHA, SUN } from '../../shared/constants';
+import { FontType, LanguagesType, ThemeType } from '../../shared/types';
 
 interface AppState {
   theme: ThemeType;
-  thaiFont: FontsType;
-  language: Languages;
+  thaiFont: FontType;
+  language: LanguagesType;
   activeTab: number;
 }
 
@@ -25,11 +25,11 @@ function isTheme(value: unknown): value is ThemeType {
   return value === LIGHT || value === DARK;
 }
 
-function isFont(value: unknown): value is FontsType {
+function isFont(value: unknown): value is FontType {
   return value === SARABUN || value === KANIT || value === SRIRACHA;
 }
 
-function isLanguage(value: unknown): value is Languages {
+function isLanguage(value: unknown): value is LanguagesType {
   return value === EN || value === FR;
 }
 
@@ -68,11 +68,11 @@ export const AppStore = signalStore(
       patchState(store, { theme: store.theme() === LIGHT ? DARK : LIGHT });
     },
 
-    switchFont(font: FontsType): void {
+    switchFont(font: FontType): void {
       patchState(store, { thaiFont: font });
     },
 
-    switchLanguage(lang: Languages): void {
+    switchLanguage(lang: LanguagesType): void {
       patchState(store, { language: lang });
       translateService.use(lang);
     },

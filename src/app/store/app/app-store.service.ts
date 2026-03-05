@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { AppStore } from './app.store';
-import { FontsType, Languages } from '../../shared/types';
+import { FontType, LanguagesType } from '../../shared/types';
 
 @Injectable({ providedIn: 'root' })
 export class AppStoreService {
@@ -19,11 +19,11 @@ export class AppStoreService {
     this.store.toggleTheme();
   }
 
-  switchFont(font: FontsType): void {
+  switchFont(font: FontType): void {
     this.store.switchFont(font);
   }
 
-  switchLanguage(lang: Languages): void {
+  switchLanguage(lang: LanguagesType): void {
     this.store.switchLanguage(lang);
   }
 

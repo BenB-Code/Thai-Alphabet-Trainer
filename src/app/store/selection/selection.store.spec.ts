@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { SelectionStore } from './selection.store';
-import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
+import { CONSONANTS_DATA, VOWELS_DATA } from '../../data';
 import { CONSONANT, HIGH, LOW, MID, SHORT, VOWEL } from '../../shared/constants';
 
 describe('SelectionStore', () => {
@@ -35,35 +35,35 @@ describe('SelectionStore', () => {
 
   describe('selectLetter', () => {
     it('should add a letter', () => {
-      store.selectLetter(THAI_CONSONANTS[0]);
+      store.selectLetter(CONSONANTS_DATA[0]);
       expect(store.selected().length).toBe(1);
       expect(store.isEmpty()).toBeFalse();
     });
 
     it('should not add a duplicate (same id + kind)', () => {
-      store.selectLetter(THAI_CONSONANTS[0]);
-      store.selectLetter(THAI_CONSONANTS[0]);
+      store.selectLetter(CONSONANTS_DATA[0]);
+      store.selectLetter(CONSONANTS_DATA[0]);
       expect(store.selected().length).toBe(1);
     });
   });
 
   describe('deselectLetter', () => {
     it('should remove a letter', () => {
-      store.selectLetter(THAI_CONSONANTS[0]);
-      store.deselectLetter(THAI_CONSONANTS[0]);
+      store.selectLetter(CONSONANTS_DATA[0]);
+      store.deselectLetter(CONSONANTS_DATA[0]);
       expect(store.selected().length).toBe(0);
     });
   });
 
   describe('toggleLetter', () => {
     it('should add when not present', () => {
-      store.toggleLetter(THAI_CONSONANTS[0]);
+      store.toggleLetter(CONSONANTS_DATA[0]);
       expect(store.selected().length).toBe(1);
     });
 
     it('should remove when already present', () => {
-      store.toggleLetter(THAI_CONSONANTS[0]);
-      store.toggleLetter(THAI_CONSONANTS[0]);
+      store.toggleLetter(CONSONANTS_DATA[0]);
+      store.toggleLetter(CONSONANTS_DATA[0]);
       expect(store.selected().length).toBe(0);
     });
   });
@@ -71,14 +71,14 @@ describe('SelectionStore', () => {
   describe('selectAll / deselectAll', () => {
     it('should select all consonants', () => {
       store.selectAll(CONSONANT);
-      expect(store.selectedConsonants().length).toBe(THAI_CONSONANTS.length);
-      expect(store.consonantsCount()).toBe(THAI_CONSONANTS.length);
+      expect(store.selectedConsonants().length).toBe(CONSONANTS_DATA.length);
+      expect(store.consonantsCount()).toBe(CONSONANTS_DATA.length);
     });
 
     it('should select all vowels', () => {
       store.selectAll(VOWEL);
-      expect(store.selectedVowels().length).toBe(THAI_VOWELS.length);
-      expect(store.vowelsCount()).toBe(THAI_VOWELS.length);
+      expect(store.selectedVowels().length).toBe(VOWELS_DATA.length);
+      expect(store.vowelsCount()).toBe(VOWELS_DATA.length);
     });
 
     it('should deselect all consonants without touching vowels', () => {
@@ -86,14 +86,14 @@ describe('SelectionStore', () => {
       store.selectAll(VOWEL);
       store.deselectAll(CONSONANT);
       expect(store.consonantsCount()).toBe(0);
-      expect(store.vowelsCount()).toBe(THAI_VOWELS.length);
+      expect(store.vowelsCount()).toBe(VOWELS_DATA.length);
     });
 
     it('should deselect all vowels without touching consonants', () => {
       store.selectAll(CONSONANT);
       store.selectAll(VOWEL);
       store.deselectAll(VOWEL);
-      expect(store.consonantsCount()).toBe(THAI_CONSONANTS.length);
+      expect(store.consonantsCount()).toBe(CONSONANTS_DATA.length);
       expect(store.vowelsCount()).toBe(0);
     });
   });
@@ -101,13 +101,13 @@ describe('SelectionStore', () => {
   describe('selectByCategory', () => {
     it('should select all consonants of a class', () => {
       store.selectByCategory(MID);
-      const midCount = THAI_CONSONANTS.filter(c => c.class === MID).length;
+      const midCount = CONSONANTS_DATA.filter(c => c.class === MID).length;
       expect(store.selected().length).toBe(midCount);
     });
 
-    it('should select all vowels of a type', () => {
+    it('should select all vowels of a length', () => {
       store.selectByCategory(SHORT);
-      const shortCount = THAI_VOWELS.filter(v => v.type === SHORT).length;
+      const shortCount = VOWELS_DATA.filter(v => v.length === SHORT).length;
       expect(store.selected().length).toBe(shortCount);
     });
 
@@ -136,12 +136,12 @@ describe('SelectionStore', () => {
   describe('toggleByCategory', () => {
     it('should select all when none are selected', () => {
       store.toggleByCategory(HIGH);
-      const highCount = THAI_CONSONANTS.filter(c => c.class === HIGH).length;
+      const highCount = CONSONANTS_DATA.filter(c => c.class === HIGH).length;
       expect(store.selected().length).toBe(highCount);
     });
 
     it('should swap: deselect selected and select unselected', () => {
-      const highConsonants = THAI_CONSONANTS.filter(c => c.class === HIGH);
+      const highConsonants = CONSONANTS_DATA.filter(c => c.class === HIGH);
       store.selectLetter(highConsonants[0]);
       store.toggleByCategory(HIGH);
       expect(
@@ -159,22 +159,22 @@ describe('SelectionStore', () => {
 
   describe('computed signals', () => {
     it('selectedConsonants should filter consonants only', () => {
-      store.selectLetter(THAI_CONSONANTS[0]);
-      store.selectLetter(THAI_VOWELS[0]);
+      store.selectLetter(CONSONANTS_DATA[0]);
+      store.selectLetter(VOWELS_DATA[0]);
       expect(store.selectedConsonants().length).toBe(1);
       expect(store.selectedConsonants()[0].kind).toBe(CONSONANT);
     });
 
     it('selectedVowels should filter vowels only', () => {
-      store.selectLetter(THAI_CONSONANTS[0]);
-      store.selectLetter(THAI_VOWELS[0]);
+      store.selectLetter(CONSONANTS_DATA[0]);
+      store.selectLetter(VOWELS_DATA[0]);
       expect(store.selectedVowels().length).toBe(1);
       expect(store.selectedVowels()[0].kind).toBe(VOWEL);
     });
 
     it('totalCount should reflect all selected', () => {
-      store.selectLetter(THAI_CONSONANTS[0]);
-      store.selectLetter(THAI_VOWELS[0]);
+      store.selectLetter(CONSONANTS_DATA[0]);
+      store.selectLetter(VOWELS_DATA[0]);
       expect(store.totalCount()).toBe(2);
     });
   });

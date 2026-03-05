@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { SelectionStore } from './selection.store';
-import { ConsonantClass, LetterKind, ThaiCharacter, VowelType } from '../../shared/types';
-import { ThaiConsonant, ThaiVowel } from '../../shared/models';
+import { ConsonantClassType, LetterKindType, ThaiSymbolType, VowelLengthType } from '../../shared/types';
+import { ThaiConsonantType, ThaiVowelType } from '../../shared/interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class SelectionStoreService {
@@ -15,35 +15,35 @@ export class SelectionStoreService {
   readonly totalCount = this.store.totalCount;
   readonly isEmpty = this.store.isEmpty;
 
-  selectLetter(letter: ThaiCharacter): void {
+  selectLetter(letter: ThaiSymbolType): void {
     this.store.selectLetter(letter);
   }
 
-  deselectLetter(letter: ThaiCharacter): void {
+  deselectLetter(letter: ThaiSymbolType): void {
     this.store.deselectLetter(letter);
   }
 
-  toggleLetter(letter: ThaiCharacter): void {
+  toggleLetter(letter: ThaiSymbolType): void {
     this.store.toggleLetter(letter);
   }
 
-  selectAll(kind: LetterKind): void {
+  selectAll(kind: LetterKindType): void {
     this.store.selectAll(kind);
   }
 
-  deselectAll(kind: LetterKind): void {
+  deselectAll(kind: LetterKindType): void {
     this.store.deselectAll(kind);
   }
 
-  selectByCategory(category: ConsonantClass | VowelType): void {
+  selectByCategory(category: ConsonantClassType | VowelLengthType): void {
     this.store.selectByCategory(category);
   }
 
-  deselectByCategory(category: ConsonantClass | VowelType): void {
+  deselectByCategory(category: ConsonantClassType | VowelLengthType): void {
     this.store.deselectByCategory(category);
   }
 
-  toggleByCategory(category: ConsonantClass | VowelType): void {
+  toggleByCategory(category: ConsonantClassType | VowelLengthType): void {
     this.store.toggleByCategory(category);
   }
 
@@ -55,11 +55,11 @@ export class SelectionStoreService {
     }).length;
   }
 
-  private isConsonant(letter: ThaiCharacter): letter is ThaiConsonant {
+  private isConsonant(letter: ThaiSymbolType): letter is ThaiConsonantType {
     return 'class' in letter;
   }
 
-  private isVowel(letter: ThaiCharacter): letter is ThaiVowel {
+  private isVowel(letter: ThaiSymbolType): letter is ThaiVowelType {
     return 'type' in letter;
   }
 }

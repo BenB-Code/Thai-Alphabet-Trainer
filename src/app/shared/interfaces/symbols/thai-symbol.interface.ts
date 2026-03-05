@@ -1,4 +1,4 @@
-import { LetterKindType } from '../../types';
+import { DisplayType, LetterKindType } from '../../types';
 
 export interface ThaiSymbol {
   id: number;
@@ -9,6 +9,7 @@ export interface ThaiSymbol {
     rtgs: string;
     ipa?: string;
   };
+  display?: DisplayType;
   info?: {
     en: string | string[];
     fr: string | string[];

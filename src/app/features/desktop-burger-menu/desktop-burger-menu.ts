@@ -3,8 +3,8 @@ import { Button } from '../../common/button/button';
 import { TranslatePipe } from '@ngx-translate/core';
 import { BurgerMenu } from '../../common/burger-menu/burger-menu';
 import { ContactService } from '../../services/contact.service/contact.service';
-import { MEDIUM, SMALL } from '../../shared/constants';
 import { AppStoreService } from '../../store/app/app-store.service';
+import { MEDIUM, SMALL } from '../../shared/constants';
 
 @Component({
   selector: 'app-desktop-burger-menu',
