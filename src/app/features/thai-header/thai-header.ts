@@ -6,10 +6,11 @@ import { MobileBurgerMenu } from '../mobile-burger-menu/mobile-burger-menu';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { DesktopBurgerMenu } from '../desktop-burger-menu/desktop-burger-menu';
 import { MEDIUM } from '../../shared/constants';
+import { PronunciationSwitchSelector } from '../pronunciation-switch-selector/pronunciation-switch-selector';
 
 @Component({
   selector: 'app-thai-header',
-  imports: [Button, Header, MobileBurgerMenu, FontSwitchSelector, DesktopBurgerMenu],
+  imports: [Button, Header, MobileBurgerMenu, FontSwitchSelector, PronunciationSwitchSelector, DesktopBurgerMenu],
   templateUrl: './thai-header.html',
   styleUrl: './thai-header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

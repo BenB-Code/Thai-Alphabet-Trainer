@@ -14,7 +14,7 @@
   } @if (item.label.display) { @if (labelTemplate()) {
   <ng-container *ngTemplateOutlet="labelTemplate(); context: { $implicit: item }" />
   } @else {
-  <span>{{ item.label.text }}</span>
+  <p class="label">{{ item.label.text }}</p>
   } }
   <ng-content />
 </button>

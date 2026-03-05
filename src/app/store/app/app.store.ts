@@ -2,12 +2,13 @@ import { computed, effect, inject, PLATFORM_ID } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { TranslateService } from '@ngx-translate/core';
-import { DARK, EN, FR, KANIT, LIGHT, MOON, SARABUN, SRIRACHA, SUN } from '../../shared/constants';
-import { FontType, LanguagesType, ThemeType } from '../../shared/types';
+import { DARK, EN, FR, IPA, KANIT, LIGHT, MOON, RTGS, SARABUN, SRIRACHA, SUN } from '../../shared/constants';
+import { FontType, LanguagesType, PronunciationsType, ThemeType } from '../../shared/types';
 
 interface AppState {
   theme: ThemeType;
   thaiFont: FontType;
+  pronunciation: PronunciationsType;
   language: LanguagesType;
   activeTab: number;
 }
@@ -17,6 +18,7 @@ const STORAGE_KEY = 'thai-flashcard-config';
 const INITIAL_STATE: AppState = {
   theme: LIGHT,
   thaiFont: SARABUN,
+  pronunciation: RTGS,
   language: EN,
   activeTab: 0,
 };
@@ -33,6 +35,10 @@ function isLanguage(value: unknown): value is LanguagesType {
   return value === EN || value === FR;
 }
 
+function isPronunciation(value: unknown): value is PronunciationsType {
+  return value === RTGS || value === IPA;
+}
+
 function loadFromStorage(): Partial<AppState> | null {
   const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) return null;
@@ -44,6 +50,7 @@ function loadFromStorage(): Partial<AppState> | null {
     if (isTheme(parsed.theme)) state.theme = parsed.theme;
     if (isFont(parsed.thaiFont)) state.thaiFont = parsed.thaiFont;
     if (isLanguage(parsed.language)) state.language = parsed.language;
+    if (isPronunciation(parsed.pronunciation)) state.pronunciation = parsed.pronunciation;
     if (typeof parsed.activeTab === 'number' && parsed.activeTab >= 0) state.activeTab = parsed.activeTab;
 
     return Object.keys(state).length > 0 ? state : null;
@@ -70,6 +77,10 @@ export const AppStore = signalStore(
 
     switchFont(font: FontType): void {
       patchState(store, { thaiFont: font });
+    },
+
+    switchPronunciation(pronunciation: PronunciationsType): void {
+      patchState(store, { pronunciation: pronunciation });
     },
 
     switchLanguage(lang: LanguagesType): void {
@@ -118,6 +129,7 @@ export const AppStore = signalStore(
           saveToStorage({
             theme: store.theme(),
             thaiFont: store.thaiFont(),
+            pronunciation: store.pronunciation(),
             language: store.language(),
             activeTab: store.activeTab(),
           });

@@ -5,3 +5,4 @@ export * from './thai-symbol.type';
 export * from './vowel-length.type';
 export * from './vowel-position.type';
 export * from './vowel.type';
+export * from './pronunciations.type';
