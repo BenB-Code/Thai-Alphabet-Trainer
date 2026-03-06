@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { LettersCategoryHeader } from '../letters-category-header/letters-category-header';
 import { LettersCard } from '../letters-card/letters-card';
-import { ConsonantClassType, ThaiSymbolType, VowelLengthType } from '../../shared/types';
+import { SymbolCategoriesType, ThaiSymbolType } from '../../shared/types';
 import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 
 @Component({
@@ -17,7 +17,7 @@ import { LetterUtilsService } from '../../services/letter-utils-service/letter-u
 export class LettersCategoryContainer {
   private readonly letterUtilsService = inject(LetterUtilsService);
 
-  category = input.required<ConsonantClassType | VowelLengthType>();
+  category = input.required<SymbolCategoriesType>();
   list = input.required<ThaiSymbolType[]>();
   color = computed(() => this.letterUtilsService.getLetterColor(this.category()));
 

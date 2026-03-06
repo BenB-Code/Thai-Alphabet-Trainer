@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ColorsType, ConsonantClassType, ThaiSymbolType, VowelLengthType } from '../../shared/types';
+import { ColorsType, SymbolCategoriesType, ThaiSymbolType } from '../../shared/types';
 import { ConsonantPosition, ThaiConsonant, ThaiNumeral, ThaiSymbol, ThaiVowel } from '../../shared/interfaces';
 import { TypeClassColorsMap } from '../../shared/map';
 import { CLASS, CONSONANT, DIACRITIC, KIND, NUMBER, NUMERAL, TONE_MARK, TYPE, VOWEL } from '../../shared/constants';
@@ -28,7 +28,7 @@ export class LetterUtilsService {
     return KIND in letter && letter.kind === TONE_MARK;
   }
 
-  getLetterColor(letter: ConsonantClassType | VowelLengthType): ColorsType {
+  getLetterColor(letter: SymbolCategoriesType): ColorsType {
     return TypeClassColorsMap[letter];
   }
 
