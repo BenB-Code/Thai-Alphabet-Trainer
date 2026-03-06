@@ -3,7 +3,7 @@ import { AppStoreService } from '../../store/app/app-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 import { ColorsType, ThaiSymbolType } from '../../shared/types';
-import { FINAL, TERTIARY } from '../../shared/constants';
+import { FINAL, TRANSPARENT } from '../../shared/constants';
 import { Card } from '../../common/card/card';
 import { Consonant } from './cards/consonant/consonant';
 import { Vowel } from './cards/vowel/vowel';
@@ -24,7 +24,7 @@ export class LettersCard {
   protected readonly letterUtilsService = inject(LetterUtilsService);
 
   letter = input.required<ThaiSymbolType>();
-  color = input<ColorsType>(TERTIARY);
+  color = input<ColorsType>(TRANSPARENT);
   clickable = input<boolean>(true);
   activable = input<boolean>(true);
   isActive = computed((): boolean =>

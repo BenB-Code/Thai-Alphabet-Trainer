@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { SwitchSelectorItem, TabsConfig } from '../../shared/interfaces';
 import { DataService } from '../data-service/data-service';
+import { CLASS, TYPE } from '../../shared/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -41,7 +42,7 @@ export class TabsService {
         class: 'letter-tab-switch-selector',
         id: 1,
       },
-      payload: this.dataService.getAllConsonantsSorted(),
+      payload: this.dataService.getAllConsonantsSortedBy(CLASS),
     },
     {
       tabSwitchConfig: {
@@ -58,7 +59,7 @@ export class TabsService {
         id: 2,
         class: 'letter-tab-switch-selector',
       },
-      payload: this.dataService.getAllVowelsSorted(),
+      payload: this.dataService.getAllVowelsSortedBy(TYPE),
     },
   ];
 

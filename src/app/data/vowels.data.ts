@@ -700,7 +700,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     },
   },
   {
-    id: 37,
+    id: 38,
     kind: VOWEL,
     symbol: 'ฦ',
     type: EXTRA_VOWEL,
@@ -718,7 +718,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     },
   },
   {
-    id: 38,
+    id: 39,
     kind: VOWEL,
     symbol: 'ฤๅ',
     type: EXTRA_VOWEL,
@@ -736,7 +736,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     },
   },
   {
-    id: 39,
+    id: 40,
     kind: VOWEL,
     symbol: 'ฦๅ',
     type: EXTRA_VOWEL,

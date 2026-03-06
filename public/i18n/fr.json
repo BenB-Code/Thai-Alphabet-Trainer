@@ -42,7 +42,9 @@
     "short": "Voyelles Courtes",
     "long": "Voyelles Longues",
     "diphthong": "Voyelles Diphtongues",
-    "special": "Voyelles Spéciales"
+    "special": "Voyelles Spéciales",
+    "extra-vowel": "Voyelles Particulières",
+    "simple": "Voyelles Simples"
   },
   "letters": {
     "outdated": "Cette lettre n'est plus utilisée",

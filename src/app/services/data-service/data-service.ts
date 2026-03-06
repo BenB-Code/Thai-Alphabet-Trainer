@@ -2,21 +2,22 @@ import { Injectable } from '@angular/core';
 import { CONSONANTS_DATA, VOWELS_DATA } from '../../data';
 import { ThaiConsonant, ThaiVowel } from '../../shared/interfaces';
 import { ConsonantClassType, ThaiSymbolType, VowelLengthType } from '../../shared/types';
+import { CLASS, TYPE } from '../../shared/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   getAll(): Record<string, ThaiSymbolType[]> {
-    return { ...this.getAllConsonantsSorted(), ...this.getAllVowelsSorted() };
+    return { ...this.getAllConsonantsSortedBy(CLASS), ...this.getAllVowelsSortedBy(TYPE) };
   }
 
   getAllConsonants(): ThaiConsonant[] {
     return [...CONSONANTS_DATA];
   }
 
-  getAllConsonantsSorted(): Record<string, ThaiConsonant[]> {
-    return this.groupBy([...CONSONANTS_DATA], 'class');
+  getAllConsonantsSortedBy(sortingKey: keyof ThaiConsonant): Record<string, ThaiConsonant[]> {
+    return this.groupBy([...CONSONANTS_DATA], sortingKey);
   }
 
   getConsonantById(id: number): ThaiConsonant | undefined {
@@ -31,8 +32,8 @@ export class DataService {
     return [...VOWELS_DATA];
   }
 
-  getAllVowelsSorted(): Record<string, ThaiVowel[]> {
-    return this.groupBy([...VOWELS_DATA], 'type');
+  getAllVowelsSortedBy(sortingKey: keyof ThaiVowel): Record<string, ThaiVowel[]> {
+    return this.groupBy([...VOWELS_DATA], sortingKey);
   }
 
   getVowelById(id: number): ThaiVowel | undefined {

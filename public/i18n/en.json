@@ -41,7 +41,9 @@
     "short": "Short Vowels",
     "long": "Long Vowels",
     "diphthong": "Diphthongs Vowels",
-    "special": "Special Vowels"
+    "special": "Special Vowels",
+    "extra-vowel": "Extra Vowels",
+    "simple": "Simple Vowels"
   },
   "letters": {
     "outdated": "This letter is not used anymore",

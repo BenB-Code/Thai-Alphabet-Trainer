@@ -4,3 +4,5 @@ export const NUMERAL = 'numeral';
 export const TONE_MARK = 'tone-mark';
 export const DIACRITIC = 'diacritic';
 export const OTHER = 'other';
+export const NUMBER = 'number';
+export const KIND = 'kind';

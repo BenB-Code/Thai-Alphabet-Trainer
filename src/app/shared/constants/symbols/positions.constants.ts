@@ -5,3 +5,4 @@ export const BELOW = 'below';
 export const SURROUND = 'surround';
 export const FINAL = 'final';
 export const INITIAL = 'initial';
+export const POSITION = 'position';
