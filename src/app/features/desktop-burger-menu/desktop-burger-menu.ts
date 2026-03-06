@@ -4,7 +4,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { BurgerMenu } from '../../common/burger-menu/burger-menu';
 import { ContactService } from '../../services/contact.service/contact.service';
 import { AppStoreService } from '../../store/app/app-store.service';
-import { MEDIUM, SMALL } from '../../shared/constants';
+import { MEDIUM } from '../../shared/constants';
 
 @Component({
   selector: 'app-desktop-burger-menu',
@@ -16,6 +16,5 @@ import { MEDIUM, SMALL } from '../../shared/constants';
 export class DesktopBurgerMenu {
   protected readonly appStoreService = inject(AppStoreService);
   protected readonly contactService = inject(ContactService);
-  protected readonly SMALL = SMALL;
   protected readonly MEDIUM = MEDIUM;
 }

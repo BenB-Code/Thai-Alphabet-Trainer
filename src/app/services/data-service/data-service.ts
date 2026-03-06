@@ -9,8 +9,8 @@ import { CATEGORY } from '../../shared/constants';
 export class DataService {
   consonants = signal([...CONSONANTS_DATA]);
   vowels = signal([...VOWELS_DATA]);
-  tones = signal([...NUMERAL_DATA]);
-  numerals = signal([...TONES_DATA]);
+  tones = signal([...TONES_DATA]);
+  numerals = signal([...NUMERAL_DATA]);
   diacritics = signal([...DIACRITICS_DATA]);
   consonantsSortedByCategory = computed(() => this.getDatasetSortedByCategory(this.consonants()));
   vowelsSortedByCategory = computed(() => this.getDatasetSortedByCategory(this.vowels()));

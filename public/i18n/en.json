@@ -47,7 +47,8 @@
     "special": "Special Vowels",
     "extra-vowel": "Extra Vowels",
     "simple": "Simple Vowels",
-    "number": "Number",
+    "number": "Numbers",
+    "digit": "Digits",
     "tone-mark": "Tones",
     "diacritic": "Diacritics"
   },

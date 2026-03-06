@@ -3,7 +3,7 @@ import { AppStoreService } from '../../store/app/app-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 import { ColorsType, ThaiSymbolType } from '../../shared/types';
-import { FINAL, TRANSPARENT } from '../../shared/constants';
+import { TRANSPARENT } from '../../shared/constants';
 import { Card } from '../../common/card/card';
 import { Consonant } from './cards/consonant/consonant';
 import { Vowel } from './cards/vowel/vowel';
@@ -34,6 +34,4 @@ export class LettersCard {
   selectLetter() {
     this.selectionStoreService.toggleLetter(this.letter());
   }
-
-  protected readonly FINAL = FINAL;
 }

@@ -1,11 +1,11 @@
-import { NUMBER, NUMERAL } from '../shared/constants';
+import { DIGIT, NUMBER, NUMERAL } from '../shared/constants';
 import { ThaiNumeral } from '../shared/interfaces';
 
 export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 0,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๐',
     transcriptions: {
       thai: 'ศูนย์',
@@ -17,7 +17,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 1,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๑',
     transcriptions: {
       thai: 'หนึ่ง',
@@ -29,7 +29,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 2,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๒',
     transcriptions: {
       thai: 'สอง',
@@ -41,7 +41,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 3,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๓',
     transcriptions: {
       thai: 'สาม',
@@ -53,7 +53,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 4,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๔',
     transcriptions: {
       thai: 'สี่',
@@ -65,7 +65,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 5,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๕',
     transcriptions: {
       thai: 'ห้า',
@@ -77,7 +77,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 6,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๖',
     transcriptions: {
       thai: 'หก',
@@ -89,7 +89,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 7,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๗',
     transcriptions: {
       thai: 'เจ็ด',
@@ -101,7 +101,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 8,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๘',
     transcriptions: {
       thai: 'แปด',
@@ -113,7 +113,7 @@ export const NUMERAL_DATA: ThaiNumeral[] = [
   {
     id: 9,
     kind: NUMERAL,
-    category: NUMBER,
+    category: DIGIT,
     symbol: '๙',
     transcriptions: {
       thai: 'เก้า',
