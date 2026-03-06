@@ -1,14 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { AppStoreService } from '../../store/app/app-store.service';
-import { StatusBadge } from '../../common/status-badge/status-badge';
-import { TranslatePipe } from '@ngx-translate/core';
 import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 import { CONSONANT, FINAL, THAI, VOWEL } from '../../shared/constants';
 
 @Component({
   selector: 'app-quiz-card',
-  imports: [StatusBadge, TranslatePipe],
+  imports: [],
   templateUrl: './quiz-card.html',
   styleUrl: './quiz-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
