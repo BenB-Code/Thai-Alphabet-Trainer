@@ -1,7 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { SwitchSelectorItem, TabsConfig } from '../../shared/interfaces';
 import { DataService } from '../data-service/data-service';
-import { CLASS, TYPE } from '../../shared/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +24,7 @@ export class TabsService {
         class: 'letter-tab-switch-selector',
         id: 0,
       },
-      payload: this.dataService.getAll(),
+      payload: this.dataService.allSymbolsSorted(),
     },
     {
       tabSwitchConfig: {
@@ -42,7 +41,7 @@ export class TabsService {
         class: 'letter-tab-switch-selector',
         id: 1,
       },
-      payload: this.dataService.getAllConsonantsSortedBy(CLASS),
+      payload: this.dataService.consonantsSortedByCategory(),
     },
     {
       tabSwitchConfig: {
@@ -59,7 +58,58 @@ export class TabsService {
         id: 2,
         class: 'letter-tab-switch-selector',
       },
-      payload: this.dataService.getAllVowelsSortedBy(TYPE),
+      payload: this.dataService.vowelsSortedByCategory(),
+    },
+    {
+      tabSwitchConfig: {
+        label: {
+          display: true,
+          text: 'app.tones',
+        },
+        icon: {
+          display: false,
+          path: '',
+          alt: '',
+          right: false,
+        },
+        id: 3,
+        class: 'letter-tab-switch-selector',
+      },
+      payload: this.dataService.tonesSortedByCategory(),
+    },
+    {
+      tabSwitchConfig: {
+        label: {
+          display: true,
+          text: 'app.numerals',
+        },
+        icon: {
+          display: false,
+          path: '',
+          alt: '',
+          right: false,
+        },
+        id: 4,
+        class: 'letter-tab-switch-selector',
+      },
+      payload: this.dataService.numeralsSortedByCategory(),
+    },
+    {
+      tabSwitchConfig: {
+        label: {
+          display: true,
+          text: 'app.diacritics',
+        },
+        icon: {
+          display: false,
+          path: '',
+          alt: '',
+          right: false,
+        },
+        id: 5,
+        class: 'letter-tab-switch-selector',
+      },
+      payload: this.dataService.diacriticsSortedByCategory(),
     },
   ];
 

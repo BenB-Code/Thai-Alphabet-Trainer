@@ -1,9 +1,10 @@
-import { DisplayType, LetterKindType } from '../../types';
+import { DisplayType, SymbolCategoriesType, LetterKindType } from '../../types';
 
 export interface ThaiSymbol {
   id: number;
   kind: LetterKindType;
   symbol: string;
+  category: SymbolCategoriesType;
   transcriptions?: {
     thai: string;
     rtgs: string;

@@ -27,7 +27,10 @@
     "menu": "Menu",
     "theme": "Theme",
     "settings": "Settings",
-    "donation": "Donation"
+    "donation": "Donation",
+    "numerals": "Numbers",
+    "tones": "Tones",
+    "diacritics": "Diacritics"
   },
   "buttons": {
     "all": "All",
@@ -43,7 +46,10 @@
     "diphthong": "Diphthongs Vowels",
     "special": "Special Vowels",
     "extra-vowel": "Extra Vowels",
-    "simple": "Simple Vowels"
+    "simple": "Simple Vowels",
+    "number": "Number",
+    "tone-mark": "Tones",
+    "diacritic": "Diacritics"
   },
   "letters": {
     "outdated": "This letter is not used anymore",

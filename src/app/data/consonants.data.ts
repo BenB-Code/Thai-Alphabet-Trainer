@@ -31,6 +31,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ก',
     class: MID,
+    category: MID,
     live: false,
     transcriptions: {
       thai: 'ก',
@@ -80,6 +81,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ข',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ข',
@@ -129,6 +131,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฃ',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ฃ',
@@ -171,6 +174,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ค',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ค',
@@ -220,6 +224,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฅ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ฅ',
@@ -262,6 +267,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฆ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ฆ',
@@ -311,6 +317,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ง',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'ง',
@@ -360,6 +367,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'จ',
     class: MID,
+    category: MID,
     live: false,
     transcriptions: {
       thai: 'จ',
@@ -409,6 +417,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฉ',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ฉ',
@@ -447,6 +456,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ช',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ช',
@@ -496,6 +506,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ซ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ซ',
@@ -545,6 +556,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฌ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ฌ',
@@ -594,6 +606,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ญ',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'ญ',
@@ -643,6 +656,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฎ',
     class: MID,
+    category: MID,
     live: false,
     transcriptions: {
       thai: 'ฎ',
@@ -692,6 +706,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฏ',
     class: MID,
+    category: MID,
     live: false,
     transcriptions: {
       thai: 'ฏ',
@@ -741,6 +756,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฐ',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ฐ',
@@ -790,6 +806,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฑ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ฑ',
@@ -839,6 +856,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฒ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ฒ',
@@ -888,6 +906,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ณ',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'ณ',
@@ -937,6 +956,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ด',
     class: MID,
+    category: MID,
     live: false,
     transcriptions: {
       thai: 'ด',
@@ -986,6 +1006,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ต',
     class: MID,
+    category: MID,
     live: false,
     transcriptions: {
       thai: 'ต',
@@ -1035,6 +1056,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ถ',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ถ',
@@ -1084,6 +1106,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ท',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ท',
@@ -1133,6 +1156,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ธ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ธ',
@@ -1182,6 +1206,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'น',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'น',
@@ -1231,6 +1256,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'บ',
     class: MID,
+    category: MID,
     live: false,
     transcriptions: {
       thai: 'บ',
@@ -1280,6 +1306,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ป',
     class: MID,
+    category: MID,
     live: false,
     transcriptions: {
       thai: 'ป',
@@ -1329,6 +1356,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ผ',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ผ',
@@ -1367,6 +1395,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฝ',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ฝ',
@@ -1405,6 +1434,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'พ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'พ',
@@ -1454,6 +1484,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฟ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ฟ',
@@ -1503,6 +1534,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ภ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ภ',
@@ -1552,6 +1584,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ม',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'ม',
@@ -1601,6 +1634,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ย',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'ย',
@@ -1650,6 +1684,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ร',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'ร',
@@ -1699,6 +1734,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ล',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'ล',
@@ -1748,6 +1784,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ว',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'ว',
@@ -1797,6 +1834,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ศ',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ศ',
@@ -1846,6 +1884,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ษ',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ษ',
@@ -1895,6 +1934,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ส',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ส',
@@ -1944,6 +1984,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ห',
     class: HIGH,
+    category: HIGH,
     live: false,
     transcriptions: {
       thai: 'ห',
@@ -1982,6 +2023,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฬ',
     class: LOW,
+    category: LOW,
     live: true,
     transcriptions: {
       thai: 'ฬ',
@@ -2031,6 +2073,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'อ',
     class: MID,
+    category: MID,
     live: false,
     transcriptions: {
       thai: 'อ',
@@ -2069,6 +2112,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     kind: CONSONANT,
     symbol: 'ฮ',
     class: LOW,
+    category: LOW,
     live: false,
     transcriptions: {
       thai: 'ฮ',

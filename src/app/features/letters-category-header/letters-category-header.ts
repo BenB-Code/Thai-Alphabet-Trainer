@@ -3,7 +3,7 @@ import { Button } from '../../common/button/button';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { AppStoreService } from '../../store/app/app-store.service';
-import { ColorsType, ConsonantClassType, VowelLengthType } from '../../shared/types';
+import { ColorsType, SymbolCategoriesType } from '../../shared/types';
 import { SMALL } from '../../shared/constants';
 
 @Component({
@@ -20,7 +20,7 @@ export class LettersCategoryHeader {
   protected readonly appStoreService = inject(AppStoreService);
   protected readonly selectionStoreService = inject(SelectionStoreService);
 
-  category = input.required<ConsonantClassType | VowelLengthType>();
+  category = input.required<SymbolCategoriesType>();
   count = input.required<number>();
   color = input.required<ColorsType>();
   isOpen = input(true);

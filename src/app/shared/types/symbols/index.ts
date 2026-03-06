@@ -6,3 +6,7 @@ export * from './vowel-length.type';
 export * from './vowel-position.type';
 export * from './vowel.type';
 export * from './pronunciations.type';
+export * from './numeral.type';
+export * from './diacritic.type';
+export * from './symbol-categories.type';
+export * from './tone.type';

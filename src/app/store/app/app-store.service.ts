@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { AppStore } from './app.store';
-import { FontType, LanguagesType, PronunciationsType } from '../../shared/types';
+import { FontType, PronunciationsType } from '../../shared/types';
 
 @Injectable({ providedIn: 'root' })
 export class AppStoreService {
@@ -26,10 +26,6 @@ export class AppStoreService {
 
   switchPronunciation(pronunciation: PronunciationsType): void {
     this.store.switchPronunciation(pronunciation);
-  }
-
-  switchLanguage(lang: LanguagesType): void {
-    this.store.switchLanguage(lang);
   }
 
   toggleLanguage(): void {

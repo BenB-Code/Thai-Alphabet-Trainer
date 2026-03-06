@@ -28,7 +28,10 @@
     "menu": "Menu",
     "theme": "Thème",
     "settings": "Options",
-    "donation": "Don"
+    "donation": "Don",
+    "numerals": "Nombres",
+    "tones": "Tons",
+    "diacritics": "Diacritiques"
   },
   "buttons": {
     "all": "Tout",
@@ -44,7 +47,10 @@
     "diphthong": "Voyelles Diphtongues",
     "special": "Voyelles Spéciales",
     "extra-vowel": "Voyelles Particulières",
-    "simple": "Voyelles Simples"
+    "simple": "Voyelles Simples",
+    "number": "Nombres",
+    "tone-mark": "Tons",
+    "diacritic": "Diacritiques"
   },
   "letters": {
     "outdated": "Cette lettre n'est plus utilisée",

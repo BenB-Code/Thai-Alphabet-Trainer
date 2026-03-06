@@ -5,6 +5,9 @@
   border: 1px solid hsl(var(--border) / 1);
   border-radius: calc(var(--radius) - 2px);
   align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-around;
 
   button {
     transition: none;
@@ -13,6 +16,7 @@
     cursor: pointer;
     text-transform: none;
     height: 100%;
+    flex: 1;
 
     .label {
       margin: 0;

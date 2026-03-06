@@ -5,6 +5,7 @@ export const TONES_DATA: ThaiSymbol[] = [
   {
     id: 0,
     kind: TONE_MARK,
+    category: TONE_MARK,
     symbol: '◌่',
     transcriptions: {
       thai: 'ไม้เอก',
@@ -15,6 +16,7 @@ export const TONES_DATA: ThaiSymbol[] = [
   {
     id: 1,
     kind: TONE_MARK,
+    category: TONE_MARK,
     symbol: '◌้',
     transcriptions: {
       thai: 'ไม้โท',
@@ -25,6 +27,7 @@ export const TONES_DATA: ThaiSymbol[] = [
   {
     id: 2,
     kind: TONE_MARK,
+    category: TONE_MARK,
     symbol: '◌๊',
     transcriptions: {
       thai: 'ไม้ตรี',
@@ -35,6 +38,7 @@ export const TONES_DATA: ThaiSymbol[] = [
   {
     id: 3,
     kind: TONE_MARK,
+    category: TONE_MARK,
     symbol: '◌๋',
     transcriptions: {
       thai: 'ไม้จัตวา',

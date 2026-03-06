@@ -83,11 +83,6 @@ export const AppStore = signalStore(
       patchState(store, { pronunciation: pronunciation });
     },
 
-    switchLanguage(lang: LanguagesType): void {
-      patchState(store, { language: lang });
-      translateService.use(lang);
-    },
-
     toggleLanguage(): void {
       const next = store.language() === EN ? FR : EN;
       patchState(store, { language: next });
@@ -113,18 +108,7 @@ export const AppStore = signalStore(
             translateService.use(saved.language);
           }
         }
-      }
 
-      effect(() => {
-        const theme = store.theme();
-        if (theme === DARK) {
-          document.documentElement.classList.add(DARK);
-        } else {
-          document.documentElement.classList.remove(DARK);
-        }
-      });
-
-      if (isBrowser) {
         effect(() => {
           saveToStorage({
             theme: store.theme(),
@@ -135,6 +119,15 @@ export const AppStore = signalStore(
           });
         });
       }
+
+      effect(() => {
+        const theme = store.theme();
+        if (theme === DARK) {
+          document.documentElement.classList.add(DARK);
+        } else {
+          document.documentElement.classList.remove(DARK);
+        }
+      });
     },
   })
 );

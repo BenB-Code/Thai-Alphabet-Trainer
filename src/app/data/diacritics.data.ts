@@ -5,6 +5,7 @@ export const DIACRITICS_DATA: ThaiSymbol[] = [
   {
     id: 0,
     kind: DIACRITIC,
+    category: DIACRITIC,
     symbol: '◌็',
     transcriptions: {
       thai: 'ไม้ไต่คู้',
@@ -19,6 +20,7 @@ export const DIACRITICS_DATA: ThaiSymbol[] = [
   {
     id: 1,
     kind: DIACRITIC,
+    category: DIACRITIC,
     symbol: '◌์',
     transcriptions: {
       thai: 'ทัณฑฆาต',
@@ -33,6 +35,7 @@ export const DIACRITICS_DATA: ThaiSymbol[] = [
   {
     id: 2,
     kind: DIACRITIC,
+    category: DIACRITIC,
     symbol: '"',
     transcriptions: {
       thai: 'ฟันหนู',
