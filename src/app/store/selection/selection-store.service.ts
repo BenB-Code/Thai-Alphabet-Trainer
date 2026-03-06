@@ -1,11 +1,12 @@
 import { inject, Injectable } from '@angular/core';
 import { SelectionStore } from './selection.store';
 import { ConsonantClassType, LetterKindType, ThaiSymbolType, VowelLengthType } from '../../shared/types';
-import { ThaiConsonantType, ThaiVowelType } from '../../shared/interfaces';
+import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 
 @Injectable({ providedIn: 'root' })
 export class SelectionStoreService {
   private readonly store = inject(SelectionStore);
+  private readonly letterUtilsService = inject(LetterUtilsService);
 
   readonly selected = this.store.selected;
   readonly selectedConsonants = this.store.selectedConsonants;
@@ -49,17 +50,9 @@ export class SelectionStoreService {
 
   getCountByCategory(category: string): number {
     return this.store.selected().filter(letter => {
-      if (this.isVowel(letter)) return letter.type === category;
-      if (this.isConsonant(letter)) return letter.class === category;
+      if (this.letterUtilsService.isVowel(letter)) return letter.type === category;
+      if (this.letterUtilsService.isConsonant(letter)) return letter.class === category;
       return false;
     }).length;
-  }
-
-  private isConsonant(letter: ThaiSymbolType): letter is ThaiConsonantType {
-    return 'class' in letter;
-  }
-
-  private isVowel(letter: ThaiSymbolType): letter is ThaiVowelType {
-    return 'type' in letter;
   }
 }

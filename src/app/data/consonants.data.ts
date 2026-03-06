@@ -1,4 +1,4 @@
-import { ThaiConsonantType } from '../shared/interfaces';
+import { ThaiConsonant } from '../shared/interfaces';
 import {
   AFFRICATE,
   ALVEOLAR,
@@ -25,7 +25,7 @@ import {
   VOICELESS,
 } from '../shared/constants';
 
-export const CONSONANTS_DATA: ThaiConsonantType[] = [
+export const CONSONANTS_DATA: ThaiConsonant[] = [
   {
     id: 0,
     kind: CONSONANT,
@@ -888,7 +888,7 @@ export const CONSONANTS_DATA: ThaiConsonantType[] = [
     kind: CONSONANT,
     symbol: 'ณ',
     class: LOW,
-    live: false,
+    live: true,
     transcriptions: {
       thai: 'ณ',
       rtgs: 'no',
@@ -1982,7 +1982,7 @@ export const CONSONANTS_DATA: ThaiConsonantType[] = [
     kind: CONSONANT,
     symbol: 'ฬ',
     class: LOW,
-    live: false,
+    live: true,
     transcriptions: {
       thai: 'ฬ',
       rtgs: 'lo',
@@ -2040,7 +2040,7 @@ export const CONSONANTS_DATA: ThaiConsonantType[] = [
     position: [
       {
         position: INITIAL,
-        rtgs: '-',
+        rtgs: '·',
         ipa: '/ʔ/',
         articulation: {
           manner: GLOTTAL,

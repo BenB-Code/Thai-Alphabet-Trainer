@@ -1,16 +1,19 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import { Card } from '../../common/card/card';
 import { AppStoreService } from '../../store/app/app-store.service';
-import { TranslatePipe } from '@ngx-translate/core';
-import { StatusBadge } from '../../common/status-badge/status-badge';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { LetterUtilsService } from '../../services/letter-utils-service/letter-utils-service';
 import { ColorsType, ThaiSymbolType } from '../../shared/types';
 import { FINAL, TERTIARY } from '../../shared/constants';
+import { Card } from '../../common/card/card';
+import { Consonant } from './cards/consonant/consonant';
+import { Vowel } from './cards/vowel/vowel';
+import { Numeral } from './cards/numeral/numeral';
+import { Diacritics } from './cards/diacritics/diacritics';
+import { Tones } from './cards/tones/tones';
 
 @Component({
   selector: 'app-letters-card',
-  imports: [Card, TranslatePipe, StatusBadge],
+  imports: [Card, Consonant, Vowel, Numeral, Diacritics, Tones],
   templateUrl: './letters-card.html',
   styleUrl: './letters-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

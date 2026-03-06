@@ -1,48 +1,60 @@
 import { Injectable } from '@angular/core';
 import { ColorsType, ConsonantClassType, ThaiSymbolType, VowelLengthType } from '../../shared/types';
-import { ThaiConsonantType, ThaiVowelType } from '../../shared/interfaces';
+import { ConsonantPosition, ThaiConsonant, ThaiNumeral, ThaiSymbol, ThaiVowel } from '../../shared/interfaces';
 import { TypeClassColorsMap } from '../../shared/map';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LetterUtilsService {
-  isConsonant(letter: ThaiSymbolType): letter is ThaiConsonantType {
+  isConsonant(letter: ThaiSymbolType): letter is ThaiConsonant {
     return 'class' in letter;
   }
 
-  isVowel(letter: ThaiSymbolType): letter is ThaiVowelType {
+  isVowel(letter: ThaiSymbolType): letter is ThaiVowel {
     return 'type' in letter;
+  }
+
+  isNumeral(letter: ThaiSymbolType): letter is ThaiNumeral {
+    return 'number' in letter;
+  }
+
+  isDiacritic(letter: ThaiSymbolType): letter is ThaiSymbol {
+    return 'kind' in letter;
+  }
+
+  isTone(letter: ThaiSymbolType): letter is ThaiSymbol {
+    return 'kind' in letter;
   }
 
   getLetterColor(letter: ConsonantClassType | VowelLengthType): ColorsType {
     return TypeClassColorsMap[letter];
   }
 
-  getVowelPosition(letter: ThaiSymbolType): ThaiVowelType['position'] | false {
+  getVowelPosition(letter: ThaiSymbolType): ThaiVowel['position'] | false {
     if (this.isVowel(letter)) {
       return letter.position;
     }
     return false;
   }
 
-  getConsonantClassType(letter: ThaiSymbolType): ThaiConsonantType['class'] | false {
+  getConsonantClassType(letter: ThaiSymbolType): ThaiConsonant['class'] | false {
     if (this.isConsonant(letter)) {
       return letter.class;
     }
     return false;
   }
 
-  getVowelType(letter: ThaiSymbolType): ThaiVowelType['type'] | false {
+  getVowelType(letter: ThaiSymbolType): ThaiVowel['type'] | false {
     if (this.isVowel(letter)) {
       return letter.type;
     }
     return false;
   }
 
-  getTransliteration(letter: ThaiSymbolType): ThaiConsonantType['transcriptions'] | false {
+  getConsonantPositions(letter: ThaiSymbolType): ConsonantPosition[] | false {
     if (this.isConsonant(letter)) {
-      return letter.transcriptions;
+      return letter.position;
     }
     return false;
   }

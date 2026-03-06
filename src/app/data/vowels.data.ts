@@ -12,9 +12,9 @@ import {
   SURROUND,
   VOWEL,
 } from '../shared/constants';
-import { ThaiVowelType } from '../shared/interfaces';
+import { ThaiVowel } from '../shared/interfaces';
 
-export const VOWELS_DATA: ThaiVowelType[] = [
+export const VOWELS_DATA: ThaiVowel[] = [
   {
     id: 0,
     kind: VOWEL,
@@ -601,8 +601,8 @@ export const VOWELS_DATA: ThaiVowelType[] = [
     withFinalConsonant: true,
     transcriptions: {
       thai: 'ไอ',
-      rtgs: 'ai',
-      ipa: '/aj/',
+      rtgs: 'ai maái malaai',
+      ipa: '/aj/ (maái malaai)',
     },
     info: {
       en: 'Called ai maái malaai',
@@ -619,8 +619,8 @@ export const VOWELS_DATA: ThaiVowelType[] = [
     withFinalConsonant: true,
     transcriptions: {
       thai: 'ใอ',
-      rtgs: 'ai',
-      ipa: '/aj/',
+      rtgs: 'ai maái múan',
+      ipa: '/aj/ (maái múan)',
     },
     info: {
       en: 'Called ai maái múan. Only exist with 20 words',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CONSONANTS_DATA, VOWELS_DATA } from '../../data';
-import { ThaiConsonantType, ThaiVowelType } from '../../shared/interfaces';
+import { ThaiConsonant, ThaiVowel } from '../../shared/interfaces';
 import { ConsonantClassType, ThaiSymbolType, VowelLengthType } from '../../shared/types';
 
 @Injectable({
@@ -11,35 +11,35 @@ export class DataService {
     return { ...this.getAllConsonantsSorted(), ...this.getAllVowelsSorted() };
   }
 
-  getAllConsonants(): ThaiConsonantType[] {
+  getAllConsonants(): ThaiConsonant[] {
     return [...CONSONANTS_DATA];
   }
 
-  getAllConsonantsSorted(): Record<string, ThaiConsonantType[]> {
+  getAllConsonantsSorted(): Record<string, ThaiConsonant[]> {
     return this.groupBy([...CONSONANTS_DATA], 'class');
   }
 
-  getConsonantById(id: number): ThaiConsonantType | undefined {
+  getConsonantById(id: number): ThaiConsonant | undefined {
     return CONSONANTS_DATA.find(o => o.id === id);
   }
 
-  getConsonantByClass(ConsonantClassType: ConsonantClassType): ThaiConsonantType[] {
+  getConsonantByClass(ConsonantClassType: ConsonantClassType): ThaiConsonant[] {
     return CONSONANTS_DATA.filter(o => o.class === ConsonantClassType);
   }
 
-  getAllVowels(): ThaiVowelType[] {
+  getAllVowels(): ThaiVowel[] {
     return [...VOWELS_DATA];
   }
 
-  getAllVowelsSorted(): Record<string, ThaiVowelType[]> {
+  getAllVowelsSorted(): Record<string, ThaiVowel[]> {
     return this.groupBy([...VOWELS_DATA], 'type');
   }
 
-  getVowelById(id: number): ThaiVowelType | undefined {
+  getVowelById(id: number): ThaiVowel | undefined {
     return VOWELS_DATA.find(o => o.id === id);
   }
 
-  getVowelByLength(vowelLength: VowelLengthType): ThaiVowelType[] {
+  getVowelByLength(vowelLength: VowelLengthType): ThaiVowel[] {
     return VOWELS_DATA.filter(o => o.length === vowelLength);
   }
 

@@ -114,15 +114,15 @@ describe('LetterUtilsService', () => {
     });
   });
 
-  describe('getTransliteration', () => {
+  describe('getConsonantPositions', () => {
     it('should return transliteration for a consonant', () => {
-      const result = service.getTransliteration(CONSONANTS_DATA[0]);
+      const result = service.getConsonantPositions(CONSONANTS_DATA[0]);
 
       expect(result).toEqual(CONSONANTS_DATA[0].transcriptions);
     });
 
     it('should return false for a vowel', () => {
-      expect(service.getTransliteration(VOWELS_DATA[0])).toBeFalse();
+      expect(service.getConsonantPositions(VOWELS_DATA[0])).toBeFalse();
     });
   });
 
