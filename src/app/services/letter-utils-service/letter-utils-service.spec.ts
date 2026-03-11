@@ -1,9 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-
-import { LetterUtilsService } from './letter-utils-service';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { CONSONANTS_DATA, VOWELS_DATA } from '../../data';
-import { AFTER, LOW, SIMPLE } from '../../shared/constants';
+import { LetterUtilsService } from './letter-utils-service';
+import { CONSONANTS_DATA, DIACRITICS_DATA, NUMERAL_DATA, TONES_DATA, VOWELS_DATA } from '../../data';
 import { TypeClassColorsMap } from '../../shared/map';
 
 describe('LetterUtilsService', () => {
@@ -28,6 +26,18 @@ describe('LetterUtilsService', () => {
     it('should return false for a vowel', () => {
       expect(service.isConsonant(VOWELS_DATA[0])).toBeFalse();
     });
+
+    it('should return false for a numeral', () => {
+      expect(service.isConsonant(NUMERAL_DATA[0])).toBeFalse();
+    });
+
+    it('should return false for a tone', () => {
+      expect(service.isConsonant(TONES_DATA[0])).toBeFalse();
+    });
+
+    it('should return false for a diacritic', () => {
+      expect(service.isConsonant(DIACRITICS_DATA[0])).toBeFalse();
+    });
   });
 
   describe('isVowel', () => {
@@ -38,108 +48,123 @@ describe('LetterUtilsService', () => {
     it('should return false for a consonant', () => {
       expect(service.isVowel(CONSONANTS_DATA[0])).toBeFalse();
     });
-  });
 
-  describe('getLetterColor', () => {
-    it('should return color based on class for consonant', () => {
-      const result = service.getLetterColor(CONSONANTS_DATA[0].class);
-
-      expect(result).toEqual(TypeClassColorsMap[CONSONANTS_DATA[0].class]);
-    });
-
-    it('should return color based on type for vowel', () => {
-      const result = service.getLetterColor(VOWELS_DATA[0].length);
-
-      expect(result).toEqual(TypeClassColorsMap[VOWELS_DATA[0].length]);
+    it('should return false for a numeral', () => {
+      expect(service.isVowel(NUMERAL_DATA[0])).toBeFalse();
     });
   });
 
-  describe('getConsonantClassType', () => {
-    it('should return class for a consonant', () => {
-      const result = service.getConsonantClassType(CONSONANTS_DATA[0]);
-
-      expect(result).toEqual(CONSONANTS_DATA[0].class);
+  describe('isNumeral', () => {
+    it('should return true for a numeral', () => {
+      expect(service.isNumeral(NUMERAL_DATA[0])).toBeTrue();
     });
 
-    it('should return the exact class value', () => {
-      const result = service.getConsonantClassType(CONSONANTS_DATA[0]);
-
-      expect(result).toEqual(LOW);
+    it('should return false for a consonant', () => {
+      expect(service.isNumeral(CONSONANTS_DATA[0])).toBeFalse();
     });
 
     it('should return false for a vowel', () => {
-      const result = service.getConsonantClassType(VOWELS_DATA[0]);
-
-      expect(result).toEqual(false);
+      expect(service.isNumeral(VOWELS_DATA[0])).toBeFalse();
     });
   });
 
-  describe('getVowelType', () => {
-    it('should return type for a vowel', () => {
-      const result = service.getVowelType(VOWELS_DATA[0]);
-
-      expect(result).toEqual(VOWELS_DATA[0].type);
-    });
-
-    it('should return the exact type value', () => {
-      const result = service.getVowelType(VOWELS_DATA[0]);
-
-      expect(result).toEqual(SIMPLE);
+  describe('isDiacritic', () => {
+    it('should return true for a diacritic', () => {
+      expect(service.isDiacritic(DIACRITICS_DATA[0])).toBeTrue();
     });
 
     it('should return false for a consonant', () => {
-      const result = service.getVowelType(CONSONANTS_DATA[0]);
+      expect(service.isDiacritic(CONSONANTS_DATA[0])).toBeFalse();
+    });
 
-      expect(result).toEqual(false);
+    it('should return false for a vowel', () => {
+      expect(service.isDiacritic(VOWELS_DATA[0])).toBeFalse();
     });
   });
 
-  describe('getVowelPosition', () => {
-    it('should return position for a vowel', () => {
-      const result = service.getVowelPosition(VOWELS_DATA[0]);
-
-      expect(result).toEqual(VOWELS_DATA[0].position);
-    });
-
-    it('should return the exact position array', () => {
-      const result = service.getVowelPosition(VOWELS_DATA[0]);
-
-      expect(result).toEqual(AFTER);
+  describe('isTone', () => {
+    it('should return true for a tone', () => {
+      expect(service.isTone(TONES_DATA[0])).toBeTrue();
     });
 
     it('should return false for a consonant', () => {
-      const result = service.getVowelPosition(CONSONANTS_DATA[0]);
+      expect(service.isTone(CONSONANTS_DATA[0])).toBeFalse();
+    });
 
-      expect(result).toEqual(false);
+    it('should return false for a vowel', () => {
+      expect(service.isTone(VOWELS_DATA[0])).toBeFalse();
+    });
+  });
+
+  describe('getLetterColor', () => {
+    it('should return color for consonant class', () => {
+      const result = service.getLetterColor(CONSONANTS_DATA[0].category);
+
+      expect(result).toBe(TypeClassColorsMap[CONSONANTS_DATA[0].category]);
+    });
+
+    it('should return color for vowel category', () => {
+      const result = service.getLetterColor(VOWELS_DATA[0].category);
+
+      expect(result).toBe(TypeClassColorsMap[VOWELS_DATA[0].category]);
+    });
+  });
+
+  describe('isWithFinalConsonant', () => {
+    it('should return withFinalConsonant value for a vowel', () => {
+      const result = service.isWithFinalConsonant(VOWELS_DATA[0]);
+
+      expect(result).toBe(VOWELS_DATA[0].withFinalConsonant);
+    });
+
+    it('should return false for a consonant', () => {
+      expect(service.isWithFinalConsonant(CONSONANTS_DATA[0])).toBeFalse();
+    });
+
+    it('should return false for a numeral', () => {
+      expect(service.isWithFinalConsonant(NUMERAL_DATA[0])).toBeFalse();
     });
   });
 
   describe('getConsonantPositions', () => {
-    it('should return transliteration for a consonant', () => {
+    it('should return positions for a consonant', () => {
       const result = service.getConsonantPositions(CONSONANTS_DATA[0]);
 
-      expect(result).toEqual(CONSONANTS_DATA[0].transcriptions);
+      expect(result).toEqual(CONSONANTS_DATA[0].position);
     });
 
     it('should return false for a vowel', () => {
       expect(service.getConsonantPositions(VOWELS_DATA[0])).toBeFalse();
     });
+
+    it('should return false for a numeral', () => {
+      expect(service.getConsonantPositions(NUMERAL_DATA[0])).toBeFalse();
+    });
   });
 
   describe('isObsolete', () => {
-    it('should return false for a non-outdated consonant', () => {
-      expect(service.isObsolete(CONSONANTS_DATA[0])).toBeFalse();
+    it('should return false for a non-obsolete consonant', () => {
+      const nonObsolete = CONSONANTS_DATA.find(c => !c.obsolete);
+
+      expect(service.isObsolete(nonObsolete!)).toBeFalsy();
     });
 
-    it('should return true for an outdated consonant', () => {
-      const outdated = CONSONANTS_DATA.find(c => c.obsolete);
-      if (outdated) {
-        expect(service.isObsolete(outdated)).toBeTrue();
+    it('should return obsolete object for an obsolete consonant', () => {
+      const obsolete = CONSONANTS_DATA.find(c => c.obsolete);
+      if (obsolete) {
+        const result = service.isObsolete(obsolete);
+
+        expect(result).toBeTruthy();
+        expect(result).toEqual(obsolete.obsolete!);
       }
     });
 
     it('should return false for a vowel', () => {
-      expect(service.isObsolete(VOWELS_DATA[0])).toBeFalse();
+      expect(service.isObsolete(VOWELS_DATA[0])).toBeFalsy();
+    });
+
+    it('should return false for a numeral', () => {
+      expect(service.isObsolete(NUMERAL_DATA[0])).toBeFalsy();
     });
   });
 });

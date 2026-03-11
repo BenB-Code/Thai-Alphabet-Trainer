@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { SwitchSelector } from './switch-selector';
-import { SwitchSelectorItem } from '../../shared/types';
+import { SwitchSelectorItem } from '../../shared/interfaces';
 
 const MOCK_LIST: SwitchSelectorItem[] = [
   {

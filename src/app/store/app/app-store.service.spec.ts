@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { Component, PLATFORM_ID, provideZonelessChangeDetection } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AppStoreService } from './app-store.service';
-import { DARK, EN, FR, KANIT, LIGHT, SARABUN } from '../../shared/constants';
+import { DARK, EN, FR, IPA, KANIT, LIGHT, RTGS, SARABUN } from '../../shared/constants';
 
 @Component({ template: '', standalone: true })
 class NoopComponent {}
@@ -46,6 +46,10 @@ describe('AppStoreService', () => {
       expect(service.language()).toBe(EN);
     });
 
+    it('should expose pronunciation', () => {
+      expect(service.pronunciation()).toBe(RTGS);
+    });
+
     it('should expose activeTab', () => {
       expect(service.activeTab()).toBe(0);
     });
@@ -73,10 +77,10 @@ describe('AppStoreService', () => {
     });
   });
 
-  describe('switchLanguage', () => {
-    it('should switch language', () => {
-      service.switchLanguage(FR);
-      expect(service.language()).toBe(FR);
+  describe('switchPronunciation', () => {
+    it('should switch pronunciation', () => {
+      service.switchPronunciation(IPA);
+      expect(service.pronunciation()).toBe(IPA);
     });
   });
 

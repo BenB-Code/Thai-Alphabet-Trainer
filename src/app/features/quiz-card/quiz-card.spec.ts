@@ -4,15 +4,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { QuizCard } from './quiz-card';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
-import { THAI_CONSONANTS } from '../../data';
-import { THAI } from '../../shared/constants';
+import { CONSONANTS_DATA } from '../../data';
+import { EN, RTGS, SARABUN, THAI } from '../../shared/constants';
 
 describe('QuizCard', () => {
   let component: QuizCard;
   let fixture: ComponentFixture<QuizCard>;
   let quizStoreService: QuizStoreService;
 
-  const mockCard = { ...THAI_CONSONANTS[0], display: THAI };
+  const mockCard = { ...CONSONANTS_DATA[0], display: THAI };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -23,8 +23,9 @@ describe('QuizCard', () => {
           provide: AppStoreService,
           useValue: {
             isDarkThemeActive: signal(false),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            pronunciation: signal(RTGS),
+            language: signal(EN),
           },
         },
         {

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { SelectionStore } from './selection.store';
 import { CONSONANTS_DATA, VOWELS_DATA } from '../../data';
-import { CONSONANT, HIGH, LOW, MID, SHORT, VOWEL } from '../../shared/constants';
+import { HIGH, LOW, MID } from '../../shared/constants';
 
 describe('SelectionStore', () => {
   let store: InstanceType<typeof SelectionStore>;
@@ -26,124 +26,111 @@ describe('SelectionStore', () => {
     it('should be empty', () => {
       expect(store.isEmpty()).toBeTrue();
     });
-
-    it('should have 0 consonants and vowels counts', () => {
-      expect(store.consonantsCount()).toBe(0);
-      expect(store.vowelsCount()).toBe(0);
-    });
-  });
-
-  describe('selectLetter', () => {
-    it('should add a letter', () => {
-      store.selectLetter(CONSONANTS_DATA[0]);
-      expect(store.selected().length).toBe(1);
-      expect(store.isEmpty()).toBeFalse();
-    });
-
-    it('should not add a duplicate (same id + kind)', () => {
-      store.selectLetter(CONSONANTS_DATA[0]);
-      store.selectLetter(CONSONANTS_DATA[0]);
-      expect(store.selected().length).toBe(1);
-    });
-  });
-
-  describe('deselectLetter', () => {
-    it('should remove a letter', () => {
-      store.selectLetter(CONSONANTS_DATA[0]);
-      store.deselectLetter(CONSONANTS_DATA[0]);
-      expect(store.selected().length).toBe(0);
-    });
   });
 
   describe('toggleLetter', () => {
     it('should add when not present', () => {
       store.toggleLetter(CONSONANTS_DATA[0]);
+
       expect(store.selected().length).toBe(1);
+      expect(store.isEmpty()).toBeFalse();
     });
 
     it('should remove when already present', () => {
       store.toggleLetter(CONSONANTS_DATA[0]);
       store.toggleLetter(CONSONANTS_DATA[0]);
+
       expect(store.selected().length).toBe(0);
-    });
-  });
-
-  describe('selectAll / deselectAll', () => {
-    it('should select all consonants', () => {
-      store.selectAll(CONSONANT);
-      expect(store.selectedConsonants().length).toBe(CONSONANTS_DATA.length);
-      expect(store.consonantsCount()).toBe(CONSONANTS_DATA.length);
+      expect(store.isEmpty()).toBeTrue();
     });
 
-    it('should select all vowels', () => {
-      store.selectAll(VOWEL);
-      expect(store.selectedVowels().length).toBe(VOWELS_DATA.length);
-      expect(store.vowelsCount()).toBe(VOWELS_DATA.length);
+    it('should add multiple different letters', () => {
+      store.toggleLetter(CONSONANTS_DATA[0]);
+      store.toggleLetter(VOWELS_DATA[0]);
+
+      expect(store.selected().length).toBe(2);
+      expect(store.totalCount()).toBe(2);
     });
 
-    it('should deselect all consonants without touching vowels', () => {
-      store.selectAll(CONSONANT);
-      store.selectAll(VOWEL);
-      store.deselectAll(CONSONANT);
-      expect(store.consonantsCount()).toBe(0);
-      expect(store.vowelsCount()).toBe(VOWELS_DATA.length);
-    });
+    it('should match by id and kind', () => {
+      store.toggleLetter(CONSONANTS_DATA[0]);
+      store.toggleLetter(CONSONANTS_DATA[1]);
 
-    it('should deselect all vowels without touching consonants', () => {
-      store.selectAll(CONSONANT);
-      store.selectAll(VOWEL);
-      store.deselectAll(VOWEL);
-      expect(store.consonantsCount()).toBe(CONSONANTS_DATA.length);
-      expect(store.vowelsCount()).toBe(0);
+      expect(store.selected().length).toBe(2);
+
+      store.toggleLetter(CONSONANTS_DATA[0]);
+      expect(store.selected().length).toBe(1);
+      expect(store.selected()[0].id).toBe(CONSONANTS_DATA[1].id);
     });
   });
 
   describe('selectByCategory', () => {
-    it('should select all consonants of a class', () => {
+    it('should select all symbols of a category', () => {
       store.selectByCategory(MID);
-      const midCount = CONSONANTS_DATA.filter(c => c.class === MID).length;
-      expect(store.selected().length).toBe(midCount);
-    });
+      const midCount = CONSONANTS_DATA.filter(c => c.category === MID).length;
 
-    it('should select all vowels of a length', () => {
-      store.selectByCategory(SHORT);
-      const shortCount = VOWELS_DATA.filter(v => v.length === SHORT).length;
-      expect(store.selected().length).toBe(shortCount);
+      expect(store.selected().length).toBe(midCount);
     });
 
     it('should not duplicate already selected letters', () => {
       store.selectByCategory(MID);
       const count = store.selected().length;
       store.selectByCategory(MID);
+
       expect(store.selected().length).toBe(count);
+    });
+
+    it('should append to existing selection', () => {
+      store.toggleLetter(VOWELS_DATA[0]);
+      store.selectByCategory(MID);
+      const midCount = CONSONANTS_DATA.filter(c => c.category === MID).length;
+
+      expect(store.selected().length).toBe(midCount + 1);
     });
   });
 
   describe('deselectByCategory', () => {
-    it('should deselect consonants of a class', () => {
-      store.selectAll(CONSONANT);
+    it('should deselect all symbols of a category', () => {
+      store.selectByCategory(MID);
+      store.selectByCategory(LOW);
       store.deselectByCategory(MID);
-      expect(store.selected().every(l => l.kind !== CONSONANT || (l as { class: string }).class !== MID)).toBeTrue();
+
+      expect(store.selected().every(l => l.category !== MID)).toBeTrue();
     });
 
-    it('should deselect vowels of a type', () => {
-      store.selectAll(VOWEL);
-      store.deselectByCategory(SHORT);
-      expect(store.selected().every(l => l.kind !== VOWEL || (l as { type: string }).type !== SHORT)).toBeTrue();
+    it('should not affect other categories', () => {
+      store.selectByCategory(MID);
+      store.selectByCategory(LOW);
+      const lowCount = store.selected().filter(l => l.category === LOW).length;
+
+      store.deselectByCategory(MID);
+
+      expect(store.selected().length).toBe(lowCount);
+    });
+
+    it('should do nothing when category is not selected', () => {
+      store.selectByCategory(MID);
+      const count = store.selected().length;
+
+      store.deselectByCategory(HIGH);
+
+      expect(store.selected().length).toBe(count);
     });
   });
 
   describe('toggleByCategory', () => {
     it('should select all when none are selected', () => {
       store.toggleByCategory(HIGH);
-      const highCount = CONSONANTS_DATA.filter(c => c.class === HIGH).length;
+      const highCount = CONSONANTS_DATA.filter(c => c.category === HIGH).length;
+
       expect(store.selected().length).toBe(highCount);
     });
 
     it('should swap: deselect selected and select unselected', () => {
-      const highConsonants = CONSONANTS_DATA.filter(c => c.class === HIGH);
-      store.selectLetter(highConsonants[0]);
+      const highConsonants = CONSONANTS_DATA.filter(c => c.category === HIGH);
+      store.toggleLetter(highConsonants[0]);
       store.toggleByCategory(HIGH);
+
       expect(
         store.selected().some(l => l.id === highConsonants[0].id && l.kind === highConsonants[0].kind)
       ).toBeFalse();
@@ -153,29 +140,38 @@ describe('SelectionStore', () => {
     it('should deselect all when all are selected', () => {
       store.selectByCategory(LOW);
       store.toggleByCategory(LOW);
+
       expect(store.selected().length).toBe(0);
+    });
+
+    it('should not affect other categories', () => {
+      store.selectByCategory(MID);
+      const midCount = store.selected().length;
+      store.toggleByCategory(HIGH);
+
+      expect(store.selected().filter(l => l.category === MID).length).toBe(midCount);
     });
   });
 
   describe('computed signals', () => {
-    it('selectedConsonants should filter consonants only', () => {
-      store.selectLetter(CONSONANTS_DATA[0]);
-      store.selectLetter(VOWELS_DATA[0]);
-      expect(store.selectedConsonants().length).toBe(1);
-      expect(store.selectedConsonants()[0].kind).toBe(CONSONANT);
-    });
-
-    it('selectedVowels should filter vowels only', () => {
-      store.selectLetter(CONSONANTS_DATA[0]);
-      store.selectLetter(VOWELS_DATA[0]);
-      expect(store.selectedVowels().length).toBe(1);
-      expect(store.selectedVowels()[0].kind).toBe(VOWEL);
-    });
-
     it('totalCount should reflect all selected', () => {
-      store.selectLetter(CONSONANTS_DATA[0]);
-      store.selectLetter(VOWELS_DATA[0]);
+      store.toggleLetter(CONSONANTS_DATA[0]);
+      store.toggleLetter(VOWELS_DATA[0]);
+
       expect(store.totalCount()).toBe(2);
+    });
+
+    it('isEmpty should be false when items selected', () => {
+      store.toggleLetter(CONSONANTS_DATA[0]);
+
+      expect(store.isEmpty()).toBeFalse();
+    });
+
+    it('isEmpty should be true after removing all items', () => {
+      store.toggleLetter(CONSONANTS_DATA[0]);
+      store.toggleLetter(CONSONANTS_DATA[0]);
+
+      expect(store.isEmpty()).toBeTrue();
     });
   });
 });

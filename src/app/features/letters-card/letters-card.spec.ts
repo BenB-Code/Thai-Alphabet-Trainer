@@ -4,14 +4,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LettersCard } from './letters-card';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
-import { THAI_CONSONANTS, VOWELS_DATA } from '../../data';
+import { CONSONANTS_DATA, VOWELS_DATA } from '../../data';
 import { ThaiSymbolType } from '../../shared/types';
+import { EN, RTGS, SARABUN } from '../../shared/constants';
 
 describe('LettersCard', () => {
   let component: LettersCard;
   let fixture: ComponentFixture<LettersCard>;
   let selectionStoreService: SelectionStoreService;
-  const testConsonant = THAI_CONSONANTS[0];
+  const testConsonant = CONSONANTS_DATA[0];
   const selectedSignal = signal<ThaiSymbolType[]>([]);
 
   beforeEach(async () => {
@@ -23,8 +24,9 @@ describe('LettersCard', () => {
           provide: AppStoreService,
           useValue: {
             isDarkThemeActive: signal(false),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            pronunciation: signal(RTGS),
+            language: signal(EN),
           },
         },
         {

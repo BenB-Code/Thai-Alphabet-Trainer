@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DesktopBurgerMenu } from './desktop-burger-menu';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { ContactService } from '../../services/contact.service/contact.service';
+import { EN, SARABUN } from '../../shared/constants';
 
 describe('MobileBurgerMenu', () => {
   let component: DesktopBurgerMenu;
@@ -20,8 +21,8 @@ describe('MobileBurgerMenu', () => {
             theme: signal('light'),
             isDarkThemeActive: signal(false),
             themeIcon: signal('icons/moon.svg'),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            language: signal(EN),
             toggleTheme: jasmine.createSpy(),
             toggleLanguage: jasmine.createSpy(),
             switchFont: jasmine.createSpy(),

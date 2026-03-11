@@ -2,7 +2,7 @@ import { Component, PLATFORM_ID, provideZonelessChangeDetection } from '@angular
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateService } from '@ngx-translate/core';
 import { AppStore } from './app.store';
-import { DARK, EN, FR, KANIT, LIGHT, SARABUN, SRIRACHA } from '../../shared/constants';
+import { DARK, EN, FR, IPA, KANIT, LIGHT, RTGS, SARABUN, SRIRACHA } from '../../shared/constants';
 
 const STORAGE_KEY = 'thai-flashcard-config';
 
@@ -48,6 +48,7 @@ describe('AppStore', () => {
       const store = await createStore();
       expect(store.theme()).toBe(LIGHT);
       expect(store.thaiFont()).toBe(SARABUN);
+      expect(store.pronunciation()).toBe(RTGS);
       expect(store.language()).toBe(EN);
       expect(store.activeTab()).toBe(0);
     });
@@ -92,11 +93,22 @@ describe('AppStore', () => {
       expect(store.thaiFont()).toBe(KANIT);
     });
 
-    it('switchLanguage should set language and call translateService.use', async () => {
+    it('switchFont should set sriracha', async () => {
       const store = await createStore();
-      store.switchLanguage(FR);
-      expect(store.language()).toBe(FR);
-      expect(translateService.use).toHaveBeenCalledWith(FR);
+      store.switchFont(SRIRACHA);
+      expect(store.thaiFont()).toBe(SRIRACHA);
+    });
+
+    it('switchPronunciation should set pronunciation', async () => {
+      const store = await createStore();
+      store.switchPronunciation(IPA);
+      expect(store.pronunciation()).toBe(IPA);
+    });
+
+    it('switchPronunciation should set rtgs', async () => {
+      const store = await createStore();
+      store.switchPronunciation(RTGS);
+      expect(store.pronunciation()).toBe(RTGS);
     });
 
     it('toggleLanguage should toggle EN to FR', async () => {
@@ -125,13 +137,29 @@ describe('AppStore', () => {
     beforeEach(() => setup('browser'));
 
     it('should restore all valid fields', async () => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ theme: DARK, thaiFont: KANIT, language: FR, activeTab: 2 }));
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({ theme: DARK, thaiFont: KANIT, pronunciation: IPA, language: FR, activeTab: 2 })
+      );
       const store = await createStore();
       expect(store.theme()).toBe(DARK);
       expect(store.thaiFont()).toBe(KANIT);
+      expect(store.pronunciation()).toBe(IPA);
       expect(store.language()).toBe(FR);
       expect(store.activeTab()).toBe(2);
       expect(translateService.use).toHaveBeenCalledWith(FR);
+    });
+
+    it('should restore rtgs pronunciation', async () => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ pronunciation: RTGS }));
+      const store = await createStore();
+      expect(store.pronunciation()).toBe(RTGS);
+    });
+
+    it('should ignore invalid pronunciation', async () => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ pronunciation: 'invalid' }));
+      const store = await createStore();
+      expect(store.pronunciation()).toBe(RTGS);
     });
 
     it('should restore light theme', async () => {
@@ -224,6 +252,7 @@ describe('AppStore', () => {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)!);
       expect(saved.theme).toBe(LIGHT);
       expect(saved.thaiFont).toBe(SARABUN);
+      expect(saved.pronunciation).toBe(RTGS);
       expect(saved.language).toBe(EN);
       expect(saved.activeTab).toBe(0);
     });

@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LettersCategoryContainer } from './letters-category-container';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
-import { MID } from '../../shared/constants';
+import { EN, MID, RTGS, SARABUN } from '../../shared/constants';
 import { CONSONANTS_DATA } from '../../data';
 
 describe('LettersCategoryContainer', () => {
@@ -20,8 +20,9 @@ describe('LettersCategoryContainer', () => {
           provide: AppStoreService,
           useValue: {
             isDarkThemeActive: signal(false),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            pronunciation: signal(RTGS),
+            language: signal(EN),
           },
         },
         {

@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { QuizSettingsPanelContent } from './quiz-settings-panel-content';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
-import { QUIZ_FORM_CONF } from '../../shared/constants';
+import { EN, QUIZ_FORM_CONF, THAI } from '../../shared/constants';
 
 describe('QuizSettingsPanelContent', () => {
   let component: QuizSettingsPanelContent;
@@ -20,7 +20,7 @@ describe('QuizSettingsPanelContent', () => {
           provide: AppStoreService,
           useValue: {
             isDarkThemeActive: signal(false),
-            language: signal('en'),
+            language: signal(EN),
             translate: jasmine.createSpy('translate').and.callFake((key: string) => key),
           },
         },
@@ -28,7 +28,7 @@ describe('QuizSettingsPanelContent', () => {
           provide: QuizStoreService,
           useValue: {
             delay: signal(3),
-            display: signal('thai'),
+            display: signal(THAI),
             questions: signal(10),
             updateDelay: jasmine.createSpy('updateDelay'),
             updateDisplay: jasmine.createSpy('updateDisplay'),

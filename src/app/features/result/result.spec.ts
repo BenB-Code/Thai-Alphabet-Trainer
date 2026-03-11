@@ -5,6 +5,7 @@ import { Result } from './result';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
+import { EN, SARABUN } from '../../shared/constants';
 
 describe('Result', () => {
   let component: Result;
@@ -20,8 +21,8 @@ describe('Result', () => {
           provide: AppStoreService,
           useValue: {
             isDarkThemeActive: signal(false),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            language: signal(EN),
           },
         },
         {

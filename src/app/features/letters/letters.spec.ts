@@ -6,6 +6,7 @@ import { AppStoreService } from '../../store/app/app-store.service';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
+import { EN, RTGS, SARABUN, THAI } from '../../shared/constants';
 
 describe('Letters', () => {
   let component: Letters;
@@ -22,8 +23,9 @@ describe('Letters', () => {
           useValue: {
             activeTab: signal(0),
             isDarkThemeActive: signal(false),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            pronunciation: signal(RTGS),
+            language: signal(EN),
             theme: signal('light'),
             themeIcon: signal('icons/moon.svg'),
             translate: jasmine.createSpy().and.returnValue(''),
@@ -35,7 +37,7 @@ describe('Letters', () => {
           provide: QuizStoreService,
           useValue: {
             delay: signal(3),
-            display: signal('thai'),
+            display: signal(THAI),
             questions: signal(10),
             isQuizValid: signal(true),
             updateDelay: jasmine.createSpy(),
