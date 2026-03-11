@@ -5,5 +5,9 @@ export interface ThaiVowel extends ThaiSymbol {
   type: VowelType;
   length: VowelLengthType;
   position: VowelPositionType;
+  apparition: {
+    medial: boolean;
+    final: boolean;
+  };
   withFinalConsonant: boolean | null;
 }

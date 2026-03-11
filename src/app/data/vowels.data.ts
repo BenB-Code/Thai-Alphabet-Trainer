@@ -23,6 +23,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: AFTER,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อะ',
@@ -38,6 +42,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: ABOVE,
+    apparition: {
+      medial: true,
+      final: false,
+    },
     withFinalConsonant: false,
     transcriptions: {
       thai: 'อัอ',
@@ -53,6 +61,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: ABOVE,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อิ',
@@ -68,6 +80,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: ABOVE,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อึ',
@@ -83,6 +99,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: BELOW,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อุ',
@@ -98,6 +118,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เอะ',
@@ -113,6 +137,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: true,
+      final: false,
+    },
     withFinalConsonant: false,
     transcriptions: {
       thai: 'เอ็อ',
@@ -128,6 +156,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'แอะ',
@@ -143,6 +175,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: true,
+      final: false,
+    },
     withFinalConsonant: false,
     transcriptions: {
       thai: 'แอ็อ',
@@ -158,6 +194,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'โอะ',
@@ -173,6 +213,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: AFTER,
+    apparition: {
+      medial: true,
+      final: false,
+    },
     withFinalConsonant: false,
     transcriptions: {
       thai: 'โอะ',
@@ -192,6 +236,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เอาะ',
@@ -207,6 +255,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: true,
+      final: false,
+    },
     withFinalConsonant: false,
     transcriptions: {
       thai: 'เอาะ',
@@ -222,6 +274,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เออะ',
@@ -237,6 +293,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: AFTER,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อา',
@@ -252,6 +312,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: ABOVE,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อี',
@@ -267,6 +331,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: SURROUND,
+    apparition: {
+      medial: true,
+      final: false,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อือ',
@@ -282,6 +350,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: ABOVE,
+    apparition: {
+      medial: true,
+      final: false,
+    },
     withFinalConsonant: false,
     transcriptions: {
       thai: 'อือ',
@@ -297,6 +369,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: BELOW,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อู',
@@ -312,6 +388,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: BEFORE,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เอ',
@@ -327,6 +407,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: BEFORE,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'แอ',
@@ -342,6 +426,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: BEFORE,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'โอ',
@@ -357,6 +445,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: AFTER,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'ออ',
@@ -376,6 +468,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เออ',
@@ -395,6 +491,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SIMPLE,
     length: LONG,
     position: SURROUND,
+    apparition: {
+      medial: true,
+      final: false,
+    },
     withFinalConsonant: false,
     transcriptions: {
       thai: 'เออ',
@@ -410,6 +510,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: DIPHTHONG,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เอียะ',
@@ -425,6 +529,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: DIPHTHONG,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เอือะ',
@@ -440,6 +548,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: DIPHTHONG,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อัวะ',
@@ -455,6 +567,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: DIPHTHONG,
     length: LONG,
     position: SURROUND,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เอีย',
@@ -470,6 +586,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: DIPHTHONG,
     length: LONG,
     position: SURROUND,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เอือ',
@@ -485,6 +605,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: DIPHTHONG,
     length: LONG,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อัว',
@@ -500,6 +624,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: DIPHTHONG,
     length: LONG,
     position: AFTER,
+    apparition: {
+      medial: true,
+      final: false,
+    },
     withFinalConsonant: false,
     transcriptions: {
       thai: 'อัว',
@@ -515,6 +643,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SPECIAL,
     length: SHORT,
     position: BEFORE,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'ไอ',
@@ -534,6 +666,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SPECIAL,
     length: SHORT,
     position: BEFORE,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'ใอ',
@@ -553,6 +689,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SPECIAL,
     length: LONG,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เอว',
@@ -568,6 +708,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SPECIAL,
     length: LONG,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'เอย',
@@ -583,6 +727,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: SPECIAL,
     length: SHORT,
     position: SURROUND,
+    apparition: {
+      medial: false,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'อำ',
@@ -598,11 +746,15 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: EXTRA_VOWEL,
     length: SHORT,
     position: AFTER,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'ฤ',
-      rtgs: 'rue, ri, roe',
-      ipa: 'rɯ/ /ri/ /rɤː',
+      rtgs: 'rue - ri - roe',
+      ipa: 'rɯ - ri - rɤː',
     },
   },
   {
@@ -613,6 +765,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: EXTRA_VOWEL,
     length: SHORT,
     position: AFTER,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'ฦ',
@@ -628,6 +784,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: EXTRA_VOWEL,
     length: LONG,
     position: AFTER,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'ฤๅ',
@@ -643,6 +803,10 @@ export const VOWELS_DATA: ThaiVowel[] = [
     category: EXTRA_VOWEL,
     length: LONG,
     position: AFTER,
+    apparition: {
+      medial: true,
+      final: true,
+    },
     withFinalConsonant: true,
     transcriptions: {
       thai: 'ฦๅ',

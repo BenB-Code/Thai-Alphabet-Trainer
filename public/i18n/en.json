@@ -61,12 +61,14 @@
     "dead": "Dead",
     "sound-as-final": "Sound as final consonant",
     "never-final": "Never occur as final consonant",
-    "medial": "Medial position",
-    "final": "Final position",
+    "medial": "Medial",
+    "final": "Final",
     "no-final": "Doesn't take final consonants",
     "oh-vowel": "Short medial [oh] vowel doesn't have a written form (camouflaged vowel)",
     "no-medial-position": "Doesn't exist in medial position",
-    "variation": "Variation"
+    "variation": "Variation",
+    "long": "Long",
+    "short": "Short"
   },
   "quiz": {
     "selected": "selected",

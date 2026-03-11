@@ -23,7 +23,7 @@ export class DataService {
     return {
       ...this.consonantsSortedByCategory(),
       ...this.vowelsSortedByCategory(),
-      ...this.tonesSortedByCategory(),
+      // ...this.tonesSortedByCategory(),
       ...this.numeralsSortedByCategory(),
       ...this.diacriticsSortedByCategory(),
     };

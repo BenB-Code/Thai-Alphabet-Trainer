@@ -1,1 +1,20 @@
-<p>{{letter().type}}</p>
+<div [class]="'thai-character thai ' + appStoreService.thaiFont()">{{ letter().symbol }}</div>
+<div class="roman-character">{{ letter().transcriptions?.[activePronunciation()] }}</div>
+
+<div class="length">
+  @if (letter().length === SHORT) {
+  <app-status-badge class="blue"> {{ 'letters.short' | translate }} </app-status-badge>
+  } @if (letter().length === LONG) {
+  <app-status-badge class="purple"> {{ 'letters.long' | translate }} </app-status-badge>
+  }
+</div>
+
+<div class="vowel-pos">
+  @if (letter().apparition.medial) {
+  <app-status-badge class="banana"> {{ 'letters.medial' | translate }} </app-status-badge>
+
+  } @if (letter().apparition.final) {
+  <app-status-badge class="lime"> {{ 'letters.final' | translate }} </app-status-badge>
+
+  }
+</div>
