@@ -60,23 +60,24 @@ export class TabsService {
       },
       payload: this.dataService.vowelsSortedByCategory(),
     },
-    {
-      tabSwitchConfig: {
-        label: {
-          display: true,
-          text: 'app.tones',
-        },
-        icon: {
-          display: false,
-          path: '',
-          alt: '',
-          right: false,
-        },
-        id: 3,
-        class: 'letter-tab-switch-selector',
-      },
-      payload: this.dataService.tonesSortedByCategory(),
-    },
+    // TODO add tones when datas are more relevants
+    // {
+    //   tabSwitchConfig: {
+    //     label: {
+    //       display: true,
+    //       text: 'app.tones',
+    //     },
+    //     icon: {
+    //       display: false,
+    //       path: '',
+    //       alt: '',
+    //       right: false,
+    //     },
+    //     id: 3,
+    //     class: 'letter-tab-switch-selector',
+    //   },
+    //   payload: this.dataService.tonesSortedByCategory(),
+    // },
     {
       tabSwitchConfig: {
         label: {
