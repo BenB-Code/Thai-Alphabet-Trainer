@@ -56,11 +56,45 @@ describe('LettersCategoryContainer', () => {
       expect(component.isOpen()).toBeFalse();
     });
 
+    it('should hide overflow immediately when closing', () => {
+      component.toggleOpen();
+
+      expect(component.isOverflowVisible()).toBeFalse();
+    });
+
     it('should reopen after toggling twice', () => {
       component.toggleOpen();
       component.toggleOpen();
 
       expect(component.isOpen()).toBeTrue();
+    });
+  });
+
+  describe('onSliderTransitionEnd', () => {
+    it('should show overflow after opening transition ends', () => {
+      component.toggleOpen();
+      component.toggleOpen();
+
+      component.onSliderTransitionEnd({ propertyName: 'grid-template-rows' } as TransitionEvent);
+
+      expect(component.isOverflowVisible()).toBeTrue();
+    });
+
+    it('should not show overflow if transition ends while closed', () => {
+      component.toggleOpen();
+
+      component.onSliderTransitionEnd({ propertyName: 'grid-template-rows' } as TransitionEvent);
+
+      expect(component.isOverflowVisible()).toBeFalse();
+    });
+
+    it('should ignore transitions other than grid-template-rows', () => {
+      component.toggleOpen();
+      component.toggleOpen();
+
+      component.onSliderTransitionEnd({ propertyName: 'opacity' } as TransitionEvent);
+
+      expect(component.isOverflowVisible()).toBeFalse();
     });
   });
 
