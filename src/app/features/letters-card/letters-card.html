@@ -1,6 +1,8 @@
 <app-card [clickable]="clickable()" [isActive]="isActive() && activable()" (clicked)="selectLetter()" [color]="color()">
   <div class="card-content">
-    @let l = letter(); @if (letterUtilsService.isConsonant(l)) {
+    @let l = letter(); @if (l.info) { @defer {
+    <app-info-bubble [info]="l.info[appStoreService.language()]" />
+    } } @if (letterUtilsService.isConsonant(l)) {
     <app-consonant [letter]="l" />
     } @else if (letterUtilsService.isVowel(l)) {
     <app-vowel [letter]="l" />

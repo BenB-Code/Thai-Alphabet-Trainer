@@ -15,6 +15,12 @@
       text-align: center;
       color: hsl(var(--foreground) / 1);
 
+      app-info-bubble {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
       div {
         width: 100%;
       }

@@ -10,10 +10,11 @@ import { Vowel } from './cards/vowel/vowel';
 import { Numeral } from './cards/numeral/numeral';
 import { Diacritics } from './cards/diacritics/diacritics';
 import { Tones } from './cards/tones/tones';
+import { InfoBubble } from '../../common/info-bubble/info-bubble';
 
 @Component({
   selector: 'app-letters-card',
-  imports: [Card, Consonant, Vowel, Numeral, Diacritics, Tones],
+  imports: [Card, Consonant, Vowel, Numeral, Diacritics, Tones, InfoBubble],
   templateUrl: './letters-card.html',
   styleUrl: './letters-card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

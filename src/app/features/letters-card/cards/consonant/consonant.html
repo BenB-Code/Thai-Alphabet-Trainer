@@ -6,7 +6,7 @@
 
 <div [class]="'thai-character thai ' + appStoreService.thaiFont()">{{ letter().symbol }}</div>
 <div class="roman-character">
-  {{ letter().transcriptions?.[activePronunciation()] }} · {{ letter().exemple[activePronunciation()] }}
+  {{ letter().transcriptions?.[activePronunciation()] }} - {{ letter().exemple[activePronunciation()] }}
 </div>
 
 @let positions = letterUtilsService.getConsonantPositions(letter());

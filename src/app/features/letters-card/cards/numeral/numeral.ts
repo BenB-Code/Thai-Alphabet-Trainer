@@ -1,5 +1,5 @@
 import { Component, computed, inject, input } from '@angular/core';
-import { ThaiSymbol } from '../../../../shared/interfaces';
+import { ThaiNumeral } from '../../../../shared/interfaces';
 import { AppStoreService } from '../../../../store/app/app-store.service';
 
 @Component({
@@ -13,5 +13,5 @@ export class Numeral {
 
   activePronunciation = computed(() => this.appStoreService.pronunciation());
 
-  letter = input.required<ThaiSymbol>();
+  letter = input.required<ThaiNumeral>();
 }

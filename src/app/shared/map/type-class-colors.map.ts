@@ -1,4 +1,5 @@
 import {
+  BIG_NUMBERS,
   COLOR_DIPHTONG,
   COLOR_EXTRA,
   COLOR_LOW,
@@ -14,6 +15,7 @@ import {
   NUMBER,
   SIMPLE,
   SPECIAL,
+  TENS,
   TONE_MARK,
 } from '../constants';
 import { ColorsType, SymbolCategoriesType } from '../types';
@@ -28,6 +30,8 @@ export const TypeClassColorsMap: Record<SymbolCategoriesType, ColorsType> = {
   [SIMPLE]: COLOR_SPECIAL,
   [DIGIT]: COLOR_MID,
   [NUMBER]: COLOR_MID,
+  [BIG_NUMBERS]: COLOR_MID,
+  [TENS]: COLOR_MID,
   [TONE_MARK]: COLOR_EXTRA,
   [DIACRITIC]: COLOR_DIPHTONG,
 };

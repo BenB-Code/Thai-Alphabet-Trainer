@@ -49,6 +49,8 @@
     "simple": "Simple Vowels",
     "number": "Numbers",
     "digit": "Digits",
+    "bigNumbers": "Big numbers",
+    "tens": "Tens",
     "tone-mark": "Tones",
     "diacritic": "Diacritics"
   },

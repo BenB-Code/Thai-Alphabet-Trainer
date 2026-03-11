@@ -10,7 +10,7 @@ export const TONES_DATA: ThaiSymbol[] = [
     transcriptions: {
       thai: 'ไม้เอก',
       rtgs: 'mái èk',
-      ipa: '/máːj èːk/',
+      ipa: 'máːj èːk',
     },
   },
   {
@@ -21,7 +21,7 @@ export const TONES_DATA: ThaiSymbol[] = [
     transcriptions: {
       thai: 'ไม้โท',
       rtgs: 'mái tho',
-      ipa: '/máːj tʰoː/',
+      ipa: 'máːj tʰoː',
     },
   },
   {
@@ -32,7 +32,7 @@ export const TONES_DATA: ThaiSymbol[] = [
     transcriptions: {
       thai: 'ไม้ตรี',
       rtgs: 'mái tri',
-      ipa: '/máːj triː/',
+      ipa: 'máːj triː',
     },
   },
   {
@@ -43,7 +43,7 @@ export const TONES_DATA: ThaiSymbol[] = [
     transcriptions: {
       thai: 'ไม้จัตวา',
       rtgs: 'mái chàttàwa',
-      ipa: '/máːj tɕàt.tà.waː/',
+      ipa: 'máːj tɕàt.tà.waː',
     },
   },
 ];

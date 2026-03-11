@@ -5,15 +5,22 @@
     width: 100%;
 
     &.thai-character {
-      font-size: 2.25rem;
-      line-height: 3rem;
+      font-size: 2.5rem;
+      line-height: 2.75rem;
     }
 
     &.roman-character {
       opacity: 0.8;
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       line-height: 1rem;
       margin-top: 0.25rem;
+    }
+
+    &.number {
+      opacity: 0.8;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin-top: 0.5rem;
     }
   }
 }

@@ -27,11 +27,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อะ',
       rtgs: 'a',
-      ipa: '/aʔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'aʔ',
     },
   },
   {
@@ -46,11 +42,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อัอ',
       rtgs: 'a',
-      ipa: '/a/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'a',
     },
   },
   {
@@ -65,11 +57,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อิ',
       rtgs: 'i',
-      ipa: '/i/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'i',
     },
   },
   {
@@ -84,11 +72,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อึ',
       rtgs: 'ue',
-      ipa: '/ɯ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɯ',
     },
   },
   {
@@ -103,11 +87,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อุ',
       rtgs: 'u',
-      ipa: '/u/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'u',
     },
   },
   {
@@ -122,11 +102,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอะ',
       rtgs: 'e',
-      ipa: '/eʔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'eʔ',
     },
   },
   {
@@ -141,11 +117,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอ็อ',
       rtgs: 'e',
-      ipa: '/e/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'e',
     },
   },
   {
@@ -160,11 +132,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'แอะ',
       rtgs: 'ae',
-      ipa: '/ɛʔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɛʔ',
     },
   },
   {
@@ -179,11 +147,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'แอ็อ',
       rtgs: 'ae',
-      ipa: '/ɛ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɛ',
     },
   },
   {
@@ -198,11 +162,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'โอะ',
       rtgs: 'o',
-      ipa: '/oʔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'oʔ',
     },
   },
   {
@@ -217,7 +177,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'โอะ',
       rtgs: 'o',
-      ipa: '/o/',
+      ipa: 'o',
     },
     info: {
       en: 'Between two consonants',
@@ -236,11 +196,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอาะ',
       rtgs: 'o',
-      ipa: '/ɔʔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɔʔ',
     },
   },
   {
@@ -255,11 +211,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอาะ',
       rtgs: 'o',
-      ipa: '/ɔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɔ',
     },
   },
   {
@@ -274,11 +226,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เออะ',
       rtgs: 'oe',
-      ipa: '/ɤʔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɤʔ',
     },
   },
   {
@@ -293,11 +241,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อา',
       rtgs: 'a',
-      ipa: '/aː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'aː',
     },
   },
   {
@@ -312,11 +256,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อี',
       rtgs: 'i',
-      ipa: '/iː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'iː',
     },
   },
   {
@@ -331,11 +271,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อือ',
       rtgs: 'ue',
-      ipa: '/ɯː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɯː',
     },
   },
   {
@@ -350,11 +286,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อือ',
       rtgs: 'ue',
-      ipa: '/ɯː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɯː',
     },
   },
   {
@@ -369,11 +301,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อู',
       rtgs: 'u',
-      ipa: '/uː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'uː',
     },
   },
   {
@@ -388,11 +316,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอ',
       rtgs: 'e',
-      ipa: '/eː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'eː',
     },
   },
   {
@@ -407,11 +331,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'แอ',
       rtgs: 'ae',
-      ipa: '/ɛː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɛː',
     },
   },
   {
@@ -426,11 +346,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'โอ',
       rtgs: 'o',
-      ipa: '/oː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'oː',
     },
   },
   {
@@ -445,11 +361,11 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'ออ',
       rtgs: 'o',
-      ipa: '/ɔː/',
+      ipa: 'ɔː',
     },
     info: {
       en: 'Only with ร (ro ruea) as final consonant, appearing as ◌ร /ɔːn/.',
-      fr: 'Uniquement avec ร (ro ruea) comme consonne finale, apparaissant sous la forme ◌ร /ɔːn/',
+      fr: 'Uniquement avec ร (ro ruea) comme consonne finale, apparaissant sous la forme ◌ร /ɔːn',
     },
   },
   {
@@ -464,7 +380,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เออ',
       rtgs: 'oe',
-      ipa: '/ɤː/',
+      ipa: 'ɤː',
     },
     info: {
       en: 'เ◌อ◌ is used only in certain words',
@@ -483,11 +399,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เออ',
       rtgs: 'oe',
-      ipa: '/ɤ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɤ',
     },
   },
   {
@@ -502,11 +414,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอียะ',
       rtgs: 'ia',
-      ipa: '/iaʔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'iaʔ',
     },
   },
   {
@@ -521,11 +429,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอือะ',
       rtgs: 'uea',
-      ipa: '/ɯaʔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɯaʔ',
     },
   },
   {
@@ -540,11 +444,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อัวะ',
       rtgs: 'ua',
-      ipa: '/uaʔ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'uaʔ',
     },
   },
   {
@@ -559,11 +459,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอีย',
       rtgs: 'ia',
-      ipa: '/ia/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ia',
     },
   },
   {
@@ -578,11 +474,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอือ',
       rtgs: 'uea',
-      ipa: '/ɯa/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɯa',
     },
   },
   {
@@ -597,11 +489,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อัว',
       rtgs: 'ua',
-      ipa: '/ua/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ua',
     },
   },
   {
@@ -616,11 +504,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อัว',
       rtgs: 'ua',
-      ipa: '/ua/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ua',
     },
   },
   {
@@ -635,7 +519,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'ไอ',
       rtgs: 'ai maái malaai',
-      ipa: '/aj/ (maái malaai)',
+      ipa: 'aj/ (maái malaai)',
     },
     info: {
       en: 'Called ai maái malaai',
@@ -654,7 +538,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'ใอ',
       rtgs: 'ai maái múan',
-      ipa: '/aj/ (maái múan)',
+      ipa: 'aj/ (maái múan)',
     },
     info: {
       en: 'Called ai maái múan. Only exist with 20 words',
@@ -673,11 +557,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอว',
       rtgs: 'eo',
-      ipa: '/eːw/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'eːw',
     },
   },
   {
@@ -692,11 +572,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'เอย',
       rtgs: 'oei',
-      ipa: '/ɤːj/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'ɤːj',
     },
   },
   {
@@ -711,11 +587,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'อำ',
       rtgs: 'am',
-      ipa: '/am/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'am',
     },
   },
   {
@@ -730,11 +602,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'ฤ',
       rtgs: 'rue, ri, roe',
-      ipa: '/rɯ/ /ri/ /rɤː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'rɯ/ /ri/ /rɤː',
     },
   },
   {
@@ -749,11 +617,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'ฦ',
       rtgs: 'lue',
-      ipa: '/lɯ/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'lɯ',
     },
   },
   {
@@ -768,11 +632,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'ฤๅ',
       rtgs: 'rue',
-      ipa: '/rɯː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'rɯː',
     },
   },
   {
@@ -787,11 +647,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'ฦๅ',
       rtgs: 'lue',
-      ipa: '/lɯː/',
-    },
-    info: {
-      en: '',
-      fr: '',
+      ipa: 'lɯː',
     },
   },
 ];

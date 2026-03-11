@@ -10,7 +10,7 @@ export const DIACRITICS_DATA: ThaiSymbol[] = [
     transcriptions: {
       thai: 'ไม้ไต่คู้',
       rtgs: 'mái tài khú',
-      ipa: '/máj tàj kʰúː/',
+      ipa: 'máj tàj kʰúː',
     },
     info: {
       en: 'Shortens vowel',
@@ -25,7 +25,7 @@ export const DIACRITICS_DATA: ThaiSymbol[] = [
     transcriptions: {
       thai: 'ทัณฑฆาต',
       rtgs: 'thǎnthákhàt',
-      ipa: '/tʰǎn.tʰá.kʰàːt/',
+      ipa: 'tʰǎn.tʰá.kʰàːt',
     },
     info: {
       en: ['Also called "การันต์" karan', 'Indicates silent letter'],
@@ -40,7 +40,7 @@ export const DIACRITICS_DATA: ThaiSymbol[] = [
     transcriptions: {
       thai: 'ฟันหนู',
       rtgs: 'fán nǔ',
-      ipa: '/fán nǔː/',
+      ipa: 'fán nǔː',
     },
     info: {
       en: [

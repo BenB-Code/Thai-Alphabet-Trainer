@@ -50,6 +50,8 @@
     "simple": "Voyelles Simples",
     "number": "Nombres",
     "digit": "Chiffres",
+    "bigNumbers": "Grand nombres",
+    "tens": "Dizaines",
     "tone-mark": "Tons",
     "diacritic": "Diacritiques"
   },
