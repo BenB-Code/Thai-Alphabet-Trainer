@@ -22,8 +22,18 @@ export class LettersCategoryContainer {
   color = computed(() => this.letterUtilsService.getLetterColor(this.category()));
 
   isOpen = signal(true);
+  isOverflowVisible = signal(true);
 
   toggleOpen(): void {
+    if (this.isOpen()) {
+      this.isOverflowVisible.set(false);
+    }
     this.isOpen.update(v => !v);
+  }
+
+  onSliderTransitionEnd(event: TransitionEvent): void {
+    if (event.propertyName === 'grid-template-rows' && this.isOpen()) {
+      this.isOverflowVisible.set(true);
+    }
   }
 }

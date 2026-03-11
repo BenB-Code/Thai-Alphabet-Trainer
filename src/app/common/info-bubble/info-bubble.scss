@@ -31,7 +31,6 @@
     left: 100%;
     bottom: 100%;
     width: 15rem;
-    max-width: 15rem;
     flex-direction: column;
     gap: 0.5rem;
 
@@ -44,6 +43,10 @@
       font-size: 0.75rem;
       text-align: left;
       color: hsl(var(--muted-foreground) / 0.9);
+    }
+
+    @media (max-width: 640px) {
+      width: 9rem;
     }
   }
 
