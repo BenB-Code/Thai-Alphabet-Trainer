@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input, linkedSignal, output, TemplateRef } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
+import { SwitchSelectorItem } from '../../shared/interfaces';
 import { LARGE, MEDIUM, SMALL } from '../../shared/constants';
-import { SwitchSelectorItem } from '../../shared/types';
 
 @Component({
   selector: 'app-switch-selector',

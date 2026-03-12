@@ -1,0 +1,11 @@
+<button class="info" (mouseenter)="toggleInfos()" (mouseleave)="toggleInfos()">
+  <img src="icons/info.svg" alt="info" />
+</button>
+
+<div class="info-card" [class.show]="showInfos()">
+  @if (isArray(info())) { @for (inf of info(); track $index) {
+  <p>· {{ inf }}</p>
+  } } @else {
+  <p>· {{ info() }}</p>
+  }
+</div>

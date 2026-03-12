@@ -2,8 +2,8 @@ import { INITIAL_QUIZ_STATE, INITIAL_SESSION_STATE } from './quiz.state';
 import { quizFeature } from './quiz.reducer';
 import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
 import { FINISHED, IN_PROGRESS, LATIN, PAUSE, THAI } from '../../shared/constants';
-import { THAI_CONSONANTS } from '../../data';
-import { DisplayType } from '../../shared/types';
+import { CONSONANTS_DATA } from '../../data';
+import { DisplayType, ProgressStateType } from '../../shared/types';
 
 describe('Quiz Reducer', () => {
   const reducer = quizFeature.reducer;
@@ -30,13 +30,13 @@ describe('Quiz Reducer', () => {
     });
 
     it('should update selected', () => {
-      const selected = [THAI_CONSONANTS[0]];
+      const selected = [CONSONANTS_DATA[0]];
       const result = reducer(INITIAL_QUIZ_STATE, QuizSettingsActions.updateSelected({ selected }));
       expect(result.settings.selected).toEqual(selected);
     });
 
     it('should set randomized list', () => {
-      const randomized = [{ ...THAI_CONSONANTS[0], display: THAI as DisplayType }];
+      const randomized = [{ ...CONSONANTS_DATA[0], display: THAI as DisplayType }];
       const result = reducer(INITIAL_QUIZ_STATE, QuizSettingsActions.setRandomizedList({ randomized }));
       expect(result.settings.randomized).toEqual(randomized);
     });
@@ -130,6 +130,49 @@ describe('Quiz Reducer', () => {
         const result = reducer(flipped, QuizSessionActions.togglePause());
         expect(result.session.flipped).toBeFalse();
         expect(result.session.progressState).toBe(IN_PROGRESS);
+      });
+    });
+
+    describe('timerExpired', () => {
+      it('should flip and pause when autoFlip is on and delay is not 0', () => {
+        const state = {
+          ...INITIAL_QUIZ_STATE,
+          settings: { ...INITIAL_QUIZ_STATE.settings, autoFlip: true, delay: 5 },
+          session: { ...INITIAL_SESSION_STATE, progressState: IN_PROGRESS as ProgressStateType },
+        };
+        const result = reducer(state, QuizSessionActions.timerExpired());
+        expect(result.session.flipped).toBeTrue();
+        expect(result.session.progressState).toBe(PAUSE);
+      });
+
+      it('should do nothing when autoFlip is off', () => {
+        const state = {
+          ...INITIAL_QUIZ_STATE,
+          settings: { ...INITIAL_QUIZ_STATE.settings, autoFlip: false, delay: 5 },
+          session: { ...INITIAL_SESSION_STATE, progressState: IN_PROGRESS as ProgressStateType },
+        };
+        const result = reducer(state, QuizSessionActions.timerExpired());
+        expect(result).toBe(state);
+      });
+
+      it('should do nothing when already flipped', () => {
+        const state = {
+          ...INITIAL_QUIZ_STATE,
+          settings: { ...INITIAL_QUIZ_STATE.settings, autoFlip: true, delay: 5 },
+          session: { ...INITIAL_SESSION_STATE, progressState: PAUSE as ProgressStateType, flipped: true },
+        };
+        const result = reducer(state, QuizSessionActions.timerExpired());
+        expect(result).toBe(state);
+      });
+
+      it('should do nothing when delay is 0', () => {
+        const state = {
+          ...INITIAL_QUIZ_STATE,
+          settings: { ...INITIAL_QUIZ_STATE.settings, autoFlip: true, delay: 0 },
+          session: { ...INITIAL_SESSION_STATE, progressState: IN_PROGRESS as ProgressStateType },
+        };
+        const result = reducer(state, QuizSessionActions.timerExpired());
+        expect(result).toBe(state);
       });
     });
 

@@ -4,7 +4,7 @@ import { provideStore, Store } from '@ngrx/store';
 import { QuizStoreService } from './quiz-store.service';
 import { quizFeature } from './quiz.reducer';
 import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
-import { THAI_CONSONANTS } from '../../data';
+import { CONSONANTS_DATA } from '../../data';
 import { LATIN, MIXED, PAUSE, THAI } from '../../shared/constants';
 
 describe('QuizStoreService', () => {
@@ -41,6 +41,7 @@ describe('QuizStoreService', () => {
       expect(service.cardAnimation()).toBeNull();
       expect(service.canGoBack()).toBeFalse();
       expect(service.canGoForward()).toBeTrue();
+      expect(service.autoFlip()).toBeFalse();
       expect(service.currentCard()).toBeNull();
       expect(service.progress()).toEqual({ current: 1, total: 10 });
       expect(service.isFinished()).toBeFalse();
@@ -65,6 +66,11 @@ describe('QuizStoreService', () => {
       service.updateDelay(10);
       expect(service.delay()).toBe(10);
       expect(service.delayMs()).toBe(10000);
+    });
+
+    it('updateAutoFlip should update delay', () => {
+      service.updateAutoFlip(true);
+      expect(service.autoFlip()).toBe(true);
     });
   });
 
@@ -103,10 +109,16 @@ describe('QuizStoreService', () => {
       service.togglePause();
       expect(service.isPaused()).toBeTrue();
     });
+
+    it('timerExpired should call timer expired', () => {
+      service.start();
+      service.timerExpired();
+      expect(service.autoFlip()).toBeFalse();
+    });
   });
 
   describe('generateQuizList', () => {
-    const selected = THAI_CONSONANTS.slice(0, 3);
+    const selected = CONSONANTS_DATA.slice(0, 3);
 
     beforeEach(() => {
       store.dispatch(QuizSettingsActions.updateSelected({ selected }));

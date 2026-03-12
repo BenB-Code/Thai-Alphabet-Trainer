@@ -31,7 +31,7 @@
 
 **Thai Flashcards** est ne d'une envie simple : apprendre l'alphabet thai sans prise de tete.
 
-Pas de compte a créer, pas de gamification artificielle, pas de système de points. Juste des **cartes**, un **timer**, et la repetition. L'idée, c'est de reproduire l'expérience d'un paquet de flashcards physiques, en plus pratique : on choisit exactement les lettres qu'on veut travailler, on règle la vitesse, et on lance.
+Pas de compte à créer, pas de gamification artificielle, pas de système de points. Juste des **cartes**, un **timer**, et la repetition. L'idée, c'est de reproduire l'expérience d'un paquet de flashcards physiques, en plus pratique : on choisit exactement les lettres qu'on veut travailler, on règle la vitesse, et on lance.
 
 L'application couvre les **44 consonnes** et **39 voyelles** de l'alphabet thai, organisées par classe (low, mid, high) et par type (courte, longue). Chaque carte montre le caractère, sa romanisation, et un mot exemple pour ancrer la memorisation.
 

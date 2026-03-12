@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { AppStoreService } from '../../store/app/app-store.service';
+import { FontSwitchItem } from '../../shared/interfaces';
 import { KANIT, LARGE, SARABUN, SRIRACHA } from '../../shared/constants';
-import { FontSwitchItem } from '../../shared/interfaces/font-switch.interface';
 
 @Component({
   selector: 'app-font-switch-selector',

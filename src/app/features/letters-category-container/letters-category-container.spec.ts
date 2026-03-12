@@ -4,8 +4,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LettersCategoryContainer } from './letters-category-container';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
-import { MID } from '../../shared/constants';
-import { THAI_CONSONANTS } from '../../data';
+import { EN, MID, RTGS, SARABUN } from '../../shared/constants';
+import { CONSONANTS_DATA } from '../../data';
 
 describe('LettersCategoryContainer', () => {
   let component: LettersCategoryContainer;
@@ -20,8 +20,9 @@ describe('LettersCategoryContainer', () => {
           provide: AppStoreService,
           useValue: {
             isDarkThemeActive: signal(false),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            pronunciation: signal(RTGS),
+            language: signal(EN),
           },
         },
         {
@@ -41,7 +42,7 @@ describe('LettersCategoryContainer', () => {
     fixture = TestBed.createComponent(LettersCategoryContainer);
     component = fixture.componentInstance;
     fixture.componentRef.setInput('category', MID);
-    fixture.componentRef.setInput('list', THAI_CONSONANTS.slice(0, 3));
+    fixture.componentRef.setInput('list', CONSONANTS_DATA.slice(0, 3));
     await fixture.whenStable();
   });
 
@@ -56,11 +57,45 @@ describe('LettersCategoryContainer', () => {
       expect(component.isOpen()).toBeFalse();
     });
 
+    it('should hide overflow immediately when closing', () => {
+      component.toggleOpen();
+
+      expect(component.isOverflowVisible()).toBeFalse();
+    });
+
     it('should reopen after toggling twice', () => {
       component.toggleOpen();
       component.toggleOpen();
 
       expect(component.isOpen()).toBeTrue();
+    });
+  });
+
+  describe('onSliderTransitionEnd', () => {
+    it('should show overflow after opening transition ends', () => {
+      component.toggleOpen();
+      component.toggleOpen();
+
+      component.onSliderTransitionEnd({ propertyName: 'grid-template-rows' } as TransitionEvent);
+
+      expect(component.isOverflowVisible()).toBeTrue();
+    });
+
+    it('should not show overflow if transition ends while closed', () => {
+      component.toggleOpen();
+
+      component.onSliderTransitionEnd({ propertyName: 'grid-template-rows' } as TransitionEvent);
+
+      expect(component.isOverflowVisible()).toBeFalse();
+    });
+
+    it('should ignore transitions other than grid-template-rows', () => {
+      component.toggleOpen();
+      component.toggleOpen();
+
+      component.onSliderTransitionEnd({ propertyName: 'opacity' } as TransitionEvent);
+
+      expect(component.isOverflowVisible()).toBeFalse();
     });
   });
 

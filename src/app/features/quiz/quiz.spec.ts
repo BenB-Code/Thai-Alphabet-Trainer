@@ -7,15 +7,15 @@ import { AppStoreService } from '../../store/app/app-store.service';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
 import { ProgressBar } from '../../common/progress-bar/progress-bar';
-import { FINISHED, IN_PROGRESS, PAUSE } from '../../shared/constants';
-import { THAI_CONSONANTS } from '../../data';
+import { EN, FINISHED, IN_PROGRESS, PAUSE, RTGS, SARABUN, THAI } from '../../shared/constants';
+import { CONSONANTS_DATA } from '../../data';
 
 describe('Quiz', () => {
   let component: Quiz;
   let fixture: ComponentFixture<Quiz>;
   let quizStoreService: QuizStoreService;
 
-  const mockCard = { ...THAI_CONSONANTS[0], display: 'thai' };
+  const mockCard = { ...CONSONANTS_DATA[0], display: THAI };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -24,7 +24,12 @@ describe('Quiz', () => {
         provideZonelessChangeDetection(),
         {
           provide: AppStoreService,
-          useValue: { isDarkThemeActive: signal(false), thaiFont: signal('sarabun'), language: signal('en') },
+          useValue: {
+            isDarkThemeActive: signal(false),
+            thaiFont: signal(SARABUN),
+            pronunciation: signal(RTGS),
+            language: signal(EN),
+          },
         },
         {
           provide: QuizStoreService,
@@ -47,6 +52,7 @@ describe('Quiz', () => {
             previous: jasmine.createSpy(),
             toggleFlip: jasmine.createSpy(),
             togglePause: jasmine.createSpy(),
+            timerExpired: jasmine.createSpy(),
           },
         },
         {
@@ -74,7 +80,7 @@ describe('Quiz', () => {
     it('should call next on the quiz store', () => {
       component.onTimerComplete();
 
-      expect(quizStoreService.next).toHaveBeenCalled();
+      expect(quizStoreService.timerExpired).toHaveBeenCalled();
     });
   });
 

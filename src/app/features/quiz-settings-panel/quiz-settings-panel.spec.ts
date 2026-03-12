@@ -6,6 +6,7 @@ import { AppStoreService } from '../../store/app/app-store.service';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { NavigationService } from '../../services/navigation-service/navigation-service';
+import { EN, SARABUN, THAI } from '../../shared/constants';
 
 describe('QuizSettingsPanel', () => {
   let component: QuizSettingsPanel;
@@ -21,8 +22,8 @@ describe('QuizSettingsPanel', () => {
           useValue: {
             activeTab: signal(0),
             isDarkThemeActive: signal(false),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            language: signal(EN),
             theme: signal('light'),
             themeIcon: signal('icons/moon.svg'),
             translate: jasmine.createSpy().and.returnValue(''),
@@ -34,9 +35,10 @@ describe('QuizSettingsPanel', () => {
           provide: QuizStoreService,
           useValue: {
             delay: signal(3),
-            display: signal('thai'),
+            display: signal(THAI),
             questions: signal(10),
             isQuizValid: signal(true),
+            autoFlip: signal(false),
             updateDelay: jasmine.createSpy(),
             updateDisplay: jasmine.createSpy(),
             updateQuestions: jasmine.createSpy(),

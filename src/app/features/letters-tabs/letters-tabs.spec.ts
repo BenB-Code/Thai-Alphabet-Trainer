@@ -5,6 +5,7 @@ import { LettersTabs } from './letters-tabs';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
 import { TabsService } from '../../services/tabs-service/tabs-service';
+import { EN, SARABUN } from '../../shared/constants';
 
 describe('LettersTabs', () => {
   let component: LettersTabs;
@@ -25,8 +26,8 @@ describe('LettersTabs', () => {
           useValue: {
             activeTab: signal(0),
             isDarkThemeActive: signal(false),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            language: signal(EN),
           },
         },
         {

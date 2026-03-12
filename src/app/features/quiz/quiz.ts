@@ -52,6 +52,6 @@ export class Quiz {
   }
 
   onTimerComplete(): void {
-    this.quizStoreService.next();
+    this.quizStoreService.timerExpired();
   }
 }

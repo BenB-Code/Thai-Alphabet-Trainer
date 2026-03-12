@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { QuizSettingsPanelContent } from './quiz-settings-panel-content';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
-import { QUIZ_FORM_BASE_CONF } from '../../shared/constants';
+import { EN, QUIZ_FORM_CONF, THAI } from '../../shared/constants';
 
 describe('QuizSettingsPanelContent', () => {
   let component: QuizSettingsPanelContent;
@@ -20,7 +20,7 @@ describe('QuizSettingsPanelContent', () => {
           provide: AppStoreService,
           useValue: {
             isDarkThemeActive: signal(false),
-            language: signal('en'),
+            language: signal(EN),
             translate: jasmine.createSpy('translate').and.callFake((key: string) => key),
           },
         },
@@ -28,8 +28,10 @@ describe('QuizSettingsPanelContent', () => {
           provide: QuizStoreService,
           useValue: {
             delay: signal(3),
-            display: signal('thai'),
+            display: signal(THAI),
             questions: signal(10),
+            autoFlip: signal(false),
+            updateAutoFlip: jasmine.createSpy('updateAutoFlip'),
             updateDelay: jasmine.createSpy('updateDelay'),
             updateDisplay: jasmine.createSpy('updateDisplay'),
             updateQuestions: jasmine.createSpy('updateQuestions'),
@@ -58,7 +60,15 @@ describe('QuizSettingsPanelContent', () => {
     it('should update delay with the corresponding value', () => {
       component.delayChange(0);
 
-      expect(quizStoreService.updateDelay).toHaveBeenCalledWith(QUIZ_FORM_BASE_CONF.delay[0]);
+      expect(quizStoreService.updateDelay).toHaveBeenCalledWith(QUIZ_FORM_CONF.delay[0]);
+    });
+  });
+
+  describe('autoFlipChange', () => {
+    it('should update autoFlip with the corresponding value', () => {
+      component.autoFlipChange(1);
+
+      expect(quizStoreService.updateAutoFlip).toHaveBeenCalledWith(QUIZ_FORM_CONF.autoFlip[1]);
     });
   });
 
@@ -66,7 +76,7 @@ describe('QuizSettingsPanelContent', () => {
     it('should update display with the corresponding value', () => {
       component.displayChange(1);
 
-      expect(quizStoreService.updateDisplay).toHaveBeenCalledWith(QUIZ_FORM_BASE_CONF.display[1].value);
+      expect(quizStoreService.updateDisplay).toHaveBeenCalledWith(QUIZ_FORM_CONF.display[1].value);
     });
   });
 
@@ -76,7 +86,7 @@ describe('QuizSettingsPanelContent', () => {
 
       component.questionsChange(event);
 
-      expect(quizStoreService.updateQuestions).toHaveBeenCalledWith(QUIZ_FORM_BASE_CONF.questions.min);
+      expect(quizStoreService.updateQuestions).toHaveBeenCalledWith(QUIZ_FORM_CONF.questions.min);
     });
 
     it('should clamp value to max', () => {
@@ -84,7 +94,7 @@ describe('QuizSettingsPanelContent', () => {
 
       component.questionsChange(event);
 
-      expect(quizStoreService.updateQuestions).toHaveBeenCalledWith(QUIZ_FORM_BASE_CONF.questions.max);
+      expect(quizStoreService.updateQuestions).toHaveBeenCalledWith(QUIZ_FORM_CONF.questions.max);
     });
 
     it('should pass valid value through', () => {
@@ -97,10 +107,10 @@ describe('QuizSettingsPanelContent', () => {
   });
 
   describe('displayList', () => {
-    it('should compute display list from QUIZ_FORM_BASE_CONF', () => {
+    it('should compute display list from QUIZ_FORM_CONF', () => {
       const list = component.displayList();
 
-      expect(list.length).toBe(QUIZ_FORM_BASE_CONF.display.length);
+      expect(list.length).toBe(QUIZ_FORM_CONF.display.length);
     });
   });
 });

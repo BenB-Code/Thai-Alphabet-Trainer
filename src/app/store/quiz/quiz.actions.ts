@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { CardAnimation, DisplayType, ThaiCharacter } from '../../shared/types';
+import { CardAnimationType, DisplayType, ThaiSymbolType } from '../../shared/types';
 
 export const QuizSettingsActions = createActionGroup({
   source: 'Quiz Settings',
@@ -7,8 +7,9 @@ export const QuizSettingsActions = createActionGroup({
     'Update Display': props<{ display: DisplayType }>(),
     'Update Questions': props<{ questions: number }>(),
     'Update Delay': props<{ delay: number }>(),
-    'Update Selected': props<{ selected: ThaiCharacter[] }>(),
-    'Set Randomized List': props<{ randomized: ThaiCharacter[] }>(),
+    'Update AutoFlip': props<{ autoFlip: boolean }>(),
+    'Update Selected': props<{ selected: ThaiSymbolType[] }>(),
+    'Set Randomized List': props<{ randomized: ThaiSymbolType[] }>(),
   },
 });
 
@@ -22,7 +23,7 @@ export const QuizSessionActions = createActionGroup({
     'Toggle Flip': emptyProps(),
     'Toggle Pause': emptyProps(),
     'Set Index': props<{ index: number }>(),
-    'Set Animation': props<{ animation: CardAnimation }>(),
+    'Set Animation': props<{ animation: CardAnimationType }>(),
     Finish: emptyProps(),
     'Timer Expired': emptyProps(),
   },

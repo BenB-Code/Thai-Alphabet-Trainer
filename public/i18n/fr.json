@@ -28,7 +28,10 @@
     "menu": "Menu",
     "theme": "Thème",
     "settings": "Options",
-    "donation": "Don"
+    "donation": "Don",
+    "numerals": "Nombres",
+    "tones": "Tons",
+    "diacritics": "Diacritiques"
   },
   "buttons": {
     "all": "Tout",
@@ -42,7 +45,15 @@
     "short": "Voyelles Courtes",
     "long": "Voyelles Longues",
     "diphthong": "Voyelles Diphtongues",
-    "special": "Voyelles Spéciales"
+    "special": "Voyelles Spéciales",
+    "extra-vowel": "Voyelles Particulières",
+    "simple": "Voyelles Simples",
+    "number": "Nombres",
+    "digit": "Chiffres",
+    "bigNumbers": "Grand nombres",
+    "tens": "Dizaines",
+    "tone-mark": "Tons",
+    "diacritic": "Diacritiques"
   },
   "letters": {
     "outdated": "Cette lettre n'est plus utilisée",
@@ -51,12 +62,14 @@
     "dead": "Morte",
     "sound-as-final": "Syllabe en consonne finale",
     "never-final": "Jamais en consonne finale",
-    "medial": "Position médiane",
-    "final": "Position finale",
+    "medial": "Médiane",
+    "final": "Finale",
     "no-final": "N'accepte pas de consonnes finales",
     "oh-vowel": "La voyelle médiane [oh] n'a pas de forme écrite (voyelle camouflée)",
     "no-medial-position": "N'éxiste pas en position médiane",
-    "variation": "Variation"
+    "variation": "Variation",
+    "long": "Longue",
+    "short": "Courte"
   },
   "quiz": {
     "selected": "lettre",
@@ -87,6 +100,7 @@
     "diphthong": "Voyelle Diphtongue",
     "special": "Voyelle Spéciale",
     "position": "Position",
-    "type": "Type"
+    "type": "Type",
+    "auto-flip": "Retournement auto"
   }
 }

@@ -16,10 +16,14 @@
   }
 
   .letter-container {
-    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, minmax(0px, 1fr));
     gap: 0.5rem;
+    overflow: hidden;
+
+    &.overflow-visible {
+      overflow: visible;
+    }
   }
 
   @media (min-width: 640px) {

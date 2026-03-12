@@ -1,53 +1,58 @@
 import { Injectable } from '@angular/core';
-import { TypeClassColorsMap } from '../../shared/constants';
-import { Colors, ConsonantClass, ThaiCharacter, VowelType } from '../../shared/types';
-import { ThaiConsonant, ThaiVowel } from '../../shared/models';
+import { ColorsType, SymbolCategoriesType, ThaiSymbolType } from '../../shared/types';
+import { ConsonantPosition, ThaiConsonant, ThaiNumeral, ThaiSymbol, ThaiVowel } from '../../shared/interfaces';
+import { TypeClassColorsMap } from '../../shared/map';
+import { CLASS, CONSONANT, DIACRITIC, KIND, NUMBER, NUMERAL, TONE_MARK, TYPE, VOWEL } from '../../shared/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LetterUtilsService {
-  isConsonant(letter: ThaiCharacter): letter is ThaiConsonant {
-    return 'class' in letter;
+  isConsonant(letter: ThaiSymbolType): letter is ThaiConsonant {
+    return CLASS in letter && letter.kind === CONSONANT;
   }
 
-  isVowel(letter: ThaiCharacter): letter is ThaiVowel {
-    return 'type' in letter;
+  isVowel(letter: ThaiSymbolType): letter is ThaiVowel {
+    return TYPE in letter && letter.kind === VOWEL;
   }
 
-  getLetterColor(letter: ConsonantClass | VowelType): Colors {
+  isNumeral(letter: ThaiSymbolType): letter is ThaiNumeral {
+    return NUMBER in letter && letter.kind === NUMERAL;
+  }
+
+  isDiacritic(letter: ThaiSymbolType): letter is ThaiSymbol {
+    return KIND in letter && letter.kind === DIACRITIC;
+  }
+
+  isTone(letter: ThaiSymbolType): letter is ThaiSymbol {
+    return KIND in letter && letter.kind === TONE_MARK;
+  }
+
+  getLetterColor(letter: SymbolCategoriesType): ColorsType {
     return TypeClassColorsMap[letter];
   }
 
-  getVowelPosition(letter: ThaiCharacter): ThaiVowel['position'] | false {
+  isWithFinalConsonant(letter: ThaiSymbolType): boolean | null {
     if (this.isVowel(letter)) {
+      return letter.withFinalConsonant;
+    }
+    return false;
+  }
+
+  getConsonantPositions(letter: ThaiSymbolType): ConsonantPosition[] | false {
+    if (this.isConsonant(letter)) {
       return letter.position;
     }
     return false;
   }
 
-  getConsonantClass(letter: ThaiCharacter): ThaiConsonant['class'] | false {
-    if (this.isConsonant(letter)) {
-      return letter.class;
-    }
-    return false;
-  }
-
-  getVowelType(letter: ThaiCharacter): ThaiVowel['type'] | false {
-    if (this.isVowel(letter)) {
-      return letter.type;
-    }
-    return false;
-  }
-
-  getTransliteration(letter: ThaiCharacter): ThaiConsonant['transliteration'] | false {
-    if (this.isConsonant(letter)) {
-      return letter.transliteration;
-    }
-    return false;
-  }
-
-  isOutdated(letter: ThaiCharacter): boolean {
-    return this.isConsonant(letter) && letter.outdated;
+  isObsolete(letter: ThaiSymbolType):
+    | false
+    | {
+        en: string;
+        fr: string;
+      }
+    | undefined {
+    return this.isConsonant(letter) && letter.obsolete;
   }
 }

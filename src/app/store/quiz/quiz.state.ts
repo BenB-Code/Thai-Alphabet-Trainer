@@ -1,19 +1,20 @@
-import { CardAnimation, DisplayType, ProgressState, ThaiCharacter } from '../../shared/types';
-import { PAUSE, QUIZ_FORM_BASE_CONF, THAI } from '../../shared/constants';
+import { CardAnimationType, DisplayType, ProgressStateType, ThaiSymbolType } from '../../shared/types';
+import { PAUSE, QUIZ_FORM_CONF, THAI } from '../../shared/constants';
 
 export interface QuizSettingsState {
   display: DisplayType;
   questions: number;
   delay: number;
-  selected: ThaiCharacter[];
-  randomized: ThaiCharacter[];
+  autoFlip: boolean;
+  selected: ThaiSymbolType[];
+  randomized: ThaiSymbolType[];
 }
 
 export interface QuizSessionState {
   index: number;
-  progressState: ProgressState;
+  progressState: ProgressStateType;
   flipped: boolean;
-  cardAnimation: CardAnimation;
+  cardAnimation: CardAnimationType;
 }
 
 export interface QuizState {
@@ -24,7 +25,8 @@ export interface QuizState {
 export const INITIAL_SETTINGS_STATE: QuizSettingsState = {
   display: THAI,
   questions: 10,
-  delay: QUIZ_FORM_BASE_CONF.delay[2],
+  autoFlip: false,
+  delay: QUIZ_FORM_CONF.delay[2],
   selected: [],
   randomized: [],
 };

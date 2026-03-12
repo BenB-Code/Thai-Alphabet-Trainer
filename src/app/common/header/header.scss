@@ -18,6 +18,7 @@
       display: flex;
       gap: 0.5rem;
       align-items: center;
+      cursor: pointer;
 
       .title,
       .subtitle {
@@ -35,7 +36,7 @@
       }
 
       .subtitle {
-        color: hsl(var(--foreground-muted) / 1);
+        color: hsl(var(--muted-foreground) / 1);
         font-weight: 300;
       }
     }

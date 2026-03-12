@@ -4,6 +4,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ThaiHeader } from './thai-header';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { ContactService } from '../../services/contact.service/contact.service';
+import { NavigationService } from '../../services/navigation-service/navigation-service';
+import { EN, RTGS, SARABUN } from '../../shared/constants';
 
 describe('ThaiHeader', () => {
   let component: ThaiHeader;
@@ -20,16 +22,22 @@ describe('ThaiHeader', () => {
             theme: signal('light'),
             isDarkThemeActive: signal(false),
             themeIcon: signal('icons/moon.svg'),
-            thaiFont: signal('sarabun'),
-            language: signal('en'),
+            thaiFont: signal(SARABUN),
+            pronunciation: signal(RTGS),
+            language: signal(EN),
             toggleTheme: jasmine.createSpy(),
             toggleLanguage: jasmine.createSpy(),
             switchFont: jasmine.createSpy(),
+            switchPronunciation: jasmine.createSpy(),
           },
         },
         {
           provide: ContactService,
           useValue: { sendMail: jasmine.createSpy() },
+        },
+        {
+          provide: NavigationService,
+          useValue: { navigate: jasmine.createSpy() },
         },
       ],
     }).compileComponents();
@@ -46,5 +54,15 @@ describe('ThaiHeader', () => {
   it('should have correct title and subtitle', () => {
     expect(component.title).toBe('Thai');
     expect(component.subtitle).toBe('Flashcards');
+  });
+
+  describe('redirect', () => {
+    it('should navigate to home', () => {
+      const navigationService = TestBed.inject(NavigationService);
+
+      component.redirect();
+
+      expect(navigationService.navigate).toHaveBeenCalledWith('');
+    });
   });
 });

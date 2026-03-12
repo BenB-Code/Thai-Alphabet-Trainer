@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,4 +10,9 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class Header {
   title = input<string>('');
   subtitle = input<string>(' ');
+  titleClicked = output();
+
+  titleClick() {
+    this.titleClicked.emit();
+  }
 }

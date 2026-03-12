@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
 import {
+  selectAutoFlip,
   selectCanGoBack,
   selectCanGoForward,
   selectCardAnimation,
@@ -21,7 +22,7 @@ import {
   selectRandomized,
   selectSelected,
 } from './quiz.selectors';
-import { DisplayType, ThaiCharacter } from '../../shared/types';
+import { DisplayType, ThaiSymbolType } from '../../shared/types';
 import { LATIN, MIXED, THAI } from '../../shared/constants';
 
 @Injectable({ providedIn: 'root' })
@@ -34,6 +35,7 @@ export class QuizStoreService {
   readonly delayMs = this.store.selectSignal(selectDelayMs);
   readonly selected = this.store.selectSignal(selectSelected);
   readonly randomized = this.store.selectSignal(selectRandomized);
+  readonly autoFlip = this.store.selectSignal(selectAutoFlip);
 
   readonly index = this.store.selectSignal(selectIndex);
   readonly progressState = this.store.selectSignal(selectProgressState);
@@ -53,6 +55,10 @@ export class QuizStoreService {
     this.store.dispatch(QuizSettingsActions.updateDisplay({ display }));
   }
 
+  updateAutoFlip(autoFlip: boolean): void {
+    this.store.dispatch(QuizSettingsActions.updateAutoFlip({ autoFlip }));
+  }
+
   updateQuestions(questions: number): void {
     this.store.dispatch(QuizSettingsActions.updateQuestions({ questions }));
   }
@@ -70,7 +76,7 @@ export class QuizStoreService {
     const remainder = questions % selected.length;
     const shuffledIndexes = this.shuffled([...selected.keys()]);
 
-    const newList: ThaiCharacter[] = [];
+    const newList: ThaiSymbolType[] = [];
     for (let i = 0; i < selected.length; i++) {
       const count = base + (shuffledIndexes.indexOf(i) < remainder ? 1 : 0);
       const displays = this.distributeDisplayTypes(count, display);
@@ -104,6 +110,10 @@ export class QuizStoreService {
 
   togglePause(): void {
     this.store.dispatch(QuizSessionActions.togglePause());
+  }
+
+  timerExpired(): void {
+    this.store.dispatch(QuizSessionActions.timerExpired());
   }
 
   private distributeDisplayTypes(count: number, display: DisplayType): DisplayType[] {

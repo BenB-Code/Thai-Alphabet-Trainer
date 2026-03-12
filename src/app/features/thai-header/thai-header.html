@@ -1,4 +1,4 @@
-<app-header class="backdrop-blur" [title]="title" [subtitle]="subtitle">
+<app-header class="backdrop-blur" [title]="title" [subtitle]="subtitle" (titleClicked)="redirect()">
   <div class="burger-container transition">
     <app-mobile-burger-menu></app-mobile-burger-menu>
   </div>
@@ -13,6 +13,7 @@
       [size]="MEDIUM"
     />
     <app-font-switch-selector></app-font-switch-selector>
+    <app-pronunciation-switch-selector></app-pronunciation-switch-selector>
     <app-desktop-burger-menu></app-desktop-burger-menu>
   </div>
 </app-header>

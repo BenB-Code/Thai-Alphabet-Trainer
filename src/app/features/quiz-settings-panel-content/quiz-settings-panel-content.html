@@ -7,9 +7,9 @@
       type="number"
       (input)="questionsChange($event)"
       [value]="quizStoreService.questions()"
-      [min]="QUIZ_FORM_BASE_CONF.questions.min"
-      [max]="QUIZ_FORM_BASE_CONF.questions.max"
-    /><span>&nbsp;/&nbsp;{{ QUIZ_FORM_BASE_CONF.questions.max }}</span>
+      [min]="QUIZ_FORM_CONF.questions.min"
+      [max]="QUIZ_FORM_CONF.questions.max"
+    /><span>&nbsp;/&nbsp;{{ QUIZ_FORM_CONF.questions.max }}</span>
   </div>
 </div>
 
@@ -32,5 +32,16 @@
     (activeItem)="displayChange($event)"
     [list]="displayList()"
     [initialIndex]="initialDisplayIndex"
+  ></app-switch-selector>
+</div>
+
+<div class="question-container">
+  <label for="auto-flip-label">{{ 'quiz.auto-flip' | translate }}</label>
+  <app-switch-selector
+    class="auto-flip"
+    [darkMode]="appStoreService.isDarkThemeActive()"
+    (activeItem)="autoFlipChange($event)"
+    [list]="autoFlipList"
+    [initialIndex]="initialAutoFlipIndex"
   ></app-switch-selector>
 </div>

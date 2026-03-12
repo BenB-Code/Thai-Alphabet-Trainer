@@ -1,0 +1,32 @@
+:host {
+  width: 100%;
+
+  div {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+
+    &.thai-character {
+      font-size: 2.5rem;
+      line-height: 2.75rem;
+      color: hsl(var(--foreground) / 1);
+      overflow-wrap: anywhere;
+    }
+
+    &.roman-character {
+      opacity: 0.8;
+      font-size: 0.85rem;
+      line-height: 1rem;
+      margin-top: 0.25rem;
+      color: hsl(var(--foreground) / 1);
+    }
+
+    &.number {
+      opacity: 0.8;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin-top: 0.5rem;
+      color: hsl(var(--foreground) / 1);
+    }
+  }
+}

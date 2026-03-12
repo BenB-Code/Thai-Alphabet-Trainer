@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LettersCategoryHeader } from './letters-category-header';
 import { AppStoreService } from '../../store/app/app-store.service';
 import { SelectionStoreService } from '../../store/selection/selection-store.service';
-import { MID, TERTIARY } from '../../shared/constants';
+import { MID, TRANSPARENT } from '../../shared/constants';
 
 describe('LettersCategoryHeader', () => {
   let component: LettersCategoryHeader;
@@ -40,7 +40,7 @@ describe('LettersCategoryHeader', () => {
     selectionStoreService = TestBed.inject(SelectionStoreService);
     fixture.componentRef.setInput('category', MID);
     fixture.componentRef.setInput('count', 10);
-    fixture.componentRef.setInput('color', TERTIARY);
+    fixture.componentRef.setInput('color', TRANSPARENT);
     await fixture.whenStable();
   });
 

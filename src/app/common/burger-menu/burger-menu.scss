@@ -4,6 +4,7 @@
 
   .burger-btn {
     border-radius: calc(var(--radius) - 2px);
+    border: 1px solid transparent;
 
     &.is-active {
       border-width: 1px;

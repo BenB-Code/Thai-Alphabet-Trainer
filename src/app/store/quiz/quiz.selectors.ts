@@ -1,12 +1,13 @@
 import { createSelector } from '@ngrx/store';
 import { quizFeature } from './quiz.reducer';
-import { FINISHED, IN_PROGRESS, PAUSE, QUIZ_FORM_BASE_CONF } from '../../shared/constants';
+import { FINISHED, IN_PROGRESS, PAUSE, QUIZ_FORM_CONF } from '../../shared/constants';
 
 export const selectQuizState = quizFeature.selectQuizState;
 
 export const selectSettings = createSelector(selectQuizState, state => state.settings);
 export const selectSession = createSelector(selectQuizState, state => state.session);
 
+export const selectAutoFlip = createSelector(selectSettings, s => s.autoFlip);
 export const selectDisplay = createSelector(selectSettings, s => s.display);
 export const selectQuestions = createSelector(selectSettings, s => s.questions);
 export const selectDelay = createSelector(selectSettings, s => s.delay);
@@ -46,8 +47,8 @@ export const selectIsQuizValid = createSelector(selectSettings, settings => {
   if (!settings.display) return false;
   if (
     !settings.questions ||
-    settings.questions < QUIZ_FORM_BASE_CONF.questions.min ||
-    settings.questions > QUIZ_FORM_BASE_CONF.questions.max
+    settings.questions < QUIZ_FORM_CONF.questions.min ||
+    settings.questions > QUIZ_FORM_CONF.questions.max
   )
     return false;
   if (settings.selected.length <= 0) return false;
