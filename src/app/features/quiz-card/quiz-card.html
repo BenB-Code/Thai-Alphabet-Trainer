@@ -9,17 +9,9 @@
   <div class="card-face recto">
     @if (card.display === THAI) {
     <div [class]="'thai-character ' + appStoreService.thaiFont()">{{ card.symbol }}</div>
-    } @else { @if (letterUtilsService.isConsonant(card)) {
-    <app-consonant [letter]="card" />
-    } @else if (letterUtilsService.isVowel(card)) {
-    <app-vowel [letter]="card" />
-    } @else if (letterUtilsService.isNumeral(card)) {
-    <app-numeral [letter]="card" />
-    } @else if (letterUtilsService.isDiacritic(card)) {
-    <app-diacritics [letter]="card" />
-    } @else if (letterUtilsService.isTone(card)) {
-    <app-tones [letter]="card" />
-    } }
+    } @else { @if (letterUtilsService.isConsonant(card)) { } @else if (letterUtilsService.isVowel(card)) { } @else if
+    (letterUtilsService.isNumeral(card)) { } @else if (letterUtilsService.isDiacritic(card)) { } @else if
+    (letterUtilsService.isTone(card)) { } }
   </div>
   <div class="card-face verso">
     @if (letterUtilsService.isConsonant(card)) {

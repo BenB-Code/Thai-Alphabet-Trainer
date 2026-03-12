@@ -10,7 +10,9 @@
   [class.large]="size() === LARGE"
 >
   @if (item.icon.display) {
-  <img class="icon" [src]="item.icon.path" [alt]="item.icon.alt" />
+  <p class="label">
+    <img class="icon" [src]="item.icon.path" [alt]="item.icon.alt" />
+  </p>
   } @if (item.label.display) { @if (labelTemplate()) {
   <ng-container *ngTemplateOutlet="labelTemplate(); context: { $implicit: item }" />
   } @else {
