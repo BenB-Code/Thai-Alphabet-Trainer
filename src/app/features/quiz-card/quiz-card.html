@@ -9,9 +9,34 @@
   <div class="card-face recto">
     @if (card.display === THAI) {
     <div [class]="'thai-character ' + appStoreService.thaiFont()">{{ card.symbol }}</div>
-    } @else { @if (letterUtilsService.isConsonant(card)) { } @else if (letterUtilsService.isVowel(card)) { } @else if
-    (letterUtilsService.isNumeral(card)) { } @else if (letterUtilsService.isDiacritic(card)) { } @else if
-    (letterUtilsService.isTone(card)) { } }
+    } @else { @if (letterUtilsService.isConsonant(card)) {
+    <div class="roman-character">
+      {{ card.transcriptions?.[activePronunciation()] }} - {{ card.exemple[activePronunciation()] }}
+    </div>
+    } @else if (letterUtilsService.isVowel(card)) {
+    <div class="roman-character vowel">{{ card.transcriptions?.[activePronunciation()] }}</div>
+
+    <div class="length">
+      @if (card.length === SHORT) {
+      <app-status-badge class="blue"> {{ 'letters.short' | translate }}</app-status-badge>
+      } @if (card.length === LONG) {
+      <app-status-badge class="purple"> {{ 'letters.long' | translate }}</app-status-badge>
+      }
+    </div>
+
+    <div class="vowel-pos">
+      @if (card.apparition.medial) {
+      <app-status-badge class="banana"> {{ 'letters.medial' | translate }}</app-status-badge>
+      } @if (card.apparition.final) {
+      <app-status-badge class="lime"> {{ 'letters.final' | translate }}</app-status-badge>
+      }
+    </div>
+
+    } @else if (letterUtilsService.isNumeral(card)) {
+    <div class="number roman-character">{{ card.number }}</div>
+    } @else if (letterUtilsService.isDiacritic(card)) {
+    <div class="roman-character">{{ card.transcriptions?.[activePronunciation()] }}</div>
+    } @else if (letterUtilsService.isTone(card)) { } }
   </div>
   <div class="card-face verso">
     @if (letterUtilsService.isConsonant(card)) {

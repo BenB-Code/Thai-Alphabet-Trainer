@@ -10,6 +10,7 @@
       font-size: 2.5rem;
       line-height: 2.75rem;
       color: hsl(var(--foreground) / 1);
+      overflow-wrap: anywhere;
     }
 
     &.roman-character {
