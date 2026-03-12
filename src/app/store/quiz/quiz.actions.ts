@@ -7,6 +7,7 @@ export const QuizSettingsActions = createActionGroup({
     'Update Display': props<{ display: DisplayType }>(),
     'Update Questions': props<{ questions: number }>(),
     'Update Delay': props<{ delay: number }>(),
+    'Update AutoFlip': props<{ autoFlip: boolean }>(),
     'Update Selected': props<{ selected: ThaiSymbolType[] }>(),
     'Set Randomized List': props<{ randomized: ThaiSymbolType[] }>(),
   },

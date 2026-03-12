@@ -17,6 +17,36 @@ export class QuizSettingsPanelContent {
   protected readonly quizStoreService = inject(QuizStoreService);
   protected readonly appStoreService = inject(AppStoreService);
 
+  readonly autoFlipList: readonly SwitchSelectorItem[] = [
+    {
+      label: {
+        display: false,
+        text: '',
+      },
+      icon: {
+        display: true,
+        path: 'icons/power-off.svg',
+        alt: 'Off',
+        right: false,
+      },
+      id: 0,
+      class: 'lighter-icon',
+    },
+    {
+      label: {
+        display: false,
+        text: '',
+      },
+      icon: {
+        display: true,
+        path: 'icons/power-on.svg',
+        alt: 'On',
+        right: false,
+      },
+      id: 1,
+      class: 'lighter-icon',
+    },
+  ];
   readonly delayList: readonly SwitchSelectorItem[] = [
     {
       label: {
@@ -89,7 +119,6 @@ export class QuizSettingsPanelContent {
       class: 'lighter-icon',
     },
   ];
-
   displayList = computed(() => {
     this.appStoreService.language();
     return QUIZ_FORM_CONF.display.map((item, index) => ({
@@ -102,6 +131,7 @@ export class QuizSettingsPanelContent {
 
   initialDelayIndex = QUIZ_FORM_CONF.delay.findIndex(d => d === this.quizStoreService.delay());
   initialDisplayIndex = QUIZ_FORM_CONF.display.findIndex(d => d.value === this.quizStoreService.display());
+  initialAutoFlipIndex = QUIZ_FORM_CONF.autoFlip.findIndex(d => d === this.quizStoreService.autoFlip());
 
   delayChange(delayId: number) {
     this.quizStoreService.updateDelay(QUIZ_FORM_CONF.delay[delayId]);
@@ -109,6 +139,10 @@ export class QuizSettingsPanelContent {
 
   displayChange(displayId: number) {
     this.quizStoreService.updateDisplay(QUIZ_FORM_CONF.display[displayId].value);
+  }
+
+  autoFlipChange(autoFlip: number) {
+    this.quizStoreService.updateAutoFlip(QUIZ_FORM_CONF.autoFlip[autoFlip]);
   }
 
   questionsChange(question: Event) {

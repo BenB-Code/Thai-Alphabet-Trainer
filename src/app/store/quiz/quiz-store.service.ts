@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
 import {
+  selectAutoFlip,
   selectCanGoBack,
   selectCanGoForward,
   selectCardAnimation,
@@ -34,6 +35,7 @@ export class QuizStoreService {
   readonly delayMs = this.store.selectSignal(selectDelayMs);
   readonly selected = this.store.selectSignal(selectSelected);
   readonly randomized = this.store.selectSignal(selectRandomized);
+  readonly autoFlip = this.store.selectSignal(selectAutoFlip);
 
   readonly index = this.store.selectSignal(selectIndex);
   readonly progressState = this.store.selectSignal(selectProgressState);
@@ -51,6 +53,10 @@ export class QuizStoreService {
 
   updateDisplay(display: DisplayType): void {
     this.store.dispatch(QuizSettingsActions.updateDisplay({ display }));
+  }
+
+  updateAutoFlip(autoFlip: boolean): void {
+    this.store.dispatch(QuizSettingsActions.updateAutoFlip({ autoFlip }));
   }
 
   updateQuestions(questions: number): void {
@@ -104,6 +110,10 @@ export class QuizStoreService {
 
   togglePause(): void {
     this.store.dispatch(QuizSessionActions.togglePause());
+  }
+
+  timerExpired(): void {
+    this.store.dispatch(QuizSessionActions.timerExpired());
   }
 
   private distributeDisplayTypes(count: number, display: DisplayType): DisplayType[] {

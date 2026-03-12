@@ -100,6 +100,7 @@
     "diphthong": "Voyelle Diphtongue",
     "special": "Voyelle Spéciale",
     "position": "Position",
-    "type": "Type"
+    "type": "Type",
+    "auto-flip": "Retournement auto"
   }
 }

@@ -7,6 +7,7 @@ export const QUIZ_FORM_CONF = {
     max: 500,
   },
   delay: [2, 3, 5, 10, 0],
+  autoFlip: [false, true],
   display: [
     {
       value: THAI as DisplayType,

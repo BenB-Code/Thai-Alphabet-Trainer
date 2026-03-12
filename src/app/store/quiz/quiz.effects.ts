@@ -4,9 +4,16 @@ import { Store } from '@ngrx/store';
 import { concat, EMPTY, map, of, switchMap, timer, withLatestFrom } from 'rxjs';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
-import { selectIndex, selectIsInProgress, selectMaxIndex } from './quiz.selectors';
+import {
+  selectAutoFlip,
+  selectDelay,
+  selectIndex,
+  selectIsFlipped,
+  selectIsInProgress,
+  selectMaxIndex,
+} from './quiz.selectors';
 import { SelectionStore } from '../selection/selection.store';
-import { FORWARD } from '../../shared/constants';
+import { FORWARD, QUIZ_FORM_CONF } from '../../shared/constants';
 
 @Injectable()
 export class QuizEffects {
@@ -16,6 +23,24 @@ export class QuizEffects {
 
   readonly syncSelection$ = createEffect(() =>
     toObservable(this.selectionStore.selected).pipe(map(selected => QuizSettingsActions.updateSelected({ selected })))
+  );
+
+  readonly timerExpired$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(QuizSessionActions.timerExpired),
+      withLatestFrom(
+        this.store.select(selectAutoFlip),
+        this.store.select(selectDelay),
+        this.store.select(selectIsFlipped)
+      ),
+      switchMap(([, autoFlip, delay, isFlipped]) => {
+        if (autoFlip && delay !== QUIZ_FORM_CONF.delay[4] && isFlipped) {
+          return EMPTY;
+        } else {
+          return of(QuizSessionActions.next());
+        }
+      })
+    )
   );
 
   readonly navigate$ = createEffect(() =>

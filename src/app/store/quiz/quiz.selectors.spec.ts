@@ -1,4 +1,5 @@
 import {
+  selectAutoFlip,
   selectCanGoBack,
   selectCanGoForward,
   selectCardAnimation,
@@ -21,11 +22,10 @@ import {
   selectSession,
   selectSettings,
 } from './quiz.selectors';
-import { INITIAL_QUIZ_STATE } from './quiz.state';
+import { INITIAL_QUIZ_STATE, QuizSettingsState } from './quiz.state';
 import { FINISHED, IN_PROGRESS, PAUSE, THAI } from '../../shared/constants';
 import { CONSONANTS_DATA } from '../../data';
 import { DisplayType } from '../../shared/types';
-import { QuizSettingsState } from './quiz.state';
 
 describe('Quiz Selectors', () => {
   const state = INITIAL_QUIZ_STATE;
@@ -40,6 +40,10 @@ describe('Quiz Selectors', () => {
 
   it('selectDisplay should return display', () => {
     expect(selectDisplay.projector(state.settings)).toBe(THAI);
+  });
+
+  it('selectAutoFlip should return autoFlip', () => {
+    expect(selectAutoFlip.projector(state.settings)).toBe(false);
   });
 
   it('selectQuestions should return questions count', () => {
@@ -145,6 +149,7 @@ describe('Quiz Selectors', () => {
       display: THAI as DisplayType,
       questions: 10,
       delay: 3,
+      autoFlip: false,
       selected: [CONSONANTS_DATA[0]],
       randomized: [],
     };

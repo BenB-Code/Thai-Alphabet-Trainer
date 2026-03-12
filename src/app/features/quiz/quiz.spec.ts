@@ -52,6 +52,7 @@ describe('Quiz', () => {
             previous: jasmine.createSpy(),
             toggleFlip: jasmine.createSpy(),
             togglePause: jasmine.createSpy(),
+            timerExpired: jasmine.createSpy(),
           },
         },
         {
@@ -79,7 +80,7 @@ describe('Quiz', () => {
     it('should call next on the quiz store', () => {
       component.onTimerComplete();
 
-      expect(quizStoreService.next).toHaveBeenCalled();
+      expect(quizStoreService.timerExpired).toHaveBeenCalled();
     });
   });
 

@@ -38,6 +38,7 @@ describe('QuizSettingsPanel', () => {
             display: signal(THAI),
             questions: signal(10),
             isQuizValid: signal(true),
+            autoFlip: signal(false),
             updateDelay: jasmine.createSpy(),
             updateDisplay: jasmine.createSpy(),
             updateQuestions: jasmine.createSpy(),

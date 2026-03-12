@@ -41,6 +41,7 @@ describe('QuizStoreService', () => {
       expect(service.cardAnimation()).toBeNull();
       expect(service.canGoBack()).toBeFalse();
       expect(service.canGoForward()).toBeTrue();
+      expect(service.autoFlip()).toBeFalse();
       expect(service.currentCard()).toBeNull();
       expect(service.progress()).toEqual({ current: 1, total: 10 });
       expect(service.isFinished()).toBeFalse();
@@ -65,6 +66,11 @@ describe('QuizStoreService', () => {
       service.updateDelay(10);
       expect(service.delay()).toBe(10);
       expect(service.delayMs()).toBe(10000);
+    });
+
+    it('updateAutoFlip should update delay', () => {
+      service.updateAutoFlip(true);
+      expect(service.autoFlip()).toBe(true);
     });
   });
 
@@ -102,6 +108,12 @@ describe('QuizStoreService', () => {
       service.start();
       service.togglePause();
       expect(service.isPaused()).toBeTrue();
+    });
+
+    it('timerExpired should call timer expired', () => {
+      service.start();
+      service.timerExpired();
+      expect(service.autoFlip()).toBeFalse();
     });
   });
 

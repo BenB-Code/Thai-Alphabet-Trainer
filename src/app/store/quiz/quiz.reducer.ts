@@ -1,7 +1,7 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
 import { INITIAL_QUIZ_STATE, INITIAL_SESSION_STATE } from './quiz.state';
-import { FINISHED, IN_PROGRESS, PAUSE } from '../../shared/constants';
+import { FINISHED, IN_PROGRESS, PAUSE, QUIZ_FORM_CONF } from '../../shared/constants';
 
 export const quizFeature = createFeature({
   name: 'quiz',
@@ -11,6 +11,11 @@ export const quizFeature = createFeature({
     on(QuizSettingsActions.updateDisplay, (state, { display }) => ({
       ...state,
       settings: { ...state.settings, display },
+    })),
+
+    on(QuizSettingsActions.updateAutoFlip, (state, { autoFlip }) => ({
+      ...state,
+      settings: { ...state.settings, autoFlip },
     })),
 
     on(QuizSettingsActions.updateQuestions, (state, { questions }) => ({
@@ -37,6 +42,20 @@ export const quizFeature = createFeature({
       ...state,
       session: { ...INITIAL_SESSION_STATE, progressState: IN_PROGRESS },
     })),
+
+    on(QuizSessionActions.timerExpired, state => {
+      if (state.settings.autoFlip && state.settings.delay !== QUIZ_FORM_CONF.delay[4] && !state.session.flipped) {
+        return {
+          ...state,
+          session: {
+            ...state.session,
+            flipped: true,
+            progressState: PAUSE,
+          },
+        };
+      }
+      return state;
+    }),
 
     on(QuizSessionActions.reset, state => ({
       ...state,

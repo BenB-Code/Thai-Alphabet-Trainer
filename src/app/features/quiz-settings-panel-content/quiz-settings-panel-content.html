@@ -34,3 +34,14 @@
     [initialIndex]="initialDisplayIndex"
   ></app-switch-selector>
 </div>
+
+<div class="question-container">
+  <label for="auto-flip-label">{{ 'quiz.auto-flip' | translate }}</label>
+  <app-switch-selector
+    class="auto-flip"
+    [darkMode]="appStoreService.isDarkThemeActive()"
+    (activeItem)="autoFlipChange($event)"
+    [list]="autoFlipList"
+    [initialIndex]="initialAutoFlipIndex"
+  ></app-switch-selector>
+</div>

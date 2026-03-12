@@ -30,6 +30,8 @@ describe('QuizSettingsPanelContent', () => {
             delay: signal(3),
             display: signal(THAI),
             questions: signal(10),
+            autoFlip: signal(false),
+            updateAutoFlip: jasmine.createSpy('updateAutoFlip'),
             updateDelay: jasmine.createSpy('updateDelay'),
             updateDisplay: jasmine.createSpy('updateDisplay'),
             updateQuestions: jasmine.createSpy('updateQuestions'),
@@ -59,6 +61,14 @@ describe('QuizSettingsPanelContent', () => {
       component.delayChange(0);
 
       expect(quizStoreService.updateDelay).toHaveBeenCalledWith(QUIZ_FORM_CONF.delay[0]);
+    });
+  });
+
+  describe('autoFlipChange', () => {
+    it('should update autoFlip with the corresponding value', () => {
+      component.autoFlipChange(1);
+
+      expect(quizStoreService.updateAutoFlip).toHaveBeenCalledWith(QUIZ_FORM_CONF.autoFlip[1]);
     });
   });
 

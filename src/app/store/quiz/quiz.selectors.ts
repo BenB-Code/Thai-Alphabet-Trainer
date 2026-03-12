@@ -7,6 +7,7 @@ export const selectQuizState = quizFeature.selectQuizState;
 export const selectSettings = createSelector(selectQuizState, state => state.settings);
 export const selectSession = createSelector(selectQuizState, state => state.session);
 
+export const selectAutoFlip = createSelector(selectSettings, s => s.autoFlip);
 export const selectDisplay = createSelector(selectSettings, s => s.display);
 export const selectQuestions = createSelector(selectSettings, s => s.questions);
 export const selectDelay = createSelector(selectSettings, s => s.delay);

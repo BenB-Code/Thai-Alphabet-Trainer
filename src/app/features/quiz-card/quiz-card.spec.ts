@@ -57,4 +57,10 @@ describe('QuizCard', () => {
       expect(quizStoreService.toggleFlip).toHaveBeenCalled();
     });
   });
+
+  describe('activePronunciation', () => {
+    it('should return the current pronunciation from appStoreService', () => {
+      expect(component.activePronunciation()).toBe(RTGS);
+    });
+  });
 });

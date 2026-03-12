@@ -5,6 +5,7 @@ export interface QuizSettingsState {
   display: DisplayType;
   questions: number;
   delay: number;
+  autoFlip: boolean;
   selected: ThaiSymbolType[];
   randomized: ThaiSymbolType[];
 }
@@ -24,6 +25,7 @@ export interface QuizState {
 export const INITIAL_SETTINGS_STATE: QuizSettingsState = {
   display: THAI,
   questions: 10,
+  autoFlip: false,
   delay: QUIZ_FORM_CONF.delay[2],
   selected: [],
   randomized: [],
