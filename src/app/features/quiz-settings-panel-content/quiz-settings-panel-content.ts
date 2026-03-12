@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
-import { SwitchSelectorItem } from '../../shared/types';
 import { QuizStoreService } from '../../store/quiz/quiz-store.service';
 import { AppStoreService } from '../../store/app/app-store.service';
-import { QUIZ_FORM_BASE_CONF } from '../../shared/constants';
+import { QUIZ_FORM_CONF } from '../../shared/constants';
+import { SwitchSelectorItem } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-quiz-settings-panel-content',
@@ -21,7 +21,7 @@ export class QuizSettingsPanelContent {
     {
       label: {
         display: true,
-        text: `${QUIZ_FORM_BASE_CONF.delay[0]}s`,
+        text: `${QUIZ_FORM_CONF.delay[0]}s`,
       },
       icon: {
         display: false,
@@ -35,7 +35,7 @@ export class QuizSettingsPanelContent {
     {
       label: {
         display: true,
-        text: `${QUIZ_FORM_BASE_CONF.delay[1]}s`,
+        text: `${QUIZ_FORM_CONF.delay[1]}s`,
       },
       icon: {
         display: false,
@@ -49,7 +49,7 @@ export class QuizSettingsPanelContent {
     {
       label: {
         display: true,
-        text: `${QUIZ_FORM_BASE_CONF.delay[2]}s`,
+        text: `${QUIZ_FORM_CONF.delay[2]}s`,
       },
       icon: {
         display: false,
@@ -63,7 +63,7 @@ export class QuizSettingsPanelContent {
     {
       label: {
         display: true,
-        text: `${QUIZ_FORM_BASE_CONF.delay[3]}s`,
+        text: `${QUIZ_FORM_CONF.delay[3]}s`,
       },
       icon: {
         display: false,
@@ -77,7 +77,7 @@ export class QuizSettingsPanelContent {
     {
       label: {
         display: false,
-        text: `${QUIZ_FORM_BASE_CONF.delay[4]}s`,
+        text: `${QUIZ_FORM_CONF.delay[4]}s`,
       },
       icon: {
         display: true,
@@ -92,7 +92,7 @@ export class QuizSettingsPanelContent {
 
   displayList = computed(() => {
     this.appStoreService.language();
-    return QUIZ_FORM_BASE_CONF.display.map((item, index) => ({
+    return QUIZ_FORM_CONF.display.map((item, index) => ({
       label: { display: true, text: this.appStoreService.translate(item.label) },
       icon: { display: false, path: '', alt: '', right: false },
       id: index,
@@ -100,24 +100,24 @@ export class QuizSettingsPanelContent {
     }));
   });
 
-  initialDelayIndex = QUIZ_FORM_BASE_CONF.delay.findIndex(d => d === this.quizStoreService.delay());
-  initialDisplayIndex = QUIZ_FORM_BASE_CONF.display.findIndex(d => d.value === this.quizStoreService.display());
+  initialDelayIndex = QUIZ_FORM_CONF.delay.findIndex(d => d === this.quizStoreService.delay());
+  initialDisplayIndex = QUIZ_FORM_CONF.display.findIndex(d => d.value === this.quizStoreService.display());
 
   delayChange(delayId: number) {
-    this.quizStoreService.updateDelay(QUIZ_FORM_BASE_CONF.delay[delayId]);
+    this.quizStoreService.updateDelay(QUIZ_FORM_CONF.delay[delayId]);
   }
 
   displayChange(displayId: number) {
-    this.quizStoreService.updateDisplay(QUIZ_FORM_BASE_CONF.display[displayId].value);
+    this.quizStoreService.updateDisplay(QUIZ_FORM_CONF.display[displayId].value);
   }
 
   questionsChange(question: Event) {
     let val = +(question.target as HTMLInputElement).value;
-    val = Math.max(val, QUIZ_FORM_BASE_CONF.questions.min);
-    val = Math.min(val, QUIZ_FORM_BASE_CONF.questions.max);
+    val = Math.max(val, QUIZ_FORM_CONF.questions.min);
+    val = Math.min(val, QUIZ_FORM_CONF.questions.max);
 
     this.quizStoreService.updateQuestions(val);
   }
 
-  protected readonly QUIZ_FORM_BASE_CONF = QUIZ_FORM_BASE_CONF;
+  protected readonly QUIZ_FORM_CONF = QUIZ_FORM_CONF;
 }

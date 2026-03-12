@@ -7,9 +7,9 @@
       type="number"
       (input)="questionsChange($event)"
       [value]="quizStoreService.questions()"
-      [min]="QUIZ_FORM_BASE_CONF.questions.min"
-      [max]="QUIZ_FORM_BASE_CONF.questions.max"
-    /><span>&nbsp;/&nbsp;{{ QUIZ_FORM_BASE_CONF.questions.max }}</span>
+      [min]="QUIZ_FORM_CONF.questions.min"
+      [max]="QUIZ_FORM_CONF.questions.max"
+    /><span>&nbsp;/&nbsp;{{ QUIZ_FORM_CONF.questions.max }}</span>
   </div>
 </div>
 

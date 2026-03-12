@@ -21,7 +21,7 @@ import {
   selectRandomized,
   selectSelected,
 } from './quiz.selectors';
-import { DisplayType, ThaiCharacter } from '../../shared/types';
+import { DisplayType, ThaiSymbolType } from '../../shared/types';
 import { LATIN, MIXED, THAI } from '../../shared/constants';
 
 @Injectable({ providedIn: 'root' })
@@ -70,7 +70,7 @@ export class QuizStoreService {
     const remainder = questions % selected.length;
     const shuffledIndexes = this.shuffled([...selected.keys()]);
 
-    const newList: ThaiCharacter[] = [];
+    const newList: ThaiSymbolType[] = [];
     for (let i = 0; i < selected.length; i++) {
       const count = base + (shuffledIndexes.indexOf(i) < remainder ? 1 : 0);
       const displays = this.distributeDisplayTypes(count, display);

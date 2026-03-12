@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { TabsService } from '../../services/tabs-service/tabs-service';
 import { LettersCategoryContainer } from '../letters-category-container/letters-category-container';
 import { AppStoreService } from '../../store/app/app-store.service';
-import { ConsonantClass, ThaiCharacter, VowelType } from '../../shared/types';
+import { SymbolCategoriesType, ThaiSymbolType } from '../../shared/types';
 
 @Component({
   selector: 'app-letters-tabs',
@@ -18,7 +18,7 @@ export class LettersTabs {
   protected readonly tabEntries = computed(() =>
     this.tabsService.tabsConfig.map(tab => ({
       id: tab.tabSwitchConfig.id,
-      categories: Object.entries(tab.payload) as [ConsonantClass | VowelType, ThaiCharacter[]][],
+      categories: Object.entries(tab.payload) as [SymbolCategoriesType, ThaiSymbolType[]][],
     }))
   );
 }

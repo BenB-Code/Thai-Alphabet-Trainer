@@ -1,5 +1,5 @@
-import { TestBed } from '@angular/core/testing';
-import { provideZonelessChangeDetection } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, provideZonelessChangeDetection } from '@angular/core';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Action } from '@ngrx/store';
@@ -9,16 +9,20 @@ import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
 import { selectIndex, selectIsInProgress, selectMaxIndex } from './quiz.selectors';
 import { INITIAL_QUIZ_STATE } from './quiz.state';
 
+@Component({ template: '', standalone: true })
+class NoopComponent {}
+
 describe('QuizEffects', () => {
   let effects: QuizEffects;
   let actions$: ReplaySubject<Action>;
   let store: MockStore;
+  let fixture: ComponentFixture<NoopComponent>;
 
-  beforeEach(() => {
-    jasmine.clock().install();
+  function setup(): void {
     actions$ = new ReplaySubject<Action>(1);
 
     TestBed.configureTestingModule({
+      imports: [NoopComponent],
       providers: [
         provideZonelessChangeDetection(),
         QuizEffects,
@@ -29,23 +33,36 @@ describe('QuizEffects', () => {
 
     effects = TestBed.inject(QuizEffects);
     store = TestBed.inject(MockStore);
-  });
-
-  afterEach(() => {
-    store.resetSelectors();
-    jasmine.clock().uninstall();
-  });
+    fixture = TestBed.createComponent(NoopComponent);
+  }
 
   describe('syncSelection$', () => {
-    it('should emit updateSelected with initial empty selection', done => {
-      effects.syncSelection$.subscribe(action => {
-        expect(action).toEqual(QuizSettingsActions.updateSelected({ selected: [] }));
-        done();
-      });
+    beforeEach(() => setup());
+
+    afterEach(() => store.resetSelectors());
+
+    it('should emit updateSelected with initial empty selection', async () => {
+      const emitted: Action[] = [];
+      effects.syncSelection$.subscribe(action => emitted.push(action));
+
+      await fixture.whenStable();
+
+      expect(emitted.length).toBe(1);
+      expect(emitted[0]).toEqual(QuizSettingsActions.updateSelected({ selected: [] }));
     });
   });
 
   describe('navigate$', () => {
+    beforeEach(() => {
+      jasmine.clock().install();
+      setup();
+    });
+
+    afterEach(() => {
+      store.resetSelectors();
+      jasmine.clock().uninstall();
+    });
+
     it('should slide forward on next within bounds', () => {
       store.overrideSelector(selectIndex, 0);
       store.overrideSelector(selectMaxIndex, 5);

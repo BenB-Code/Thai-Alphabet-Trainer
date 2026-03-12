@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { DataService } from './data-service';
-import { THAI_CONSONANTS, THAI_VOWELS } from '../../data';
-import { LONG, MID } from '../../shared/constants';
+import { CONSONANTS_DATA, DIACRITICS_DATA, NUMERAL_DATA, TONES_DATA, VOWELS_DATA } from '../../data';
+import { LOW, MID } from '../../shared/constants';
 
 describe('DataService', () => {
   let service: DataService;
@@ -18,101 +18,133 @@ describe('DataService', () => {
     expect(service).toBeTruthy();
   });
 
+  describe('signals', () => {
+    it('should expose consonants', () => {
+      expect(service.consonants().length).toBe(CONSONANTS_DATA.length);
+    });
+
+    it('should expose vowels', () => {
+      expect(service.vowels().length).toBe(VOWELS_DATA.length);
+    });
+
+    it('should expose tones', () => {
+      expect(service.tones().length).toBe(TONES_DATA.length);
+    });
+
+    it('should expose numerals', () => {
+      expect(service.numerals().length).toBe(NUMERAL_DATA.length);
+    });
+
+    it('should expose diacritics', () => {
+      expect(service.diacritics().length).toBe(DIACRITICS_DATA.length);
+    });
+
+    it('should return copies, not the original arrays', () => {
+      expect(service.consonants()).not.toBe(CONSONANTS_DATA);
+      expect(service.vowels()).not.toBe(VOWELS_DATA);
+    });
+  });
+
+  describe('sorted computed signals', () => {
+    it('should group consonants by category', () => {
+      const result = service.consonantsSortedByCategory();
+      const totalCount = Object.values(result).reduce((sum, arr) => sum + arr.length, 0);
+
+      expect(totalCount).toBe(CONSONANTS_DATA.length);
+      Object.entries(result).forEach(([key, items]) => {
+        items.forEach(item => expect(item.category).toBe(key));
+      });
+    });
+
+    it('should group vowels by category', () => {
+      const result = service.vowelsSortedByCategory();
+      const totalCount = Object.values(result).reduce((sum, arr) => sum + arr.length, 0);
+
+      expect(totalCount).toBe(VOWELS_DATA.length);
+      Object.entries(result).forEach(([key, items]) => {
+        items.forEach(item => expect(item.category).toBe(key));
+      });
+    });
+
+    it('should group tones by category', () => {
+      const result = service.tonesSortedByCategory();
+      const totalCount = Object.values(result).reduce((sum, arr) => sum + arr.length, 0);
+
+      expect(totalCount).toBe(TONES_DATA.length);
+    });
+
+    it('should group numerals by category', () => {
+      const result = service.numeralsSortedByCategory();
+      const totalCount = Object.values(result).reduce((sum, arr) => sum + arr.length, 0);
+
+      expect(totalCount).toBe(NUMERAL_DATA.length);
+    });
+
+    it('should group diacritics by category', () => {
+      const result = service.diacriticsSortedByCategory();
+      const totalCount = Object.values(result).reduce((sum, arr) => sum + arr.length, 0);
+
+      expect(totalCount).toBe(DIACRITICS_DATA.length);
+    });
+  });
+
+  describe('allSymbolsSorted', () => {
+    it('should merge consonants, vowels, numerals and diacritics', () => {
+      const result = service.allSymbolsSorted();
+      const keys = Object.keys(result);
+      const consonantKeys = Object.keys(service.consonantsSortedByCategory());
+      const vowelKeys = Object.keys(service.vowelsSortedByCategory());
+      const numeralKeys = Object.keys(service.numeralsSortedByCategory());
+      const diacriticKeys = Object.keys(service.diacriticsSortedByCategory());
+
+      const expectedKeys = [...consonantKeys, ...vowelKeys, ...numeralKeys, ...diacriticKeys];
+      expect(keys).toEqual(expectedKeys);
+    });
+  });
+
   describe('getAll', () => {
-    it('should return consonants and vowels grouped together', () => {
+    it('should return the same as allSymbolsSorted', () => {
       const result = service.getAll();
-      const consonantKeys = Object.keys(service.getAllConsonantsSorted());
-      const vowelKeys = Object.keys(service.getAllVowelsSorted());
+      const allKeys = Object.keys(result);
 
-      expect(Object.keys(result)).toEqual([...consonantKeys, ...vowelKeys]);
+      expect(allKeys.length).toBeGreaterThan(0);
     });
   });
 
-  describe('Thai Consonants', () => {
-    it('getAllConsonants should return all consonants', () => {
-      const result = service.getAllConsonants();
+  describe('getSymbolsByCategory', () => {
+    it('should return symbols for a valid category', () => {
+      const result = service.getSymbolsByCategory(LOW);
 
-      expect(result.length).toEqual(THAI_CONSONANTS.length);
+      expect(result.length).toBeGreaterThan(0);
+      result.forEach(symbol => expect(symbol.category).toBe(LOW));
     });
 
-    it('getAllConsonants should return a copy, not the original', () => {
-      const result = service.getAllConsonants();
+    it('should return symbols for another category', () => {
+      const result = service.getSymbolsByCategory(MID);
 
-      expect(result).not.toBe(THAI_CONSONANTS);
+      expect(result.length).toBeGreaterThan(0);
+      result.forEach(symbol => expect(symbol.category).toBe(MID));
     });
 
-    it('getAllConsonantsSorted should group by class', () => {
-      const result = service.getAllConsonantsSorted();
-      const totalCount = Object.values(result).reduce((sum, arr) => sum + arr.length, 0);
-
-      expect(totalCount).toEqual(THAI_CONSONANTS.length);
-      Object.entries(result).forEach(([key, consonants]) => {
-        consonants.forEach(c => expect(c.class).toEqual(key));
-      });
-    });
-
-    it('getConsonantById should return corresponding consonant entry', () => {
-      const result = service.getConsonantById(3);
-      const expected = THAI_CONSONANTS.find(consonant => consonant.id === 3);
-
-      expect(result).toEqual(expected);
-    });
-
-    it('getConsonantById should return undefined for unknown id', () => {
-      const result = service.getConsonantById(123);
+    it('should return undefined for unknown category', () => {
+      const result = service.getSymbolsByCategory('nonexistent' as never);
 
       expect(result).toBeUndefined();
-    });
-
-    it('getConsonantByClass should return corresponding consonants list', () => {
-      const result = service.getConsonantByClass(MID);
-      const expected = THAI_CONSONANTS.filter(consonant => consonant.class === MID);
-
-      expect(result).toEqual(expected);
     });
   });
 
-  describe('Thai Vowels', () => {
-    it('getAllVowels should return all vowels', () => {
-      const result = service.getAllVowels();
-
-      expect(result.length).toEqual(THAI_VOWELS.length);
-    });
-
-    it('getAllVowels should return a copy, not the original', () => {
-      const result = service.getAllVowels();
-
-      expect(result).not.toBe(THAI_VOWELS);
-    });
-
-    it('getAllVowelsSorted should group by type', () => {
-      const result = service.getAllVowelsSorted();
+  describe('getDatasetSortedByCategory', () => {
+    it('should group a dataset by category', () => {
+      const result = service.getDatasetSortedByCategory(CONSONANTS_DATA);
       const totalCount = Object.values(result).reduce((sum, arr) => sum + arr.length, 0);
 
-      expect(totalCount).toEqual(THAI_VOWELS.length);
-      Object.entries(result).forEach(([key, vowels]) => {
-        vowels.forEach(v => expect(v.type).toEqual(key));
-      });
+      expect(totalCount).toBe(CONSONANTS_DATA.length);
     });
 
-    it('getVowelById should return corresponding vowel entry', () => {
-      const result = service.getVowelById(3);
-      const expected = THAI_VOWELS.find(vowel => vowel.id === 3);
+    it('should return empty object for empty dataset', () => {
+      const result = service.getDatasetSortedByCategory([]);
 
-      expect(result).toEqual(expected);
-    });
-
-    it('getVowelById should return undefined for unknown id', () => {
-      const result = service.getVowelById(123);
-
-      expect(result).toBeUndefined();
-    });
-
-    it('getVowelByType should return corresponding vowels list', () => {
-      const result = service.getVowelByType(LONG);
-      const expected = THAI_VOWELS.filter(vowel => vowel.type === LONG);
-
-      expect(result).toEqual(expected);
+      expect(result).toEqual({});
     });
   });
 

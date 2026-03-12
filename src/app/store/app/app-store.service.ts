@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { AppStore } from './app.store';
-import { FontsType, Languages } from '../../shared/types';
+import { FontType, PronunciationsType } from '../../shared/types';
 
 @Injectable({ providedIn: 'root' })
 export class AppStoreService {
@@ -10,6 +10,7 @@ export class AppStoreService {
 
   readonly theme = this.store.theme;
   readonly thaiFont = this.store.thaiFont;
+  readonly pronunciation = this.store.pronunciation;
   readonly language = this.store.language;
   readonly activeTab = this.store.activeTab;
   readonly themeIcon = this.store.themeIcon;
@@ -19,12 +20,12 @@ export class AppStoreService {
     this.store.toggleTheme();
   }
 
-  switchFont(font: FontsType): void {
+  switchFont(font: FontType): void {
     this.store.switchFont(font);
   }
 
-  switchLanguage(lang: Languages): void {
-    this.store.switchLanguage(lang);
+  switchPronunciation(pronunciation: PronunciationsType): void {
+    this.store.switchPronunciation(pronunciation);
   }
 
   toggleLanguage(): void {

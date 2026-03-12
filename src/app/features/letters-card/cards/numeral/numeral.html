@@ -1,0 +1,3 @@
+<div [class]="'thai-character thai ' + appStoreService.thaiFont()">{{ letter().symbol }}</div>
+<div class="roman-character">{{ letter().transcriptions?.[activePronunciation()] }}</div>
+<div class="number">{{ letter().number }}</div>

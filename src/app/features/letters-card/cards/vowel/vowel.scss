@@ -1,0 +1,60 @@
+:host {
+  width: 100%;
+
+  div {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+
+    &.thai-character {
+      font-size: 2.5rem;
+      line-height: 3.25rem;
+      color: hsl(var(--foreground) / 1);
+    }
+
+    &.roman-character {
+      opacity: 0.8;
+      font-size: 0.85rem;
+      line-height: 1rem;
+      margin-top: 0.25rem;
+      color: hsl(var(--foreground) / 1);
+    }
+
+    &.length {
+      margin-top: 0.375rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 0.85rem;
+
+      .blue {
+        color: hsl(var(--length-short) / 1);
+        background-color: hsl(var(--length-short-bg) / 0.8);
+      }
+
+      .purple {
+        color: hsl(var(--length-long) / 1);
+        background-color: hsl(var(--length-long-bg) / 0.8);
+      }
+    }
+
+    &.vowel-pos {
+      margin-top: 0.375rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 0.85rem;
+      gap: 0.5rem;
+
+      .banana {
+        color: hsl(var(--apparition-medial) / 1);
+        background-color: hsl(var(--apparition-medial-bg) / 0.8);
+      }
+
+      .lime {
+        color: hsl(var(--apparition-final) / 1);
+        background-color: hsl(var(--apparition-final-bg) / 0.8);
+      }
+    }
+  }
+}

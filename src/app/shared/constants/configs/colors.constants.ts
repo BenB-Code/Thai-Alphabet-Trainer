@@ -1,0 +1,10 @@
+export const TRANSPARENT = 'transparent';
+export const COLOR_SIMPLE = 'var(--purple-x11)';
+export const COLOR_DIPHTONG = 'var(--banana-cream)';
+export const COLOR_EXTRA = 'var(--grapefruit-pink)';
+export const COLOR_SPECIAL = 'var(--mauve-magic)';
+export const COLOR_LONG = 'var(--pastel-light-blue)';
+export const COLOR_SHORT = 'var(--pastel-light-purple)';
+export const COLOR_LOW = 'var(--turquoise-surf)';
+export const COLOR_MID = 'var( --slime-lime)';
+export const COLOR_HIGH = 'var(--orange)';

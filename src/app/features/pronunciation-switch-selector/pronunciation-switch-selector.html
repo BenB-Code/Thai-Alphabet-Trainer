@@ -1,0 +1,7 @@
+<app-switch-selector
+  [size]="LARGE"
+  [darkMode]="appStoreService.isDarkThemeActive()"
+  [initialIndex]="activePronunciationIndex()"
+  (activeItem)="activeId($event)"
+  [list]="pronunciationsList"
+></app-switch-selector>

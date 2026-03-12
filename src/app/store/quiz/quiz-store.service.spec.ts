@@ -4,7 +4,7 @@ import { provideStore, Store } from '@ngrx/store';
 import { QuizStoreService } from './quiz-store.service';
 import { quizFeature } from './quiz.reducer';
 import { QuizSessionActions, QuizSettingsActions } from './quiz.actions';
-import { THAI_CONSONANTS } from '../../data';
+import { CONSONANTS_DATA } from '../../data';
 import { LATIN, MIXED, PAUSE, THAI } from '../../shared/constants';
 
 describe('QuizStoreService', () => {
@@ -106,7 +106,7 @@ describe('QuizStoreService', () => {
   });
 
   describe('generateQuizList', () => {
-    const selected = THAI_CONSONANTS.slice(0, 3);
+    const selected = CONSONANTS_DATA.slice(0, 3);
 
     beforeEach(() => {
       store.dispatch(QuizSettingsActions.updateSelected({ selected }));

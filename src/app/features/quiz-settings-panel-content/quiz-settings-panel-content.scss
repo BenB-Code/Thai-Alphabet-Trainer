@@ -17,7 +17,12 @@
 
     .delay,
     .display {
-      height: 2rem;
+      min-height: 2rem;
+    }
+
+    app-switch-selector {
+      --switch-btn-line-height: 1.25rem;
+      --icon-size: 19px;
     }
 
     label {

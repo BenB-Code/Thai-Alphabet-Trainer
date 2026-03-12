@@ -1,0 +1,37 @@
+@if (letterUtilsService.isObsolete(letter())) {
+<div class="outdated">
+  <img src="icons/triangle-alert.svg" alt="alert" /> <span>{{ 'letters.obsolete' | translate }} </span>
+</div>
+}
+
+<div [class]="'thai-character thai ' + appStoreService.thaiFont()">{{ letter().symbol }}</div>
+<div class="roman-character">
+  {{ letter().transcriptions?.[activePronunciation()] }} - {{ letter().exemple[activePronunciation()] }}
+</div>
+
+@let positions = letterUtilsService.getConsonantPositions(letter());
+<div class="sounds">
+  @if (positions) { @if (positions[0].position === INITIAL) { {{ positions[0]?.[activePronunciation()] }}
+  <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/arrow-right.svg" alt="to" />
+  @if (positions[1]) {
+  <span> {{ positions[1]?.[activePronunciation()] }} </span>
+  } @else {
+  <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
+  } } @else if (positions[0].position === FINAL) {
+  <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
+  <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/arrow-right.svg" alt="to" />
+  <span> {{ positions[0]?.[activePronunciation()] }} </span>
+  } }
+</div>
+
+<div class="status">
+  @if (letter().live !== null) { @if (letter().live) {
+  <app-status-badge class="green"> {{ 'letters.live' | translate }}</app-status-badge>
+  } @else {
+  <app-status-badge class="red"> {{ 'letters.dead' | translate }}</app-status-badge>
+  } }
+</div>
+<div class="translations">
+  <span [class]="'thai ' + appStoreService.thaiFont()">{{ letter().exemple.thai }}</span>
+  <span class="trad">{{ letter().exemple.translation[appStoreService.language()] }}</span>
+</div>

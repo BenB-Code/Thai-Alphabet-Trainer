@@ -44,4 +44,15 @@ describe('Header', () => {
       expect(title.textContent.trim()).toBe('');
     });
   });
+
+  describe('titleClick', () => {
+    it('should emit titleClicked', () => {
+      const spy = jasmine.createSpy();
+      component.titleClicked.subscribe(spy);
+
+      component.titleClick();
+
+      expect(spy).toHaveBeenCalled();
+    });
+  });
 });

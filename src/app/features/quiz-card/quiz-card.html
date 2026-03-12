@@ -6,78 +6,49 @@
   [class]="quizStoreService.cardAnimation()"
   (click)="flip()"
 >
-  <button class="card-face recto">
+  <div class="card-face recto">
     @if (card.display === THAI) {
-    <div [class]="'thai-character ' + appStoreService.thaiFont()">{{ card.character.thai }}</div>
-    } @else {
-    <div class="roman-character">{{ card.character.roman }}</div>
-    <div class="smaller roman-character">
-      @if (card.kind === CONSONANT) { {{ card.exampleWord.roman }} } @else if (card.kind === VOWEL) { {{ 'quiz.' +
-      letterUtilsService.getVowelType(card) | translate }} }
+    <div [class]="'thai-character ' + appStoreService.thaiFont()">{{ card.symbol }}</div>
+    } @else { @if (letterUtilsService.isConsonant(card)) {
+    <div class="roman-character">
+      {{ card.transcriptions?.[activePronunciation()] }} - {{ card.exemple[activePronunciation()] }}
     </div>
-    @let vowelPos = letterUtilsService.getVowelPosition(card);
-    <div class="sounds">
-      @if (vowelPos) {
-      <div class="vowel-pos">
-        <span>
-          @if (vowelPos.includes(MEDIAL)) { M } @if (vowelPos.includes(MEDIAL) && vowelPos.includes(FINAL)) { | } @if
-          (vowelPos.includes(FINAL)) { F }
-        </span>
-      </div>
+    } @else if (letterUtilsService.isVowel(card)) {
+    <div class="roman-character vowel">{{ card.transcriptions?.[activePronunciation()] }}</div>
+
+    <div class="length">
+      @if (card.length === SHORT) {
+      <app-status-badge class="blue"> {{ 'letters.short' | translate }}</app-status-badge>
+      } @if (card.length === LONG) {
+      <app-status-badge class="purple"> {{ 'letters.long' | translate }}</app-status-badge>
       }
     </div>
+
+    <div class="vowel-pos">
+      @if (card.apparition.medial) {
+      <app-status-badge class="banana"> {{ 'letters.medial' | translate }}</app-status-badge>
+      } @if (card.apparition.final) {
+      <app-status-badge class="lime"> {{ 'letters.final' | translate }}</app-status-badge>
+      }
+    </div>
+
+    } @else if (letterUtilsService.isNumeral(card)) {
+    <div class="number roman-character">{{ card.number }}</div>
+    } @else if (letterUtilsService.isDiacritic(card)) {
+    <div class="roman-character">{{ card.transcriptions?.[activePronunciation()] }}</div>
+    } @else if (letterUtilsService.isTone(card)) { } }
+  </div>
+  <div class="card-face verso">
+    @if (letterUtilsService.isConsonant(card)) {
+    <app-consonant [letter]="card" />
+    } @else if (letterUtilsService.isVowel(card)) {
+    <app-vowel [letter]="card" />
+    } @else if (letterUtilsService.isNumeral(card)) {
+    <app-numeral [letter]="card" />
+    } @else if (letterUtilsService.isDiacritic(card)) {
+    <app-diacritics [letter]="card" />
+    } @else if (letterUtilsService.isTone(card)) {
+    <app-tones [letter]="card" />
     }
-  </button>
-  <button class="card-face verso">
-    @if (letterUtilsService.isOutdated(card)) {
-    <div class="outdated">
-      <img src="icons/triangle-alert.svg" alt="alert" /> <span>{{ 'letters.obsolete' | translate }} </span>
-    </div>
-    }
-    <div [class]="'thai-character ' + appStoreService.thaiFont()">{{ card.character.thai }}</div>
-    <span class="roman">{{ card.character.roman }} · {{ card.exampleWord.roman }}</span>
-    @let translit = letterUtilsService.getTransliteration(card); @let vowelPos =
-    letterUtilsService.getVowelPosition(card);
-    <div class="sounds">
-      @if (translit) { @if (translit.initial) { {{ translit.initial }} } @else {
-      <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
-      }
-      <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/arrow-right.svg" alt="to" />
-      @if (translit.final) {
-      <span> {{ translit.final }} </span>
-      } @else {
-      <img [class.dark]="appStoreService.isDarkThemeActive()" src="icons/line.svg" alt="n/a" />
-      } } @else if (vowelPos) {
-      <div class="vowel-pos">
-        <span>
-          @if (vowelPos.includes(MEDIAL)) { M } @if (vowelPos.includes(MEDIAL) && vowelPos.includes(FINAL)) { | } @if
-          (vowelPos.includes(FINAL)) { F }
-        </span>
-      </div>
-      }
-    </div>
-    <div class="status">
-      @if (card.live) {
-      <app-status-badge class="green">
-        @if (appStoreService.isDarkThemeActive()) {
-        <img src="icons/lighting-dark.svg" alt="live" />
-        } @else {
-        <img src="icons/lighting.svg" alt="live" />
-        } {{ 'letters.live' | translate }}
-      </app-status-badge>
-      } @else {
-      <app-status-badge class="red">
-        @if (appStoreService.isDarkThemeActive()) {
-        <img src="icons/lighting-slashed-dark.svg" alt="dead" />
-        } @else {
-        <img src="icons/lighting-slashed.svg" alt="dead" />
-        } {{ 'letters.dead' | translate }}
-      </app-status-badge>
-      }
-    </div>
-    <div class="translations">
-      <span [class]="'thai ' + appStoreService.thaiFont()">{{ card.exampleWord.thai }}</span>
-      <span class="trad">{{ card.exampleWord[appStoreService.language()] }}</span>
-    </div>
-  </button>
+  </div>
 </button>

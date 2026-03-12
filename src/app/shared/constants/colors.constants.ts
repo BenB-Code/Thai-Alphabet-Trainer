@@ -1,9 +1,0 @@
-export const GREEN = 'var(--thai-high)';
-export const GREEN_BLUE = 'var(--thai-special)';
-export const ORANGE = 'var(--thai-short)';
-export const PURPLE = 'var(--thai-low)';
-export const YELLOW = 'var(--thai-long)';
-export const PRIMARY = 'var(--thai-mid)';
-export const SECONDARY = 'var(--thai-special)';
-export const TERTIARY = 'var(--muted-foreground)';
-export const TRANSPARENT = 'transparent';

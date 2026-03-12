@@ -27,7 +27,10 @@
     "menu": "Menu",
     "theme": "Theme",
     "settings": "Settings",
-    "donation": "Donation"
+    "donation": "Donation",
+    "numerals": "Numbers",
+    "tones": "Tones",
+    "diacritics": "Diacritics"
   },
   "buttons": {
     "all": "All",
@@ -41,7 +44,15 @@
     "short": "Short Vowels",
     "long": "Long Vowels",
     "diphthong": "Diphthongs Vowels",
-    "special": "Special Vowels"
+    "special": "Special Vowels",
+    "extra-vowel": "Extra Vowels",
+    "simple": "Simple Vowels",
+    "number": "Numbers",
+    "digit": "Digits",
+    "bigNumbers": "Big numbers",
+    "tens": "Tens",
+    "tone-mark": "Tones",
+    "diacritic": "Diacritics"
   },
   "letters": {
     "outdated": "This letter is not used anymore",
@@ -50,12 +61,14 @@
     "dead": "Dead",
     "sound-as-final": "Sound as final consonant",
     "never-final": "Never occur as final consonant",
-    "medial": "Medial position",
-    "final": "Final position",
+    "medial": "Medial",
+    "final": "Final",
     "no-final": "Doesn't take final consonants",
     "oh-vowel": "Short medial [oh] vowel doesn't have a written form (camouflaged vowel)",
     "no-medial-position": "Doesn't exist in medial position",
-    "variation": "Variation"
+    "variation": "Variation",
+    "long": "Long",
+    "short": "Short"
   },
   "quiz": {
     "selected": "selected",

@@ -81,16 +81,28 @@ describe('ProgressBar', () => {
       expect(component.timerPercent()).toBe(100);
     });
 
-    it('should set skipTransition to true then back to false', async () => {
+    it('should set skipTransition to true then back to false', (done: DoneFn) => {
+      const originalRaf = window.requestAnimationFrame;
+      const captured: { cb: FrameRequestCallback | null } = { cb: null };
+
+      spyOn(window, 'requestAnimationFrame').and.callFake((cb: FrameRequestCallback) => {
+        captured.cb = cb;
+        return 0;
+      });
+
       component.reset(3000);
 
       expect(component.skipTransition()).toBeTrue();
 
-      await new Promise<void>(resolve => {
-        requestAnimationFrame(() => resolve());
-      });
+      window.requestAnimationFrame = originalRaf;
+      if (captured.cb) {
+        captured.cb(performance.now());
+      }
 
-      expect(component.skipTransition()).toBeFalse();
+      setTimeout(() => {
+        expect(component.skipTransition()).toBeFalse();
+        done();
+      });
     });
 
     it('should stop before resetting', () => {
@@ -113,6 +125,11 @@ describe('ProgressBar', () => {
 
   describe('completion', () => {
     it('should emit completed when timer reaches 0', (done: DoneFn) => {
+      spyOn(window, 'requestAnimationFrame').and.callFake((cb: FrameRequestCallback) => {
+        setTimeout(() => cb(performance.now() + 100), 0);
+        return 0;
+      });
+
       component.completed.subscribe(() => {
         expect(component.timerPercent()).toBe(0);
         done();

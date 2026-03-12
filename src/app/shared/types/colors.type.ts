@@ -1,12 +1,24 @@
-import { GREEN, GREEN_BLUE, ORANGE, PRIMARY, PURPLE, SECONDARY, TERTIARY, TRANSPARENT, YELLOW } from '../constants';
+import {
+  COLOR_DIPHTONG,
+  COLOR_EXTRA,
+  COLOR_HIGH,
+  COLOR_LONG,
+  COLOR_LOW,
+  COLOR_MID,
+  COLOR_SHORT,
+  COLOR_SIMPLE,
+  COLOR_SPECIAL,
+  TRANSPARENT,
+} from '../constants';
 
-export type Colors =
-  | typeof GREEN
-  | typeof GREEN_BLUE
-  | typeof ORANGE
-  | typeof PURPLE
-  | typeof YELLOW
-  | typeof PRIMARY
-  | typeof SECONDARY
-  | typeof TERTIARY
+export type ColorsType =
+  | typeof COLOR_DIPHTONG
+  | typeof COLOR_SIMPLE
+  | typeof COLOR_EXTRA
+  | typeof COLOR_SPECIAL
+  | typeof COLOR_LONG
+  | typeof COLOR_SHORT
+  | typeof COLOR_LOW
+  | typeof COLOR_MID
+  | typeof COLOR_HIGH
   | typeof TRANSPARENT;

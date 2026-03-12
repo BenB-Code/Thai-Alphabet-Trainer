@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SwitchSelector } from '../../common/switch-selector/switch-selector';
 import { TranslatePipe } from '@ngx-translate/core';
-import { LARGE } from '../../shared/constants';
 import { TabsService } from '../../services/tabs-service/tabs-service';
 import { AppStoreService } from '../../store/app/app-store.service';
+import { LARGE } from '../../shared/constants';
 
 @Component({
   selector: 'app-letters-tab-switch-selector',

@@ -1,3 +1,3 @@
 import { EN, FR } from '../constants';
 
-export type Languages = typeof EN | typeof FR;
+export type LanguagesType = typeof EN | typeof FR;
