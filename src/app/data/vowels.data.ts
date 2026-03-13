@@ -651,7 +651,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'ไอ',
       rtgs: 'ai maái malaai',
-      ipa: 'aj/ (maái malaai)',
+      ipa: 'aj maái malaai',
     },
     info: {
       en: 'Called ai maái malaai',
@@ -674,7 +674,7 @@ export const VOWELS_DATA: ThaiVowel[] = [
     transcriptions: {
       thai: 'ใอ',
       rtgs: 'ai maái múan',
-      ipa: 'aj/ (maái múan)',
+      ipa: 'aj maái múan',
     },
     info: {
       en: 'Called ai maái múan. Only exist with 20 words',

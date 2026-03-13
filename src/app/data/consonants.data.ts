@@ -470,7 +470,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
     live: false,
     transcriptions: {
       thai: 'ซ',
-      rtgs: 'cho',
+      rtgs: 'so',
       ipa: 'sɔː',
     },
     position: [
@@ -1686,7 +1686,7 @@ export const CONSONANTS_DATA: ThaiConsonant[] = [
       {
         position: FINAL,
         rtgs: 'o',
-        ipa: 'w',
+        ipa: 'o',
         articulation: {
           manner: BILABIAL,
           place: APPROXIMANT,
