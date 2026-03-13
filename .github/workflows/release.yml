@@ -47,7 +47,7 @@ jobs:
           git push origin master --follow-tags
       - name: Generate changelog
         id: changelog
-        uses: mikepenz/release-changelog-builder-action@{latest-release}
+        uses: mikepenz/release-changelog-builder-action@6
         with:
           configuration: ".github/changelog-config.json"
           toTag: v${{ steps.version.outputs.new_version }}
